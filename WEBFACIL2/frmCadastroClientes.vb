@@ -67,7 +67,7 @@ Public Class frmCadastroClientes
             cliente.cli_DtCadastro = Now.Date
 
             '  If cliente.cli_id > 0 Then
-            cliente.Gravar()
+            cliente.GravarDados()
             ' Else
             '  cliente.Alterar()
             '  End If
@@ -82,6 +82,67 @@ Public Class frmCadastroClientes
 
     Private Sub btLimpar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btLimpar.Click
         LimparCampos()
+    End Sub
+
+    Private Sub btPesquisarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCliente.Click
+        Try
+            Dim campo As DataRow
+            cliente.cli_CPF = txtCPF.Text
+            ds = cliente.ConsultarCliente()
+            campo = ds.Tables(0).Rows(0)
+            'txtCPF.Text = campo(2)
+            'txtRG.Text
+            'txtNome.Text
+            'txtPIS.Text
+            'txtTitEleitoral.Text
+            'txtLogradouro.Text
+            'txtNumero.Text
+            'txtComplemento.Text
+            'txtBairro.Text
+            'txtCidade.Text
+            'cboUF.Text
+            'txtCEP.Text
+            'txtFoneRes.Text
+            'txtFoneCel.Text
+            'txtDtNasc.Text
+            'chbCurriculo.Checked
+            'txtEmail.Text
+            'txtObs.Text
+            'chbAposentado.Checked
+            'txtNumBeneficio.Text
+            'chbFuncPublico.Checked
+            'txtFuncPublico.Text
+            'chbAutonomo.Checked
+            'txtAutonomo.Text
+            'chbFalecido.Checked
+            'txtFalecido.Text
+            'chbParcelamentos.Checked
+            'txtParcelamentos.Text
+            'chbESocial.Checked
+            'txtESocial.Text
+            'chbVIP.Checked
+            'txtVIP.Text
+            'chbPJ.Checked
+            'txtPJ.Text
+            'chbMEI.Checked
+            'txtMEI.Text
+            'chbITR.Checked
+            'txtITR.Text
+            'chbMensalista.Checked
+            'txtMensalista.Text
+            'chbDecore.Checked
+            'txtDecore.Text
+            'chbIRPF.Checked
+            'txtIRPF.Text
+            'chbSenhaWeb.Checked
+            'txtSenhaWeb.Text
+            'txtValidade.Text
+
+
+        Catch ex As Exception
+            MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
     End Sub
 
     Private Sub chbAposentado_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbAposentado.CheckedChanged
@@ -420,4 +481,9 @@ Public Class frmCadastroClientes
         txtSenhaWeb.Text = ""
         txtValidade.Text = ""
     End Sub
+
+    
+    
+    
+   
 End Class

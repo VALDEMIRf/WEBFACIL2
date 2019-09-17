@@ -532,7 +532,7 @@ Public Class clsCliente
         End Set
     End Property
 
-    Public Sub Gravar()
+    Public Sub GravarDados()
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
@@ -599,6 +599,33 @@ Public Class clsCliente
             End Try
         End Using
     End Sub
+
+    Public Function ConsultarCliente()
+        Dim dr As OleDbDataReader = Nothing
+        Using con As OleDbConnection = GetConnection()
+            Try
+                con.Open()
+                sql = "SELECT * FROM tbClientes WHERE cli_CPF=" & cli_CPF & ""
+                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+                dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+                If dr.HasRows Then
+                    dr.Read()
+                    ' txtLogin.Text = dr.Item("login")
+                    '  txtSenha.Text = dr.Item("senha")
+                    '  txtPerfil.Text = dr.Item("perfil")
+                Else
+                    MsgBox("Não foi possível carregar os dados.", MsgBoxStyle.Critical, "Aviso do Sistema")
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                dr.Close()
+                con.Close()
+            End Try
+        End Using
+
+    End Function
 
     Public Sub Alterar()
 

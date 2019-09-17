@@ -88,10 +88,10 @@ Partial Class frmCadastroClientes
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.chbCurriculo = New System.Windows.Forms.CheckBox()
         Me.txtCPFVinculado = New System.Windows.Forms.ComboBox()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btPesquisarCPFVinculado = New System.Windows.Forms.Button()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.txtVinculo = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btPesquisarCliente = New System.Windows.Forms.Button()
         Me.txtDtNasc = New System.Windows.Forms.MaskedTextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -182,7 +182,7 @@ Partial Class frmCadastroClientes
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1160, 668)
+        Me.TabControl1.Size = New System.Drawing.Size(1129, 668)
         Me.TabControl1.TabIndex = 0
         '
         'TabCliente
@@ -197,7 +197,7 @@ Partial Class frmCadastroClientes
         Me.TabCliente.Location = New System.Drawing.Point(4, 22)
         Me.TabCliente.Name = "TabCliente"
         Me.TabCliente.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabCliente.Size = New System.Drawing.Size(1152, 642)
+        Me.TabCliente.Size = New System.Drawing.Size(1121, 642)
         Me.TabCliente.TabIndex = 0
         Me.TabCliente.Text = "Clientes"
         '
@@ -247,7 +247,7 @@ Partial Class frmCadastroClientes
         Me.btLimpar.FlatAppearance.BorderSize = 0
         Me.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btLimpar.Image = CType(resources.GetObject("btLimpar.Image"), System.Drawing.Image)
-        Me.btLimpar.Location = New System.Drawing.Point(436, 117)
+        Me.btLimpar.Location = New System.Drawing.Point(444, 117)
         Me.btLimpar.Name = "btLimpar"
         Me.btLimpar.Size = New System.Drawing.Size(112, 56)
         Me.btLimpar.TabIndex = 84
@@ -308,7 +308,7 @@ Partial Class frmCadastroClientes
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(448, 59)
+        Me.Button1.Location = New System.Drawing.Point(456, 59)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 41)
         Me.Button1.TabIndex = 76
@@ -347,7 +347,7 @@ Partial Class frmCadastroClientes
         Me.btSalvar.FlatAppearance.BorderSize = 0
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(448, 4)
+        Me.btSalvar.Location = New System.Drawing.Point(456, 4)
         Me.btSalvar.Name = "btSalvar"
         Me.btSalvar.Size = New System.Drawing.Size(100, 41)
         Me.btSalvar.TabIndex = 24
@@ -797,10 +797,10 @@ Partial Class frmCadastroClientes
         '
         Me.GroupBox2.Controls.Add(Me.chbCurriculo)
         Me.GroupBox2.Controls.Add(Me.txtCPFVinculado)
-        Me.GroupBox2.Controls.Add(Me.Button3)
+        Me.GroupBox2.Controls.Add(Me.btPesquisarCPFVinculado)
         Me.GroupBox2.Controls.Add(Me.Label39)
         Me.GroupBox2.Controls.Add(Me.txtVinculo)
-        Me.GroupBox2.Controls.Add(Me.Button2)
+        Me.GroupBox2.Controls.Add(Me.btPesquisarCliente)
         Me.GroupBox2.Controls.Add(Me.txtDtNasc)
         Me.GroupBox2.Controls.Add(Me.Label20)
         Me.GroupBox2.Controls.Add(Me.Label19)
@@ -840,19 +840,19 @@ Partial Class frmCadastroClientes
         Me.txtCPFVinculado.Size = New System.Drawing.Size(138, 21)
         Me.txtCPFVinculado.TabIndex = 82
         '
-        'Button3
+        'btPesquisarCPFVinculado
         '
-        Me.Button3.AutoSize = True
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(245, 153)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(38, 33)
-        Me.Button3.TabIndex = 80
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button3.UseCompatibleTextRendering = True
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btPesquisarCPFVinculado.AutoSize = True
+        Me.btPesquisarCPFVinculado.FlatAppearance.BorderSize = 0
+        Me.btPesquisarCPFVinculado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btPesquisarCPFVinculado.Image = CType(resources.GetObject("btPesquisarCPFVinculado.Image"), System.Drawing.Image)
+        Me.btPesquisarCPFVinculado.Location = New System.Drawing.Point(245, 153)
+        Me.btPesquisarCPFVinculado.Name = "btPesquisarCPFVinculado"
+        Me.btPesquisarCPFVinculado.Size = New System.Drawing.Size(38, 33)
+        Me.btPesquisarCPFVinculado.TabIndex = 80
+        Me.btPesquisarCPFVinculado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btPesquisarCPFVinculado.UseCompatibleTextRendering = True
+        Me.btPesquisarCPFVinculado.UseVisualStyleBackColor = True
         '
         'Label39
         '
@@ -871,17 +871,17 @@ Partial Class frmCadastroClientes
         Me.txtVinculo.Size = New System.Drawing.Size(145, 20)
         Me.txtVinculo.TabIndex = 78
         '
-        'Button2
+        'btPesquisarCliente
         '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(189, 16)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(49, 41)
-        Me.Button2.TabIndex = 77
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btPesquisarCliente.FlatAppearance.BorderSize = 0
+        Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
+        Me.btPesquisarCliente.Location = New System.Drawing.Point(189, 16)
+        Me.btPesquisarCliente.Name = "btPesquisarCliente"
+        Me.btPesquisarCliente.Size = New System.Drawing.Size(49, 41)
+        Me.btPesquisarCliente.TabIndex = 77
+        Me.btPesquisarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btPesquisarCliente.UseVisualStyleBackColor = True
         '
         'txtDtNasc
         '
@@ -1023,7 +1023,7 @@ Partial Class frmCadastroClientes
         Me.TabEmpresa.Location = New System.Drawing.Point(4, 22)
         Me.TabEmpresa.Name = "TabEmpresa"
         Me.TabEmpresa.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabEmpresa.Size = New System.Drawing.Size(1152, 642)
+        Me.TabEmpresa.Size = New System.Drawing.Size(1121, 642)
         Me.TabEmpresa.TabIndex = 1
         Me.TabEmpresa.Text = "Empresa"
         '
@@ -1554,7 +1554,7 @@ Partial Class frmCadastroClientes
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(1178, 33)
+        Me.btSair.Location = New System.Drawing.Point(1147, 36)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(82, 80)
         Me.btSair.TabIndex = 26
@@ -1566,7 +1566,7 @@ Partial Class frmCadastroClientes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.ClientSize = New System.Drawing.Size(1227, 681)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "frmCadastroClientes"
@@ -1597,10 +1597,10 @@ Partial Class frmCadastroClientes
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents chbCurriculo As System.Windows.Forms.CheckBox
     Friend WithEvents txtCPFVinculado As System.Windows.Forms.ComboBox
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btPesquisarCPFVinculado As System.Windows.Forms.Button
     Friend WithEvents Label39 As System.Windows.Forms.Label
     Public WithEvents txtVinculo As System.Windows.Forms.TextBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btPesquisarCliente As System.Windows.Forms.Button
     Public WithEvents txtDtNasc As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
