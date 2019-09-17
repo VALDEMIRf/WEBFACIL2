@@ -47,6 +47,7 @@ Public Class frmCadastroClientes
             cliente.cli_NumParcelamento = txtParcelamentos.Text
             cliente.cli_EmprDom = chbESocial.Checked
             cliente.cli_ESocial = txtESocial.Text
+            cliente.cli_EsocialSenha = txtEsocialSenha.Text
             cliente.cli_VIP = chbVIP.Checked
             cliente.cli_VIPDescricao = txtVIP.Text
             cliente.cli_PJ = chbPJ.Checked
@@ -64,11 +65,13 @@ Public Class frmCadastroClientes
             cliente.cli_SenWebPrefeitura = chbSenhaWeb.Checked
             cliente.cli_SenhaWebPrefeitura = txtSenhaWeb.Text
             cliente.cli_SenhaWebValidade = txtValidade.Text
+            cliente.cli_Redesim = chbRedesim.Checked
+            cliente.cli_SenhaRedesim = txtSenhaRedesim.Text
             cliente.cli_DtCadastro = Now.Date
 
             '  If cliente.cli_id > 0 Then
             cliente.GravarDados()
-            ' Else
+            ' Else 
             '  cliente.Alterar()
             '  End If
 
@@ -199,6 +202,10 @@ Public Class frmCadastroClientes
 
     Private Sub chbSenhaWeb_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSenhaWeb.CheckedChanged
         SenhaWeb()
+    End Sub
+
+    Private Sub chbRedesim_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbRedesim.CheckedChanged
+        Redesim()
     End Sub
 
     Private Sub Aposentado()
@@ -400,11 +407,13 @@ Public Class frmCadastroClientes
             If chbESocial.Checked = True Then
                 '  lblESocial.Visible = True
                 txtESocial.Visible = True
-
+                txtEsocialSenha.Visible = True
+                lblEsocialSenha.Visible = True
             Else
                 '   lblESocial.Visible = False
                 txtESocial.Visible = False
-
+                txtEsocialSenha.Visible = False
+                lblEsocialSenha.Visible = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -430,6 +439,23 @@ Public Class frmCadastroClientes
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+
+    Private Sub Redesim()
+        Try
+            If chbRedesim.Checked = True Then
+                lblSenhaRedesim.Visible = True
+                txtSenhaRedesim.Visible = True
+
+            Else
+                lblSenhaRedesim.Visible = False
+                txtSenhaRedesim.Visible = False
+                
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub LimparCampos()
@@ -463,6 +489,7 @@ Public Class frmCadastroClientes
         txtParcelamentos.Text = ""
         chbESocial.Checked = False
         txtESocial.Text = ""
+        txtEsocialSenha.Text = ""
         chbVIP.Checked = False
         txtVIP.Text = ""
         chbPJ.Checked = False
@@ -480,10 +507,13 @@ Public Class frmCadastroClientes
         chbSenhaWeb.Checked = False
         txtSenhaWeb.Text = ""
         txtValidade.Text = ""
+        chbRedesim.Checked = False
+        txtSenhaRedesim.Text = ""
     End Sub
 
     
     
     
    
+    
 End Class

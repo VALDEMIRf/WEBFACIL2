@@ -349,6 +349,16 @@ Public Class clsCliente
         End Set
     End Property
 
+    Private _cli_EsocialSenha As String
+    Public Property cli_EsocialSenha() As String
+        Get
+            Return _cli_EsocialSenha
+        End Get
+        Set(ByVal value As String)
+            _cli_EsocialSenha = value
+        End Set
+    End Property
+
     Private _cli_VIP As Boolean
     Public Property cli_VIP() As Boolean
         Get
@@ -489,8 +499,6 @@ Public Class clsCliente
         End Set
     End Property
 
-
-
     Private _cli_SenWebPrefeitura As Boolean
     Public Property cli_SenWebPrefeitura() As Boolean
         Get
@@ -521,6 +529,26 @@ Public Class clsCliente
         End Set
     End Property
 
+    Private _cli_Redesim As Boolean
+    Public Property cli_Redesim() As Boolean
+        Get
+            Return _cli_Redesim
+        End Get
+        Set(ByVal value As Boolean)
+            _cli_Redesim = value
+        End Set
+    End Property
+
+    Private _cli_SenhaRedesim As String
+    Public Property cli_SenhaRedesim() As String
+        Get
+            Return _cli_SenhaRedesim
+        End Get
+        Set(ByVal value As String)
+            _cli_SenhaRedesim = value
+        End Set
+    End Property
+
     Private _cli_DtCadastro As DateTime
 
     Public Property cli_DtCadastro() As DateTime
@@ -536,7 +564,7 @@ Public Class clsCliente
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
-                Dim sql As String = "INSERT INTO tbClientes(cli_CPF,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Logradouro,cli_Numero,cli_Complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_data_nasc,cli_Curriculo,cli_Email,cli_Observacoes,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NomeFunc,cli_Autonomo,cli_AutonomoNome,cli_Falecido,cli_NomeFalecido,cli_Parcelamento,cli_NumParcelamento,cli_EmprDom,cli_ESocial,cli_VIP,cli_VIPDescricao,cli_PJ,cli_NumPJ,cli_MEI,cli_NumMEI,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_SenhaWebValidade,cli_DtCadastro) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                Dim sql As String = "INSERT INTO tbClientes(cli_CPF,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Logradouro,cli_Numero,cli_Complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_data_nasc,cli_Curriculo,cli_Email,cli_Observacoes,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NomeFunc,cli_Autonomo,cli_AutonomoNome,cli_Falecido,cli_NomeFalecido,cli_Parcelamento,cli_NumParcelamento,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_VIP,cli_VIPDescricao,cli_PJ,cli_NumPJ,cli_MEI,cli_NumMEI,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_SenhaWebValidade,cli_Redesim,cli_SenhaRedesim,cli_DtCadastro) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CPF", _cli_CPF))
@@ -566,9 +594,10 @@ Public Class clsCliente
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Falecido", _cli_Falecido))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NomeFalecido", _cli_NomeFalecido))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Parcelamento", _cli_Parcelamento))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Parcelamento", _cli_NumParcelamento))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumParcelamento", _cli_NumParcelamento))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_EmprDom", _cli_EmprDom))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_ESocial", _cli_ESocial))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_EsocialSenha", _cli_EsocialSenha))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_VIP", _cli_VIP))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_VIPDescricao", _cli_VIPDescricao))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_PJ", _cli_PJ))
@@ -586,6 +615,8 @@ Public Class clsCliente
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenWebPrefeitura", _cli_SenWebPrefeitura))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebPrefeitura", _cli_SenhaWebPrefeitura))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebValidade", _cli_SenhaWebValidade))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Redesim", _cli_Redesim))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaRedesim", _cli_SenhaRedesim))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_DtCadastro", Now.Date))
                 cmd.ExecuteNonQuery()
 

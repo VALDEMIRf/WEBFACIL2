@@ -164,6 +164,11 @@ Partial Class frmCadastroClientes
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
+        Me.lblEsocialSenha = New System.Windows.Forms.Label()
+        Me.txtEsocialSenha = New System.Windows.Forms.TextBox()
+        Me.lblSenhaRedesim = New System.Windows.Forms.Label()
+        Me.txtSenhaRedesim = New System.Windows.Forms.TextBox()
+        Me.chbRedesim = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -203,6 +208,11 @@ Partial Class frmCadastroClientes
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.lblSenhaRedesim)
+        Me.Panel1.Controls.Add(Me.txtSenhaRedesim)
+        Me.Panel1.Controls.Add(Me.chbRedesim)
+        Me.Panel1.Controls.Add(Me.lblEsocialSenha)
+        Me.Panel1.Controls.Add(Me.txtEsocialSenha)
         Me.Panel1.Controls.Add(Me.btLimpar)
         Me.Panel1.Controls.Add(Me.txtValidade)
         Me.Panel1.Controls.Add(Me.lblValido)
@@ -257,7 +267,7 @@ Partial Class frmCadastroClientes
         '
         'txtValidade
         '
-        Me.txtValidade.Location = New System.Drawing.Point(218, 577)
+        Me.txtValidade.Location = New System.Drawing.Point(203, 551)
         Me.txtValidade.Mask = "00/00/0000"
         Me.txtValidade.Name = "txtValidade"
         Me.txtValidade.Size = New System.Drawing.Size(91, 20)
@@ -268,7 +278,7 @@ Partial Class frmCadastroClientes
         'lblValido
         '
         Me.lblValido.AutoSize = True
-        Me.lblValido.Location = New System.Drawing.Point(146, 585)
+        Me.lblValido.Location = New System.Drawing.Point(146, 558)
         Me.lblValido.Name = "lblValido"
         Me.lblValido.Size = New System.Drawing.Size(51, 13)
         Me.lblValido.TabIndex = 82
@@ -278,7 +288,7 @@ Partial Class frmCadastroClientes
         'lblSenhaWeb
         '
         Me.lblSenhaWeb.AutoSize = True
-        Me.lblSenhaWeb.Location = New System.Drawing.Point(146, 552)
+        Me.lblSenhaWeb.Location = New System.Drawing.Point(146, 525)
         Me.lblSenhaWeb.Name = "lblSenhaWeb"
         Me.lblSenhaWeb.Size = New System.Drawing.Size(41, 13)
         Me.lblSenhaWeb.TabIndex = 19
@@ -287,7 +297,7 @@ Partial Class frmCadastroClientes
         '
         'txtSenhaWeb
         '
-        Me.txtSenhaWeb.Location = New System.Drawing.Point(218, 544)
+        Me.txtSenhaWeb.Location = New System.Drawing.Point(193, 522)
         Me.txtSenhaWeb.Name = "txtSenhaWeb"
         Me.txtSenhaWeb.Size = New System.Drawing.Size(160, 20)
         Me.txtSenhaWeb.TabIndex = 81
@@ -296,11 +306,11 @@ Partial Class frmCadastroClientes
         'chbSenhaWeb
         '
         Me.chbSenhaWeb.AutoSize = True
-        Me.chbSenhaWeb.Location = New System.Drawing.Point(15, 565)
+        Me.chbSenhaWeb.Location = New System.Drawing.Point(15, 538)
         Me.chbSenhaWeb.Name = "chbSenhaWeb"
-        Me.chbSenhaWeb.Size = New System.Drawing.Size(134, 17)
+        Me.chbSenhaWeb.Size = New System.Drawing.Size(147, 17)
         Me.chbSenhaWeb.TabIndex = 78
-        Me.chbSenhaWeb.Text = "Senha Web Prefeitura:"
+        Me.chbSenhaWeb.Text = "Senha Web PrefeituraPF:"
         Me.chbSenhaWeb.UseVisualStyleBackColor = True
         '
         'Button1
@@ -1561,6 +1571,52 @@ Partial Class frmCadastroClientes
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = True
         '
+        'lblEsocialSenha
+        '
+        Me.lblEsocialSenha.AutoSize = True
+        Me.lblEsocialSenha.Location = New System.Drawing.Point(298, 229)
+        Me.lblEsocialSenha.Name = "lblEsocialSenha"
+        Me.lblEsocialSenha.Size = New System.Drawing.Size(41, 13)
+        Me.lblEsocialSenha.TabIndex = 85
+        Me.lblEsocialSenha.Text = "Senha:"
+        Me.lblEsocialSenha.Visible = False
+        '
+        'txtEsocialSenha
+        '
+        Me.txtEsocialSenha.Location = New System.Drawing.Point(345, 226)
+        Me.txtEsocialSenha.Name = "txtEsocialSenha"
+        Me.txtEsocialSenha.Size = New System.Drawing.Size(160, 20)
+        Me.txtEsocialSenha.TabIndex = 86
+        Me.txtEsocialSenha.Visible = False
+        '
+        'lblSenhaRedesim
+        '
+        Me.lblSenhaRedesim.AutoSize = True
+        Me.lblSenhaRedesim.Location = New System.Drawing.Point(118, 584)
+        Me.lblSenhaRedesim.Name = "lblSenhaRedesim"
+        Me.lblSenhaRedesim.Size = New System.Drawing.Size(41, 13)
+        Me.lblSenhaRedesim.TabIndex = 87
+        Me.lblSenhaRedesim.Text = "Senha:"
+        Me.lblSenhaRedesim.Visible = False
+        '
+        'txtSenhaRedesim
+        '
+        Me.txtSenhaRedesim.Location = New System.Drawing.Point(165, 581)
+        Me.txtSenhaRedesim.Name = "txtSenhaRedesim"
+        Me.txtSenhaRedesim.Size = New System.Drawing.Size(160, 20)
+        Me.txtSenhaRedesim.TabIndex = 89
+        Me.txtSenhaRedesim.Visible = False
+        '
+        'chbRedesim
+        '
+        Me.chbRedesim.AutoSize = True
+        Me.chbRedesim.Location = New System.Drawing.Point(15, 584)
+        Me.chbRedesim.Name = "chbRedesim"
+        Me.chbRedesim.Size = New System.Drawing.Size(70, 17)
+        Me.chbRedesim.TabIndex = 88
+        Me.chbRedesim.Text = "Redesim:"
+        Me.chbRedesim.UseVisualStyleBackColor = True
+        '
         'frmCadastroClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1733,4 +1789,9 @@ Partial Class frmCadastroClientes
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents btSair As System.Windows.Forms.Button
     Friend WithEvents btLimpar As System.Windows.Forms.Button
+    Friend WithEvents lblEsocialSenha As System.Windows.Forms.Label
+    Public WithEvents txtEsocialSenha As System.Windows.Forms.TextBox
+    Friend WithEvents lblSenhaRedesim As System.Windows.Forms.Label
+    Public WithEvents txtSenhaRedesim As System.Windows.Forms.TextBox
+    Friend WithEvents chbRedesim As System.Windows.Forms.CheckBox
 End Class
