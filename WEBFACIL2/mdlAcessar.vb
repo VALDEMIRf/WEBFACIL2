@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+
 Module mdlAcessar
     Public Function GetConnection() As OleDbConnection
 

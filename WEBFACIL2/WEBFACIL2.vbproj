@@ -48,6 +48,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Imagens\Accounting-Calculator1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -132,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagens\Accounting-Calculator.ico" />
+    <Content Include="Imagens\Accounting-Calculator1.ico" />
     <Content Include="Imagens\alterar.png" />
     <Content Include="Imagens\Button-Add-icon.png" />
     <Content Include="Imagens\Consultar.ico" />

@@ -93,57 +93,59 @@ Public Class frmCadastroClientes
             cliente.cli_CPF = txtCPF.Text
             ds = cliente.ConsultarCliente()
             campo = ds.Tables(0).Rows(0)
-            'txtCPF.Text = campo(2)
-            'txtRG.Text
-            'txtNome.Text
-            'txtPIS.Text
-            'txtTitEleitoral.Text
-            'txtLogradouro.Text
-            'txtNumero.Text
-            'txtComplemento.Text
-            'txtBairro.Text
-            'txtCidade.Text
-            'cboUF.Text
-            'txtCEP.Text
-            'txtFoneRes.Text
-            'txtFoneCel.Text
-            'txtDtNasc.Text
-            'chbCurriculo.Checked
-            'txtEmail.Text
-            'txtObs.Text
-            'chbAposentado.Checked
-            'txtNumBeneficio.Text
-            'chbFuncPublico.Checked
-            'txtFuncPublico.Text
-            'chbAutonomo.Checked
-            'txtAutonomo.Text
-            'chbFalecido.Checked
-            'txtFalecido.Text
-            'chbParcelamentos.Checked
-            'txtParcelamentos.Text
-            'chbESocial.Checked
-            'txtESocial.Text
-            'chbVIP.Checked
-            'txtVIP.Text
-            'chbPJ.Checked
-            'txtPJ.Text
-            'chbMEI.Checked
-            'txtMEI.Text
-            'chbITR.Checked
-            'txtITR.Text
-            'chbMensalista.Checked
-            'txtMensalista.Text
-            'chbDecore.Checked
-            'txtDecore.Text
-            'chbIRPF.Checked
-            'txtIRPF.Text
-            'chbSenhaWeb.Checked
-            'txtSenhaWeb.Text
-            'txtValidade.Text
-
+            txtCPF.Text = campo(2)
+            txtRG.Text = campo(3)
+            txtNome.Text = campo(4)
+            txtPIS.Text = campo(5)
+            txtTitEleitoral.Text = campo(6)
+            txtLogradouro.Text = campo(7)
+            txtNumero.Text = campo(8)
+            txtComplemento.Text = campo(9)
+            txtBairro.Text = campo(10)
+            txtCidade.Text = campo(11)
+            cboUF.Text = campo(12)
+            txtCEP.Text = campo(13)
+            txtFoneRes.Text = campo(14)
+            txtFoneCel.Text = campo(15)
+            txtDtNasc.Text = campo(16)
+            chbCurriculo.Checked = campo(17)
+            txtEmail.Text = campo(18)
+            txtObs.Text = campo(19)
+            chbAposentado.Checked = campo(20)
+            txtNumBeneficio.Text = campo(21)
+            chbFuncPublico.Checked = campo(22)
+            txtFuncPublico.Text = campo(23)
+            chbAutonomo.Checked = campo(24)
+            txtAutonomo.Text = campo(25)
+            chbFalecido.Checked = campo(26)
+            txtFalecido.Text = campo(27)
+            chbParcelamentos.Checked = campo(28)
+            txtParcelamentos.Text = campo(29)
+            chbESocial.Checked = campo(30)
+            txtESocial.Text = campo(31)
+            txtEsocialSenha.Text = campo(32)
+            chbVIP.Checked = campo(33)
+            txtVIP.Text = campo(34)
+            chbPJ.Checked = campo(35)
+            txtPJ.Text = campo(36)
+            chbMEI.Checked = campo(37)
+            txtMEI.Text = campo(38)
+            chbITR.Checked = campo(39)
+            txtITR.Text = campo(40)
+            chbMensalista.Checked = campo(41)
+            txtMensalista.Text = campo(42)
+            chbDecore.Checked = campo(43)
+            txtDecore.Text = campo(44)
+            chbIRPF.Checked = campo(45)
+            txtIRPF.Text = campo(46)
+            chbSenhaWeb.Checked = campo(47)
+            txtSenhaWeb.Text = campo(48)
+            txtValidade.Text = campo(49)
+            chbRedesim.Checked = campo(50)
+            txtSenhaRedesim.Text = campo(51)
 
         Catch ex As Exception
-            MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Erro ao pesquisar o Cliente!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
             MsgBox(ex.Message.ToString)
         End Try
     End Sub

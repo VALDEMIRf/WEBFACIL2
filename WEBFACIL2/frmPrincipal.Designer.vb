@@ -60,7 +60,7 @@ Partial Class frmPrincipal
         '
         Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
-        Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.CadastrosToolStripMenuItem.Text = "Cadastros"
         '
         'FormulariosToolStripMenuItem
@@ -85,6 +85,8 @@ Partial Class frmPrincipal
         Me.ClientSize = New System.Drawing.Size(1348, 733)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(5)
         Me.Name = "frmPrincipal"
