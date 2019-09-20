@@ -281,7 +281,7 @@ Partial Class frmCadastroClientes
         Me.txtInativo.Location = New System.Drawing.Point(296, 136)
         Me.txtInativo.Multiline = True
         Me.txtInativo.Name = "txtInativo"
-        Me.txtInativo.Size = New System.Drawing.Size(248, 30)
+        Me.txtInativo.Size = New System.Drawing.Size(248, 22)
         Me.txtInativo.TabIndex = 91
         Me.txtInativo.Visible = False
         '
@@ -366,7 +366,7 @@ Partial Class frmCadastroClientes
         '
         'txtValidadeRFB
         '
-        Me.txtValidadeRFB.Location = New System.Drawing.Point(345, 550)
+        Me.txtValidadeRFB.Location = New System.Drawing.Point(345, 549)
         Me.txtValidadeRFB.Mask = "00/00/0000"
         Me.txtValidadeRFB.Name = "txtValidadeRFB"
         Me.txtValidadeRFB.Size = New System.Drawing.Size(91, 20)
@@ -377,7 +377,7 @@ Partial Class frmCadastroClientes
         'lblValidoRFB
         '
         Me.lblValidoRFB.AutoSize = True
-        Me.lblValidoRFB.Location = New System.Drawing.Point(288, 557)
+        Me.lblValidoRFB.Location = New System.Drawing.Point(288, 552)
         Me.lblValidoRFB.Name = "lblValidoRFB"
         Me.lblValidoRFB.Size = New System.Drawing.Size(51, 13)
         Me.lblValidoRFB.TabIndex = 82

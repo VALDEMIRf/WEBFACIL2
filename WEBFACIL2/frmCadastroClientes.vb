@@ -43,6 +43,8 @@ Public Class frmCadastroClientes
             cliente.cli_AutonomoNome = txtAutonomo.Text
             cliente.cli_Falecido = chbFalecido.Checked
             cliente.cli_NomeFalecido = txtFalecido.Text
+            cliente.cli_Inativo = chbInativo.Checked
+            cliente.cli_InativoObs = txtInativo.Text
             cliente.cli_Parcelamento = chbParcelamentos.Checked
             cliente.cli_NumParcelamento = txtParcelamentos.Text
             cliente.cli_EmprDom = chbESocial.Checked
@@ -64,9 +66,11 @@ Public Class frmCadastroClientes
             cliente.cli_NumIRPF = txtIRPF.Text
             cliente.cli_SenWebPrefeitura = chbSenhaWeb.Checked
             cliente.cli_SenhaWebPrefeitura = txtSenhaWeb.Text
-            '  cliente.cli_SenhaWebValidade = txtValidadeRFB.Text
             cliente.cli_Redesim = chbRedesim.Checked
             cliente.cli_SenhaRedesim = txtSenhaRedesim.Text
+            cliente.cli_CodRFB = chbCodRFB.Checked
+            cliente.cli_CodRFBNum = txtCodRFB.Text
+            cliente.cli_CodRFBValidade = txtValidadeRFB.Text
             cliente.cli_DtCadastro = Now.Date
 
             '  If cliente.cli_id > 0 Then
@@ -159,6 +163,10 @@ Public Class frmCadastroClientes
 
     Private Sub chbRedesim_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbRedesim.CheckedChanged
         Redesim()
+    End Sub
+
+    Private Sub chbCodRFB_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbCodRFB.CheckedChanged
+        CodRFB()
     End Sub
 
     Private Sub Aposentado()
@@ -425,6 +433,24 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
+    Private Sub CodRFB()
+        Try
+            If chbCodRFB.Checked = True Then
+                txtCodRFB.Visible = True
+                lblValidoRFB.Visible = True
+                txtValidadeRFB.Visible = True
+
+            Else
+                txtCodRFB.Visible = False
+                lblValidoRFB.Visible = False
+                txtValidadeRFB.Visible = False
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub LimparCampos()
         txtCPF.Text = ""
         txtRG.Text = ""
@@ -488,4 +514,5 @@ Public Class frmCadastroClientes
    
 
     
+   
 End Class

@@ -1,3 +1,4 @@
-﻿Public Class frmClienteConsulta
+﻿
+Public Class frmClienteConsulta
 
 End Class
