@@ -309,6 +309,26 @@ Public Class clsCliente
         End Set
     End Property
 
+    Private _cli_Inativo As Boolean
+    Public Property cli_Inativo() As Boolean
+        Get
+            Return _cli_Inativo
+        End Get
+        Set(ByVal value As Boolean)
+            _cli_Inativo = value
+        End Set
+    End Property
+
+    Private _cli_InativoObs As String
+    Public Property cli_InativoObs() As String
+        Get
+            Return _cli_InativoObs
+        End Get
+        Set(ByVal value As String)
+            _cli_InativoObs = value
+        End Set
+    End Property
+
     Private _cli_Parcelamento As Boolean
     Public Property cli_Parcelamento() As Boolean
         Get
@@ -519,16 +539,6 @@ Public Class clsCliente
         End Set
     End Property
 
-    Private _cli_SenhaWebValidade As String
-    Public Property cli_SenhaWebValidade() As String
-        Get
-            Return _cli_SenhaWebValidade
-        End Get
-        Set(ByVal value As String)
-            _cli_SenhaWebValidade = value
-        End Set
-    End Property
-
     Private _cli_Redesim As Boolean
     Public Property cli_Redesim() As Boolean
         Get
@@ -546,6 +556,20 @@ Public Class clsCliente
         End Get
         Set(ByVal value As String)
             _cli_SenhaRedesim = value
+        End Set
+    End Property
+
+
+
+
+
+    Private _cli_CodRFBValidade As String
+    Public Property cli_CodRFBValidade() As String
+        Get
+            Return _cli_CodRFBValidade
+        End Get
+        Set(ByVal value As String)
+            _cli_CodRFBValidade = value
         End Set
     End Property
 
@@ -614,7 +638,7 @@ Public Class clsCliente
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_IRPF", _cli_NumIRPF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenWebPrefeitura", _cli_SenWebPrefeitura))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebPrefeitura", _cli_SenhaWebPrefeitura))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebValidade", _cli_SenhaWebValidade))
+                ' cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebValidade", _cli_SenhaWebValidade))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Redesim", _cli_Redesim))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaRedesim", _cli_SenhaRedesim))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_DtCadastro", Now.Date))
@@ -631,32 +655,32 @@ Public Class clsCliente
         End Using
     End Sub
 
-    Public Function ConsultarCliente()
-        Dim dr As OleDbDataReader = Nothing
-        Using con As OleDbConnection = GetConnection()
-            Try
-                con.Open()
-                sql = "SELECT * FROM tbClientes WHERE cli_CPF=" & cli_CPF & ""
-                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
-                dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
-                If dr.HasRows Then
-                    dr.Read()
-                    ' txtLogin.Text = dr.Item("login")
-                    '  txtSenha.Text = dr.Item("senha")
-                    '  txtPerfil.Text = dr.Item("perfil")
-                Else
-                    MsgBox("Não foi possível carregar os dados.", MsgBoxStyle.Critical, "Aviso do Sistema")
-                End If
+    'Public Function ConsultarCliente()
+    '    Dim dr As OleDbDataReader = Nothing
+    '    Using con As OleDbConnection = GetConnection()
+    '        Try
+    '            con.Open()
+    '            sql = "SELECT * FROM tbClientes WHERE cli_CPF=" & cli_CPF & ""
+    '            Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+    '            dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+    '            If dr.HasRows Then
+    '                dr.Read()
+    '                ' txtLogin.Text = dr.Item("login")
+    '                '  txtSenha.Text = dr.Item("senha")
+    '                '  txtPerfil.Text = dr.Item("perfil")
+    '            Else
+    '                MsgBox("Não foi possível carregar os dados.", MsgBoxStyle.Critical, "Aviso do Sistema")
+    '            End If
 
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                dr.Close()
-                con.Close()
-            End Try
-        End Using
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message)
+    '        Finally
+    '            dr.Close()
+    '            con.Close()
+    '        End Try
+    '    End Using
 
-    End Function
+    'End Function
 
     Public Sub Alterar()
 
@@ -712,7 +736,7 @@ Public Class clsCliente
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_IRPF", _cli_NumIRPF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenWebPrefeitura", _cli_SenWebPrefeitura))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebPrefeitura", _cli_SenhaWebPrefeitura))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebValidade", _cli_SenhaWebValidade))
+                ' cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebValidade", _cli_SenhaWebValidade))
 
                 cmd.ExecuteNonQuery()
 

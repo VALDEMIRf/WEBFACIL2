@@ -26,10 +26,19 @@ Partial Class frmCadastroClientes
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabCliente = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtCodRFB = New System.Windows.Forms.TextBox()
+        Me.chbCodRFB = New System.Windows.Forms.CheckBox()
+        Me.txtInativo = New System.Windows.Forms.TextBox()
+        Me.chbInativo = New System.Windows.Forms.CheckBox()
+        Me.txtFalecido = New System.Windows.Forms.MaskedTextBox()
+        Me.lblSenhaRedesim = New System.Windows.Forms.Label()
+        Me.txtSenhaRedesim = New System.Windows.Forms.TextBox()
+        Me.chbRedesim = New System.Windows.Forms.CheckBox()
+        Me.lblEsocialSenha = New System.Windows.Forms.Label()
+        Me.txtEsocialSenha = New System.Windows.Forms.TextBox()
         Me.btLimpar = New System.Windows.Forms.Button()
-        Me.txtValidade = New System.Windows.Forms.MaskedTextBox()
-        Me.lblValido = New System.Windows.Forms.Label()
-        Me.lblSenhaWeb = New System.Windows.Forms.Label()
+        Me.txtValidadeRFB = New System.Windows.Forms.MaskedTextBox()
+        Me.lblValidoRFB = New System.Windows.Forms.Label()
         Me.txtSenhaWeb = New System.Windows.Forms.TextBox()
         Me.chbSenhaWeb = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -43,7 +52,6 @@ Partial Class frmCadastroClientes
         Me.txtITR = New System.Windows.Forms.TextBox()
         Me.txtMEI = New System.Windows.Forms.TextBox()
         Me.txtVIP = New System.Windows.Forms.TextBox()
-        Me.txtFalecido = New System.Windows.Forms.TextBox()
         Me.txtAutonomo = New System.Windows.Forms.TextBox()
         Me.txtFuncPublico = New System.Windows.Forms.TextBox()
         Me.txtPJ = New System.Windows.Forms.TextBox()
@@ -164,11 +172,6 @@ Partial Class frmCadastroClientes
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.lblEsocialSenha = New System.Windows.Forms.Label()
-        Me.txtEsocialSenha = New System.Windows.Forms.TextBox()
-        Me.lblSenhaRedesim = New System.Windows.Forms.Label()
-        Me.txtSenhaRedesim = New System.Windows.Forms.TextBox()
-        Me.chbRedesim = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -208,15 +211,19 @@ Partial Class frmCadastroClientes
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txtCodRFB)
+        Me.Panel1.Controls.Add(Me.chbCodRFB)
+        Me.Panel1.Controls.Add(Me.txtInativo)
+        Me.Panel1.Controls.Add(Me.chbInativo)
+        Me.Panel1.Controls.Add(Me.txtFalecido)
         Me.Panel1.Controls.Add(Me.lblSenhaRedesim)
         Me.Panel1.Controls.Add(Me.txtSenhaRedesim)
         Me.Panel1.Controls.Add(Me.chbRedesim)
         Me.Panel1.Controls.Add(Me.lblEsocialSenha)
         Me.Panel1.Controls.Add(Me.txtEsocialSenha)
         Me.Panel1.Controls.Add(Me.btLimpar)
-        Me.Panel1.Controls.Add(Me.txtValidade)
-        Me.Panel1.Controls.Add(Me.lblValido)
-        Me.Panel1.Controls.Add(Me.lblSenhaWeb)
+        Me.Panel1.Controls.Add(Me.txtValidadeRFB)
+        Me.Panel1.Controls.Add(Me.lblValidoRFB)
         Me.Panel1.Controls.Add(Me.txtSenhaWeb)
         Me.Panel1.Controls.Add(Me.chbSenhaWeb)
         Me.Panel1.Controls.Add(Me.Button1)
@@ -230,7 +237,6 @@ Partial Class frmCadastroClientes
         Me.Panel1.Controls.Add(Me.txtITR)
         Me.Panel1.Controls.Add(Me.txtMEI)
         Me.Panel1.Controls.Add(Me.txtVIP)
-        Me.Panel1.Controls.Add(Me.txtFalecido)
         Me.Panel1.Controls.Add(Me.txtAutonomo)
         Me.Panel1.Controls.Add(Me.txtFuncPublico)
         Me.Panel1.Controls.Add(Me.txtPJ)
@@ -252,12 +258,105 @@ Partial Class frmCadastroClientes
         Me.Panel1.Size = New System.Drawing.Size(562, 627)
         Me.Panel1.TabIndex = 53
         '
+        'txtCodRFB
+        '
+        Me.txtCodRFB.Location = New System.Drawing.Point(90, 547)
+        Me.txtCodRFB.Name = "txtCodRFB"
+        Me.txtCodRFB.Size = New System.Drawing.Size(160, 20)
+        Me.txtCodRFB.TabIndex = 94
+        Me.txtCodRFB.Visible = False
+        '
+        'chbCodRFB
+        '
+        Me.chbCodRFB.AutoSize = True
+        Me.chbCodRFB.Location = New System.Drawing.Point(15, 550)
+        Me.chbCodRFB.Name = "chbCodRFB"
+        Me.chbCodRFB.Size = New System.Drawing.Size(69, 17)
+        Me.chbCodRFB.TabIndex = 93
+        Me.chbCodRFB.Text = "CódRFB:"
+        Me.chbCodRFB.UseVisualStyleBackColor = True
+        '
+        'txtInativo
+        '
+        Me.txtInativo.Location = New System.Drawing.Point(296, 136)
+        Me.txtInativo.Multiline = True
+        Me.txtInativo.Name = "txtInativo"
+        Me.txtInativo.Size = New System.Drawing.Size(248, 30)
+        Me.txtInativo.TabIndex = 91
+        Me.txtInativo.Visible = False
+        '
+        'chbInativo
+        '
+        Me.chbInativo.AutoSize = True
+        Me.chbInativo.Location = New System.Drawing.Point(229, 140)
+        Me.chbInativo.Name = "chbInativo"
+        Me.chbInativo.Size = New System.Drawing.Size(61, 17)
+        Me.chbInativo.TabIndex = 90
+        Me.chbInativo.Text = "Inativo:"
+        Me.chbInativo.UseVisualStyleBackColor = True
+        '
+        'txtFalecido
+        '
+        Me.txtFalecido.Location = New System.Drawing.Point(131, 138)
+        Me.txtFalecido.Mask = "00/00/0000"
+        Me.txtFalecido.Name = "txtFalecido"
+        Me.txtFalecido.Size = New System.Drawing.Size(74, 20)
+        Me.txtFalecido.TabIndex = 84
+        Me.txtFalecido.ValidatingType = GetType(Date)
+        Me.txtFalecido.Visible = False
+        '
+        'lblSenhaRedesim
+        '
+        Me.lblSenhaRedesim.AutoSize = True
+        Me.lblSenhaRedesim.Location = New System.Drawing.Point(118, 508)
+        Me.lblSenhaRedesim.Name = "lblSenhaRedesim"
+        Me.lblSenhaRedesim.Size = New System.Drawing.Size(41, 13)
+        Me.lblSenhaRedesim.TabIndex = 87
+        Me.lblSenhaRedesim.Text = "Senha:"
+        Me.lblSenhaRedesim.Visible = False
+        '
+        'txtSenhaRedesim
+        '
+        Me.txtSenhaRedesim.Location = New System.Drawing.Point(165, 505)
+        Me.txtSenhaRedesim.Name = "txtSenhaRedesim"
+        Me.txtSenhaRedesim.Size = New System.Drawing.Size(160, 20)
+        Me.txtSenhaRedesim.TabIndex = 89
+        Me.txtSenhaRedesim.Visible = False
+        '
+        'chbRedesim
+        '
+        Me.chbRedesim.AutoSize = True
+        Me.chbRedesim.Location = New System.Drawing.Point(15, 508)
+        Me.chbRedesim.Name = "chbRedesim"
+        Me.chbRedesim.Size = New System.Drawing.Size(70, 17)
+        Me.chbRedesim.TabIndex = 88
+        Me.chbRedesim.Text = "Redesim:"
+        Me.chbRedesim.UseVisualStyleBackColor = True
+        '
+        'lblEsocialSenha
+        '
+        Me.lblEsocialSenha.AutoSize = True
+        Me.lblEsocialSenha.Location = New System.Drawing.Point(298, 229)
+        Me.lblEsocialSenha.Name = "lblEsocialSenha"
+        Me.lblEsocialSenha.Size = New System.Drawing.Size(41, 13)
+        Me.lblEsocialSenha.TabIndex = 85
+        Me.lblEsocialSenha.Text = "Senha:"
+        Me.lblEsocialSenha.Visible = False
+        '
+        'txtEsocialSenha
+        '
+        Me.txtEsocialSenha.Location = New System.Drawing.Point(345, 226)
+        Me.txtEsocialSenha.Name = "txtEsocialSenha"
+        Me.txtEsocialSenha.Size = New System.Drawing.Size(160, 20)
+        Me.txtEsocialSenha.TabIndex = 86
+        Me.txtEsocialSenha.Visible = False
+        '
         'btLimpar
         '
         Me.btLimpar.FlatAppearance.BorderSize = 0
         Me.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btLimpar.Image = CType(resources.GetObject("btLimpar.Image"), System.Drawing.Image)
-        Me.btLimpar.Location = New System.Drawing.Point(444, 117)
+        Me.btLimpar.Location = New System.Drawing.Point(345, 4)
         Me.btLimpar.Name = "btLimpar"
         Me.btLimpar.Size = New System.Drawing.Size(112, 56)
         Me.btLimpar.TabIndex = 84
@@ -265,39 +364,29 @@ Partial Class frmCadastroClientes
         Me.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btLimpar.UseVisualStyleBackColor = True
         '
-        'txtValidade
+        'txtValidadeRFB
         '
-        Me.txtValidade.Location = New System.Drawing.Point(203, 551)
-        Me.txtValidade.Mask = "00/00/0000"
-        Me.txtValidade.Name = "txtValidade"
-        Me.txtValidade.Size = New System.Drawing.Size(91, 20)
-        Me.txtValidade.TabIndex = 83
-        Me.txtValidade.ValidatingType = GetType(Date)
-        Me.txtValidade.Visible = False
+        Me.txtValidadeRFB.Location = New System.Drawing.Point(345, 550)
+        Me.txtValidadeRFB.Mask = "00/00/0000"
+        Me.txtValidadeRFB.Name = "txtValidadeRFB"
+        Me.txtValidadeRFB.Size = New System.Drawing.Size(91, 20)
+        Me.txtValidadeRFB.TabIndex = 83
+        Me.txtValidadeRFB.ValidatingType = GetType(Date)
+        Me.txtValidadeRFB.Visible = False
         '
-        'lblValido
+        'lblValidoRFB
         '
-        Me.lblValido.AutoSize = True
-        Me.lblValido.Location = New System.Drawing.Point(146, 558)
-        Me.lblValido.Name = "lblValido"
-        Me.lblValido.Size = New System.Drawing.Size(51, 13)
-        Me.lblValido.TabIndex = 82
-        Me.lblValido.Text = "Validade:"
-        Me.lblValido.Visible = False
-        '
-        'lblSenhaWeb
-        '
-        Me.lblSenhaWeb.AutoSize = True
-        Me.lblSenhaWeb.Location = New System.Drawing.Point(146, 525)
-        Me.lblSenhaWeb.Name = "lblSenhaWeb"
-        Me.lblSenhaWeb.Size = New System.Drawing.Size(41, 13)
-        Me.lblSenhaWeb.TabIndex = 19
-        Me.lblSenhaWeb.Text = "Senha:"
-        Me.lblSenhaWeb.Visible = False
+        Me.lblValidoRFB.AutoSize = True
+        Me.lblValidoRFB.Location = New System.Drawing.Point(288, 557)
+        Me.lblValidoRFB.Name = "lblValidoRFB"
+        Me.lblValidoRFB.Size = New System.Drawing.Size(51, 13)
+        Me.lblValidoRFB.TabIndex = 82
+        Me.lblValidoRFB.Text = "Validade:"
+        Me.lblValidoRFB.Visible = False
         '
         'txtSenhaWeb
         '
-        Me.txtSenhaWeb.Location = New System.Drawing.Point(193, 522)
+        Me.txtSenhaWeb.Location = New System.Drawing.Point(165, 467)
         Me.txtSenhaWeb.Name = "txtSenhaWeb"
         Me.txtSenhaWeb.Size = New System.Drawing.Size(160, 20)
         Me.txtSenhaWeb.TabIndex = 81
@@ -306,7 +395,7 @@ Partial Class frmCadastroClientes
         'chbSenhaWeb
         '
         Me.chbSenhaWeb.AutoSize = True
-        Me.chbSenhaWeb.Location = New System.Drawing.Point(15, 538)
+        Me.chbSenhaWeb.Location = New System.Drawing.Point(15, 470)
         Me.chbSenhaWeb.Name = "chbSenhaWeb"
         Me.chbSenhaWeb.Size = New System.Drawing.Size(147, 17)
         Me.chbSenhaWeb.TabIndex = 78
@@ -346,7 +435,7 @@ Partial Class frmCadastroClientes
         '
         'txtMensalista
         '
-        Me.txtMensalista.Location = New System.Drawing.Point(165, 412)
+        Me.txtMensalista.Location = New System.Drawing.Point(165, 365)
         Me.txtMensalista.Name = "txtMensalista"
         Me.txtMensalista.Size = New System.Drawing.Size(160, 20)
         Me.txtMensalista.TabIndex = 72
@@ -368,7 +457,7 @@ Partial Class frmCadastroClientes
         'chbMensalista
         '
         Me.chbMensalista.AutoSize = True
-        Me.chbMensalista.Location = New System.Drawing.Point(15, 414)
+        Me.chbMensalista.Location = New System.Drawing.Point(15, 367)
         Me.chbMensalista.Name = "chbMensalista"
         Me.chbMensalista.Size = New System.Drawing.Size(79, 17)
         Me.chbMensalista.TabIndex = 70
@@ -377,7 +466,7 @@ Partial Class frmCadastroClientes
         '
         'txtIRPF
         '
-        Me.txtIRPF.Location = New System.Drawing.Point(165, 488)
+        Me.txtIRPF.Location = New System.Drawing.Point(165, 441)
         Me.txtIRPF.Name = "txtIRPF"
         Me.txtIRPF.Size = New System.Drawing.Size(160, 20)
         Me.txtIRPF.TabIndex = 69
@@ -385,7 +474,7 @@ Partial Class frmCadastroClientes
         '
         'txtDecore
         '
-        Me.txtDecore.Location = New System.Drawing.Point(165, 453)
+        Me.txtDecore.Location = New System.Drawing.Point(165, 406)
         Me.txtDecore.Name = "txtDecore"
         Me.txtDecore.Size = New System.Drawing.Size(160, 20)
         Me.txtDecore.TabIndex = 67
@@ -393,7 +482,7 @@ Partial Class frmCadastroClientes
         '
         'txtITR
         '
-        Me.txtITR.Location = New System.Drawing.Point(165, 380)
+        Me.txtITR.Location = New System.Drawing.Point(165, 333)
         Me.txtITR.Name = "txtITR"
         Me.txtITR.Size = New System.Drawing.Size(160, 20)
         Me.txtITR.TabIndex = 65
@@ -401,9 +490,9 @@ Partial Class frmCadastroClientes
         '
         'txtMEI
         '
-        Me.txtMEI.Location = New System.Drawing.Point(165, 343)
+        Me.txtMEI.Location = New System.Drawing.Point(214, 303)
         Me.txtMEI.Name = "txtMEI"
-        Me.txtMEI.Size = New System.Drawing.Size(160, 20)
+        Me.txtMEI.Size = New System.Drawing.Size(61, 20)
         Me.txtMEI.TabIndex = 63
         Me.txtMEI.Visible = False
         '
@@ -414,14 +503,6 @@ Partial Class frmCadastroClientes
         Me.txtVIP.Size = New System.Drawing.Size(104, 20)
         Me.txtVIP.TabIndex = 61
         Me.txtVIP.Visible = False
-        '
-        'txtFalecido
-        '
-        Me.txtFalecido.Location = New System.Drawing.Point(165, 136)
-        Me.txtFalecido.Name = "txtFalecido"
-        Me.txtFalecido.Size = New System.Drawing.Size(119, 20)
-        Me.txtFalecido.TabIndex = 59
-        Me.txtFalecido.Visible = False
         '
         'txtAutonomo
         '
@@ -441,9 +522,9 @@ Partial Class frmCadastroClientes
         '
         'txtPJ
         '
-        Me.txtPJ.Location = New System.Drawing.Point(165, 301)
+        Me.txtPJ.Location = New System.Drawing.Point(62, 302)
         Me.txtPJ.Name = "txtPJ"
-        Me.txtPJ.Size = New System.Drawing.Size(160, 20)
+        Me.txtPJ.Size = New System.Drawing.Size(63, 20)
         Me.txtPJ.TabIndex = 52
         Me.txtPJ.Visible = False
         '
@@ -496,7 +577,7 @@ Partial Class frmCadastroClientes
         'chbDecore
         '
         Me.chbDecore.AutoSize = True
-        Me.chbDecore.Location = New System.Drawing.Point(15, 453)
+        Me.chbDecore.Location = New System.Drawing.Point(15, 406)
         Me.chbDecore.Name = "chbDecore"
         Me.chbDecore.Size = New System.Drawing.Size(74, 17)
         Me.chbDecore.TabIndex = 46
@@ -506,7 +587,7 @@ Partial Class frmCadastroClientes
         'chbIRPF
         '
         Me.chbIRPF.AutoSize = True
-        Me.chbIRPF.Location = New System.Drawing.Point(15, 490)
+        Me.chbIRPF.Location = New System.Drawing.Point(15, 443)
         Me.chbIRPF.Name = "chbIRPF"
         Me.chbIRPF.Size = New System.Drawing.Size(53, 17)
         Me.chbIRPF.TabIndex = 47
@@ -548,15 +629,15 @@ Partial Class frmCadastroClientes
         Me.chbFalecido.AutoSize = True
         Me.chbFalecido.Location = New System.Drawing.Point(15, 138)
         Me.chbFalecido.Name = "chbFalecido"
-        Me.chbFalecido.Size = New System.Drawing.Size(69, 17)
+        Me.chbFalecido.Size = New System.Drawing.Size(110, 17)
         Me.chbFalecido.TabIndex = 42
-        Me.chbFalecido.Text = "Falecido:"
+        Me.chbFalecido.Text = "Falecido na Data:"
         Me.chbFalecido.UseVisualStyleBackColor = True
         '
         'chbMEI
         '
         Me.chbMEI.AutoSize = True
-        Me.chbMEI.Location = New System.Drawing.Point(15, 345)
+        Me.chbMEI.Location = New System.Drawing.Point(160, 307)
         Me.chbMEI.Name = "chbMEI"
         Me.chbMEI.Size = New System.Drawing.Size(48, 17)
         Me.chbMEI.TabIndex = 44
@@ -566,7 +647,7 @@ Partial Class frmCadastroClientes
         'chbITR
         '
         Me.chbITR.AutoSize = True
-        Me.chbITR.Location = New System.Drawing.Point(15, 381)
+        Me.chbITR.Location = New System.Drawing.Point(15, 334)
         Me.chbITR.Name = "chbITR"
         Me.chbITR.Size = New System.Drawing.Size(47, 17)
         Me.chbITR.TabIndex = 41
@@ -886,7 +967,7 @@ Partial Class frmCadastroClientes
         Me.btPesquisarCliente.FlatAppearance.BorderSize = 0
         Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
-        Me.btPesquisarCliente.Location = New System.Drawing.Point(189, 16)
+        Me.btPesquisarCliente.Location = New System.Drawing.Point(189, 18)
         Me.btPesquisarCliente.Name = "btPesquisarCliente"
         Me.btPesquisarCliente.Size = New System.Drawing.Size(49, 41)
         Me.btPesquisarCliente.TabIndex = 77
@@ -1571,52 +1652,6 @@ Partial Class frmCadastroClientes
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = True
         '
-        'lblEsocialSenha
-        '
-        Me.lblEsocialSenha.AutoSize = True
-        Me.lblEsocialSenha.Location = New System.Drawing.Point(298, 229)
-        Me.lblEsocialSenha.Name = "lblEsocialSenha"
-        Me.lblEsocialSenha.Size = New System.Drawing.Size(41, 13)
-        Me.lblEsocialSenha.TabIndex = 85
-        Me.lblEsocialSenha.Text = "Senha:"
-        Me.lblEsocialSenha.Visible = False
-        '
-        'txtEsocialSenha
-        '
-        Me.txtEsocialSenha.Location = New System.Drawing.Point(345, 226)
-        Me.txtEsocialSenha.Name = "txtEsocialSenha"
-        Me.txtEsocialSenha.Size = New System.Drawing.Size(160, 20)
-        Me.txtEsocialSenha.TabIndex = 86
-        Me.txtEsocialSenha.Visible = False
-        '
-        'lblSenhaRedesim
-        '
-        Me.lblSenhaRedesim.AutoSize = True
-        Me.lblSenhaRedesim.Location = New System.Drawing.Point(118, 584)
-        Me.lblSenhaRedesim.Name = "lblSenhaRedesim"
-        Me.lblSenhaRedesim.Size = New System.Drawing.Size(41, 13)
-        Me.lblSenhaRedesim.TabIndex = 87
-        Me.lblSenhaRedesim.Text = "Senha:"
-        Me.lblSenhaRedesim.Visible = False
-        '
-        'txtSenhaRedesim
-        '
-        Me.txtSenhaRedesim.Location = New System.Drawing.Point(165, 581)
-        Me.txtSenhaRedesim.Name = "txtSenhaRedesim"
-        Me.txtSenhaRedesim.Size = New System.Drawing.Size(160, 20)
-        Me.txtSenhaRedesim.TabIndex = 89
-        Me.txtSenhaRedesim.Visible = False
-        '
-        'chbRedesim
-        '
-        Me.chbRedesim.AutoSize = True
-        Me.chbRedesim.Location = New System.Drawing.Point(15, 584)
-        Me.chbRedesim.Name = "chbRedesim"
-        Me.chbRedesim.Size = New System.Drawing.Size(70, 17)
-        Me.chbRedesim.TabIndex = 88
-        Me.chbRedesim.Text = "Redesim:"
-        Me.chbRedesim.UseVisualStyleBackColor = True
-        '
         'frmCadastroClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1698,9 +1733,8 @@ Partial Class frmCadastroClientes
     Public WithEvents txtNumero As System.Windows.Forms.TextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Public WithEvents txtValidade As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents lblValido As System.Windows.Forms.Label
-    Friend WithEvents lblSenhaWeb As System.Windows.Forms.Label
+    Public WithEvents txtValidadeRFB As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents lblValidoRFB As System.Windows.Forms.Label
     Public WithEvents txtSenhaWeb As System.Windows.Forms.TextBox
     Friend WithEvents chbSenhaWeb As System.Windows.Forms.CheckBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
@@ -1714,7 +1748,6 @@ Partial Class frmCadastroClientes
     Public WithEvents txtITR As System.Windows.Forms.TextBox
     Public WithEvents txtMEI As System.Windows.Forms.TextBox
     Public WithEvents txtVIP As System.Windows.Forms.TextBox
-    Public WithEvents txtFalecido As System.Windows.Forms.TextBox
     Public WithEvents txtAutonomo As System.Windows.Forms.TextBox
     Public WithEvents txtFuncPublico As System.Windows.Forms.TextBox
     Public WithEvents txtPJ As System.Windows.Forms.TextBox
@@ -1794,4 +1827,9 @@ Partial Class frmCadastroClientes
     Friend WithEvents lblSenhaRedesim As System.Windows.Forms.Label
     Public WithEvents txtSenhaRedesim As System.Windows.Forms.TextBox
     Friend WithEvents chbRedesim As System.Windows.Forms.CheckBox
+    Public WithEvents txtFalecido As System.Windows.Forms.MaskedTextBox
+    Public WithEvents txtInativo As System.Windows.Forms.TextBox
+    Friend WithEvents chbInativo As System.Windows.Forms.CheckBox
+    Public WithEvents txtCodRFB As System.Windows.Forms.TextBox
+    Friend WithEvents chbCodRFB As System.Windows.Forms.CheckBox
 End Class

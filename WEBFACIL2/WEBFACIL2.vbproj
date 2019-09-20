@@ -84,6 +84,12 @@
     <Compile Include="frmCadastroClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmClienteConsulta.Designer.vb">
+      <DependentUpon>frmClienteConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClienteConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmCadastroClientes.resx">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClienteConsulta.resx">
+      <DependentUpon>frmClienteConsulta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>

@@ -64,7 +64,7 @@ Public Class frmCadastroClientes
             cliente.cli_NumIRPF = txtIRPF.Text
             cliente.cli_SenWebPrefeitura = chbSenhaWeb.Checked
             cliente.cli_SenhaWebPrefeitura = txtSenhaWeb.Text
-            cliente.cli_SenhaWebValidade = txtValidade.Text
+            '  cliente.cli_SenhaWebValidade = txtValidadeRFB.Text
             cliente.cli_Redesim = chbRedesim.Checked
             cliente.cli_SenhaRedesim = txtSenhaRedesim.Text
             cliente.cli_DtCadastro = Now.Date
@@ -89,11 +89,11 @@ Public Class frmCadastroClientes
 
     Private Sub btPesquisarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCliente.Click
         Try
-            
+
 
         Catch ex As Exception
             '  MessageBox.Show("Erro ao pesquisar o Cliente!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            ' MsgBox(ex.Message.ToString)
+            MsgBox(ex.Message.ToString)
         End Try
     End Sub
 
@@ -111,6 +111,10 @@ Public Class frmCadastroClientes
 
     Private Sub chbFalecido_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbFalecido.CheckedChanged
         Falecido()
+    End Sub
+
+    Private Sub chbInativo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbInativo.CheckedChanged
+        Inativo()
     End Sub
 
     Private Sub chbParcelamentos_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbParcelamentos.CheckedChanged
@@ -214,6 +218,20 @@ Public Class frmCadastroClientes
             Else
                 '   lblFalecido.Visible = False
                 txtFalecido.Visible = False
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Inativo()
+        Try
+            If chbInativo.Checked = True Then
+                txtInativo.Visible = True
+
+            Else
+                txtInativo.Visible = False
 
             End If
         Catch ex As Exception
@@ -372,16 +390,16 @@ Public Class frmCadastroClientes
     Private Sub SenhaWeb()
         Try
             If chbSenhaWeb.Checked = True Then
-                lblSenhaWeb.Visible = True
+                'lblSenhaWeb.Visible = True
                 txtSenhaWeb.Visible = True
-                lblValido.Visible = True
-                txtValidade.Visible = True
+                lblValidoRFB.Visible = True
+                txtValidadeRFB.Visible = True
 
             Else
-                lblSenhaWeb.Visible = False
+                ' lblSenhaWeb.Visible = False
                 txtSenhaWeb.Visible = False
-                lblValido.Visible = False
-                txtValidade.Visible = False
+                lblValidoRFB.Visible = False
+                txtValidadeRFB.Visible = False
 
             End If
         Catch ex As Exception
@@ -399,7 +417,7 @@ Public Class frmCadastroClientes
             Else
                 lblSenhaRedesim.Visible = False
                 txtSenhaRedesim.Visible = False
-                
+
 
             End If
         Catch ex As Exception
@@ -434,6 +452,8 @@ Public Class frmCadastroClientes
         txtAutonomo.Text = ""
         chbFalecido.Checked = False
         txtFalecido.Text = ""
+        chbInativo.Checked = False
+        txtInativo.Text = ""
         chbParcelamentos.Checked = False
         txtParcelamentos.Text = ""
         chbESocial.Checked = False
@@ -455,14 +475,17 @@ Public Class frmCadastroClientes
         txtIRPF.Text = ""
         chbSenhaWeb.Checked = False
         txtSenhaWeb.Text = ""
-        txtValidade.Text = ""
         chbRedesim.Checked = False
         txtSenhaRedesim.Text = ""
+        chbCodRFB.Checked = False
+        txtCodRFB.Text = ""
+        txtValidadeRFB.Text = ""
     End Sub
 
     
     
     
    
+
     
 End Class
