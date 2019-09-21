@@ -4,7 +4,7 @@ Public Class frmCadastroClientes
     Dim sql As String
     Dim ds As New DataSet
     Dim con As New Conexao
-
+    Dim CodigoCliente As Integer
     Dim cliente As New clsCliente
     Private Sub frmCadastroClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TabEmpresa.Enabled = False
@@ -92,13 +92,15 @@ Public Class frmCadastroClientes
     End Sub
 
     Private Sub btPesquisarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCliente.Click
-        Try
+        Dim frmClienteConsulta As New frmClienteConsulta
+        frmClienteConsulta.Text = "Consulta de Cliente"
+        frmClienteConsulta.ConsultaTipo = frmClienteConsulta.TipoConsulta.Cliente
+        frmClienteConsulta.ShowDialog()
 
+        CodigoCliente = frmClienteConsulta.CodigoRetorno
+        txtNome.Text = frmClienteConsulta.NomeRetorno
+        txtCPF.Text = frmClienteConsulta.CPFRetorno
 
-        Catch ex As Exception
-            '  MessageBox.Show("Erro ao pesquisar o Cliente!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            MsgBox(ex.Message.ToString)
-        End Try
     End Sub
 
     Private Sub chbAposentado_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbAposentado.CheckedChanged

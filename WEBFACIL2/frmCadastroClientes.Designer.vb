@@ -216,6 +216,7 @@ Partial Class frmCadastroClientes
         Me.Panel1.Controls.Add(Me.txtInativo)
         Me.Panel1.Controls.Add(Me.chbInativo)
         Me.Panel1.Controls.Add(Me.txtFalecido)
+        Me.Panel1.Controls.Add(Me.btPesquisarCliente)
         Me.Panel1.Controls.Add(Me.lblSenhaRedesim)
         Me.Panel1.Controls.Add(Me.txtSenhaRedesim)
         Me.Panel1.Controls.Add(Me.chbRedesim)
@@ -278,7 +279,7 @@ Partial Class frmCadastroClientes
         '
         'txtInativo
         '
-        Me.txtInativo.Location = New System.Drawing.Point(296, 136)
+        Me.txtInativo.Location = New System.Drawing.Point(296, 138)
         Me.txtInativo.Multiline = True
         Me.txtInativo.Name = "txtInativo"
         Me.txtInativo.Size = New System.Drawing.Size(248, 22)
@@ -288,7 +289,7 @@ Partial Class frmCadastroClientes
         'chbInativo
         '
         Me.chbInativo.AutoSize = True
-        Me.chbInativo.Location = New System.Drawing.Point(229, 140)
+        Me.chbInativo.Location = New System.Drawing.Point(229, 142)
         Me.chbInativo.Name = "chbInativo"
         Me.chbInativo.Size = New System.Drawing.Size(61, 17)
         Me.chbInativo.TabIndex = 90
@@ -407,7 +408,7 @@ Partial Class frmCadastroClientes
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(456, 59)
+        Me.Button1.Location = New System.Drawing.Point(336, 59)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 41)
         Me.Button1.TabIndex = 76
@@ -891,7 +892,6 @@ Partial Class frmCadastroClientes
         Me.GroupBox2.Controls.Add(Me.btPesquisarCPFVinculado)
         Me.GroupBox2.Controls.Add(Me.Label39)
         Me.GroupBox2.Controls.Add(Me.txtVinculo)
-        Me.GroupBox2.Controls.Add(Me.btPesquisarCliente)
         Me.GroupBox2.Controls.Add(Me.txtDtNasc)
         Me.GroupBox2.Controls.Add(Me.Label20)
         Me.GroupBox2.Controls.Add(Me.Label19)
@@ -967,10 +967,11 @@ Partial Class frmCadastroClientes
         Me.btPesquisarCliente.FlatAppearance.BorderSize = 0
         Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
-        Me.btPesquisarCliente.Location = New System.Drawing.Point(189, 18)
+        Me.btPesquisarCliente.Location = New System.Drawing.Point(456, 62)
         Me.btPesquisarCliente.Name = "btPesquisarCliente"
-        Me.btPesquisarCliente.Size = New System.Drawing.Size(49, 41)
+        Me.btPesquisarCliente.Size = New System.Drawing.Size(89, 52)
         Me.btPesquisarCliente.TabIndex = 77
+        Me.btPesquisarCliente.Text = "Pesquisar Cliente"
         Me.btPesquisarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btPesquisarCliente.UseVisualStyleBackColor = True
         '

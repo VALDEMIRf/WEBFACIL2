@@ -75,6 +75,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cldBancoDados.vb" />
     <Compile Include="clsCliente.vb" />
     <Compile Include="clsCPFVinculado.vb" />
     <Compile Include="Conexao.vb" />
@@ -132,6 +133,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -146,6 +148,7 @@
     <Content Include="Imagens\Accounting-Calculator.ico" />
     <Content Include="Imagens\Accounting-Calculator1.ico" />
     <Content Include="Imagens\alterar.png" />
+    <Content Include="Imagens\arrow-right.png" />
     <Content Include="Imagens\Button-Add-icon.png" />
     <Content Include="Imagens\Consultar.ico" />
     <Content Include="Imagens\deletar.png" />
@@ -153,6 +156,7 @@
     <Content Include="Imagens\forms-icon.png" />
     <Content Include="Imagens\lupa.png" />
     <Content Include="Imagens\novo1.png" />
+    <Content Include="Imagens\Ok-icon.png" />
     <Content Include="Imagens\Register.ico" />
     <Content Include="Imagens\sair.png" />
     <Content Include="Imagens\sair3.png" />

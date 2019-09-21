@@ -675,33 +675,22 @@ Public Class clsCliente
         End Using
     End Sub
 
-    'Public Function ConsultarCliente()
-    '    Dim dr As OleDbDataReader = Nothing
-    '    Using con As OleDbConnection = GetConnection()
-    '        Try
-    '            con.Open()
-    '            sql = "SELECT * FROM tbClientes WHERE cli_CPF=" & cli_CPF & ""
-    '            Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
-    '            dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
-    '            If dr.HasRows Then
-    '                dr.Read()
-    '                ' txtLogin.Text = dr.Item("login")
-    '                '  txtSenha.Text = dr.Item("senha")
-    '                '  txtPerfil.Text = dr.Item("perfil")
-    '            Else
-    '                MsgBox("Não foi possível carregar os dados.", MsgBoxStyle.Critical, "Aviso do Sistema")
-    '            End If
+    Public Function Listar(ByVal strDescricao As String) As DataSet
+        'Cria um StringBuilder para concatenar a Query Sql
+        Dim strQuery As New StringBuilder
+        strQuery.Append(" SELECT cli_id as Codigo,cli_CPF as CPF,cli_Nome as Nome ")
+        strQuery.Append(" FROM tbClientes ")
+        If Not strDescricao.Equals(String.Empty) Then
+            strQuery.Append(" WHERE cli_CPF like '%" & strDescricao & "%'")
+        End If
 
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message)
-    '        Finally
-    '            dr.Close()
-    '            con.Close()
-    '        End Try
-    '    End Using
 
-    'End Function
+        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
+        Dim cldBancoDados As New cldBancoDados()
+        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
+    End Function
 
+   
     Public Sub Alterar()
 
         Using con As OleDbConnection = GetConnection()
@@ -850,6 +839,32 @@ Public Class clsCliente
     'cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,
     'cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_SenhaWebValidade,cli_DtCadastro
 
+    'Public Function ConsultarCliente()
+    '    Dim dr As OleDbDataReader = Nothing
+    '    Using con As OleDbConnection = GetConnection()
+    '        Try
+    '            con.Open()
+    '            sql = "SELECT * FROM tbClientes WHERE cli_CPF=" & cli_CPF & ""
+    '            Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+    '            dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+    '            If dr.HasRows Then
+    '                dr.Read()
+    '                ' txtLogin.Text = dr.Item("login")
+    '                '  txtSenha.Text = dr.Item("senha")
+    '                '  txtPerfil.Text = dr.Item("perfil")
+    '            Else
+    '                MsgBox("Não foi possível carregar os dados.", MsgBoxStyle.Critical, "Aviso do Sistema")
+    '            End If
+
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message)
+    '        Finally
+    '            dr.Close()
+    '            con.Close()
+    '        End Try
+    '    End Using
+
+    'End Function
 
 
 End Class
