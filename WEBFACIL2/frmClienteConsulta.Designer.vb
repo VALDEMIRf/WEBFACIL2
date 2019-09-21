@@ -33,6 +33,7 @@ Partial Class frmClienteConsulta
         Me.dgvGrid = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,7 +119,7 @@ Partial Class frmClienteConsulta
         'dgvGrid
         '
         Me.dgvGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.CPF, Me.Nome})
+        Me.dgvGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.CPF, Me.RG, Me.Nome})
         Me.dgvGrid.GridColor = System.Drawing.Color.DarkGray
         Me.dgvGrid.Location = New System.Drawing.Point(12, 100)
         Me.dgvGrid.Name = "dgvGrid"
@@ -137,6 +138,12 @@ Partial Class frmClienteConsulta
         Me.CPF.HeaderText = "CPF"
         Me.CPF.Name = "CPF"
         Me.CPF.Width = 150
+        '
+        'RG
+        '
+        Me.RG.DataPropertyName = "RG"
+        Me.RG.HeaderText = "RG"
+        Me.RG.Name = "RG"
         '
         'Nome
         '
@@ -171,9 +178,10 @@ Partial Class frmClienteConsulta
     Friend WithEvents txtCPFPesquisa As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgvGrid As System.Windows.Forms.DataGridView
-    Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CPF As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Nome As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btFechar As System.Windows.Forms.Button
     Friend WithEvents btEnviarDados As System.Windows.Forms.Button
+    Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CPF As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RG As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nome As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

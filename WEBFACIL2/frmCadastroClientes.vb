@@ -97,9 +97,59 @@ Public Class frmCadastroClientes
         frmClienteConsulta.ConsultaTipo = frmClienteConsulta.TipoConsulta.Cliente
         frmClienteConsulta.ShowDialog()
 
-        CodigoCliente = frmClienteConsulta.CodigoRetorno
-        txtNome.Text = frmClienteConsulta.NomeRetorno
-        txtCPF.Text = frmClienteConsulta.CPFRetorno
+        CodigoCliente = frmClienteConsulta.cli_id
+        txtCPF.Text = frmClienteConsulta.cli_CPF
+        txtRG.Text = frmClienteConsulta.cli_RG
+        txtNome.Text = frmClienteConsulta.cli_Nome
+        txtPIS.Text = frmClienteConsulta.cli_PIS
+        txtTitEleitoral.Text = frmClienteConsulta.cli_TitEleitoral
+        txtLogradouro.Text = frmClienteConsulta.cli_Logradouro
+        txtNumero.Text = frmClienteConsulta.cli_Numero
+        txtComplemento.Text = frmClienteConsulta.cli_complemento
+        txtBairro.Text = frmClienteConsulta.cli_Bairro
+        txtCidade.Text = frmClienteConsulta.cli_Cidade
+        cboUF.Text = frmClienteConsulta.cli_UF
+        txtCEP.Text = frmClienteConsulta.cli_CEP
+        txtFoneRes.Text = frmClienteConsulta.cli_FoneRes
+        txtFoneCel.Text = frmClienteConsulta.cli_FoneCel
+        txtDtNasc.Text = frmClienteConsulta.cli_data_nasc
+        chbCurriculo.Checked = frmClienteConsulta.cli_Curriculo
+        txtEmail.Text = frmClienteConsulta.cli_Email
+        txtObs.Text = frmClienteConsulta.cli_observacoes
+        chbAposentado.Checked = frmClienteConsulta.cli_Aposentado
+        txtNumBeneficio.Text = frmClienteConsulta.cli_NumBeneficio
+        chbFuncPublico.Checked = frmClienteConsulta.cli_FuncPublico
+        txtFuncPublico.Text = frmClienteConsulta.cli_NomeFunc
+        chbAutonomo.Checked = frmClienteConsulta.cli_Autonomo
+        txtAutonomo.Text = frmClienteConsulta.cli_AutonomoNome
+        chbFalecido.Checked = frmClienteConsulta.cli_Falecido
+        txtFalecido.Text = frmClienteConsulta.cli_NomeFalecido
+        chbParcelamentos.Checked = frmClienteConsulta.cli_Parcelamento
+        txtParcelamentos.Text = frmClienteConsulta.cli_NumParcelamento
+        chbESocial.Checked = frmClienteConsulta.cli_EmprDom
+        txtESocial.Text = frmClienteConsulta.cli_ESocial
+        txtEsocialSenha.Text = frmClienteConsulta.cli_EsocialSenha
+        chbVIP.Checked = frmClienteConsulta.cli_VIP
+        txtVIP.Text = frmClienteConsulta.cli_VIPDescricao
+        chbPJ.Checked = frmClienteConsulta.cli_PJ
+        txtPJ.Text = frmClienteConsulta.cli_NumPJ
+        chbMEI.Checked = frmClienteConsulta.cli_MEI
+        txtMEI.Text = frmClienteConsulta.cli_NumMEI
+        chbITR.Checked = frmClienteConsulta.cli_ITR
+        txtITR.Text = frmClienteConsulta.cli_NumITR
+        chbMensalista.Checked = frmClienteConsulta.cli_Mensalista
+        txtMensalista.Text = frmClienteConsulta.cli_NomeMensalista
+        chbDecore.Checked = frmClienteConsulta.cli_Decore
+        txtDecore.Text = frmClienteConsulta.cli_DecoreDescricao
+        chbIRPF.Checked = frmClienteConsulta.cli_IRPF
+        txtIRPF.Text = frmClienteConsulta.cli_NumIRPF
+        chbSenhaWeb.Checked = frmClienteConsulta.cli_SenWebPrefeitura
+        txtSenhaWeb.Text = frmClienteConsulta.cli_SenhaWebPrefeitura
+        chbRedesim.Checked = frmClienteConsulta.cli_Redesim
+        txtSenhaRedesim.Text = frmClienteConsulta.cli_SenhaRedesim
+        chbCodRFB.Checked = frmClienteConsulta.cli_CodRFB
+        txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
+        txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
 
     End Sub
 
