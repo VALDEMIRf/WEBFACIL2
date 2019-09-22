@@ -6,6 +6,28 @@ Public Class frmCadastroClientes
     Dim con As New Conexao
     Dim CodigoCliente As Integer
     Dim cliente As New clsCliente
+    Dim _Operacao As clsFuncoesGerais.Operacao
+
+
+    Public Property Operacao() As clsFuncoesGerais.Operacao
+        Get
+            Return _Operacao
+        End Get
+        Set(ByVal value As clsFuncoesGerais.Operacao)
+            _Operacao = value
+        End Set
+    End Property
+
+    Dim _Codigo As Integer
+    Public Property Codigo() As Integer
+        Get
+            Return _Codigo
+
+        End Get
+        Set(ByVal value As Integer)
+            _Codigo = value
+        End Set
+    End Property
     Private Sub frmCadastroClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TabEmpresa.Enabled = False
     End Sub
@@ -15,7 +37,21 @@ Public Class frmCadastroClientes
     End Sub
 
     Private Sub btSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSalvar.Click
+        
+        If txtCPF.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCPF, "Digite um CPF")
+            txtCPF.Focus()
+            Exit Sub
+        Else
+            errErro.SetError(txtCPF, "")
 
+        End If
+        If txtNome.Text.Equals(String.Empty) Then
+            errErro.SetError(txtNome, "Digite um nome")
+            Exit Sub
+        Else
+            errErro.SetError(txtNome, "")
+        End If
         Try
             cliente.cli_CPF = txtCPF.Text
             cliente.cli_RG = txtRG.Text
@@ -75,10 +111,6 @@ Public Class frmCadastroClientes
 
             '  If cliente.cli_id > 0 Then
             cliente.GravarDados()
-            ' Else 
-            '  cliente.Alterar()
-            '  End If
-
             LimparCampos()
 
         Catch ex As Exception
@@ -98,6 +130,7 @@ Public Class frmCadastroClientes
         frmClienteConsulta.ShowDialog()
 
         CodigoCliente = frmClienteConsulta.cli_id
+        lblciID.Text = frmClienteConsulta.cli_id
         txtCPF.Text = frmClienteConsulta.cli_CPF
         txtRG.Text = frmClienteConsulta.cli_RG
         txtNome.Text = frmClienteConsulta.cli_Nome
@@ -151,6 +184,149 @@ Public Class frmCadastroClientes
         txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
         txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
 
+    End Sub
+
+    Private Sub btAlterarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDados.Click
+        If txtCPF.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCPF, "Digite um CPF")
+            txtCPF.Focus()
+            Exit Sub
+        Else
+            errErro.SetError(txtCPF, "")
+
+        End If
+
+        If txtNome.Text.Equals(String.Empty) Then
+            errErro.SetError(txtNome, "Digite um nome")
+            txtNome.Focus()
+            Exit Sub
+        Else
+            errErro.SetError(txtNome, "")
+        End If
+
+        Try
+            cliente.cli_id = lblciID.Text
+            cliente.cli_CPF = txtCPF.Text
+            cliente.cli_RG = txtRG.Text
+            cliente.cli_Nome = txtNome.Text
+            cliente.cli_PIS = txtPIS.Text
+            cliente.cli_TitEleitoral = txtTitEleitoral.Text
+            cliente.cli_Logradouro = txtLogradouro.Text
+            cliente.cli_Numero = txtNumero.Text
+            cliente.cli_complemento = txtComplemento.Text
+            cliente.cli_Bairro = txtBairro.Text
+            cliente.cli_Cidade = txtCidade.Text
+            cliente.cli_UF = cboUF.Text
+            cliente.cli_CEP = txtCEP.Text
+            cliente.cli_FoneRes = txtFoneRes.Text
+            cliente.cli_FoneCel = txtFoneCel.Text
+            cliente.cli_data_nasc = txtDtNasc.Text
+            cliente.cli_Curriculo = chbCurriculo.Checked
+            cliente.cli_Email = txtEmail.Text
+            cliente.cli_observacoes = txtObs.Text
+            cliente.cli_Aposentado = chbAposentado.Checked
+            cliente.cli_NumBeneficio = txtNumBeneficio.Text
+            cliente.cli_FuncPublico = chbFuncPublico.Checked
+            cliente.cli_NomeFunc = txtFuncPublico.Text
+            cliente.cli_Autonomo = chbAutonomo.Checked
+            cliente.cli_AutonomoNome = txtAutonomo.Text
+            cliente.cli_Falecido = chbFalecido.Checked
+            cliente.cli_NomeFalecido = txtFalecido.Text
+            cliente.cli_Inativo = chbInativo.Checked
+            cliente.cli_InativoObs = txtInativo.Text
+            cliente.cli_Parcelamento = chbParcelamentos.Checked
+            cliente.cli_NumParcelamento = txtParcelamentos.Text
+            cliente.cli_EmprDom = chbESocial.Checked
+            cliente.cli_ESocial = txtESocial.Text
+            cliente.cli_EsocialSenha = txtEsocialSenha.Text
+            cliente.cli_VIP = chbVIP.Checked
+            cliente.cli_VIPDescricao = txtVIP.Text
+            cliente.cli_PJ = chbPJ.Checked
+            cliente.cli_NumPJ = txtPJ.Text
+            cliente.cli_MEI = chbMEI.Checked
+            cliente.cli_NumMEI = txtMEI.Text
+            cliente.cli_ITR = chbITR.Checked
+            cliente.cli_NumITR = txtITR.Text
+            cliente.cli_Mensalista = chbMensalista.Checked
+            cliente.cli_NomeMensalista = txtMensalista.Text
+            cliente.cli_Decore = chbDecore.Checked
+            cliente.cli_DecoreDescricao = txtDecore.Text
+            cliente.cli_IRPF = chbIRPF.Checked
+            cliente.cli_NumIRPF = txtIRPF.Text
+            cliente.cli_SenWebPrefeitura = chbSenhaWeb.Checked
+            cliente.cli_SenhaWebPrefeitura = txtSenhaWeb.Text
+            cliente.cli_Redesim = chbRedesim.Checked
+            cliente.cli_SenhaRedesim = txtSenhaRedesim.Text
+            cliente.cli_CodRFB = chbCodRFB.Checked
+            cliente.cli_CodRFBNum = txtCodRFB.Text
+            cliente.cli_CodRFBValidade = txtValidadeRFB.Text
+            cliente.cli_DtCadastro = Now.Date
+
+            cliente.AlterarDados()
+            
+            LimparCampos()
+
+        Catch ex As Exception
+            MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+    Private Sub LimparCampos()
+        txtCPF.Text = ""
+        txtRG.Text = ""
+        txtNome.Text = ""
+        txtPIS.Text = ""
+        txtTitEleitoral.Text = ""
+        txtLogradouro.Text = ""
+        txtNumero.Text = ""
+        txtComplemento.Text = ""
+        txtBairro.Text = ""
+        txtCidade.Text = ""
+        cboUF.Text = ""
+        txtCEP.Text = ""
+        txtFoneRes.Text = ""
+        txtFoneCel.Text = ""
+        txtDtNasc.Text = ""
+        chbCurriculo.Checked = False
+        txtEmail.Text = ""
+        txtObs.Text = ""
+        chbAposentado.Checked = False
+        txtNumBeneficio.Text = ""
+        chbFuncPublico.Checked = False
+        txtFuncPublico.Text = ""
+        chbAutonomo.Checked = False
+        txtAutonomo.Text = ""
+        chbFalecido.Checked = False
+        txtFalecido.Text = ""
+        chbInativo.Checked = False
+        txtInativo.Text = ""
+        chbParcelamentos.Checked = False
+        txtParcelamentos.Text = ""
+        chbESocial.Checked = False
+        txtESocial.Text = ""
+        txtEsocialSenha.Text = ""
+        chbVIP.Checked = False
+        txtVIP.Text = ""
+        chbPJ.Checked = False
+        txtPJ.Text = ""
+        chbMEI.Checked = False
+        txtMEI.Text = ""
+        chbITR.Checked = False
+        txtITR.Text = ""
+        chbMensalista.Checked = False
+        txtMensalista.Text = ""
+        chbDecore.Checked = False
+        txtDecore.Text = ""
+        chbIRPF.Checked = False
+        txtIRPF.Text = ""
+        chbSenhaWeb.Checked = False
+        txtSenhaWeb.Text = ""
+        chbRedesim.Checked = False
+        txtSenhaRedesim.Text = ""
+        chbCodRFB.Checked = False
+        txtCodRFB.Text = ""
+        txtValidadeRFB.Text = ""
     End Sub
 
     Private Sub chbAposentado_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbAposentado.CheckedChanged
@@ -503,68 +679,5 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
-    Private Sub LimparCampos()
-        txtCPF.Text = ""
-        txtRG.Text = ""
-        txtNome.Text = ""
-        txtPIS.Text = ""
-        txtTitEleitoral.Text = ""
-        txtLogradouro.Text = ""
-        txtNumero.Text = ""
-        txtComplemento.Text = ""
-        txtBairro.Text = ""
-        txtCidade.Text = ""
-        cboUF.Text = ""
-        txtCEP.Text = ""
-        txtFoneRes.Text = ""
-        txtFoneCel.Text = ""
-        txtDtNasc.Text = ""
-        chbCurriculo.Checked = False
-        txtEmail.Text = ""
-        txtObs.Text = ""
-        chbAposentado.Checked = False
-        txtNumBeneficio.Text = ""
-        chbFuncPublico.Checked = False
-        txtFuncPublico.Text = ""
-        chbAutonomo.Checked = False
-        txtAutonomo.Text = ""
-        chbFalecido.Checked = False
-        txtFalecido.Text = ""
-        chbInativo.Checked = False
-        txtInativo.Text = ""
-        chbParcelamentos.Checked = False
-        txtParcelamentos.Text = ""
-        chbESocial.Checked = False
-        txtESocial.Text = ""
-        txtEsocialSenha.Text = ""
-        chbVIP.Checked = False
-        txtVIP.Text = ""
-        chbPJ.Checked = False
-        txtPJ.Text = ""
-        chbMEI.Checked = False
-        txtMEI.Text = ""
-        chbITR.Checked = False
-        txtITR.Text = ""
-        chbMensalista.Checked = False
-        txtMensalista.Text = ""
-        chbDecore.Checked = False
-        txtDecore.Text = ""
-        chbIRPF.Checked = False
-        txtIRPF.Text = ""
-        chbSenhaWeb.Checked = False
-        txtSenhaWeb.Text = ""
-        chbRedesim.Checked = False
-        txtSenhaRedesim.Text = ""
-        chbCodRFB.Checked = False
-        txtCodRFB.Text = ""
-        txtValidadeRFB.Text = ""
-    End Sub
-
     
-    
-    
-   
-
-    
-   
 End Class

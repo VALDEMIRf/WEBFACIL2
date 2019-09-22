@@ -27,7 +27,6 @@ Partial Class frmClienteConsulta
         Me.btFechar = New System.Windows.Forms.Button()
         Me.btEnviarDados = New System.Windows.Forms.Button()
         Me.btPesquisaCliente = New System.Windows.Forms.Button()
-        Me.txtCPFNumeros = New System.Windows.Forms.MaskedTextBox()
         Me.txtCPFPesquisa = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvGrid = New System.Windows.Forms.DataGridView()
@@ -44,7 +43,6 @@ Partial Class frmClienteConsulta
         Me.GroupBox1.Controls.Add(Me.btFechar)
         Me.GroupBox1.Controls.Add(Me.btEnviarDados)
         Me.GroupBox1.Controls.Add(Me.btPesquisaCliente)
-        Me.GroupBox1.Controls.Add(Me.txtCPFNumeros)
         Me.GroupBox1.Controls.Add(Me.txtCPFPesquisa)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(18, 4)
@@ -61,7 +59,7 @@ Partial Class frmClienteConsulta
         Me.btFechar.FlatAppearance.BorderSize = 0
         Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btFechar.Image = CType(resources.GetObject("btFechar.Image"), System.Drawing.Image)
-        Me.btFechar.Location = New System.Drawing.Point(582, 16)
+        Me.btFechar.Location = New System.Drawing.Point(582, 25)
         Me.btFechar.Name = "btFechar"
         Me.btFechar.Size = New System.Drawing.Size(101, 55)
         Me.btFechar.TabIndex = 6
@@ -74,7 +72,7 @@ Partial Class frmClienteConsulta
         Me.btEnviarDados.FlatAppearance.BorderSize = 0
         Me.btEnviarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEnviarDados.Image = CType(resources.GetObject("btEnviarDados.Image"), System.Drawing.Image)
-        Me.btEnviarDados.Location = New System.Drawing.Point(468, 20)
+        Me.btEnviarDados.Location = New System.Drawing.Point(333, 29)
         Me.btEnviarDados.Name = "btEnviarDados"
         Me.btEnviarDados.Size = New System.Drawing.Size(108, 47)
         Me.btEnviarDados.TabIndex = 5
@@ -84,24 +82,20 @@ Partial Class frmClienteConsulta
         '
         'btPesquisaCliente
         '
-        Me.btPesquisaCliente.Location = New System.Drawing.Point(265, 33)
+        Me.btPesquisaCliente.FlatAppearance.BorderSize = 0
+        Me.btPesquisaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btPesquisaCliente.Image = CType(resources.GetObject("btPesquisaCliente.Image"), System.Drawing.Image)
+        Me.btPesquisaCliente.Location = New System.Drawing.Point(209, 33)
         Me.btPesquisaCliente.Name = "btPesquisaCliente"
         Me.btPesquisaCliente.Size = New System.Drawing.Size(128, 38)
         Me.btPesquisaCliente.TabIndex = 4
         Me.btPesquisaCliente.Text = "Pesquisar"
+        Me.btPesquisaCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btPesquisaCliente.UseVisualStyleBackColor = True
-        '
-        'txtCPFNumeros
-        '
-        Me.txtCPFNumeros.Location = New System.Drawing.Point(99, 24)
-        Me.txtCPFNumeros.Mask = "00000000000"
-        Me.txtCPFNumeros.Name = "txtCPFNumeros"
-        Me.txtCPFNumeros.Size = New System.Drawing.Size(127, 26)
-        Me.txtCPFNumeros.TabIndex = 3
         '
         'txtCPFPesquisa
         '
-        Me.txtCPFPesquisa.Location = New System.Drawing.Point(99, 56)
+        Me.txtCPFPesquisa.Location = New System.Drawing.Point(62, 40)
         Me.txtCPFPesquisa.Mask = "000.000.000-00"
         Me.txtCPFPesquisa.Name = "txtCPFPesquisa"
         Me.txtCPFPesquisa.Size = New System.Drawing.Size(127, 26)
@@ -110,7 +104,7 @@ Partial Class frmClienteConsulta
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(26, 43)
+        Me.Label1.Location = New System.Drawing.Point(11, 43)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 18)
         Me.Label1.TabIndex = 0
@@ -174,7 +168,6 @@ Partial Class frmClienteConsulta
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents btPesquisaCliente As System.Windows.Forms.Button
-    Friend WithEvents txtCPFNumeros As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txtCPFPesquisa As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgvGrid As System.Windows.Forms.DataGridView

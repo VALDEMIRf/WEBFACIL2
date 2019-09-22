@@ -22,6 +22,7 @@ Partial Class frmCadastroClientes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCadastroClientes))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabCliente = New System.Windows.Forms.TabPage()
@@ -31,6 +32,7 @@ Partial Class frmCadastroClientes
         Me.txtInativo = New System.Windows.Forms.TextBox()
         Me.chbInativo = New System.Windows.Forms.CheckBox()
         Me.txtFalecido = New System.Windows.Forms.MaskedTextBox()
+        Me.btPesquisarCliente = New System.Windows.Forms.Button()
         Me.lblSenhaRedesim = New System.Windows.Forms.Label()
         Me.txtSenhaRedesim = New System.Windows.Forms.TextBox()
         Me.chbRedesim = New System.Windows.Forms.CheckBox()
@@ -41,7 +43,7 @@ Partial Class frmCadastroClientes
         Me.lblValidoRFB = New System.Windows.Forms.Label()
         Me.txtSenhaWeb = New System.Windows.Forms.TextBox()
         Me.chbSenhaWeb = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btAlterarDados = New System.Windows.Forms.Button()
         Me.txtESocial = New System.Windows.Forms.TextBox()
         Me.chbESocial = New System.Windows.Forms.CheckBox()
         Me.txtMensalista = New System.Windows.Forms.TextBox()
@@ -99,7 +101,6 @@ Partial Class frmCadastroClientes
         Me.btPesquisarCPFVinculado = New System.Windows.Forms.Button()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.txtVinculo = New System.Windows.Forms.TextBox()
-        Me.btPesquisarCliente = New System.Windows.Forms.Button()
         Me.txtDtNasc = New System.Windows.Forms.MaskedTextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -172,6 +173,8 @@ Partial Class frmCadastroClientes
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
+        Me.lblciID = New System.Windows.Forms.Label()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -181,6 +184,7 @@ Partial Class frmCadastroClientes
         Me.TabEmpresa.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -227,7 +231,7 @@ Partial Class frmCadastroClientes
         Me.Panel1.Controls.Add(Me.lblValidoRFB)
         Me.Panel1.Controls.Add(Me.txtSenhaWeb)
         Me.Panel1.Controls.Add(Me.chbSenhaWeb)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btAlterarDados)
         Me.Panel1.Controls.Add(Me.txtESocial)
         Me.Panel1.Controls.Add(Me.chbESocial)
         Me.Panel1.Controls.Add(Me.txtMensalista)
@@ -305,6 +309,19 @@ Partial Class frmCadastroClientes
         Me.txtFalecido.TabIndex = 84
         Me.txtFalecido.ValidatingType = GetType(Date)
         Me.txtFalecido.Visible = False
+        '
+        'btPesquisarCliente
+        '
+        Me.btPesquisarCliente.FlatAppearance.BorderSize = 0
+        Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
+        Me.btPesquisarCliente.Location = New System.Drawing.Point(456, 62)
+        Me.btPesquisarCliente.Name = "btPesquisarCliente"
+        Me.btPesquisarCliente.Size = New System.Drawing.Size(89, 52)
+        Me.btPesquisarCliente.TabIndex = 77
+        Me.btPesquisarCliente.Text = "Pesquisar Cliente"
+        Me.btPesquisarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btPesquisarCliente.UseVisualStyleBackColor = True
         '
         'lblSenhaRedesim
         '
@@ -403,18 +420,18 @@ Partial Class frmCadastroClientes
         Me.chbSenhaWeb.Text = "Senha Web PrefeituraPF:"
         Me.chbSenhaWeb.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btAlterarDados
         '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(336, 59)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 41)
-        Me.Button1.TabIndex = 76
-        Me.Button1.Text = "Excluir"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btAlterarDados.FlatAppearance.BorderSize = 0
+        Me.btAlterarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAlterarDados.Image = CType(resources.GetObject("btAlterarDados.Image"), System.Drawing.Image)
+        Me.btAlterarDados.Location = New System.Drawing.Point(343, 55)
+        Me.btAlterarDados.Name = "btAlterarDados"
+        Me.btAlterarDados.Size = New System.Drawing.Size(93, 67)
+        Me.btAlterarDados.TabIndex = 76
+        Me.btAlterarDados.Text = "Alterar Dados"
+        Me.btAlterarDados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btAlterarDados.UseVisualStyleBackColor = True
         '
         'txtESocial
         '
@@ -961,19 +978,6 @@ Partial Class frmCadastroClientes
         Me.txtVinculo.ReadOnly = True
         Me.txtVinculo.Size = New System.Drawing.Size(145, 20)
         Me.txtVinculo.TabIndex = 78
-        '
-        'btPesquisarCliente
-        '
-        Me.btPesquisarCliente.FlatAppearance.BorderSize = 0
-        Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
-        Me.btPesquisarCliente.Location = New System.Drawing.Point(456, 62)
-        Me.btPesquisarCliente.Name = "btPesquisarCliente"
-        Me.btPesquisarCliente.Size = New System.Drawing.Size(89, 52)
-        Me.btPesquisarCliente.TabIndex = 77
-        Me.btPesquisarCliente.Text = "Pesquisar Cliente"
-        Me.btPesquisarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btPesquisarCliente.UseVisualStyleBackColor = True
         '
         'txtDtNasc
         '
@@ -1653,12 +1657,26 @@ Partial Class frmCadastroClientes
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = True
         '
+        'lblciID
+        '
+        Me.lblciID.AutoSize = True
+        Me.lblciID.Location = New System.Drawing.Point(1160, 20)
+        Me.lblciID.Name = "lblciID"
+        Me.lblciID.Size = New System.Drawing.Size(13, 13)
+        Me.lblciID.TabIndex = 27
+        Me.lblciID.Text = "0"
+        '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
         'frmCadastroClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1227, 681)
+        Me.Controls.Add(Me.lblciID)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "frmCadastroClientes"
@@ -1681,7 +1699,9 @@ Partial Class frmCadastroClientes
         Me.GroupBox5.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
@@ -1738,7 +1758,7 @@ Partial Class frmCadastroClientes
     Friend WithEvents lblValidoRFB As System.Windows.Forms.Label
     Public WithEvents txtSenhaWeb As System.Windows.Forms.TextBox
     Friend WithEvents chbSenhaWeb As System.Windows.Forms.CheckBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btAlterarDados As System.Windows.Forms.Button
     Public WithEvents txtESocial As System.Windows.Forms.TextBox
     Friend WithEvents chbESocial As System.Windows.Forms.CheckBox
     Public WithEvents txtMensalista As System.Windows.Forms.TextBox
@@ -1833,4 +1853,6 @@ Partial Class frmCadastroClientes
     Friend WithEvents chbInativo As System.Windows.Forms.CheckBox
     Public WithEvents txtCodRFB As System.Windows.Forms.TextBox
     Friend WithEvents chbCodRFB As System.Windows.Forms.CheckBox
+    Friend WithEvents lblciID As System.Windows.Forms.Label
+    Friend WithEvents errErro As System.Windows.Forms.ErrorProvider
 End Class

@@ -75,6 +75,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsFuncoesGerais.vb" />
     <Compile Include="cldBancoDados.vb" />
     <Compile Include="clsCliente.vb" />
     <Compile Include="clsCPFVinculado.vb" />
@@ -148,7 +149,9 @@
     <Content Include="Imagens\Accounting-Calculator.ico" />
     <Content Include="Imagens\Accounting-Calculator1.ico" />
     <Content Include="Imagens\alterar.png" />
+    <Content Include="Imagens\alterarDados.png" />
     <Content Include="Imagens\arrow-right.png" />
+    <Content Include="Imagens\binoculars.png" />
     <Content Include="Imagens\Button-Add-icon.png" />
     <Content Include="Imagens\Consultar.ico" />
     <Content Include="Imagens\deletar.png" />
