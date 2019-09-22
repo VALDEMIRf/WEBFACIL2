@@ -1248,7 +1248,7 @@ Partial Class frmCadastroClientes
         Me.btEmpresaSalvar.FlatAppearance.BorderSize = 0
         Me.btEmpresaSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEmpresaSalvar.Image = CType(resources.GetObject("btEmpresaSalvar.Image"), System.Drawing.Image)
-        Me.btEmpresaSalvar.Location = New System.Drawing.Point(1044, 13)
+        Me.btEmpresaSalvar.Location = New System.Drawing.Point(1024, 14)
         Me.btEmpresaSalvar.Name = "btEmpresaSalvar"
         Me.btEmpresaSalvar.Size = New System.Drawing.Size(91, 41)
         Me.btEmpresaSalvar.TabIndex = 95

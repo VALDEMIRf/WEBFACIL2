@@ -739,4 +739,21 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
+    Private Sub btEmpresaSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEmpresaSalvar.Click
+        If txtRazaoSocial.Text.Equals(String.Empty) Then
+            errErro.SetError(txtRazaoSocial, "Digite O nome da Empresa")
+            Exit Sub
+        Else
+            errErro.SetError(txtRazaoSocial, "")
+        End If
+        If txtCNPJ.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCNPJ, "Digite o CNPJ da Empresa")
+            Exit Sub
+        Else
+            errErro.SetError(txtCNPJ, "")
+
+        End If
+        Dim clnCategoria As New clsCategoria
+        clnCategoria.cat_ID = cbTipo.SelectedValue
+    End Sub
 End Class
