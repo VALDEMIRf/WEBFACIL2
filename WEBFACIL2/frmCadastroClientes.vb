@@ -6,28 +6,7 @@ Public Class frmCadastroClientes
     Dim con As New Conexao
     Dim CodigoCliente As Integer
     Dim cliente As New clsCliente
-    Dim _Operacao As clsFuncoesGerais.Operacao
-
-
-    Public Property Operacao() As clsFuncoesGerais.Operacao
-        Get
-            Return _Operacao
-        End Get
-        Set(ByVal value As clsFuncoesGerais.Operacao)
-            _Operacao = value
-        End Set
-    End Property
-
-    Dim _Codigo As Integer
-    Public Property Codigo() As Integer
-        Get
-            Return _Codigo
-
-        End Get
-        Set(ByVal value As Integer)
-            _Codigo = value
-        End Set
-    End Property
+   
     Private Sub frmCadastroClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TabEmpresa.Enabled = False
     End Sub
@@ -109,7 +88,6 @@ Public Class frmCadastroClientes
             cliente.cli_CodRFBValidade = txtValidadeRFB.Text
             cliente.cli_DtCadastro = Now.Date
 
-            '  If cliente.cli_id > 0 Then
             cliente.GravarDados()
             LimparCampos()
 
@@ -263,7 +241,6 @@ Public Class frmCadastroClientes
             cliente.cli_DtCadastro = Now.Date
 
             cliente.AlterarDados()
-            
             LimparCampos()
 
         Catch ex As Exception
@@ -327,6 +304,52 @@ Public Class frmCadastroClientes
         chbCodRFB.Checked = False
         txtCodRFB.Text = ""
         txtValidadeRFB.Text = ""
+    End Sub
+
+    Private Sub txtPIS_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPIS.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+    End Sub
+
+    Private Sub txtESocial_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtESocial.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub txtSenhaWeb_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSenhaWeb.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub txtCodRFB_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCodRFB.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub txtTitEleitoral_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTitEleitoral.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub chbAposentado_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbAposentado.CheckedChanged
@@ -679,5 +702,4 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
-    
 End Class

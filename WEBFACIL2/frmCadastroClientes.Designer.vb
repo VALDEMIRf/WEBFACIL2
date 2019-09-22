@@ -1449,7 +1449,7 @@ Partial Class frmCadastroClientes
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(337, 110)
+        Me.Label38.Location = New System.Drawing.Point(311, 110)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(36, 13)
         Me.Label38.TabIndex = 69
@@ -1457,7 +1457,7 @@ Partial Class frmCadastroClientes
         '
         'txtNIRE
         '
-        Me.txtNIRE.Location = New System.Drawing.Point(388, 105)
+        Me.txtNIRE.Location = New System.Drawing.Point(362, 105)
         Me.txtNIRE.Name = "txtNIRE"
         Me.txtNIRE.Size = New System.Drawing.Size(210, 20)
         Me.txtNIRE.TabIndex = 68
@@ -1497,7 +1497,7 @@ Partial Class frmCadastroClientes
         '
         'txtNomeFantasia
         '
-        Me.txtNomeFantasia.Location = New System.Drawing.Point(121, 71)
+        Me.txtNomeFantasia.Location = New System.Drawing.Point(95, 73)
         Me.txtNomeFantasia.Name = "txtNomeFantasia"
         Me.txtNomeFantasia.Size = New System.Drawing.Size(477, 20)
         Me.txtNomeFantasia.TabIndex = 62
@@ -1563,7 +1563,7 @@ Partial Class frmCadastroClientes
         '
         'txtRazaoSocial
         '
-        Me.txtRazaoSocial.Location = New System.Drawing.Point(121, 39)
+        Me.txtRazaoSocial.Location = New System.Drawing.Point(95, 43)
         Me.txtRazaoSocial.Name = "txtRazaoSocial"
         Me.txtRazaoSocial.Size = New System.Drawing.Size(477, 20)
         Me.txtRazaoSocial.TabIndex = 59
@@ -1586,7 +1586,7 @@ Partial Class frmCadastroClientes
         '
         'txtCNPJ
         '
-        Me.txtCNPJ.Location = New System.Drawing.Point(121, 102)
+        Me.txtCNPJ.Location = New System.Drawing.Point(95, 102)
         Me.txtCNPJ.Mask = "00.000.000/0000-00"
         Me.txtCNPJ.Name = "txtCNPJ"
         Me.txtCNPJ.Size = New System.Drawing.Size(137, 20)
@@ -1604,7 +1604,7 @@ Partial Class frmCadastroClientes
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(67, 105)
+        Me.Label24.Location = New System.Drawing.Point(41, 105)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(37, 13)
         Me.Label24.TabIndex = 54
