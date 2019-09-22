@@ -150,8 +150,6 @@ Partial Class frmCadastroClientes
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.txtNIRE = New System.Windows.Forms.TextBox()
-        Me.txtCliente = New System.Windows.Forms.ComboBox()
-        Me.Label37 = New System.Windows.Forms.Label()
         Me.txtEmprPorte = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.txtNomeFantasia = New System.Windows.Forms.TextBox()
@@ -168,7 +166,7 @@ Partial Class frmCadastroClientes
         Me.txtCNPJ = New System.Windows.Forms.MaskedTextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.txtTipo = New System.Windows.Forms.ComboBox()
+        Me.cbTipo = New System.Windows.Forms.ComboBox()
         Me.dtpDataInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -1417,8 +1415,6 @@ Partial Class frmCadastroClientes
         '
         Me.GroupBox1.Controls.Add(Me.Label38)
         Me.GroupBox1.Controls.Add(Me.txtNIRE)
-        Me.GroupBox1.Controls.Add(Me.txtCliente)
-        Me.GroupBox1.Controls.Add(Me.Label37)
         Me.GroupBox1.Controls.Add(Me.txtEmprPorte)
         Me.GroupBox1.Controls.Add(Me.Label36)
         Me.GroupBox1.Controls.Add(Me.txtNomeFantasia)
@@ -1435,7 +1431,7 @@ Partial Class frmCadastroClientes
         Me.GroupBox1.Controls.Add(Me.txtCNPJ)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label24)
-        Me.GroupBox1.Controls.Add(Me.txtTipo)
+        Me.GroupBox1.Controls.Add(Me.cbTipo)
         Me.GroupBox1.Controls.Add(Me.dtpDataInicio)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -1461,23 +1457,6 @@ Partial Class frmCadastroClientes
         Me.txtNIRE.Name = "txtNIRE"
         Me.txtNIRE.Size = New System.Drawing.Size(210, 20)
         Me.txtNIRE.TabIndex = 68
-        '
-        'txtCliente
-        '
-        Me.txtCliente.FormattingEnabled = True
-        Me.txtCliente.Location = New System.Drawing.Point(366, 209)
-        Me.txtCliente.Name = "txtCliente"
-        Me.txtCliente.Size = New System.Drawing.Size(232, 21)
-        Me.txtCliente.TabIndex = 67
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(311, 213)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(42, 13)
-        Me.Label37.TabIndex = 66
-        Me.Label37.Text = "Cliente:"
         '
         'txtEmprPorte
         '
@@ -1610,18 +1589,18 @@ Partial Class frmCadastroClientes
         Me.Label24.TabIndex = 54
         Me.Label24.Text = "CNPJ:"
         '
-        'txtTipo
+        'cbTipo
         '
-        Me.txtTipo.FormattingEnabled = True
-        Me.txtTipo.Location = New System.Drawing.Point(121, 207)
-        Me.txtTipo.Name = "txtTipo"
-        Me.txtTipo.Size = New System.Drawing.Size(186, 21)
-        Me.txtTipo.TabIndex = 48
+        Me.cbTipo.FormattingEnabled = True
+        Me.cbTipo.Location = New System.Drawing.Point(121, 207)
+        Me.cbTipo.Name = "cbTipo"
+        Me.cbTipo.Size = New System.Drawing.Size(186, 21)
+        Me.cbTipo.TabIndex = 48
         '
         'dtpDataInicio
         '
         Me.dtpDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDataInicio.Location = New System.Drawing.Point(119, 238)
+        Me.dtpDataInicio.Location = New System.Drawing.Point(424, 208)
         Me.dtpDataInicio.Name = "dtpDataInicio"
         Me.dtpDataInicio.Size = New System.Drawing.Size(111, 20)
         Me.dtpDataInicio.TabIndex = 49
@@ -1630,11 +1609,11 @@ Partial Class frmCadastroClientes
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(34, 242)
+        Me.Label4.Location = New System.Drawing.Point(329, 212)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(66, 13)
+        Me.Label4.Size = New System.Drawing.Size(78, 13)
         Me.Label4.TabIndex = 46
-        Me.Label4.Text = "Dt de Início:"
+        Me.Label4.Text = "Data de Início:"
         '
         'Label6
         '
@@ -1819,8 +1798,6 @@ Partial Class frmCadastroClientes
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents txtNIRE As System.Windows.Forms.TextBox
-    Friend WithEvents txtCliente As System.Windows.Forms.ComboBox
-    Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents txtEmprPorte As System.Windows.Forms.TextBox
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents txtNomeFantasia As System.Windows.Forms.TextBox
@@ -1837,7 +1814,7 @@ Partial Class frmCadastroClientes
     Friend WithEvents txtCNPJ As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents txtTipo As System.Windows.Forms.ComboBox
+    Friend WithEvents cbTipo As System.Windows.Forms.ComboBox
     Friend WithEvents dtpDataInicio As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label

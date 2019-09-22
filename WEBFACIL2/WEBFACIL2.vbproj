@@ -75,6 +75,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCategoria.vb" />
     <Compile Include="clsEmpresa.vb" />
     <Compile Include="cldBancoDados.vb" />
     <Compile Include="clsCliente.vb" />

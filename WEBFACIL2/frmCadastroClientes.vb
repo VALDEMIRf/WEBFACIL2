@@ -9,6 +9,16 @@ Public Class frmCadastroClientes
    
     Private Sub frmCadastroClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TabEmpresa.Enabled = False
+
+        Dim clnCategoria As New clsCategoria
+        Dim dsCategoria As New Data.DataSet
+        dsCategoria = clnCategoria.Listar("")
+        With cbTipo
+            .DataSource = dsCategoria.Tables(0)
+            .DisplayMember = "Descricao"
+            .ValueMember = "Codigo"
+        End With
+
     End Sub
 
     Private Sub btSair_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSair.Click
@@ -335,6 +345,33 @@ Public Class frmCadastroClientes
     End Sub
 
     Private Sub txtCodRFB_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCodRFB.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub txtSimplesNacional_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSimplesNacional.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub txtSenhaWebPJ_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSenhaWebPJ.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub txtNIRE_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNIRE.KeyPress
         Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
         KeyAscii = CShort(SoNumeros(KeyAscii))
         If KeyAscii = 0 Then
