@@ -177,6 +177,7 @@ Partial Class frmCadastroClientes
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtEmprCPF = New System.Windows.Forms.MaskedTextBox()
+        Me.cboCliente = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1438,6 +1439,7 @@ Partial Class frmCadastroClientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cboCliente)
         Me.GroupBox1.Controls.Add(Me.txtEmprCPF)
         Me.GroupBox1.Controls.Add(Me.Label37)
         Me.GroupBox1.Controls.Add(Me.Label38)
@@ -1693,6 +1695,14 @@ Partial Class frmCadastroClientes
         Me.txtEmprCPF.Size = New System.Drawing.Size(89, 20)
         Me.txtEmprCPF.TabIndex = 72
         '
+        'cboCliente
+        '
+        Me.cboCliente.FormattingEnabled = True
+        Me.cboCliente.Location = New System.Drawing.Point(237, 244)
+        Me.cboCliente.Name = "cboCliente"
+        Me.cboCliente.Size = New System.Drawing.Size(186, 21)
+        Me.cboCliente.TabIndex = 73
+        '
         'frmCadastroClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1880,4 +1890,5 @@ Partial Class frmCadastroClientes
     Public WithEvents txtEmprSimei As System.Windows.Forms.TextBox
     Friend WithEvents chbSIMEI As System.Windows.Forms.CheckBox
     Public WithEvents txtEmprCPF As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents cboCliente As System.Windows.Forms.ComboBox
 End Class

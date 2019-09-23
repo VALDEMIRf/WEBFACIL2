@@ -20,7 +20,14 @@ Public Class frmCadastroClientes
             .ValueMember = "Codigo"
         End With
 
-        
+        Dim clnCliente As New clsCliente
+        Dim dsCliente As New Data.DataSet
+        dsCliente = clnCliente.ListarCpf("")
+        With cboCliente
+            .DataSource = dsCliente.Tables(0)
+            .DisplayMember = "Descricao"
+            .ValueMember = "Codigo"
+        End With
 
     End Sub
 
@@ -127,6 +134,11 @@ Public Class frmCadastroClientes
         Dim clnCategoria As New clsCategoria
         clnCategoria.cat_ID = cbTipo.SelectedValue
 
+        Dim clnCliente As New clsCliente 
+        clnCliente.cli_id = txtEmprCPF.SelectedText.Trim
+
+        ' clnCliente.cli_CPF = cboCliente.SelectedValue
+
         Dim recebeIDCliente As Integer
         recebeIDCliente = lblciID.Text
 
@@ -140,7 +152,7 @@ Public Class frmCadastroClientes
             empresa.empr_atividade = txtAtividade.Text
             empresa.empr_Porte = txtEmprPorte.Text
             ' empresa.clsCliente = clnCliente
-            empresa.clsCliente.cli_id = lblciID.Text
+            empresa.clsCliente = clnCliente
             empresa.clsCategoria = clnCategoria
             empresa.empr_dataInicio = dtpDataInicio.Text
             empresa.empr_endereco = txtEmprEndereco.Text

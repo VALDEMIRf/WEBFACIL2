@@ -690,7 +690,7 @@ Public Class clsCliente
         Dim cldBancoDados As New cldBancoDados()
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
-    Public Function ListarCPF(ByVal strDescricao As String) As DataSet
+    Public Function ListarCpf(ByVal strDescricao As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder
         strQuery.Append(" SELECT cli_id as Codigo,cli_CPF as Descricao")
