@@ -116,11 +116,13 @@ Partial Class frmCadastroClientes
         Me.txtCPF = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabEmpresa = New System.Windows.Forms.TabPage()
+        Me.txtEmprSimei = New System.Windows.Forms.TextBox()
+        Me.chbSIMEI = New System.Windows.Forms.CheckBox()
         Me.txtSenhaPJValidade = New System.Windows.Forms.MaskedTextBox()
         Me.lblSenhaPJValidade = New System.Windows.Forms.Label()
         Me.lblSenhaWebPJ = New System.Windows.Forms.Label()
         Me.txtSenhaWebPJ = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chbSenhaWebPJ = New System.Windows.Forms.CheckBox()
         Me.lblSimplesNacilnal = New System.Windows.Forms.Label()
         Me.lblSenha = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
@@ -148,6 +150,7 @@ Partial Class frmCadastroClientes
         Me.txtEmprNum = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.txtNIRE = New System.Windows.Forms.TextBox()
         Me.txtEmprPorte = New System.Windows.Forms.TextBox()
@@ -173,6 +176,7 @@ Partial Class frmCadastroClientes
         Me.btSair = New System.Windows.Forms.Button()
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtEmprCPF = New System.Windows.Forms.MaskedTextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1081,7 +1085,7 @@ Partial Class frmCadastroClientes
         Me.txtCPF.Location = New System.Drawing.Point(62, 23)
         Me.txtCPF.Mask = "000.000.000-00"
         Me.txtCPF.Name = "txtCPF"
-        Me.txtCPF.Size = New System.Drawing.Size(121, 20)
+        Me.txtCPF.Size = New System.Drawing.Size(86, 20)
         Me.txtCPF.TabIndex = 1
         '
         'Label2
@@ -1096,11 +1100,13 @@ Partial Class frmCadastroClientes
         'TabEmpresa
         '
         Me.TabEmpresa.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.TabEmpresa.Controls.Add(Me.txtEmprSimei)
+        Me.TabEmpresa.Controls.Add(Me.chbSIMEI)
         Me.TabEmpresa.Controls.Add(Me.txtSenhaPJValidade)
         Me.TabEmpresa.Controls.Add(Me.lblSenhaPJValidade)
         Me.TabEmpresa.Controls.Add(Me.lblSenhaWebPJ)
         Me.TabEmpresa.Controls.Add(Me.txtSenhaWebPJ)
-        Me.TabEmpresa.Controls.Add(Me.CheckBox1)
+        Me.TabEmpresa.Controls.Add(Me.chbSenhaWebPJ)
         Me.TabEmpresa.Controls.Add(Me.lblSimplesNacilnal)
         Me.TabEmpresa.Controls.Add(Me.lblSenha)
         Me.TabEmpresa.Controls.Add(Me.lblUsuario)
@@ -1121,9 +1127,28 @@ Partial Class frmCadastroClientes
         Me.TabEmpresa.TabIndex = 1
         Me.TabEmpresa.Text = "Empresa"
         '
+        'txtEmprSimei
+        '
+        Me.txtEmprSimei.Location = New System.Drawing.Point(806, 75)
+        Me.txtEmprSimei.Name = "txtEmprSimei"
+        Me.txtEmprSimei.Size = New System.Drawing.Size(160, 20)
+        Me.txtEmprSimei.TabIndex = 110
+        Me.txtEmprSimei.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtEmprSimei.Visible = False
+        '
+        'chbSIMEI
+        '
+        Me.chbSIMEI.AutoSize = True
+        Me.chbSIMEI.Location = New System.Drawing.Point(635, 77)
+        Me.chbSIMEI.Name = "chbSIMEI"
+        Me.chbSIMEI.Size = New System.Drawing.Size(55, 17)
+        Me.chbSIMEI.TabIndex = 109
+        Me.chbSIMEI.Text = "SIMEI"
+        Me.chbSIMEI.UseVisualStyleBackColor = True
+        '
         'txtSenhaPJValidade
         '
-        Me.txtSenhaPJValidade.Location = New System.Drawing.Point(822, 187)
+        Me.txtSenhaPJValidade.Location = New System.Drawing.Point(822, 263)
         Me.txtSenhaPJValidade.Mask = "00/00/0000"
         Me.txtSenhaPJValidade.Name = "txtSenhaPJValidade"
         Me.txtSenhaPJValidade.Size = New System.Drawing.Size(91, 20)
@@ -1134,7 +1159,7 @@ Partial Class frmCadastroClientes
         'lblSenhaPJValidade
         '
         Me.lblSenhaPJValidade.AutoSize = True
-        Me.lblSenhaPJValidade.Location = New System.Drawing.Point(750, 195)
+        Me.lblSenhaPJValidade.Location = New System.Drawing.Point(750, 271)
         Me.lblSenhaPJValidade.Name = "lblSenhaPJValidade"
         Me.lblSenhaPJValidade.Size = New System.Drawing.Size(51, 13)
         Me.lblSenhaPJValidade.TabIndex = 107
@@ -1144,7 +1169,7 @@ Partial Class frmCadastroClientes
         'lblSenhaWebPJ
         '
         Me.lblSenhaWebPJ.AutoSize = True
-        Me.lblSenhaWebPJ.Location = New System.Drawing.Point(750, 162)
+        Me.lblSenhaWebPJ.Location = New System.Drawing.Point(750, 238)
         Me.lblSenhaWebPJ.Name = "lblSenhaWebPJ"
         Me.lblSenhaWebPJ.Size = New System.Drawing.Size(41, 13)
         Me.lblSenhaWebPJ.TabIndex = 104
@@ -1153,21 +1178,21 @@ Partial Class frmCadastroClientes
         '
         'txtSenhaWebPJ
         '
-        Me.txtSenhaWebPJ.Location = New System.Drawing.Point(822, 154)
+        Me.txtSenhaWebPJ.Location = New System.Drawing.Point(822, 230)
         Me.txtSenhaWebPJ.Name = "txtSenhaWebPJ"
         Me.txtSenhaWebPJ.Size = New System.Drawing.Size(160, 20)
         Me.txtSenhaWebPJ.TabIndex = 106
         Me.txtSenhaWebPJ.Visible = False
         '
-        'CheckBox1
+        'chbSenhaWebPJ
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(635, 176)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(98, 17)
-        Me.CheckBox1.TabIndex = 105
-        Me.CheckBox1.Text = "Senha Web PJ"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chbSenhaWebPJ.AutoSize = True
+        Me.chbSenhaWebPJ.Location = New System.Drawing.Point(635, 252)
+        Me.chbSenhaWebPJ.Name = "chbSenhaWebPJ"
+        Me.chbSenhaWebPJ.Size = New System.Drawing.Size(98, 17)
+        Me.chbSenhaWebPJ.TabIndex = 105
+        Me.chbSenhaWebPJ.Text = "Senha Web PJ"
+        Me.chbSenhaWebPJ.UseVisualStyleBackColor = True
         '
         'lblSimplesNacilnal
         '
@@ -1182,7 +1207,7 @@ Partial Class frmCadastroClientes
         'lblSenha
         '
         Me.lblSenha.AutoSize = True
-        Me.lblSenha.Location = New System.Drawing.Point(766, 120)
+        Me.lblSenha.Location = New System.Drawing.Point(766, 196)
         Me.lblSenha.Name = "lblSenha"
         Me.lblSenha.Size = New System.Drawing.Size(38, 13)
         Me.lblSenha.TabIndex = 102
@@ -1192,7 +1217,7 @@ Partial Class frmCadastroClientes
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Location = New System.Drawing.Point(758, 86)
+        Me.lblUsuario.Location = New System.Drawing.Point(758, 162)
         Me.lblUsuario.Name = "lblUsuario"
         Me.lblUsuario.Size = New System.Drawing.Size(43, 13)
         Me.lblUsuario.TabIndex = 101
@@ -1201,7 +1226,7 @@ Partial Class frmCadastroClientes
         '
         'txtSefazSen
         '
-        Me.txtSefazSen.Location = New System.Drawing.Point(822, 116)
+        Me.txtSefazSen.Location = New System.Drawing.Point(822, 192)
         Me.txtSefazSen.Name = "txtSefazSen"
         Me.txtSefazSen.Size = New System.Drawing.Size(160, 20)
         Me.txtSefazSen.TabIndex = 100
@@ -1209,7 +1234,7 @@ Partial Class frmCadastroClientes
         '
         'txtSefazUsu
         '
-        Me.txtSefazUsu.Location = New System.Drawing.Point(822, 81)
+        Me.txtSefazUsu.Location = New System.Drawing.Point(822, 157)
         Me.txtSefazUsu.Name = "txtSefazUsu"
         Me.txtSefazUsu.Size = New System.Drawing.Size(160, 20)
         Me.txtSefazUsu.TabIndex = 99
@@ -1218,7 +1243,7 @@ Partial Class frmCadastroClientes
         'chbSefaz
         '
         Me.chbSefaz.AutoSize = True
-        Me.chbSefaz.Location = New System.Drawing.Point(635, 108)
+        Me.chbSefaz.Location = New System.Drawing.Point(635, 184)
         Me.chbSefaz.Name = "chbSefaz"
         Me.chbSefaz.Size = New System.Drawing.Size(94, 17)
         Me.chbSefaz.TabIndex = 98
@@ -1413,6 +1438,8 @@ Partial Class frmCadastroClientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtEmprCPF)
+        Me.GroupBox1.Controls.Add(Me.Label37)
         Me.GroupBox1.Controls.Add(Me.Label38)
         Me.GroupBox1.Controls.Add(Me.txtNIRE)
         Me.GroupBox1.Controls.Add(Me.txtEmprPorte)
@@ -1441,6 +1468,15 @@ Partial Class frmCadastroClientes
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Dados da Empresa"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(72, 254)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(42, 13)
+        Me.Label37.TabIndex = 70
+        Me.Label37.Text = "Cliente:"
         '
         'Label38
         '
@@ -1649,6 +1685,14 @@ Partial Class frmCadastroClientes
         '
         Me.errErro.ContainerControl = Me
         '
+        'txtEmprCPF
+        '
+        Me.txtEmprCPF.Location = New System.Drawing.Point(121, 248)
+        Me.txtEmprCPF.Mask = "000.000.000-00"
+        Me.txtEmprCPF.Name = "txtEmprCPF"
+        Me.txtEmprCPF.Size = New System.Drawing.Size(89, 20)
+        Me.txtEmprCPF.TabIndex = 72
+        '
         'frmCadastroClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1768,7 +1812,7 @@ Partial Class frmCadastroClientes
     Friend WithEvents lblSenhaPJValidade As System.Windows.Forms.Label
     Friend WithEvents lblSenhaWebPJ As System.Windows.Forms.Label
     Public WithEvents txtSenhaWebPJ As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents chbSenhaWebPJ As System.Windows.Forms.CheckBox
     Friend WithEvents lblSimplesNacilnal As System.Windows.Forms.Label
     Friend WithEvents lblSenha As System.Windows.Forms.Label
     Friend WithEvents lblUsuario As System.Windows.Forms.Label
@@ -1832,4 +1876,8 @@ Partial Class frmCadastroClientes
     Friend WithEvents chbCodRFB As System.Windows.Forms.CheckBox
     Friend WithEvents lblciID As System.Windows.Forms.Label
     Friend WithEvents errErro As System.Windows.Forms.ErrorProvider
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Public WithEvents txtEmprSimei As System.Windows.Forms.TextBox
+    Friend WithEvents chbSIMEI As System.Windows.Forms.CheckBox
+    Public WithEvents txtEmprCPF As System.Windows.Forms.MaskedTextBox
 End Class

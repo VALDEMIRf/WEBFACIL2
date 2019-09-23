@@ -690,7 +690,20 @@ Public Class clsCliente
         Dim cldBancoDados As New cldBancoDados()
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
+    Public Function ListarCPF(ByVal strDescricao As String) As DataSet
+        'Cria um StringBuilder para concatenar a Query Sql
+        Dim strQuery As New StringBuilder
+        strQuery.Append(" SELECT cli_id as Codigo,cli_CPF as Descricao")
+        ' strQuery.Append(" SELECT * FROM tbClientes ")
+        strQuery.Append(" FROM tbClientes ORDER BY cli_Id")
+        If Not strDescricao.Equals(String.Empty) Then
+            strQuery.Append(" WHERE cli_id like '%" & strDescricao & "%'")
+        End If
 
+        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
+        Dim cldBancoDados As New cldBancoDados()
+        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
+    End Function
    
     Public Sub AlterarDados()
 

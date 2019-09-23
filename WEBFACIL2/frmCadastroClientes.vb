@@ -6,6 +6,7 @@ Public Class frmCadastroClientes
     Dim con As New Conexao
     Dim CodigoCliente As Integer
     Dim cliente As New clsCliente
+    Dim empresa As New clsEmpresa
    
     Private Sub frmCadastroClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TabEmpresa.Enabled = False
@@ -18,6 +19,8 @@ Public Class frmCadastroClientes
             .DisplayMember = "Descricao"
             .ValueMember = "Codigo"
         End With
+
+        
 
     End Sub
 
@@ -107,6 +110,67 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
+    Private Sub btEmpresaSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEmpresaSalvar.Click
+        If txtRazaoSocial.Text.Equals(String.Empty) Then
+            errErro.SetError(txtRazaoSocial, "Digite O nome da Empresa")
+            Exit Sub
+        Else
+            errErro.SetError(txtRazaoSocial, "")
+        End If
+        If txtCNPJ.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCNPJ, "Digite o CNPJ da Empresa")
+            Exit Sub
+        Else
+            errErro.SetError(txtCNPJ, "")
+
+        End If
+        Dim clnCategoria As New clsCategoria
+        clnCategoria.cat_ID = cbTipo.SelectedValue
+
+        Dim recebeIDCliente As Integer
+        recebeIDCliente = lblciID.Text
+
+        Try
+            empresa.empr_razaosocial = txtRazaoSocial.Text
+            empresa.empr_nomefantasia = txtNomeFantasia.Text
+            empresa.empr_cnpj = txtCNPJ.Text
+            empresa.empr_NIRE = txtNIRE.Text
+            empresa.empr_InscrEstadual = txtInscrEstadual.Text
+            empresa.empr_CCM = txtCCM.Text
+            empresa.empr_atividade = txtAtividade.Text
+            empresa.empr_Porte = txtEmprPorte.Text
+            ' empresa.clsCliente = clnCliente
+            empresa.clsCliente.cli_id = lblciID.Text
+            empresa.clsCategoria = clnCategoria
+            empresa.empr_dataInicio = dtpDataInicio.Text
+            empresa.empr_endereco = txtEmprEndereco.Text
+            empresa.empr_numero = txtEmprNum.Text
+            empresa.empr_complemento = txtEmprComplemento.Text
+            empresa.empr_bairro = txtEmprBairro.Text
+            empresa.empr_cidade = txtEmprCidade.Text
+            empresa.empr_UF = txtEmprUF.Text
+            empresa.empr_CEP = txtEmprCEP.Text
+            empresa.empr_obs = txtEmprObs.Text
+            empresa.empr_Simples = chbSimples.Checked
+            empresa.empr_SimplesNacional = txtSimplesNacional.Text
+            empresa.empr_Simei = chbSIMEI.Checked
+            empresa.empr_CodSimei = txtEmprSimei.Text
+            empresa.empr_sefaz = chbSefaz.Checked
+            empresa.empr_SefazUsu = txtSefazUsu.Text
+            empresa.empr_SefazSen = txtSefazSen.Text
+            empresa.empr_CodReceitaPJ = chbSenhaWebPJ.Checked
+            empresa.empr_NumCodReceitaPJ = txtSenhaWebPJ.Text
+
+            empresa.GravarDados()
+            LimparCampos()
+
+        Catch ex As Exception
+            ' MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
+
+    End Sub
+
     Private Sub btLimpar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btLimpar.Click
         LimparCampos()
     End Sub
@@ -120,6 +184,7 @@ Public Class frmCadastroClientes
         CodigoCliente = frmClienteConsulta.cli_id
         lblciID.Text = frmClienteConsulta.cli_id
         txtCPF.Text = frmClienteConsulta.cli_CPF
+        txtEmprCPF.Text = frmClienteConsulta.cli_CPF
         txtRG.Text = frmClienteConsulta.cli_RG
         txtNome.Text = frmClienteConsulta.cli_Nome
         txtPIS.Text = frmClienteConsulta.cli_PIS
@@ -314,6 +379,37 @@ Public Class frmCadastroClientes
         chbCodRFB.Checked = False
         txtCodRFB.Text = ""
         txtValidadeRFB.Text = ""
+
+        txtRazaoSocial.Text = ""
+        txtNomeFantasia.Text = ""
+        txtCNPJ.Text = ""
+        txtNIRE.Text = ""
+        txtInscrEstadual.Text = ""
+        txtCCM.Text = ""
+        txtAtividade.Text = ""
+        txtEmprPorte.Text = ""
+        ' clnCliente()
+        ' empresa.clsCliente.cli_id = recebeIDCliente.ToString
+        ' empresa.clsCategoria = clnCategoria
+        dtpDataInicio.Text = ""
+        txtEmprEndereco.Text = ""
+        txtEmprNum.Text = ""
+        txtEmprComplemento.Text = ""
+        txtEmprBairro.Text = ""
+        txtEmprCidade.Text = ""
+        txtEmprUF.Text = ""
+        txtEmprCEP.Text = ""
+        txtEmprObs.Text = ""
+        chbSimples.Checked = False
+        txtSimplesNacional.Text = ""
+        chbSIMEI.Checked = False
+        txtEmprSimei.Text = ""
+        chbSefaz.Checked = False
+        txtSefazUsu.Text = ""
+        txtSefazSen.Text = ""
+        chbSenhaWebPJ.Checked = False
+        txtSenhaWebPJ.Text = ""
+
     End Sub
 
     Private Sub txtPIS_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPIS.KeyPress
@@ -589,11 +685,12 @@ Public Class frmCadastroClientes
         Try
             If chbMEI.Checked = True Then
                 ' lblMEI.Visible = True
-                txtMEI.Visible = True
+                TabEmpresa.Enabled = True
+                ' txtMEI.Visible = True
 
             Else
                 '   lblMEI.Visible = False
-                txtMEI.Visible = False
+                ' txtMEI.Visible = False
 
             End If
         Catch ex As Exception
@@ -739,21 +836,31 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
-    Private Sub btEmpresaSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEmpresaSalvar.Click
-        If txtRazaoSocial.Text.Equals(String.Empty) Then
-            errErro.SetError(txtRazaoSocial, "Digite O nome da Empresa")
-            Exit Sub
-        Else
-            errErro.SetError(txtRazaoSocial, "")
-        End If
-        If txtCNPJ.Text.Equals(String.Empty) Then
-            errErro.SetError(txtCNPJ, "Digite o CNPJ da Empresa")
-            Exit Sub
-        Else
-            errErro.SetError(txtCNPJ, "")
+    
 
-        End If
-        Dim clnCategoria As New clsCategoria
-        clnCategoria.cat_ID = cbTipo.SelectedValue
-    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 End Class
