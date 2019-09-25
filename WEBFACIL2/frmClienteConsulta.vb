@@ -2,6 +2,7 @@
 Public Class frmClienteConsulta
     Public Enum TipoConsulta
         Cliente
+        '  Empresa
     End Enum
 
     Private Sub CarregaGrid()
@@ -10,6 +11,10 @@ Public Class frmClienteConsulta
             Case TipoConsulta.Cliente
                 Dim clnCliente As New clsCliente
                 dsConsulta = clnCliente.Listar(txtCPFPesquisa.Text)
+
+                'Case TipoConsulta.Empresa
+                '    Dim clnEmpresa As New clsEmpresa
+                '    dsConsulta = clnEmpresa.Listar(txtCPFPesquisa.Text)
         End Select
         dgvGrid.DataSource = dsConsulta.Tables(0)
     End Sub
@@ -605,6 +610,309 @@ Public Class frmClienteConsulta
         End Set
     End Property
 
+    Private _empr_ID As Integer
+    Public Property empr_ID() As Integer
+        Get
+            Return _empr_ID
+        End Get
+        Set(ByVal value As Integer)
+            _empr_ID = value
+        End Set
+    End Property
+
+    Private _empr_razaosocial As String
+
+    Public Property empr_razaosocial() As String
+        Get
+            Return _empr_razaosocial
+        End Get
+        Set(ByVal value As String)
+            _empr_razaosocial = value
+        End Set
+    End Property
+
+    Private _empr_nomefantasia As String
+    Public Property empr_nomefantasia() As String
+        Get
+            Return _empr_nomefantasia
+        End Get
+        Set(ByVal value As String)
+            _empr_nomefantasia = value
+        End Set
+    End Property
+
+    Private _empr_cnpj As String
+    Public Property empr_cnpj() As String
+        Get
+            Return _empr_cnpj
+        End Get
+        Set(ByVal value As String)
+            _empr_cnpj = value
+        End Set
+    End Property
+
+    Private _empr_NIRE As String
+    Public Property empr_NIRE() As String
+        Get
+            Return _empr_NIRE
+        End Get
+        Set(ByVal value As String)
+            _empr_NIRE = value
+        End Set
+    End Property
+
+    Private _empr_InscrEstadual As String
+    Public Property empr_InscrEstadual() As String
+        Get
+            Return _empr_InscrEstadual
+        End Get
+        Set(ByVal value As String)
+            _empr_InscrEstadual = value
+        End Set
+    End Property
+
+    Private _empr_CCM As String
+    Public Property empr_CCM() As String
+        Get
+            Return _empr_CCM
+        End Get
+        Set(ByVal value As String)
+            _empr_CCM = value
+        End Set
+    End Property
+
+    Private _empr_atividade As String
+    Public Property empr_atividade() As String
+        Get
+            Return _empr_atividade
+        End Get
+        Set(ByVal value As String)
+            _empr_atividade = value
+        End Set
+    End Property
+
+    Private _empr_Porte As String
+    Public Property empr_Porte() As String
+        Get
+            Return _empr_Porte
+        End Get
+        Set(ByVal value As String)
+            _empr_Porte = value
+        End Set
+    End Property
+
+    Private _clsCategoria As clsCategoria
+    Public Property clsCategoria() As clsCategoria
+        Get
+            Return _clsCategoria
+        End Get
+        Set(ByVal value As clsCategoria)
+            _clsCategoria = value
+        End Set
+    End Property
+
+    Private _clsCliente As clsCliente
+    Public Property clsCliente() As clsCliente
+        Get
+            Return _clsCliente
+        End Get
+        Set(ByVal value As clsCliente)
+            _clsCliente = value
+        End Set
+    End Property
+
+
+    Private _empr_lblclienteID As Integer
+    Public Property empr_lblclienteID() As Integer
+        Get
+            Return _empr_lblclienteID
+        End Get
+        Set(ByVal value As Integer)
+            _empr_lblclienteID = value
+        End Set
+    End Property
+
+    Private _empr_dataInicio As String
+    Public Property empr_dataInicio() As String
+        Get
+            Return _empr_dataInicio
+        End Get
+        Set(ByVal value As String)
+            _empr_dataInicio = value
+        End Set
+    End Property
+
+    Private _empr_endereco As String
+    Public Property empr_endereco() As String
+        Get
+            Return _empr_endereco
+        End Get
+        Set(ByVal value As String)
+            _empr_endereco = value
+        End Set
+    End Property
+
+    Private _empr_numero As String
+    Public Property empr_numero() As String
+        Get
+            Return _empr_numero
+        End Get
+        Set(ByVal value As String)
+            _empr_numero = value
+        End Set
+    End Property
+
+    Private _empr_complemento As String
+    Public Property empr_complemento() As String
+        Get
+            Return _empr_complemento
+        End Get
+        Set(ByVal value As String)
+            _empr_complemento = value
+        End Set
+    End Property
+
+    Private _empr_bairro As String
+    Public Property empr_bairro() As String
+        Get
+            Return _empr_bairro
+        End Get
+        Set(ByVal value As String)
+            _empr_bairro = value
+        End Set
+    End Property
+
+    Private _empr_cidade As String
+    Public Property empr_cidade() As String
+        Get
+            Return _empr_cidade
+        End Get
+        Set(ByVal value As String)
+            _empr_cidade = value
+        End Set
+    End Property
+
+    Private _empr_UF As String
+    Public Property empr_UF() As String
+        Get
+            Return _empr_UF
+        End Get
+        Set(ByVal value As String)
+            _empr_UF = value
+        End Set
+    End Property
+
+    Private _empr_CEP As String
+    Public Property empr_CEP() As String
+        Get
+            Return _empr_CEP
+        End Get
+        Set(ByVal value As String)
+            _empr_CEP = value
+        End Set
+    End Property
+
+    Private _empr_obs As String
+    Public Property empr_obs() As String
+        Get
+            Return _empr_obs
+        End Get
+        Set(ByVal value As String)
+            _empr_obs = value
+        End Set
+    End Property
+
+    Private _empr_Simples As Boolean
+    Public Property empr_Simples() As Boolean
+        Get
+            Return _empr_Simples
+        End Get
+        Set(ByVal value As Boolean)
+            _empr_Simples = value
+        End Set
+    End Property
+
+    Private _empr_SimplesNacional As String
+    Public Property empr_SimplesNacional() As String
+        Get
+            Return _empr_SimplesNacional
+        End Get
+        Set(ByVal value As String)
+            _empr_SimplesNacional = value
+        End Set
+    End Property
+
+    Private _empr_Simei As Boolean
+    Public Property empr_Simei() As Boolean
+        Get
+            Return _empr_Simei
+        End Get
+        Set(ByVal value As Boolean)
+            _empr_Simei = value
+        End Set
+    End Property
+
+    Private _empr_CodSimei As String
+    Public Property empr_CodSimei() As String
+        Get
+            Return _empr_CodSimei
+        End Get
+        Set(ByVal value As String)
+            _empr_CodSimei = value
+        End Set
+    End Property
+
+    Private _empr_sefaz As Boolean
+    Public Property empr_sefaz() As Boolean
+        Get
+            Return _empr_sefaz
+        End Get
+        Set(ByVal value As Boolean)
+            _empr_sefaz = value
+        End Set
+    End Property
+
+    Private _empr_SefazUsu As String
+    Public Property empr_SefazUsu() As String
+        Get
+            Return _empr_SefazUsu
+        End Get
+        Set(ByVal value As String)
+            _empr_SefazUsu = value
+        End Set
+    End Property
+
+    Private _empr_SefazSen As String
+    Public Property empr_SefazSen() As String
+        Get
+            Return _empr_SefazSen
+        End Get
+        Set(ByVal value As String)
+            _empr_SefazSen = value
+        End Set
+    End Property
+
+    Private _empr_CodReceitaPJ As Boolean
+    Public Property empr_CodReceitaPJ() As Boolean
+        Get
+            Return _empr_CodReceitaPJ
+        End Get
+        Set(ByVal value As Boolean)
+            _empr_CodReceitaPJ = value
+        End Set
+    End Property
+
+    Private _empr_NumCodReceitaPJ As String
+    Public Property empr_NumCodReceitaPJ() As String
+        Get
+            Return _empr_NumCodReceitaPJ
+        End Get
+        Set(ByVal value As String)
+            _empr_NumCodReceitaPJ = value
+        End Set
+    End Property
+
+
     Private Sub btPesquisaCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisaCliente.Click
         CarregaGrid()
     End Sub
@@ -673,9 +981,41 @@ Public Class frmClienteConsulta
                     _cli_CodRFB = dgvGrid.CurrentRow.Cells(52).Value
                     _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(53).Value
                     _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(54).Value
+                    '  End If
+                    'ENVIO DE DADOS DA EMPRESA
+                    _empr_ID = dgvGrid.CurrentRow.Cells(55).Value
+                    _empr_razaosocial = dgvGrid.CurrentRow.Cells(56).Value
+                    _empr_nomefantasia = dgvGrid.CurrentRow.Cells(57).Value
+                    _empr_cnpj = dgvGrid.CurrentRow.Cells(58).Value
+                    _empr_NIRE = dgvGrid.CurrentRow.Cells(59).Value
+                    _empr_InscrEstadual = dgvGrid.CurrentRow.Cells(60).Value
+                    _empr_CCM = dgvGrid.CurrentRow.Cells(61).Value
+                    _empr_atividade = dgvGrid.CurrentRow.Cells(62).Value
+                    _empr_Porte = dgvGrid.CurrentRow.Cells(63).Value
+                    _empr_lblclienteID = dgvGrid.CurrentRow.Cells(64).Value
+                    ' _clsCategoria.cat_ID = dgvGrid.CurrentRow.Cells(65).Value
+                    _empr_dataInicio = dgvGrid.CurrentRow.Cells(66).Value
+                    _empr_endereco = dgvGrid.CurrentRow.Cells(67).Value
+                    _empr_numero = dgvGrid.CurrentRow.Cells(68).Value
+                    _empr_complemento = dgvGrid.CurrentRow.Cells(69).Value
+                    _empr_bairro = dgvGrid.CurrentRow.Cells(70).Value
+                    _empr_cidade = dgvGrid.CurrentRow.Cells(71).Value
+                    _empr_UF = dgvGrid.CurrentRow.Cells(72).Value
+                    _empr_CEP = dgvGrid.CurrentRow.Cells(73).Value
+                    _empr_obs = dgvGrid.CurrentRow.Cells(74).Value
+                    _empr_Simples = dgvGrid.CurrentRow.Cells(75).Value
+                    _empr_SimplesNacional = dgvGrid.CurrentRow.Cells(76).Value
+                    _empr_Simei = dgvGrid.CurrentRow.Cells(77).Value
+                    _empr_CodSimei = dgvGrid.CurrentRow.Cells(78).Value
+                    _empr_sefaz = dgvGrid.CurrentRow.Cells(79).Value
+                    _empr_SefazUsu = dgvGrid.CurrentRow.Cells(80).Value
+                    _empr_SefazSen = dgvGrid.CurrentRow.Cells(81).Value
+                    _empr_CodReceitaPJ = dgvGrid.CurrentRow.Cells(82).Value
+                    _empr_NumCodReceitaPJ = dgvGrid.CurrentRow.Cells(83).Value
                     Me.Close()
+
                 End If
-               
+
         End Select
     End Sub
 
@@ -736,6 +1076,37 @@ Public Class frmClienteConsulta
             _cli_CodRFB = dgvGrid.CurrentRow.Cells(52).Value
             _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(53).Value
             _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(54).Value
+            'ENVIO DE DADOS DA EMPRESA
+            _empr_ID = dgvGrid.CurrentRow.Cells(55).Value
+            _empr_razaosocial = dgvGrid.CurrentRow.Cells(56).Value
+            _empr_nomefantasia = dgvGrid.CurrentRow.Cells(57).Value
+            _empr_cnpj = dgvGrid.CurrentRow.Cells(58).Value
+            _empr_NIRE = dgvGrid.CurrentRow.Cells(59).Value
+            _empr_InscrEstadual = dgvGrid.CurrentRow.Cells(60).Value
+            _empr_CCM = dgvGrid.CurrentRow.Cells(61).Value
+            _empr_atividade = dgvGrid.CurrentRow.Cells(62).Value
+            _empr_Porte = dgvGrid.CurrentRow.Cells(63).Value
+            _empr_lblclienteID = dgvGrid.CurrentRow.Cells(64).Value
+            ' _clsCategoria.cat_ID = dgvGrid.CurrentRow.Cells(65).Value
+            _empr_dataInicio = dgvGrid.CurrentRow.Cells(66).Value
+            _empr_endereco = dgvGrid.CurrentRow.Cells(67).Value
+            _empr_numero = dgvGrid.CurrentRow.Cells(68).Value
+            _empr_complemento = dgvGrid.CurrentRow.Cells(69).Value
+            _empr_bairro = dgvGrid.CurrentRow.Cells(70).Value
+            _empr_cidade = dgvGrid.CurrentRow.Cells(71).Value
+            _empr_UF = dgvGrid.CurrentRow.Cells(72).Value
+            _empr_CEP = dgvGrid.CurrentRow.Cells(73).Value
+            _empr_obs = dgvGrid.CurrentRow.Cells(74).Value
+            _empr_Simples = dgvGrid.CurrentRow.Cells(75).Value
+            _empr_SimplesNacional = dgvGrid.CurrentRow.Cells(76).Value
+            _empr_Simei = dgvGrid.CurrentRow.Cells(77).Value
+            _empr_CodSimei = dgvGrid.CurrentRow.Cells(78).Value
+            _empr_sefaz = dgvGrid.CurrentRow.Cells(79).Value
+            _empr_SefazUsu = dgvGrid.CurrentRow.Cells(80).Value
+            _empr_SefazSen = dgvGrid.CurrentRow.Cells(81).Value
+            _empr_CodReceitaPJ = dgvGrid.CurrentRow.Cells(82).Value
+            _empr_NumCodReceitaPJ = dgvGrid.CurrentRow.Cells(83).Value
+
             Me.Close()
         End If
     End Sub

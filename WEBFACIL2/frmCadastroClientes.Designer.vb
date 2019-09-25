@@ -178,6 +178,7 @@ Partial Class frmCadastroClientes
         Me.btSair = New System.Windows.Forms.Button()
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.lblidEmpresa = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -229,7 +230,6 @@ Partial Class frmCadastroClientes
         Me.Panel1.Controls.Add(Me.chbRedesim)
         Me.Panel1.Controls.Add(Me.lblEsocialSenha)
         Me.Panel1.Controls.Add(Me.txtEsocialSenha)
-        Me.Panel1.Controls.Add(Me.btLimpar)
         Me.Panel1.Controls.Add(Me.txtValidadeRFB)
         Me.Panel1.Controls.Add(Me.lblValidoRFB)
         Me.Panel1.Controls.Add(Me.txtSenhaWeb)
@@ -377,9 +377,9 @@ Partial Class frmCadastroClientes
         Me.btLimpar.FlatAppearance.BorderSize = 0
         Me.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btLimpar.Image = CType(resources.GetObject("btLimpar.Image"), System.Drawing.Image)
-        Me.btLimpar.Location = New System.Drawing.Point(345, 4)
+        Me.btLimpar.Location = New System.Drawing.Point(1147, 117)
         Me.btLimpar.Name = "btLimpar"
-        Me.btLimpar.Size = New System.Drawing.Size(112, 56)
+        Me.btLimpar.Size = New System.Drawing.Size(105, 48)
         Me.btLimpar.TabIndex = 84
         Me.btLimpar.Text = "Limpar Campos"
         Me.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -428,7 +428,7 @@ Partial Class frmCadastroClientes
         Me.btAlterarDados.FlatAppearance.BorderSize = 0
         Me.btAlterarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAlterarDados.Image = CType(resources.GetObject("btAlterarDados.Image"), System.Drawing.Image)
-        Me.btAlterarDados.Location = New System.Drawing.Point(343, 55)
+        Me.btAlterarDados.Location = New System.Drawing.Point(345, 3)
         Me.btAlterarDados.Name = "btAlterarDados"
         Me.btAlterarDados.Size = New System.Drawing.Size(93, 67)
         Me.btAlterarDados.TabIndex = 76
@@ -467,7 +467,7 @@ Partial Class frmCadastroClientes
         Me.btSalvar.FlatAppearance.BorderSize = 0
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(456, 4)
+        Me.btSalvar.Location = New System.Drawing.Point(456, 10)
         Me.btSalvar.Name = "btSalvar"
         Me.btSalvar.Size = New System.Drawing.Size(100, 41)
         Me.btSalvar.TabIndex = 24
@@ -1439,6 +1439,7 @@ Partial Class frmCadastroClientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblidEmpresa)
         Me.GroupBox1.Controls.Add(Me.cboCliente)
         Me.GroupBox1.Controls.Add(Me.txtEmprCPF)
         Me.GroupBox1.Controls.Add(Me.Label37)
@@ -1705,15 +1706,25 @@ Partial Class frmCadastroClientes
         '
         Me.errErro.ContainerControl = Me
         '
+        'lblidEmpresa
+        '
+        Me.lblidEmpresa.AutoSize = True
+        Me.lblidEmpresa.Location = New System.Drawing.Point(54, 20)
+        Me.lblidEmpresa.Name = "lblidEmpresa"
+        Me.lblidEmpresa.Size = New System.Drawing.Size(13, 13)
+        Me.lblidEmpresa.TabIndex = 74
+        Me.lblidEmpresa.Text = "0"
+        '
         'frmCadastroClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1227, 681)
+        Me.ClientSize = New System.Drawing.Size(1264, 681)
         Me.Controls.Add(Me.lblciID)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.btLimpar)
         Me.Name = "frmCadastroClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cadastro de Clientes"
@@ -1893,4 +1904,5 @@ Partial Class frmCadastroClientes
     Friend WithEvents chbSIMEI As System.Windows.Forms.CheckBox
     Public WithEvents txtEmprCPF As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cboCliente As System.Windows.Forms.ComboBox
+    Friend WithEvents lblidEmpresa As System.Windows.Forms.Label
 End Class

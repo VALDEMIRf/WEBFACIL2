@@ -249,7 +249,35 @@ Public Class frmCadastroClientes
         txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
         txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
 
-       
+        'PESQUISA DE CAMPOS DA EMPRESA
+        txtRazaoSocial.Text = frmClienteConsulta.empr_razaosocial
+        txtNomeFantasia.Text = frmClienteConsulta.empr_nomefantasia
+        txtCNPJ.Text = frmClienteConsulta.empr_cnpj
+        txtNIRE.Text = frmClienteConsulta.empr_NIRE
+        txtInscrEstadual.Text = frmClienteConsulta.empr_InscrEstadual
+        txtCCM.Text = frmClienteConsulta.empr_CCM
+        txtAtividade.Text = frmClienteConsulta.empr_atividade
+        txtEmprPorte.Text = frmClienteConsulta.empr_Porte
+        dtpDataInicio.Text = frmClienteConsulta.empr_dataInicio
+        txtEmprEndereco.Text = frmClienteConsulta.empr_endereco
+        txtEmprNum.Text = frmClienteConsulta.empr_numero
+        txtEmprComplemento.Text = frmClienteConsulta.empr_complemento
+        txtEmprBairro.Text = frmClienteConsulta.empr_bairro
+        txtEmprCidade.Text = frmClienteConsulta.empr_cidade
+        lblclienteID.Text = frmClienteConsulta.empr_lblclienteID
+        txtEmprUF.Text = frmClienteConsulta.empr_UF
+        txtEmprCEP.Text = frmClienteConsulta.empr_CEP
+        txtEmprObs.Text = frmClienteConsulta.empr_obs
+        chbSimples.Checked = frmClienteConsulta.empr_Simples
+        txtSimplesNacional.Text = frmClienteConsulta.empr_SimplesNacional
+        chbSIMEI.Checked = frmClienteConsulta.empr_Simei
+        txtEmprSimei.Text = frmClienteConsulta.empr_CodSimei
+        chbSefaz.Checked = frmClienteConsulta.empr_sefaz
+        txtSefazUsu.Text = frmClienteConsulta.empr_SefazUsu
+        txtSefazSen.Text = frmClienteConsulta.empr_SefazSen
+        chbSenhaWebPJ.Checked = frmClienteConsulta.empr_CodReceitaPJ
+        txtSenhaWebPJ.Text = frmClienteConsulta.empr_NumCodReceitaPJ
+
     End Sub
 
     Private Sub btAlterarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDados.Click
@@ -453,12 +481,12 @@ Public Class frmCadastroClientes
     End Sub
 
     Private Sub txtCodRFB_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCodRFB.KeyPress
-        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
-        KeyAscii = CShort(SoNumeros(KeyAscii))
-        If KeyAscii = 0 Then
-            e.Handled = True
-            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+        'Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        'KeyAscii = CShort(SoNumeros(KeyAscii))
+        'If KeyAscii = 0 Then
+        '    e.Handled = True
+        '    MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'End If
     End Sub
 
     Private Sub txtSimplesNacional_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSimplesNacional.KeyPress

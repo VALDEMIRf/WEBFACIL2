@@ -123,26 +123,26 @@ Partial Class frmClienteConsulta
         'codigo
         '
         Me.codigo.DataPropertyName = "codigo"
-        Me.codigo.HeaderText = ""
+        Me.codigo.HeaderText = "codigo"
         Me.codigo.Name = "codigo"
         '
         'CPF
         '
         Me.CPF.DataPropertyName = "CPF"
-        Me.CPF.HeaderText = ""
+        Me.CPF.HeaderText = "CPF"
         Me.CPF.Name = "CPF"
         Me.CPF.Width = 150
         '
         'RG
         '
         Me.RG.DataPropertyName = "RG"
-        Me.RG.HeaderText = ""
+        Me.RG.HeaderText = "RG"
         Me.RG.Name = "RG"
         '
         'Nome
         '
         Me.Nome.DataPropertyName = "Nome"
-        Me.Nome.HeaderText = ""
+        Me.Nome.HeaderText = "Nome"
         Me.Nome.Name = "Nome"
         Me.Nome.Width = 400
         '
