@@ -109,6 +109,7 @@ Public Class frmCadastroClientes
             cliente.cli_DtCadastro = Now.Date
 
             cliente.GravarDados()
+            
             LimparCampos()
 
         Catch ex As Exception
@@ -135,9 +136,8 @@ Public Class frmCadastroClientes
         clnCategoria.cat_ID = cbTipo.SelectedValue
 
         Dim clnCliente As New clsCliente 
-        clnCliente.cli_id = txtEmprCPF.SelectedText.Trim
+        clnCliente.cli_id = cboCliente.SelectedValue
 
-        ' clnCliente.cli_CPF = cboCliente.SelectedValue
 
         Dim recebeIDCliente As Integer
         recebeIDCliente = lblciID.Text
@@ -151,8 +151,7 @@ Public Class frmCadastroClientes
             empresa.empr_CCM = txtCCM.Text
             empresa.empr_atividade = txtAtividade.Text
             empresa.empr_Porte = txtEmprPorte.Text
-            ' empresa.clsCliente = clnCliente
-            empresa.clsCliente = clnCliente
+            empresa.empr_lblclienteID = lblclienteID.Text
             empresa.clsCategoria = clnCategoria
             empresa.empr_dataInicio = dtpDataInicio.Text
             empresa.empr_endereco = txtEmprEndereco.Text
@@ -197,6 +196,7 @@ Public Class frmCadastroClientes
         lblciID.Text = frmClienteConsulta.cli_id
         txtCPF.Text = frmClienteConsulta.cli_CPF
         txtEmprCPF.Text = frmClienteConsulta.cli_CPF
+        lblclienteID.Text = frmClienteConsulta.cli_id
         txtRG.Text = frmClienteConsulta.cli_RG
         txtNome.Text = frmClienteConsulta.cli_Nome
         txtPIS.Text = frmClienteConsulta.cli_PIS
@@ -249,6 +249,7 @@ Public Class frmCadastroClientes
         txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
         txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
 
+       
     End Sub
 
     Private Sub btAlterarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDados.Click
@@ -400,15 +401,14 @@ Public Class frmCadastroClientes
         txtCCM.Text = ""
         txtAtividade.Text = ""
         txtEmprPorte.Text = ""
-        ' clnCliente()
-        ' empresa.clsCliente.cli_id = recebeIDCliente.ToString
-        ' empresa.clsCategoria = clnCategoria
         dtpDataInicio.Text = ""
         txtEmprEndereco.Text = ""
         txtEmprNum.Text = ""
         txtEmprComplemento.Text = ""
         txtEmprBairro.Text = ""
         txtEmprCidade.Text = ""
+        txtEmprCPF.Text = ""
+        cboCliente.Text = ""
         txtEmprUF.Text = ""
         txtEmprCEP.Text = ""
         txtEmprObs.Text = ""
@@ -421,7 +421,7 @@ Public Class frmCadastroClientes
         txtSefazSen.Text = ""
         chbSenhaWebPJ.Checked = False
         txtSenhaWebPJ.Text = ""
-
+        lblclienteID.Text = ""
     End Sub
 
     Private Sub txtPIS_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPIS.KeyPress
@@ -847,32 +847,5 @@ Public Class frmCadastroClientes
             MsgBox(ex.Message)
         End Try
     End Sub
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 End Class

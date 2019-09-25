@@ -9,6 +9,9 @@ Public Class clsCliente
     'Cria todos os métodos internos e propriedades externas com os mesmos atributos do banco de dados
 
     Private _cli_id As Integer
+    Friend Shared nome As Object
+
+
     Public Property cli_id() As Integer
         Get
             Return _cli_id
@@ -697,7 +700,7 @@ Public Class clsCliente
         ' strQuery.Append(" SELECT * FROM tbClientes ")
         strQuery.Append(" FROM tbClientes ORDER BY cli_Id")
         If Not strDescricao.Equals(String.Empty) Then
-            strQuery.Append(" WHERE cli_id like '%" & strDescricao & "%'")
+            strQuery.Append(" WHERE cli_CPF like '%" & strDescricao & "%'")
         End If
 
         'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader

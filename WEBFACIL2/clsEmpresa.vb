@@ -119,6 +119,17 @@ Public Class clsEmpresa
         End Set
     End Property
 
+
+    Private _empr_lblclienteID As Integer
+    Public Property empr_lblclienteID() As Integer
+        Get
+            Return _empr_lblclienteID
+        End Get
+        Set(ByVal value As Integer)
+            _empr_lblclienteID = value
+        End Set
+    End Property
+
     Private _empr_dataInicio As String
     Public Property empr_dataInicio() As String
         Get
@@ -314,7 +325,7 @@ Public Class clsEmpresa
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_CCM", _empr_CCM))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_atividade", _empr_atividade))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Porte", _empr_Porte))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _clsCliente.cli_id))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _empr_lblclienteID))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cat_Id", _clsCategoria.cat_ID))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_dataInicio", _empr_dataInicio))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_endereco", _empr_endereco))

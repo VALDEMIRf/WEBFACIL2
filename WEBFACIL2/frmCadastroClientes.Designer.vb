@@ -150,6 +150,8 @@ Partial Class frmCadastroClientes
         Me.txtEmprNum = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cboCliente = New System.Windows.Forms.ComboBox()
+        Me.txtEmprCPF = New System.Windows.Forms.MaskedTextBox()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.txtNIRE = New System.Windows.Forms.TextBox()
@@ -159,7 +161,7 @@ Partial Class frmCadastroClientes
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtCCM = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.lblempr_ID = New System.Windows.Forms.Label()
+        Me.lblclienteID = New System.Windows.Forms.Label()
         Me.txtInscrEstadual = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -176,8 +178,6 @@ Partial Class frmCadastroClientes
         Me.btSair = New System.Windows.Forms.Button()
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.txtEmprCPF = New System.Windows.Forms.MaskedTextBox()
-        Me.cboCliente = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1450,7 +1450,7 @@ Partial Class frmCadastroClientes
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.txtCCM)
         Me.GroupBox1.Controls.Add(Me.Label26)
-        Me.GroupBox1.Controls.Add(Me.lblempr_ID)
+        Me.GroupBox1.Controls.Add(Me.lblclienteID)
         Me.GroupBox1.Controls.Add(Me.txtInscrEstadual)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.Label27)
@@ -1470,6 +1470,24 @@ Partial Class frmCadastroClientes
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Dados da Empresa"
+        '
+        'cboCliente
+        '
+        Me.cboCliente.FormattingEnabled = True
+        Me.cboCliente.Location = New System.Drawing.Point(237, 244)
+        Me.cboCliente.Name = "cboCliente"
+        Me.cboCliente.Size = New System.Drawing.Size(186, 21)
+        Me.cboCliente.TabIndex = 73
+        Me.cboCliente.Visible = False
+        '
+        'txtEmprCPF
+        '
+        Me.txtEmprCPF.Location = New System.Drawing.Point(121, 248)
+        Me.txtEmprCPF.Mask = "000.000.000-00"
+        Me.txtEmprCPF.Name = "txtEmprCPF"
+        Me.txtEmprCPF.ReadOnly = True
+        Me.txtEmprCPF.Size = New System.Drawing.Size(89, 20)
+        Me.txtEmprCPF.TabIndex = 72
         '
         'Label37
         '
@@ -1544,14 +1562,14 @@ Partial Class frmCadastroClientes
         Me.Label26.TabIndex = 51
         Me.Label26.Text = "Inscr. Estadual:"
         '
-        'lblempr_ID
+        'lblclienteID
         '
-        Me.lblempr_ID.AutoSize = True
-        Me.lblempr_ID.Location = New System.Drawing.Point(61, 21)
-        Me.lblempr_ID.Name = "lblempr_ID"
-        Me.lblempr_ID.Size = New System.Drawing.Size(13, 13)
-        Me.lblempr_ID.TabIndex = 61
-        Me.lblempr_ID.Text = "0"
+        Me.lblclienteID.AutoSize = True
+        Me.lblclienteID.Location = New System.Drawing.Point(505, 251)
+        Me.lblclienteID.Name = "lblclienteID"
+        Me.lblclienteID.Size = New System.Drawing.Size(13, 13)
+        Me.lblclienteID.TabIndex = 61
+        Me.lblclienteID.Text = "0"
         '
         'txtInscrEstadual
         '
@@ -1686,22 +1704,6 @@ Partial Class frmCadastroClientes
         'errErro
         '
         Me.errErro.ContainerControl = Me
-        '
-        'txtEmprCPF
-        '
-        Me.txtEmprCPF.Location = New System.Drawing.Point(121, 248)
-        Me.txtEmprCPF.Mask = "000.000.000-00"
-        Me.txtEmprCPF.Name = "txtEmprCPF"
-        Me.txtEmprCPF.Size = New System.Drawing.Size(89, 20)
-        Me.txtEmprCPF.TabIndex = 72
-        '
-        'cboCliente
-        '
-        Me.cboCliente.FormattingEnabled = True
-        Me.cboCliente.Location = New System.Drawing.Point(237, 244)
-        Me.cboCliente.Name = "cboCliente"
-        Me.cboCliente.Size = New System.Drawing.Size(186, 21)
-        Me.cboCliente.TabIndex = 73
         '
         'frmCadastroClientes
         '
@@ -1858,7 +1860,7 @@ Partial Class frmCadastroClientes
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txtCCM As System.Windows.Forms.TextBox
     Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents lblempr_ID As System.Windows.Forms.Label
+    Friend WithEvents lblclienteID As System.Windows.Forms.Label
     Friend WithEvents txtInscrEstadual As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label27 As System.Windows.Forms.Label
