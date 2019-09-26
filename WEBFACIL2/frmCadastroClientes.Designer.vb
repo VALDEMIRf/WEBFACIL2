@@ -27,6 +27,7 @@ Partial Class frmCadastroClientes
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabCliente = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtFuncPublico = New System.Windows.Forms.ComboBox()
         Me.txtCodRFB = New System.Windows.Forms.TextBox()
         Me.chbCodRFB = New System.Windows.Forms.CheckBox()
         Me.txtInativo = New System.Windows.Forms.TextBox()
@@ -54,7 +55,6 @@ Partial Class frmCadastroClientes
         Me.txtMEI = New System.Windows.Forms.TextBox()
         Me.txtVIP = New System.Windows.Forms.TextBox()
         Me.txtAutonomo = New System.Windows.Forms.TextBox()
-        Me.txtFuncPublico = New System.Windows.Forms.TextBox()
         Me.txtPJ = New System.Windows.Forms.TextBox()
         Me.txtNumBeneficio = New System.Windows.Forms.TextBox()
         Me.txtParcelamentos = New System.Windows.Forms.TextBox()
@@ -122,8 +122,7 @@ Partial Class frmCadastroClientes
         Me.lblSenhaWebPJ = New System.Windows.Forms.Label()
         Me.txtSenhaWebPJ = New System.Windows.Forms.TextBox()
         Me.chbSenhaWebPJ = New System.Windows.Forms.CheckBox()
-        Me.lblSimplesNacilnal = New System.Windows.Forms.Label()
-        Me.lblSenha = New System.Windows.Forms.Label()
+        Me.lblSenhaSefaz = New System.Windows.Forms.Label()
         Me.lblUsuario = New System.Windows.Forms.Label()
         Me.txtSefazSen = New System.Windows.Forms.TextBox()
         Me.txtSefazUsu = New System.Windows.Forms.TextBox()
@@ -180,6 +179,9 @@ Partial Class frmCadastroClientes
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.btPesquisaEmpresa = New System.Windows.Forms.Button()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.txtCPFRedesim = New System.Windows.Forms.MaskedTextBox()
+        Me.lblcpfRedesim = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -196,10 +198,11 @@ Partial Class frmCadastroClientes
         '
         Me.TabControl1.Controls.Add(Me.TabCliente)
         Me.TabControl1.Controls.Add(Me.TabEmpresa)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 13)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1129, 668)
+        Me.TabControl1.Size = New System.Drawing.Size(1130, 719)
         Me.TabControl1.TabIndex = 0
         '
         'TabCliente
@@ -211,15 +214,20 @@ Partial Class frmCadastroClientes
         Me.TabCliente.Controls.Add(Me.GroupBox4)
         Me.TabCliente.Controls.Add(Me.GroupBox3)
         Me.TabCliente.Controls.Add(Me.GroupBox2)
-        Me.TabCliente.Location = New System.Drawing.Point(4, 22)
+        Me.TabCliente.Location = New System.Drawing.Point(4, 23)
+        Me.TabCliente.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabCliente.Name = "TabCliente"
-        Me.TabCliente.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabCliente.Size = New System.Drawing.Size(1121, 642)
+        Me.TabCliente.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TabCliente.Size = New System.Drawing.Size(1122, 692)
         Me.TabCliente.TabIndex = 0
         Me.TabCliente.Text = "Clientes"
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txtCPFRedesim)
+        Me.Panel1.Controls.Add(Me.lblcpfRedesim)
+        Me.Panel1.Controls.Add(Me.Label41)
+        Me.Panel1.Controls.Add(Me.txtFuncPublico)
         Me.Panel1.Controls.Add(Me.txtCodRFB)
         Me.Panel1.Controls.Add(Me.chbCodRFB)
         Me.Panel1.Controls.Add(Me.txtInativo)
@@ -247,7 +255,6 @@ Partial Class frmCadastroClientes
         Me.Panel1.Controls.Add(Me.txtMEI)
         Me.Panel1.Controls.Add(Me.txtVIP)
         Me.Panel1.Controls.Add(Me.txtAutonomo)
-        Me.Panel1.Controls.Add(Me.txtFuncPublico)
         Me.Panel1.Controls.Add(Me.txtPJ)
         Me.Panel1.Controls.Add(Me.txtNumBeneficio)
         Me.Panel1.Controls.Add(Me.txtParcelamentos)
@@ -262,14 +269,28 @@ Partial Class frmCadastroClientes
         Me.Panel1.Controls.Add(Me.chbFalecido)
         Me.Panel1.Controls.Add(Me.chbMEI)
         Me.Panel1.Controls.Add(Me.chbITR)
-        Me.Panel1.Location = New System.Drawing.Point(555, 8)
+        Me.Panel1.Location = New System.Drawing.Point(555, 9)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(562, 627)
+        Me.Panel1.Size = New System.Drawing.Size(562, 676)
         Me.Panel1.TabIndex = 53
+        '
+        'txtFuncPublico
+        '
+        Me.txtFuncPublico.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFuncPublico.FormattingEnabled = True
+        Me.txtFuncPublico.Items.AddRange(New Object() {"Municipal", "Estadual", "Federal"})
+        Me.txtFuncPublico.Location = New System.Drawing.Point(144, 61)
+        Me.txtFuncPublico.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtFuncPublico.Name = "txtFuncPublico"
+        Me.txtFuncPublico.Size = New System.Drawing.Size(140, 26)
+        Me.txtFuncPublico.TabIndex = 15
+        Me.txtFuncPublico.Visible = False
         '
         'txtCodRFB
         '
-        Me.txtCodRFB.Location = New System.Drawing.Point(90, 547)
+        Me.txtCodRFB.Location = New System.Drawing.Point(90, 589)
+        Me.txtCodRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCodRFB.Name = "txtCodRFB"
         Me.txtCodRFB.Size = New System.Drawing.Size(160, 20)
         Me.txtCodRFB.TabIndex = 94
@@ -278,35 +299,39 @@ Partial Class frmCadastroClientes
         'chbCodRFB
         '
         Me.chbCodRFB.AutoSize = True
-        Me.chbCodRFB.Location = New System.Drawing.Point(15, 550)
+        Me.chbCodRFB.Location = New System.Drawing.Point(15, 592)
+        Me.chbCodRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbCodRFB.Name = "chbCodRFB"
-        Me.chbCodRFB.Size = New System.Drawing.Size(69, 17)
+        Me.chbCodRFB.Size = New System.Drawing.Size(68, 18)
         Me.chbCodRFB.TabIndex = 93
         Me.chbCodRFB.Text = "CódRFB:"
         Me.chbCodRFB.UseVisualStyleBackColor = True
         '
         'txtInativo
         '
-        Me.txtInativo.Location = New System.Drawing.Point(296, 138)
+        Me.txtInativo.Location = New System.Drawing.Point(296, 149)
+        Me.txtInativo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtInativo.Multiline = True
         Me.txtInativo.Name = "txtInativo"
-        Me.txtInativo.Size = New System.Drawing.Size(248, 22)
+        Me.txtInativo.Size = New System.Drawing.Size(248, 23)
         Me.txtInativo.TabIndex = 91
         Me.txtInativo.Visible = False
         '
         'chbInativo
         '
         Me.chbInativo.AutoSize = True
-        Me.chbInativo.Location = New System.Drawing.Point(229, 142)
+        Me.chbInativo.Location = New System.Drawing.Point(230, 153)
+        Me.chbInativo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbInativo.Name = "chbInativo"
-        Me.chbInativo.Size = New System.Drawing.Size(61, 17)
+        Me.chbInativo.Size = New System.Drawing.Size(60, 18)
         Me.chbInativo.TabIndex = 90
         Me.chbInativo.Text = "Inativo:"
         Me.chbInativo.UseVisualStyleBackColor = True
         '
         'txtFalecido
         '
-        Me.txtFalecido.Location = New System.Drawing.Point(131, 138)
+        Me.txtFalecido.Location = New System.Drawing.Point(130, 149)
+        Me.txtFalecido.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtFalecido.Mask = "00/00/0000"
         Me.txtFalecido.Name = "txtFalecido"
         Me.txtFalecido.Size = New System.Drawing.Size(74, 20)
@@ -319,9 +344,10 @@ Partial Class frmCadastroClientes
         Me.btPesquisarCliente.FlatAppearance.BorderSize = 0
         Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
-        Me.btPesquisarCliente.Location = New System.Drawing.Point(456, 62)
+        Me.btPesquisarCliente.Location = New System.Drawing.Point(444, 63)
+        Me.btPesquisarCliente.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btPesquisarCliente.Name = "btPesquisarCliente"
-        Me.btPesquisarCliente.Size = New System.Drawing.Size(89, 52)
+        Me.btPesquisarCliente.Size = New System.Drawing.Size(100, 56)
         Me.btPesquisarCliente.TabIndex = 77
         Me.btPesquisarCliente.Text = "Pesquisar Cliente"
         Me.btPesquisarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -330,16 +356,17 @@ Partial Class frmCadastroClientes
         'lblSenhaRedesim
         '
         Me.lblSenhaRedesim.AutoSize = True
-        Me.lblSenhaRedesim.Location = New System.Drawing.Point(118, 508)
+        Me.lblSenhaRedesim.Location = New System.Drawing.Point(243, 552)
         Me.lblSenhaRedesim.Name = "lblSenhaRedesim"
-        Me.lblSenhaRedesim.Size = New System.Drawing.Size(41, 13)
+        Me.lblSenhaRedesim.Size = New System.Drawing.Size(41, 14)
         Me.lblSenhaRedesim.TabIndex = 87
         Me.lblSenhaRedesim.Text = "Senha:"
         Me.lblSenhaRedesim.Visible = False
         '
         'txtSenhaRedesim
         '
-        Me.txtSenhaRedesim.Location = New System.Drawing.Point(165, 505)
+        Me.txtSenhaRedesim.Location = New System.Drawing.Point(296, 547)
+        Me.txtSenhaRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSenhaRedesim.Name = "txtSenhaRedesim"
         Me.txtSenhaRedesim.Size = New System.Drawing.Size(160, 20)
         Me.txtSenhaRedesim.TabIndex = 89
@@ -348,9 +375,10 @@ Partial Class frmCadastroClientes
         'chbRedesim
         '
         Me.chbRedesim.AutoSize = True
-        Me.chbRedesim.Location = New System.Drawing.Point(15, 508)
+        Me.chbRedesim.Location = New System.Drawing.Point(15, 553)
+        Me.chbRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbRedesim.Name = "chbRedesim"
-        Me.chbRedesim.Size = New System.Drawing.Size(70, 17)
+        Me.chbRedesim.Size = New System.Drawing.Size(70, 18)
         Me.chbRedesim.TabIndex = 88
         Me.chbRedesim.Text = "Redesim:"
         Me.chbRedesim.UseVisualStyleBackColor = True
@@ -358,16 +386,17 @@ Partial Class frmCadastroClientes
         'lblEsocialSenha
         '
         Me.lblEsocialSenha.AutoSize = True
-        Me.lblEsocialSenha.Location = New System.Drawing.Point(298, 229)
+        Me.lblEsocialSenha.Location = New System.Drawing.Point(249, 241)
         Me.lblEsocialSenha.Name = "lblEsocialSenha"
-        Me.lblEsocialSenha.Size = New System.Drawing.Size(41, 13)
+        Me.lblEsocialSenha.Size = New System.Drawing.Size(41, 14)
         Me.lblEsocialSenha.TabIndex = 85
         Me.lblEsocialSenha.Text = "Senha:"
         Me.lblEsocialSenha.Visible = False
         '
         'txtEsocialSenha
         '
-        Me.txtEsocialSenha.Location = New System.Drawing.Point(345, 226)
+        Me.txtEsocialSenha.Location = New System.Drawing.Point(296, 238)
+        Me.txtEsocialSenha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEsocialSenha.Name = "txtEsocialSenha"
         Me.txtEsocialSenha.Size = New System.Drawing.Size(160, 20)
         Me.txtEsocialSenha.TabIndex = 86
@@ -375,7 +404,8 @@ Partial Class frmCadastroClientes
         '
         'txtValidadeRFB
         '
-        Me.txtValidadeRFB.Location = New System.Drawing.Point(345, 549)
+        Me.txtValidadeRFB.Location = New System.Drawing.Point(345, 592)
+        Me.txtValidadeRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtValidadeRFB.Mask = "00/00/0000"
         Me.txtValidadeRFB.Name = "txtValidadeRFB"
         Me.txtValidadeRFB.Size = New System.Drawing.Size(91, 20)
@@ -386,16 +416,17 @@ Partial Class frmCadastroClientes
         'lblValidoRFB
         '
         Me.lblValidoRFB.AutoSize = True
-        Me.lblValidoRFB.Location = New System.Drawing.Point(288, 552)
+        Me.lblValidoRFB.Location = New System.Drawing.Point(288, 594)
         Me.lblValidoRFB.Name = "lblValidoRFB"
-        Me.lblValidoRFB.Size = New System.Drawing.Size(51, 13)
+        Me.lblValidoRFB.Size = New System.Drawing.Size(51, 14)
         Me.lblValidoRFB.TabIndex = 82
         Me.lblValidoRFB.Text = "Validade:"
         Me.lblValidoRFB.Visible = False
         '
         'txtSenhaWeb
         '
-        Me.txtSenhaWeb.Location = New System.Drawing.Point(165, 467)
+        Me.txtSenhaWeb.Location = New System.Drawing.Point(165, 503)
+        Me.txtSenhaWeb.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSenhaWeb.Name = "txtSenhaWeb"
         Me.txtSenhaWeb.Size = New System.Drawing.Size(160, 20)
         Me.txtSenhaWeb.TabIndex = 81
@@ -404,9 +435,10 @@ Partial Class frmCadastroClientes
         'chbSenhaWeb
         '
         Me.chbSenhaWeb.AutoSize = True
-        Me.chbSenhaWeb.Location = New System.Drawing.Point(15, 470)
+        Me.chbSenhaWeb.Location = New System.Drawing.Point(15, 507)
+        Me.chbSenhaWeb.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbSenhaWeb.Name = "chbSenhaWeb"
-        Me.chbSenhaWeb.Size = New System.Drawing.Size(147, 17)
+        Me.chbSenhaWeb.Size = New System.Drawing.Size(147, 18)
         Me.chbSenhaWeb.TabIndex = 78
         Me.chbSenhaWeb.Text = "Senha Web PrefeituraPF:"
         Me.chbSenhaWeb.UseVisualStyleBackColor = True
@@ -416,9 +448,10 @@ Partial Class frmCadastroClientes
         Me.btAlterarDados.FlatAppearance.BorderSize = 0
         Me.btAlterarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAlterarDados.Image = CType(resources.GetObject("btAlterarDados.Image"), System.Drawing.Image)
-        Me.btAlterarDados.Location = New System.Drawing.Point(345, 3)
+        Me.btAlterarDados.Location = New System.Drawing.Point(357, 2)
+        Me.btAlterarDados.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btAlterarDados.Name = "btAlterarDados"
-        Me.btAlterarDados.Size = New System.Drawing.Size(93, 67)
+        Me.btAlterarDados.Size = New System.Drawing.Size(93, 73)
         Me.btAlterarDados.TabIndex = 76
         Me.btAlterarDados.Text = "Alterar Dados"
         Me.btAlterarDados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -426,7 +459,8 @@ Partial Class frmCadastroClientes
         '
         'txtESocial
         '
-        Me.txtESocial.Location = New System.Drawing.Point(165, 224)
+        Me.txtESocial.Location = New System.Drawing.Point(121, 241)
+        Me.txtESocial.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtESocial.Name = "txtESocial"
         Me.txtESocial.Size = New System.Drawing.Size(119, 20)
         Me.txtESocial.TabIndex = 75
@@ -435,16 +469,18 @@ Partial Class frmCadastroClientes
         'chbESocial
         '
         Me.chbESocial.AutoSize = True
-        Me.chbESocial.Location = New System.Drawing.Point(15, 226)
+        Me.chbESocial.Location = New System.Drawing.Point(15, 243)
+        Me.chbESocial.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbESocial.Name = "chbESocial"
-        Me.chbESocial.Size = New System.Drawing.Size(84, 17)
+        Me.chbESocial.Size = New System.Drawing.Size(82, 18)
         Me.chbESocial.TabIndex = 73
         Me.chbESocial.Text = "Empr. Dom.:"
         Me.chbESocial.UseVisualStyleBackColor = True
         '
         'txtMensalista
         '
-        Me.txtMensalista.Location = New System.Drawing.Point(165, 365)
+        Me.txtMensalista.Location = New System.Drawing.Point(121, 394)
+        Me.txtMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtMensalista.Name = "txtMensalista"
         Me.txtMensalista.Size = New System.Drawing.Size(160, 20)
         Me.txtMensalista.TabIndex = 72
@@ -456,8 +492,9 @@ Partial Class frmCadastroClientes
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
         Me.btSalvar.Location = New System.Drawing.Point(456, 10)
+        Me.btSalvar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btSalvar.Name = "btSalvar"
-        Me.btSalvar.Size = New System.Drawing.Size(100, 41)
+        Me.btSalvar.Size = New System.Drawing.Size(100, 45)
         Me.btSalvar.TabIndex = 24
         Me.btSalvar.Text = "Salvar"
         Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -466,16 +503,18 @@ Partial Class frmCadastroClientes
         'chbMensalista
         '
         Me.chbMensalista.AutoSize = True
-        Me.chbMensalista.Location = New System.Drawing.Point(15, 367)
+        Me.chbMensalista.Location = New System.Drawing.Point(15, 396)
+        Me.chbMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbMensalista.Name = "chbMensalista"
-        Me.chbMensalista.Size = New System.Drawing.Size(79, 17)
+        Me.chbMensalista.Size = New System.Drawing.Size(80, 18)
         Me.chbMensalista.TabIndex = 70
         Me.chbMensalista.Text = "Mensalista:"
         Me.chbMensalista.UseVisualStyleBackColor = True
         '
         'txtIRPF
         '
-        Me.txtIRPF.Location = New System.Drawing.Point(165, 441)
+        Me.txtIRPF.Location = New System.Drawing.Point(90, 475)
+        Me.txtIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtIRPF.Name = "txtIRPF"
         Me.txtIRPF.Size = New System.Drawing.Size(160, 20)
         Me.txtIRPF.TabIndex = 69
@@ -483,7 +522,8 @@ Partial Class frmCadastroClientes
         '
         'txtDecore
         '
-        Me.txtDecore.Location = New System.Drawing.Point(165, 406)
+        Me.txtDecore.Location = New System.Drawing.Point(121, 429)
+        Me.txtDecore.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtDecore.Name = "txtDecore"
         Me.txtDecore.Size = New System.Drawing.Size(160, 20)
         Me.txtDecore.TabIndex = 67
@@ -491,7 +531,8 @@ Partial Class frmCadastroClientes
         '
         'txtITR
         '
-        Me.txtITR.Location = New System.Drawing.Point(165, 333)
+        Me.txtITR.Location = New System.Drawing.Point(90, 360)
+        Me.txtITR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtITR.Name = "txtITR"
         Me.txtITR.Size = New System.Drawing.Size(160, 20)
         Me.txtITR.TabIndex = 65
@@ -499,7 +540,8 @@ Partial Class frmCadastroClientes
         '
         'txtMEI
         '
-        Me.txtMEI.Location = New System.Drawing.Point(214, 303)
+        Me.txtMEI.Location = New System.Drawing.Point(214, 326)
+        Me.txtMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtMEI.Name = "txtMEI"
         Me.txtMEI.Size = New System.Drawing.Size(61, 20)
         Me.txtMEI.TabIndex = 63
@@ -507,7 +549,8 @@ Partial Class frmCadastroClientes
         '
         'txtVIP
         '
-        Me.txtVIP.Location = New System.Drawing.Point(165, 261)
+        Me.txtVIP.Location = New System.Drawing.Point(121, 281)
+        Me.txtVIP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtVIP.Name = "txtVIP"
         Me.txtVIP.Size = New System.Drawing.Size(104, 20)
         Me.txtVIP.TabIndex = 61
@@ -515,31 +558,26 @@ Partial Class frmCadastroClientes
         '
         'txtAutonomo
         '
-        Me.txtAutonomo.Location = New System.Drawing.Point(165, 97)
+        Me.txtAutonomo.Location = New System.Drawing.Point(332, 81)
+        Me.txtAutonomo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtAutonomo.Name = "txtAutonomo"
-        Me.txtAutonomo.Size = New System.Drawing.Size(119, 20)
+        Me.txtAutonomo.Size = New System.Drawing.Size(10, 20)
         Me.txtAutonomo.TabIndex = 57
         Me.txtAutonomo.Visible = False
         '
-        'txtFuncPublico
-        '
-        Me.txtFuncPublico.Location = New System.Drawing.Point(165, 57)
-        Me.txtFuncPublico.Name = "txtFuncPublico"
-        Me.txtFuncPublico.Size = New System.Drawing.Size(119, 20)
-        Me.txtFuncPublico.TabIndex = 55
-        Me.txtFuncPublico.Visible = False
-        '
         'txtPJ
         '
-        Me.txtPJ.Location = New System.Drawing.Point(62, 302)
+        Me.txtPJ.Location = New System.Drawing.Point(62, 326)
+        Me.txtPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPJ.Name = "txtPJ"
-        Me.txtPJ.Size = New System.Drawing.Size(63, 20)
+        Me.txtPJ.Size = New System.Drawing.Size(62, 20)
         Me.txtPJ.TabIndex = 52
         Me.txtPJ.Visible = False
         '
         'txtNumBeneficio
         '
-        Me.txtNumBeneficio.Location = New System.Drawing.Point(165, 11)
+        Me.txtNumBeneficio.Location = New System.Drawing.Point(194, 12)
+        Me.txtNumBeneficio.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNumBeneficio.Name = "txtNumBeneficio"
         Me.txtNumBeneficio.Size = New System.Drawing.Size(119, 20)
         Me.txtNumBeneficio.TabIndex = 19
@@ -547,7 +585,8 @@ Partial Class frmCadastroClientes
         '
         'txtParcelamentos
         '
-        Me.txtParcelamentos.Location = New System.Drawing.Point(165, 182)
+        Me.txtParcelamentos.Location = New System.Drawing.Point(131, 198)
+        Me.txtParcelamentos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtParcelamentos.Name = "txtParcelamentos"
         Me.txtParcelamentos.Size = New System.Drawing.Size(119, 20)
         Me.txtParcelamentos.TabIndex = 21
@@ -556,9 +595,10 @@ Partial Class frmCadastroClientes
         'chbVIP
         '
         Me.chbVIP.AutoSize = True
-        Me.chbVIP.Location = New System.Drawing.Point(15, 263)
+        Me.chbVIP.Location = New System.Drawing.Point(15, 284)
+        Me.chbVIP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbVIP.Name = "chbVIP"
-        Me.chbVIP.Size = New System.Drawing.Size(46, 17)
+        Me.chbVIP.Size = New System.Drawing.Size(45, 18)
         Me.chbVIP.TabIndex = 49
         Me.chbVIP.Text = "VIP:"
         Me.chbVIP.UseVisualStyleBackColor = True
@@ -566,9 +606,11 @@ Partial Class frmCadastroClientes
         'chbFuncPublico
         '
         Me.chbFuncPublico.AutoSize = True
-        Me.chbFuncPublico.Location = New System.Drawing.Point(15, 59)
+        Me.chbFuncPublico.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.chbFuncPublico.Location = New System.Drawing.Point(15, 64)
+        Me.chbFuncPublico.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbFuncPublico.Name = "chbFuncPublico"
-        Me.chbFuncPublico.Size = New System.Drawing.Size(91, 17)
+        Me.chbFuncPublico.Size = New System.Drawing.Size(100, 19)
         Me.chbFuncPublico.TabIndex = 43
         Me.chbFuncPublico.Text = "Func. Público"
         Me.chbFuncPublico.UseVisualStyleBackColor = True
@@ -576,9 +618,10 @@ Partial Class frmCadastroClientes
         'chbAposentado
         '
         Me.chbAposentado.AutoSize = True
-        Me.chbAposentado.Location = New System.Drawing.Point(15, 14)
+        Me.chbAposentado.Location = New System.Drawing.Point(15, 15)
+        Me.chbAposentado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbAposentado.Name = "chbAposentado"
-        Me.chbAposentado.Size = New System.Drawing.Size(83, 17)
+        Me.chbAposentado.Size = New System.Drawing.Size(85, 18)
         Me.chbAposentado.TabIndex = 39
         Me.chbAposentado.Text = "Aposentado"
         Me.chbAposentado.UseVisualStyleBackColor = True
@@ -586,9 +629,10 @@ Partial Class frmCadastroClientes
         'chbDecore
         '
         Me.chbDecore.AutoSize = True
-        Me.chbDecore.Location = New System.Drawing.Point(15, 406)
+        Me.chbDecore.Location = New System.Drawing.Point(15, 438)
+        Me.chbDecore.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbDecore.Name = "chbDecore"
-        Me.chbDecore.Size = New System.Drawing.Size(74, 17)
+        Me.chbDecore.Size = New System.Drawing.Size(70, 18)
         Me.chbDecore.TabIndex = 46
         Me.chbDecore.Text = "DECORE:"
         Me.chbDecore.UseVisualStyleBackColor = True
@@ -596,9 +640,10 @@ Partial Class frmCadastroClientes
         'chbIRPF
         '
         Me.chbIRPF.AutoSize = True
-        Me.chbIRPF.Location = New System.Drawing.Point(15, 443)
+        Me.chbIRPF.Location = New System.Drawing.Point(15, 477)
+        Me.chbIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbIRPF.Name = "chbIRPF"
-        Me.chbIRPF.Size = New System.Drawing.Size(53, 17)
+        Me.chbIRPF.Size = New System.Drawing.Size(50, 18)
         Me.chbIRPF.TabIndex = 47
         Me.chbIRPF.Text = "IRPF:"
         Me.chbIRPF.UseVisualStyleBackColor = True
@@ -606,9 +651,10 @@ Partial Class frmCadastroClientes
         'chbParcelamentos
         '
         Me.chbParcelamentos.AutoSize = True
-        Me.chbParcelamentos.Location = New System.Drawing.Point(15, 186)
+        Me.chbParcelamentos.Location = New System.Drawing.Point(15, 200)
+        Me.chbParcelamentos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbParcelamentos.Name = "chbParcelamentos"
-        Me.chbParcelamentos.Size = New System.Drawing.Size(99, 17)
+        Me.chbParcelamentos.Size = New System.Drawing.Size(100, 18)
         Me.chbParcelamentos.TabIndex = 48
         Me.chbParcelamentos.Text = "Parcelamentos:"
         Me.chbParcelamentos.UseVisualStyleBackColor = True
@@ -616,9 +662,10 @@ Partial Class frmCadastroClientes
         'chbAutonomo
         '
         Me.chbAutonomo.AutoSize = True
-        Me.chbAutonomo.Location = New System.Drawing.Point(15, 99)
+        Me.chbAutonomo.Location = New System.Drawing.Point(15, 107)
+        Me.chbAutonomo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbAutonomo.Name = "chbAutonomo"
-        Me.chbAutonomo.Size = New System.Drawing.Size(74, 17)
+        Me.chbAutonomo.Size = New System.Drawing.Size(75, 18)
         Me.chbAutonomo.TabIndex = 40
         Me.chbAutonomo.Text = "Autonomo"
         Me.chbAutonomo.UseVisualStyleBackColor = True
@@ -626,9 +673,10 @@ Partial Class frmCadastroClientes
         'chbPJ
         '
         Me.chbPJ.AutoSize = True
-        Me.chbPJ.Location = New System.Drawing.Point(15, 305)
+        Me.chbPJ.Location = New System.Drawing.Point(15, 328)
+        Me.chbPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbPJ.Name = "chbPJ"
-        Me.chbPJ.Size = New System.Drawing.Size(41, 17)
+        Me.chbPJ.Size = New System.Drawing.Size(40, 18)
         Me.chbPJ.TabIndex = 45
         Me.chbPJ.Text = "PJ:"
         Me.chbPJ.UseVisualStyleBackColor = True
@@ -636,9 +684,10 @@ Partial Class frmCadastroClientes
         'chbFalecido
         '
         Me.chbFalecido.AutoSize = True
-        Me.chbFalecido.Location = New System.Drawing.Point(15, 138)
+        Me.chbFalecido.Location = New System.Drawing.Point(15, 149)
+        Me.chbFalecido.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbFalecido.Name = "chbFalecido"
-        Me.chbFalecido.Size = New System.Drawing.Size(110, 17)
+        Me.chbFalecido.Size = New System.Drawing.Size(109, 18)
         Me.chbFalecido.TabIndex = 42
         Me.chbFalecido.Text = "Falecido na Data:"
         Me.chbFalecido.UseVisualStyleBackColor = True
@@ -646,9 +695,10 @@ Partial Class frmCadastroClientes
         'chbMEI
         '
         Me.chbMEI.AutoSize = True
-        Me.chbMEI.Location = New System.Drawing.Point(160, 307)
+        Me.chbMEI.Location = New System.Drawing.Point(160, 331)
+        Me.chbMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbMEI.Name = "chbMEI"
-        Me.chbMEI.Size = New System.Drawing.Size(48, 17)
+        Me.chbMEI.Size = New System.Drawing.Size(45, 18)
         Me.chbMEI.TabIndex = 44
         Me.chbMEI.Text = "MEI:"
         Me.chbMEI.UseVisualStyleBackColor = True
@@ -656,27 +706,29 @@ Partial Class frmCadastroClientes
         'chbITR
         '
         Me.chbITR.AutoSize = True
-        Me.chbITR.Location = New System.Drawing.Point(15, 334)
+        Me.chbITR.Location = New System.Drawing.Point(15, 360)
+        Me.chbITR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbITR.Name = "chbITR"
-        Me.chbITR.Size = New System.Drawing.Size(47, 17)
+        Me.chbITR.Size = New System.Drawing.Size(44, 18)
         Me.chbITR.TabIndex = 41
         Me.chbITR.Text = "ITR:"
         Me.chbITR.UseVisualStyleBackColor = True
         '
         'txtObs
         '
-        Me.txtObs.Location = New System.Drawing.Point(6, 513)
+        Me.txtObs.Location = New System.Drawing.Point(6, 552)
+        Me.txtObs.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtObs.Multiline = True
         Me.txtObs.Name = "txtObs"
-        Me.txtObs.Size = New System.Drawing.Size(543, 118)
+        Me.txtObs.Size = New System.Drawing.Size(542, 126)
         Me.txtObs.TabIndex = 27
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 497)
+        Me.Label11.Location = New System.Drawing.Point(6, 536)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(73, 13)
+        Me.Label11.Size = New System.Drawing.Size(76, 14)
         Me.Label11.TabIndex = 28
         Me.Label11.Text = "Observações:"
         '
@@ -689,9 +741,11 @@ Partial Class frmCadastroClientes
         Me.GroupBox4.Controls.Add(Me.Label21)
         Me.GroupBox4.Controls.Add(Me.Label22)
         Me.GroupBox4.Controls.Add(Me.Label23)
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 407)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 438)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(529, 87)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox4.Size = New System.Drawing.Size(530, 94)
         Me.GroupBox4.TabIndex = 15
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Contatos"
@@ -699,22 +753,24 @@ Partial Class frmCadastroClientes
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(240, 35)
+        Me.Label40.Location = New System.Drawing.Point(240, 38)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(35, 13)
+        Me.Label40.Size = New System.Drawing.Size(34, 14)
         Me.Label40.TabIndex = 18
         Me.Label40.Text = "Email:"
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(59, 56)
+        Me.txtEmail.Location = New System.Drawing.Point(58, 60)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(441, 20)
         Me.txtEmail.TabIndex = 17
         '
         'txtFoneCel
         '
-        Me.txtFoneCel.Location = New System.Drawing.Point(371, 22)
+        Me.txtFoneCel.Location = New System.Drawing.Point(370, 24)
+        Me.txtFoneCel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtFoneCel.Mask = "(99) 0 0000-0000"
         Me.txtFoneCel.Name = "txtFoneCel"
         Me.txtFoneCel.Size = New System.Drawing.Size(129, 20)
@@ -722,36 +778,37 @@ Partial Class frmCadastroClientes
         '
         'txtFoneRes
         '
-        Me.txtFoneRes.Location = New System.Drawing.Point(70, 22)
+        Me.txtFoneRes.Location = New System.Drawing.Point(70, 24)
+        Me.txtFoneRes.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtFoneRes.Mask = "(99) 0000-0000"
         Me.txtFoneRes.Name = "txtFoneRes"
-        Me.txtFoneRes.Size = New System.Drawing.Size(111, 20)
+        Me.txtFoneRes.Size = New System.Drawing.Size(110, 20)
         Me.txtFoneRes.TabIndex = 15
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(6, 26)
+        Me.Label21.Location = New System.Drawing.Point(6, 28)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(47, 13)
+        Me.Label21.Size = New System.Drawing.Size(45, 14)
         Me.Label21.TabIndex = 2
         Me.Label21.Text = "Tel.Res:"
         '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(287, 25)
+        Me.Label22.Location = New System.Drawing.Point(286, 27)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(60, 13)
+        Me.Label22.Size = New System.Drawing.Size(59, 14)
         Me.Label22.TabIndex = 3
         Me.Label22.Text = "Tel.Celular:"
         '
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(6, 59)
+        Me.Label23.Location = New System.Drawing.Point(6, 64)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(35, 13)
+        Me.Label23.Size = New System.Drawing.Size(34, 14)
         Me.Label23.TabIndex = 5
         Me.Label23.Text = "Email:"
         '
@@ -771,16 +828,19 @@ Partial Class frmCadastroClientes
         Me.GroupBox3.Controls.Add(Me.Label17)
         Me.GroupBox3.Controls.Add(Me.txtNumero)
         Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 203)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 219)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(529, 198)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(530, 214)
         Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Endereço"
         '
         'txtCidade
         '
-        Me.txtCidade.Location = New System.Drawing.Point(76, 131)
+        Me.txtCidade.Location = New System.Drawing.Point(76, 141)
+        Me.txtCidade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCidade.Name = "txtCidade"
         Me.txtCidade.Size = New System.Drawing.Size(438, 20)
         Me.txtCidade.TabIndex = 12
@@ -788,9 +848,9 @@ Partial Class frmCadastroClientes
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(20, 134)
+        Me.Label13.Location = New System.Drawing.Point(20, 144)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(43, 13)
+        Me.Label13.Size = New System.Drawing.Size(43, 14)
         Me.Label13.TabIndex = 12
         Me.Label13.Text = "Cidade:"
         '
@@ -798,28 +858,32 @@ Partial Class frmCadastroClientes
         '
         Me.cboUF.FormattingEnabled = True
         Me.cboUF.Items.AddRange(New Object() {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"})
-        Me.cboUF.Location = New System.Drawing.Point(77, 162)
+        Me.cboUF.Location = New System.Drawing.Point(77, 174)
+        Me.cboUF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboUF.Name = "cboUF"
-        Me.cboUF.Size = New System.Drawing.Size(49, 21)
+        Me.cboUF.Size = New System.Drawing.Size(49, 22)
         Me.cboUF.TabIndex = 13
         '
         'txtComplemento
         '
-        Me.txtComplemento.Location = New System.Drawing.Point(269, 65)
+        Me.txtComplemento.Location = New System.Drawing.Point(269, 70)
+        Me.txtComplemento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtComplemento.Name = "txtComplemento"
-        Me.txtComplemento.Size = New System.Drawing.Size(245, 20)
+        Me.txtComplemento.Size = New System.Drawing.Size(246, 20)
         Me.txtComplemento.TabIndex = 10
         '
         'txtLogradouro
         '
-        Me.txtLogradouro.Location = New System.Drawing.Point(112, 23)
+        Me.txtLogradouro.Location = New System.Drawing.Point(112, 24)
+        Me.txtLogradouro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtLogradouro.Name = "txtLogradouro"
         Me.txtLogradouro.Size = New System.Drawing.Size(402, 20)
         Me.txtLogradouro.TabIndex = 8
         '
         'txtCEP
         '
-        Me.txtCEP.Location = New System.Drawing.Point(184, 162)
+        Me.txtCEP.Location = New System.Drawing.Point(184, 174)
+        Me.txtCEP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCEP.Mask = "00000-999"
         Me.txtCEP.Name = "txtCEP"
         Me.txtCEP.Size = New System.Drawing.Size(86, 20)
@@ -827,59 +891,61 @@ Partial Class frmCadastroClientes
         '
         'txtBairro
         '
-        Me.txtBairro.Location = New System.Drawing.Point(77, 94)
+        Me.txtBairro.Location = New System.Drawing.Point(77, 102)
+        Me.txtBairro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtBairro.Name = "txtBairro"
-        Me.txtBairro.Size = New System.Drawing.Size(437, 20)
+        Me.txtBairro.Size = New System.Drawing.Size(438, 20)
         Me.txtBairro.TabIndex = 11
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(21, 97)
+        Me.Label9.Location = New System.Drawing.Point(21, 104)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(37, 13)
+        Me.Label9.Size = New System.Drawing.Size(39, 14)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "Bairro:"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(46, 168)
+        Me.Label10.Location = New System.Drawing.Point(46, 181)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(24, 13)
+        Me.Label10.Size = New System.Drawing.Size(23, 14)
         Me.Label10.TabIndex = 5
         Me.Label10.Text = "UF:"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(19, 26)
+        Me.Label12.Location = New System.Drawing.Point(19, 28)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(64, 13)
+        Me.Label12.Size = New System.Drawing.Size(66, 14)
         Me.Label12.TabIndex = 3
         Me.Label12.Text = "Logradouro:"
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(161, 68)
+        Me.Label16.Location = New System.Drawing.Point(161, 74)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(74, 13)
+        Me.Label16.Size = New System.Drawing.Size(74, 14)
         Me.Label16.TabIndex = 2
         Me.Label16.Text = "Complemento:"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(19, 64)
+        Me.Label17.Location = New System.Drawing.Point(19, 69)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(35, 13)
+        Me.Label17.Size = New System.Drawing.Size(34, 14)
         Me.Label17.TabIndex = 0
         Me.Label17.Text = "Núm.:"
         '
         'txtNumero
         '
-        Me.txtNumero.Location = New System.Drawing.Point(77, 61)
+        Me.txtNumero.Location = New System.Drawing.Point(77, 66)
+        Me.txtNumero.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(69, 20)
         Me.txtNumero.TabIndex = 9
@@ -887,9 +953,9 @@ Partial Class frmCadastroClientes
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(136, 170)
+        Me.Label18.Location = New System.Drawing.Point(136, 183)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(31, 13)
+        Me.Label18.Size = New System.Drawing.Size(29, 14)
         Me.Label18.TabIndex = 1
         Me.Label18.Text = "CEP:"
         '
@@ -915,8 +981,10 @@ Partial Class frmCadastroClientes
         Me.GroupBox2.Controls.Add(Me.txtCPF)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(543, 191)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(543, 206)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Dados do Cliente"
@@ -924,9 +992,10 @@ Partial Class frmCadastroClientes
         'chbCurriculo
         '
         Me.chbCurriculo.AutoSize = True
-        Me.chbCurriculo.Location = New System.Drawing.Point(412, 126)
+        Me.chbCurriculo.Location = New System.Drawing.Point(412, 136)
+        Me.chbCurriculo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbCurriculo.Name = "chbCurriculo"
-        Me.chbCurriculo.Size = New System.Drawing.Size(67, 17)
+        Me.chbCurriculo.Size = New System.Drawing.Size(69, 18)
         Me.chbCurriculo.TabIndex = 83
         Me.chbCurriculo.Text = "Curriculo"
         Me.chbCurriculo.UseVisualStyleBackColor = True
@@ -934,9 +1003,10 @@ Partial Class frmCadastroClientes
         'txtCPFVinculado
         '
         Me.txtCPFVinculado.FormattingEnabled = True
-        Me.txtCPFVinculado.Location = New System.Drawing.Point(100, 160)
+        Me.txtCPFVinculado.Location = New System.Drawing.Point(100, 172)
+        Me.txtCPFVinculado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCPFVinculado.Name = "txtCPFVinculado"
-        Me.txtCPFVinculado.Size = New System.Drawing.Size(138, 21)
+        Me.txtCPFVinculado.Size = New System.Drawing.Size(138, 22)
         Me.txtCPFVinculado.TabIndex = 82
         '
         'btPesquisarCPFVinculado
@@ -945,9 +1015,10 @@ Partial Class frmCadastroClientes
         Me.btPesquisarCPFVinculado.FlatAppearance.BorderSize = 0
         Me.btPesquisarCPFVinculado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisarCPFVinculado.Image = CType(resources.GetObject("btPesquisarCPFVinculado.Image"), System.Drawing.Image)
-        Me.btPesquisarCPFVinculado.Location = New System.Drawing.Point(245, 153)
+        Me.btPesquisarCPFVinculado.Location = New System.Drawing.Point(245, 164)
+        Me.btPesquisarCPFVinculado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btPesquisarCPFVinculado.Name = "btPesquisarCPFVinculado"
-        Me.btPesquisarCPFVinculado.Size = New System.Drawing.Size(38, 33)
+        Me.btPesquisarCPFVinculado.Size = New System.Drawing.Size(38, 36)
         Me.btPesquisarCPFVinculado.TabIndex = 80
         Me.btPesquisarCPFVinculado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btPesquisarCPFVinculado.UseCompatibleTextRendering = True
@@ -956,15 +1027,16 @@ Partial Class frmCadastroClientes
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(316, 167)
+        Me.Label39.Location = New System.Drawing.Point(316, 179)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(69, 13)
+        Me.Label39.Size = New System.Drawing.Size(69, 14)
         Me.Label39.TabIndex = 79
         Me.Label39.Text = "Tipo Vinculo:"
         '
         'txtVinculo
         '
-        Me.txtVinculo.Location = New System.Drawing.Point(391, 162)
+        Me.txtVinculo.Location = New System.Drawing.Point(391, 174)
+        Me.txtVinculo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtVinculo.Name = "txtVinculo"
         Me.txtVinculo.ReadOnly = True
         Me.txtVinculo.Size = New System.Drawing.Size(145, 20)
@@ -972,7 +1044,8 @@ Partial Class frmCadastroClientes
         '
         'txtDtNasc
         '
-        Me.txtDtNasc.Location = New System.Drawing.Point(128, 124)
+        Me.txtDtNasc.Location = New System.Drawing.Point(128, 134)
+        Me.txtDtNasc.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtDtNasc.Mask = "00/00/0000"
         Me.txtDtNasc.Name = "txtDtNasc"
         Me.txtDtNasc.Size = New System.Drawing.Size(91, 20)
@@ -982,49 +1055,51 @@ Partial Class frmCadastroClientes
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(19, 128)
+        Me.Label20.Location = New System.Drawing.Point(19, 137)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(79, 13)
+        Me.Label20.Size = New System.Drawing.Size(78, 14)
         Me.Label20.TabIndex = 18
         Me.Label20.Text = "Data de Nasc.:"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(8, 163)
+        Me.Label19.Location = New System.Drawing.Point(8, 176)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(80, 13)
+        Me.Label19.Size = New System.Drawing.Size(80, 14)
         Me.Label19.TabIndex = 16
         Me.Label19.Text = "CPF Vinculado:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(21, 95)
+        Me.Label7.Location = New System.Drawing.Point(21, 102)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(27, 13)
+        Me.Label7.Size = New System.Drawing.Size(25, 14)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "PIS:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(221, 94)
+        Me.Label5.Location = New System.Drawing.Point(221, 102)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 13)
+        Me.Label5.Size = New System.Drawing.Size(61, 14)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Tit Eleitoral:"
         '
         'txtPIS
         '
-        Me.txtPIS.Location = New System.Drawing.Point(63, 90)
+        Me.txtPIS.Location = New System.Drawing.Point(63, 97)
+        Me.txtPIS.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPIS.Name = "txtPIS"
         Me.txtPIS.Size = New System.Drawing.Size(152, 20)
         Me.txtPIS.TabIndex = 4
         '
         'txtTitEleitoral
         '
-        Me.txtTitEleitoral.Location = New System.Drawing.Point(310, 89)
+        Me.txtTitEleitoral.Location = New System.Drawing.Point(310, 95)
+        Me.txtTitEleitoral.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtTitEleitoral.Name = "txtTitEleitoral"
         Me.txtTitEleitoral.Size = New System.Drawing.Size(204, 20)
         Me.txtTitEleitoral.TabIndex = 5
@@ -1032,46 +1107,49 @@ Partial Class frmCadastroClientes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(339, 32)
+        Me.Label1.Location = New System.Drawing.Point(339, 34)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(26, 13)
+        Me.Label1.Size = New System.Drawing.Size(25, 14)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "RG:"
         '
         'cli_id1
         '
         Me.cli_id1.AutoSize = True
-        Me.cli_id1.Location = New System.Drawing.Point(423, 22)
+        Me.cli_id1.Location = New System.Drawing.Point(423, 24)
         Me.cli_id1.Name = "cli_id1"
-        Me.cli_id1.Size = New System.Drawing.Size(0, 13)
+        Me.cli_id1.Size = New System.Drawing.Size(0, 14)
         Me.cli_id1.TabIndex = 7
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 64)
+        Me.Label3.Location = New System.Drawing.Point(10, 69)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(38, 13)
+        Me.Label3.Size = New System.Drawing.Size(37, 14)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Nome:"
         '
         'txtRG
         '
-        Me.txtRG.Location = New System.Drawing.Point(379, 27)
+        Me.txtRG.Location = New System.Drawing.Point(379, 29)
+        Me.txtRG.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRG.Name = "txtRG"
-        Me.txtRG.Size = New System.Drawing.Size(135, 20)
+        Me.txtRG.Size = New System.Drawing.Size(134, 20)
         Me.txtRG.TabIndex = 2
         '
         'txtNome
         '
-        Me.txtNome.Location = New System.Drawing.Point(63, 61)
+        Me.txtNome.Location = New System.Drawing.Point(63, 66)
+        Me.txtNome.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNome.Name = "txtNome"
         Me.txtNome.Size = New System.Drawing.Size(451, 20)
         Me.txtNome.TabIndex = 3
         '
         'txtCPF
         '
-        Me.txtCPF.Location = New System.Drawing.Point(62, 23)
+        Me.txtCPF.Location = New System.Drawing.Point(62, 24)
+        Me.txtCPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCPF.Mask = "000.000.000-00"
         Me.txtCPF.Name = "txtCPF"
         Me.txtCPF.Size = New System.Drawing.Size(86, 20)
@@ -1080,9 +1158,9 @@ Partial Class frmCadastroClientes
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 27)
+        Me.Label2.Location = New System.Drawing.Point(16, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(30, 13)
+        Me.Label2.Size = New System.Drawing.Size(29, 14)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "CPF:"
         '
@@ -1096,8 +1174,7 @@ Partial Class frmCadastroClientes
         Me.TabEmpresa.Controls.Add(Me.lblSenhaWebPJ)
         Me.TabEmpresa.Controls.Add(Me.txtSenhaWebPJ)
         Me.TabEmpresa.Controls.Add(Me.chbSenhaWebPJ)
-        Me.TabEmpresa.Controls.Add(Me.lblSimplesNacilnal)
-        Me.TabEmpresa.Controls.Add(Me.lblSenha)
+        Me.TabEmpresa.Controls.Add(Me.lblSenhaSefaz)
         Me.TabEmpresa.Controls.Add(Me.lblUsuario)
         Me.TabEmpresa.Controls.Add(Me.txtSefazSen)
         Me.TabEmpresa.Controls.Add(Me.txtSefazUsu)
@@ -1109,16 +1186,18 @@ Partial Class frmCadastroClientes
         Me.TabEmpresa.Controls.Add(Me.Label35)
         Me.TabEmpresa.Controls.Add(Me.GroupBox5)
         Me.TabEmpresa.Controls.Add(Me.GroupBox1)
-        Me.TabEmpresa.Location = New System.Drawing.Point(4, 22)
+        Me.TabEmpresa.Location = New System.Drawing.Point(4, 23)
+        Me.TabEmpresa.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TabEmpresa.Name = "TabEmpresa"
-        Me.TabEmpresa.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabEmpresa.Size = New System.Drawing.Size(1121, 642)
+        Me.TabEmpresa.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TabEmpresa.Size = New System.Drawing.Size(1122, 692)
         Me.TabEmpresa.TabIndex = 1
         Me.TabEmpresa.Text = "Empresa"
         '
         'txtEmprSimei
         '
-        Me.txtEmprSimei.Location = New System.Drawing.Point(806, 75)
+        Me.txtEmprSimei.Location = New System.Drawing.Point(761, 80)
+        Me.txtEmprSimei.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprSimei.Name = "txtEmprSimei"
         Me.txtEmprSimei.Size = New System.Drawing.Size(160, 20)
         Me.txtEmprSimei.TabIndex = 110
@@ -1128,16 +1207,18 @@ Partial Class frmCadastroClientes
         'chbSIMEI
         '
         Me.chbSIMEI.AutoSize = True
-        Me.chbSIMEI.Location = New System.Drawing.Point(635, 77)
+        Me.chbSIMEI.Location = New System.Drawing.Point(634, 83)
+        Me.chbSIMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbSIMEI.Name = "chbSIMEI"
-        Me.chbSIMEI.Size = New System.Drawing.Size(55, 17)
+        Me.chbSIMEI.Size = New System.Drawing.Size(51, 18)
         Me.chbSIMEI.TabIndex = 109
         Me.chbSIMEI.Text = "SIMEI"
         Me.chbSIMEI.UseVisualStyleBackColor = True
         '
         'txtSenhaPJValidade
         '
-        Me.txtSenhaPJValidade.Location = New System.Drawing.Point(822, 263)
+        Me.txtSenhaPJValidade.Location = New System.Drawing.Point(822, 284)
+        Me.txtSenhaPJValidade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSenhaPJValidade.Mask = "00/00/0000"
         Me.txtSenhaPJValidade.Name = "txtSenhaPJValidade"
         Me.txtSenhaPJValidade.Size = New System.Drawing.Size(91, 20)
@@ -1148,9 +1229,9 @@ Partial Class frmCadastroClientes
         'lblSenhaPJValidade
         '
         Me.lblSenhaPJValidade.AutoSize = True
-        Me.lblSenhaPJValidade.Location = New System.Drawing.Point(750, 271)
+        Me.lblSenhaPJValidade.Location = New System.Drawing.Point(750, 291)
         Me.lblSenhaPJValidade.Name = "lblSenhaPJValidade"
-        Me.lblSenhaPJValidade.Size = New System.Drawing.Size(51, 13)
+        Me.lblSenhaPJValidade.Size = New System.Drawing.Size(51, 14)
         Me.lblSenhaPJValidade.TabIndex = 107
         Me.lblSenhaPJValidade.Text = "Validade:"
         Me.lblSenhaPJValidade.Visible = False
@@ -1158,16 +1239,17 @@ Partial Class frmCadastroClientes
         'lblSenhaWebPJ
         '
         Me.lblSenhaWebPJ.AutoSize = True
-        Me.lblSenhaWebPJ.Location = New System.Drawing.Point(750, 238)
+        Me.lblSenhaWebPJ.Location = New System.Drawing.Point(750, 256)
         Me.lblSenhaWebPJ.Name = "lblSenhaWebPJ"
-        Me.lblSenhaWebPJ.Size = New System.Drawing.Size(41, 13)
+        Me.lblSenhaWebPJ.Size = New System.Drawing.Size(41, 14)
         Me.lblSenhaWebPJ.TabIndex = 104
         Me.lblSenhaWebPJ.Text = "Senha:"
         Me.lblSenhaWebPJ.Visible = False
         '
         'txtSenhaWebPJ
         '
-        Me.txtSenhaWebPJ.Location = New System.Drawing.Point(822, 230)
+        Me.txtSenhaWebPJ.Location = New System.Drawing.Point(822, 248)
+        Me.txtSenhaWebPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSenhaWebPJ.Name = "txtSenhaWebPJ"
         Me.txtSenhaWebPJ.Size = New System.Drawing.Size(160, 20)
         Me.txtSenhaWebPJ.TabIndex = 106
@@ -1176,46 +1258,38 @@ Partial Class frmCadastroClientes
         'chbSenhaWebPJ
         '
         Me.chbSenhaWebPJ.AutoSize = True
-        Me.chbSenhaWebPJ.Location = New System.Drawing.Point(635, 252)
+        Me.chbSenhaWebPJ.Location = New System.Drawing.Point(634, 271)
+        Me.chbSenhaWebPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbSenhaWebPJ.Name = "chbSenhaWebPJ"
-        Me.chbSenhaWebPJ.Size = New System.Drawing.Size(98, 17)
+        Me.chbSenhaWebPJ.Size = New System.Drawing.Size(96, 18)
         Me.chbSenhaWebPJ.TabIndex = 105
         Me.chbSenhaWebPJ.Text = "Senha Web PJ"
         Me.chbSenhaWebPJ.UseVisualStyleBackColor = True
         '
-        'lblSimplesNacilnal
+        'lblSenhaSefaz
         '
-        Me.lblSimplesNacilnal.AutoSize = True
-        Me.lblSimplesNacilnal.Location = New System.Drawing.Point(769, 28)
-        Me.lblSimplesNacilnal.Name = "lblSimplesNacilnal"
-        Me.lblSimplesNacilnal.Size = New System.Drawing.Size(35, 13)
-        Me.lblSimplesNacilnal.TabIndex = 103
-        Me.lblSimplesNacilnal.Text = "Núm.:"
-        Me.lblSimplesNacilnal.Visible = False
-        '
-        'lblSenha
-        '
-        Me.lblSenha.AutoSize = True
-        Me.lblSenha.Location = New System.Drawing.Point(766, 196)
-        Me.lblSenha.Name = "lblSenha"
-        Me.lblSenha.Size = New System.Drawing.Size(38, 13)
-        Me.lblSenha.TabIndex = 102
-        Me.lblSenha.Text = "Senha"
-        Me.lblSenha.Visible = False
+        Me.lblSenhaSefaz.AutoSize = True
+        Me.lblSenhaSefaz.Location = New System.Drawing.Point(766, 211)
+        Me.lblSenhaSefaz.Name = "lblSenhaSefaz"
+        Me.lblSenhaSefaz.Size = New System.Drawing.Size(38, 14)
+        Me.lblSenhaSefaz.TabIndex = 102
+        Me.lblSenhaSefaz.Text = "Senha"
+        Me.lblSenhaSefaz.Visible = False
         '
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Location = New System.Drawing.Point(758, 162)
+        Me.lblUsuario.Location = New System.Drawing.Point(758, 174)
         Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(43, 13)
+        Me.lblUsuario.Size = New System.Drawing.Size(44, 14)
         Me.lblUsuario.TabIndex = 101
         Me.lblUsuario.Text = "Usuario"
         Me.lblUsuario.Visible = False
         '
         'txtSefazSen
         '
-        Me.txtSefazSen.Location = New System.Drawing.Point(822, 192)
+        Me.txtSefazSen.Location = New System.Drawing.Point(822, 206)
+        Me.txtSefazSen.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSefazSen.Name = "txtSefazSen"
         Me.txtSefazSen.Size = New System.Drawing.Size(160, 20)
         Me.txtSefazSen.TabIndex = 100
@@ -1223,7 +1297,8 @@ Partial Class frmCadastroClientes
         '
         'txtSefazUsu
         '
-        Me.txtSefazUsu.Location = New System.Drawing.Point(822, 157)
+        Me.txtSefazUsu.Location = New System.Drawing.Point(822, 169)
+        Me.txtSefazUsu.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSefazUsu.Name = "txtSefazUsu"
         Me.txtSefazUsu.Size = New System.Drawing.Size(160, 20)
         Me.txtSefazUsu.TabIndex = 99
@@ -1232,16 +1307,18 @@ Partial Class frmCadastroClientes
         'chbSefaz
         '
         Me.chbSefaz.AutoSize = True
-        Me.chbSefaz.Location = New System.Drawing.Point(635, 184)
+        Me.chbSefaz.Location = New System.Drawing.Point(634, 199)
+        Me.chbSefaz.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbSefaz.Name = "chbSefaz"
-        Me.chbSefaz.Size = New System.Drawing.Size(94, 17)
+        Me.chbSefaz.Size = New System.Drawing.Size(99, 18)
         Me.chbSefaz.TabIndex = 98
         Me.chbSefaz.Text = "Acesso Sefaz:"
         Me.chbSefaz.UseVisualStyleBackColor = True
         '
         'txtSimplesNacional
         '
-        Me.txtSimplesNacional.Location = New System.Drawing.Point(822, 23)
+        Me.txtSimplesNacional.Location = New System.Drawing.Point(761, 27)
+        Me.txtSimplesNacional.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtSimplesNacional.Name = "txtSimplesNacional"
         Me.txtSimplesNacional.Size = New System.Drawing.Size(160, 20)
         Me.txtSimplesNacional.TabIndex = 97
@@ -1250,9 +1327,10 @@ Partial Class frmCadastroClientes
         'chbSimples
         '
         Me.chbSimples.AutoSize = True
-        Me.chbSimples.Location = New System.Drawing.Point(635, 26)
+        Me.chbSimples.Location = New System.Drawing.Point(634, 28)
+        Me.chbSimples.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbSimples.Name = "chbSimples"
-        Me.chbSimples.Size = New System.Drawing.Size(110, 17)
+        Me.chbSimples.Size = New System.Drawing.Size(110, 18)
         Me.chbSimples.TabIndex = 96
         Me.chbSimples.Text = "Simples Nacional:"
         Me.chbSimples.UseVisualStyleBackColor = True
@@ -1262,9 +1340,10 @@ Partial Class frmCadastroClientes
         Me.btEmpresaSalvar.FlatAppearance.BorderSize = 0
         Me.btEmpresaSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEmpresaSalvar.Image = CType(resources.GetObject("btEmpresaSalvar.Image"), System.Drawing.Image)
-        Me.btEmpresaSalvar.Location = New System.Drawing.Point(1024, 14)
+        Me.btEmpresaSalvar.Location = New System.Drawing.Point(1024, 15)
+        Me.btEmpresaSalvar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btEmpresaSalvar.Name = "btEmpresaSalvar"
-        Me.btEmpresaSalvar.Size = New System.Drawing.Size(91, 41)
+        Me.btEmpresaSalvar.Size = New System.Drawing.Size(91, 45)
         Me.btEmpresaSalvar.TabIndex = 95
         Me.btEmpresaSalvar.Text = "Salvar"
         Me.btEmpresaSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1272,18 +1351,19 @@ Partial Class frmCadastroClientes
         '
         'txtEmprObs
         '
-        Me.txtEmprObs.Location = New System.Drawing.Point(121, 497)
+        Me.txtEmprObs.Location = New System.Drawing.Point(122, 536)
+        Me.txtEmprObs.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprObs.Multiline = True
         Me.txtEmprObs.Name = "txtEmprObs"
-        Me.txtEmprObs.Size = New System.Drawing.Size(471, 116)
+        Me.txtEmprObs.Size = New System.Drawing.Size(470, 125)
         Me.txtEmprObs.TabIndex = 31
         '
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(15, 495)
+        Me.Label35.Location = New System.Drawing.Point(15, 533)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(73, 13)
+        Me.Label35.Size = New System.Drawing.Size(76, 14)
         Me.Label35.TabIndex = 30
         Me.Label35.Text = "Observações:"
         '
@@ -1303,16 +1383,19 @@ Partial Class frmCadastroClientes
         Me.GroupBox5.Controls.Add(Me.Label33)
         Me.GroupBox5.Controls.Add(Me.txtEmprNum)
         Me.GroupBox5.Controls.Add(Me.Label34)
-        Me.GroupBox5.Location = New System.Drawing.Point(15, 289)
+        Me.GroupBox5.Location = New System.Drawing.Point(15, 312)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(583, 198)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox5.Size = New System.Drawing.Size(583, 214)
         Me.GroupBox5.TabIndex = 5
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Endereço"
         '
         'txtEmprCidade
         '
-        Me.txtEmprCidade.Location = New System.Drawing.Point(76, 131)
+        Me.txtEmprCidade.Location = New System.Drawing.Point(76, 141)
+        Me.txtEmprCidade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprCidade.Name = "txtEmprCidade"
         Me.txtEmprCidade.Size = New System.Drawing.Size(487, 20)
         Me.txtEmprCidade.TabIndex = 15
@@ -1320,9 +1403,9 @@ Partial Class frmCadastroClientes
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(20, 134)
+        Me.Label28.Location = New System.Drawing.Point(20, 144)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(43, 13)
+        Me.Label28.Size = New System.Drawing.Size(43, 14)
         Me.Label28.TabIndex = 12
         Me.Label28.Text = "Cidade:"
         '
@@ -1330,28 +1413,32 @@ Partial Class frmCadastroClientes
         '
         Me.txtEmprUF.FormattingEnabled = True
         Me.txtEmprUF.Items.AddRange(New Object() {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"})
-        Me.txtEmprUF.Location = New System.Drawing.Point(77, 162)
+        Me.txtEmprUF.Location = New System.Drawing.Point(77, 174)
+        Me.txtEmprUF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprUF.Name = "txtEmprUF"
-        Me.txtEmprUF.Size = New System.Drawing.Size(49, 21)
+        Me.txtEmprUF.Size = New System.Drawing.Size(49, 22)
         Me.txtEmprUF.TabIndex = 16
         '
         'txtEmprComplemento
         '
-        Me.txtEmprComplemento.Location = New System.Drawing.Point(269, 65)
+        Me.txtEmprComplemento.Location = New System.Drawing.Point(269, 70)
+        Me.txtEmprComplemento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprComplemento.Name = "txtEmprComplemento"
         Me.txtEmprComplemento.Size = New System.Drawing.Size(294, 20)
         Me.txtEmprComplemento.TabIndex = 13
         '
         'txtEmprEndereco
         '
-        Me.txtEmprEndereco.Location = New System.Drawing.Point(112, 23)
+        Me.txtEmprEndereco.Location = New System.Drawing.Point(112, 24)
+        Me.txtEmprEndereco.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprEndereco.Name = "txtEmprEndereco"
         Me.txtEmprEndereco.Size = New System.Drawing.Size(451, 20)
         Me.txtEmprEndereco.TabIndex = 11
         '
         'txtEmprCEP
         '
-        Me.txtEmprCEP.Location = New System.Drawing.Point(184, 162)
+        Me.txtEmprCEP.Location = New System.Drawing.Point(184, 174)
+        Me.txtEmprCEP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprCEP.Mask = "00000-999"
         Me.txtEmprCEP.Name = "txtEmprCEP"
         Me.txtEmprCEP.Size = New System.Drawing.Size(86, 20)
@@ -1359,7 +1446,8 @@ Partial Class frmCadastroClientes
         '
         'txtEmprBairro
         '
-        Me.txtEmprBairro.Location = New System.Drawing.Point(77, 94)
+        Me.txtEmprBairro.Location = New System.Drawing.Point(77, 102)
+        Me.txtEmprBairro.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprBairro.Name = "txtEmprBairro"
         Me.txtEmprBairro.Size = New System.Drawing.Size(486, 20)
         Me.txtEmprBairro.TabIndex = 14
@@ -1367,51 +1455,52 @@ Partial Class frmCadastroClientes
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(21, 97)
+        Me.Label29.Location = New System.Drawing.Point(21, 104)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(37, 13)
+        Me.Label29.Size = New System.Drawing.Size(39, 14)
         Me.Label29.TabIndex = 4
         Me.Label29.Text = "Bairro:"
         '
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(46, 168)
+        Me.Label30.Location = New System.Drawing.Point(46, 181)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(24, 13)
+        Me.Label30.Size = New System.Drawing.Size(23, 14)
         Me.Label30.TabIndex = 5
         Me.Label30.Text = "UF:"
         '
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(19, 26)
+        Me.Label31.Location = New System.Drawing.Point(19, 28)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(64, 13)
+        Me.Label31.Size = New System.Drawing.Size(66, 14)
         Me.Label31.TabIndex = 3
         Me.Label31.Text = "Logradouro:"
         '
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(161, 68)
+        Me.Label32.Location = New System.Drawing.Point(161, 74)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(74, 13)
+        Me.Label32.Size = New System.Drawing.Size(74, 14)
         Me.Label32.TabIndex = 2
         Me.Label32.Text = "Complemento:"
         '
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(19, 64)
+        Me.Label33.Location = New System.Drawing.Point(19, 69)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(35, 13)
+        Me.Label33.Size = New System.Drawing.Size(34, 14)
         Me.Label33.TabIndex = 0
         Me.Label33.Text = "Núm.:"
         '
         'txtEmprNum
         '
-        Me.txtEmprNum.Location = New System.Drawing.Point(77, 61)
+        Me.txtEmprNum.Location = New System.Drawing.Point(77, 66)
+        Me.txtEmprNum.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprNum.Name = "txtEmprNum"
         Me.txtEmprNum.Size = New System.Drawing.Size(69, 20)
         Me.txtEmprNum.TabIndex = 12
@@ -1419,9 +1508,9 @@ Partial Class frmCadastroClientes
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(136, 170)
+        Me.Label34.Location = New System.Drawing.Point(136, 183)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(31, 13)
+        Me.Label34.Size = New System.Drawing.Size(29, 14)
         Me.Label34.TabIndex = 1
         Me.Label34.Text = "CEP:"
         '
@@ -1454,8 +1543,10 @@ Partial Class frmCadastroClientes
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(615, 275)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(615, 297)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Dados da Empresa"
@@ -1463,58 +1554,62 @@ Partial Class frmCadastroClientes
         'lblidEmpresa
         '
         Me.lblidEmpresa.AutoSize = True
-        Me.lblidEmpresa.Location = New System.Drawing.Point(54, 20)
+        Me.lblidEmpresa.Location = New System.Drawing.Point(54, 22)
         Me.lblidEmpresa.Name = "lblidEmpresa"
-        Me.lblidEmpresa.Size = New System.Drawing.Size(13, 13)
+        Me.lblidEmpresa.Size = New System.Drawing.Size(13, 14)
         Me.lblidEmpresa.TabIndex = 74
         Me.lblidEmpresa.Text = "0"
         '
         'cboCliente
         '
         Me.cboCliente.FormattingEnabled = True
-        Me.cboCliente.Location = New System.Drawing.Point(237, 244)
+        Me.cboCliente.Location = New System.Drawing.Point(237, 262)
+        Me.cboCliente.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cboCliente.Name = "cboCliente"
-        Me.cboCliente.Size = New System.Drawing.Size(186, 21)
+        Me.cboCliente.Size = New System.Drawing.Size(186, 22)
         Me.cboCliente.TabIndex = 73
         Me.cboCliente.Visible = False
         '
         'txtEmprCPF
         '
-        Me.txtEmprCPF.Location = New System.Drawing.Point(121, 248)
+        Me.txtEmprCPF.Location = New System.Drawing.Point(122, 267)
+        Me.txtEmprCPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprCPF.Mask = "000.000.000-00"
         Me.txtEmprCPF.Name = "txtEmprCPF"
         Me.txtEmprCPF.ReadOnly = True
-        Me.txtEmprCPF.Size = New System.Drawing.Size(89, 20)
+        Me.txtEmprCPF.Size = New System.Drawing.Size(90, 20)
         Me.txtEmprCPF.TabIndex = 72
         '
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(72, 254)
+        Me.Label37.Location = New System.Drawing.Point(72, 274)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(42, 13)
+        Me.Label37.Size = New System.Drawing.Size(42, 14)
         Me.Label37.TabIndex = 70
         Me.Label37.Text = "Cliente:"
         '
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(311, 110)
+        Me.Label38.Location = New System.Drawing.Point(310, 118)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(36, 13)
+        Me.Label38.Size = New System.Drawing.Size(32, 14)
         Me.Label38.TabIndex = 69
         Me.Label38.Text = "NIRE:"
         '
         'txtNIRE
         '
-        Me.txtNIRE.Location = New System.Drawing.Point(362, 105)
+        Me.txtNIRE.Location = New System.Drawing.Point(362, 113)
+        Me.txtNIRE.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNIRE.Name = "txtNIRE"
         Me.txtNIRE.Size = New System.Drawing.Size(210, 20)
         Me.txtNIRE.TabIndex = 68
         '
         'txtEmprPorte
         '
-        Me.txtEmprPorte.Location = New System.Drawing.Point(508, 179)
+        Me.txtEmprPorte.Location = New System.Drawing.Point(508, 192)
+        Me.txtEmprPorte.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtEmprPorte.Name = "txtEmprPorte"
         Me.txtEmprPorte.Size = New System.Drawing.Size(90, 20)
         Me.txtEmprPorte.TabIndex = 64
@@ -1522,15 +1617,16 @@ Partial Class frmCadastroClientes
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(462, 183)
+        Me.Label36.Location = New System.Drawing.Point(462, 197)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(35, 13)
+        Me.Label36.Size = New System.Drawing.Size(35, 14)
         Me.Label36.TabIndex = 65
         Me.Label36.Text = "Porte:"
         '
         'txtNomeFantasia
         '
-        Me.txtNomeFantasia.Location = New System.Drawing.Point(95, 73)
+        Me.txtNomeFantasia.Location = New System.Drawing.Point(94, 79)
+        Me.txtNomeFantasia.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNomeFantasia.Name = "txtNomeFantasia"
         Me.txtNomeFantasia.Size = New System.Drawing.Size(477, 20)
         Me.txtNomeFantasia.TabIndex = 62
@@ -1538,40 +1634,42 @@ Partial Class frmCadastroClientes
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 75)
+        Me.Label8.Location = New System.Drawing.Point(6, 80)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(81, 13)
+        Me.Label8.Size = New System.Drawing.Size(81, 14)
         Me.Label8.TabIndex = 63
         Me.Label8.Text = "Nome Fantasia:"
         '
         'txtCCM
         '
-        Me.txtCCM.Location = New System.Drawing.Point(389, 145)
+        Me.txtCCM.Location = New System.Drawing.Point(389, 157)
+        Me.txtCCM.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCCM.Name = "txtCCM"
-        Me.txtCCM.Size = New System.Drawing.Size(209, 20)
+        Me.txtCCM.Size = New System.Drawing.Size(210, 20)
         Me.txtCCM.TabIndex = 52
         '
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(9, 148)
+        Me.Label26.Location = New System.Drawing.Point(9, 159)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(80, 13)
+        Me.Label26.Size = New System.Drawing.Size(80, 14)
         Me.Label26.TabIndex = 51
         Me.Label26.Text = "Inscr. Estadual:"
         '
         'lblclienteID
         '
         Me.lblclienteID.AutoSize = True
-        Me.lblclienteID.Location = New System.Drawing.Point(505, 251)
+        Me.lblclienteID.Location = New System.Drawing.Point(506, 270)
         Me.lblclienteID.Name = "lblclienteID"
-        Me.lblclienteID.Size = New System.Drawing.Size(13, 13)
+        Me.lblclienteID.Size = New System.Drawing.Size(13, 14)
         Me.lblclienteID.TabIndex = 61
         Me.lblclienteID.Text = "0"
         '
         'txtInscrEstadual
         '
-        Me.txtInscrEstadual.Location = New System.Drawing.Point(121, 143)
+        Me.txtInscrEstadual.Location = New System.Drawing.Point(122, 154)
+        Me.txtInscrEstadual.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtInscrEstadual.Name = "txtInscrEstadual"
         Me.txtInscrEstadual.Size = New System.Drawing.Size(210, 20)
         Me.txtInscrEstadual.TabIndex = 50
@@ -1579,24 +1677,25 @@ Partial Class frmCadastroClientes
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(21, 21)
+        Me.Label14.Location = New System.Drawing.Point(21, 23)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(21, 13)
+        Me.Label14.Size = New System.Drawing.Size(19, 14)
         Me.Label14.TabIndex = 60
         Me.Label14.Text = "ID:"
         '
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(338, 151)
+        Me.Label27.Location = New System.Drawing.Point(338, 163)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(33, 13)
+        Me.Label27.Size = New System.Drawing.Size(32, 14)
         Me.Label27.TabIndex = 53
         Me.Label27.Text = "CCM:"
         '
         'txtRazaoSocial
         '
-        Me.txtRazaoSocial.Location = New System.Drawing.Point(95, 43)
+        Me.txtRazaoSocial.Location = New System.Drawing.Point(94, 46)
+        Me.txtRazaoSocial.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRazaoSocial.Name = "txtRazaoSocial"
         Me.txtRazaoSocial.Size = New System.Drawing.Size(477, 20)
         Me.txtRazaoSocial.TabIndex = 59
@@ -1604,77 +1703,81 @@ Partial Class frmCadastroClientes
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(18, 46)
+        Me.Label25.Location = New System.Drawing.Point(18, 50)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(73, 13)
+        Me.Label25.Size = New System.Drawing.Size(73, 14)
         Me.Label25.TabIndex = 58
         Me.Label25.Text = "Razão Social:"
         '
         'txtAtividade
         '
-        Me.txtAtividade.Location = New System.Drawing.Point(121, 176)
+        Me.txtAtividade.Location = New System.Drawing.Point(122, 190)
+        Me.txtAtividade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtAtividade.Name = "txtAtividade"
         Me.txtAtividade.Size = New System.Drawing.Size(337, 20)
         Me.txtAtividade.TabIndex = 56
         '
         'txtCNPJ
         '
-        Me.txtCNPJ.Location = New System.Drawing.Point(95, 102)
+        Me.txtCNPJ.Location = New System.Drawing.Point(94, 109)
+        Me.txtCNPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCNPJ.Mask = "00.000.000/0000-00"
         Me.txtCNPJ.Name = "txtCNPJ"
-        Me.txtCNPJ.Size = New System.Drawing.Size(137, 20)
+        Me.txtCNPJ.Size = New System.Drawing.Size(138, 20)
         Me.txtCNPJ.TabIndex = 55
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(45, 179)
+        Me.Label15.Location = New System.Drawing.Point(45, 192)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(54, 13)
+        Me.Label15.Size = New System.Drawing.Size(55, 14)
         Me.Label15.TabIndex = 57
         Me.Label15.Text = "Atividade:"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(41, 105)
+        Me.Label24.Location = New System.Drawing.Point(41, 113)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(37, 13)
+        Me.Label24.Size = New System.Drawing.Size(35, 14)
         Me.Label24.TabIndex = 54
         Me.Label24.Text = "CNPJ:"
         '
         'cbTipo
         '
         Me.cbTipo.FormattingEnabled = True
-        Me.cbTipo.Location = New System.Drawing.Point(121, 207)
+        Me.cbTipo.Location = New System.Drawing.Point(122, 223)
+        Me.cbTipo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cbTipo.Name = "cbTipo"
-        Me.cbTipo.Size = New System.Drawing.Size(186, 21)
+        Me.cbTipo.Size = New System.Drawing.Size(186, 22)
         Me.cbTipo.TabIndex = 48
         '
         'dtpDataInicio
         '
         Me.dtpDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDataInicio.Location = New System.Drawing.Point(424, 208)
+        Me.dtpDataInicio.Location = New System.Drawing.Point(424, 224)
+        Me.dtpDataInicio.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dtpDataInicio.Name = "dtpDataInicio"
-        Me.dtpDataInicio.Size = New System.Drawing.Size(111, 20)
+        Me.dtpDataInicio.Size = New System.Drawing.Size(110, 20)
         Me.dtpDataInicio.TabIndex = 49
         Me.dtpDataInicio.Value = New Date(2019, 7, 5, 0, 0, 0, 0)
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(329, 212)
+        Me.Label4.Location = New System.Drawing.Point(329, 228)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 13)
+        Me.Label4.Size = New System.Drawing.Size(74, 14)
         Me.Label4.TabIndex = 46
         Me.Label4.Text = "Data de Início:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(78, 213)
+        Me.Label6.Location = New System.Drawing.Point(78, 229)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(31, 13)
+        Me.Label6.Size = New System.Drawing.Size(30, 14)
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "Tipo:"
         '
@@ -1683,9 +1786,10 @@ Partial Class frmCadastroClientes
         Me.btLimpar.FlatAppearance.BorderSize = 0
         Me.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btLimpar.Image = CType(resources.GetObject("btLimpar.Image"), System.Drawing.Image)
-        Me.btLimpar.Location = New System.Drawing.Point(1147, 117)
+        Me.btLimpar.Location = New System.Drawing.Point(1148, 126)
+        Me.btLimpar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btLimpar.Name = "btLimpar"
-        Me.btLimpar.Size = New System.Drawing.Size(105, 48)
+        Me.btLimpar.Size = New System.Drawing.Size(104, 52)
         Me.btLimpar.TabIndex = 84
         Me.btLimpar.Text = "Limpar Campos"
         Me.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1696,9 +1800,10 @@ Partial Class frmCadastroClientes
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(1147, 36)
+        Me.btSair.Location = New System.Drawing.Point(1147, 38)
+        Me.btSair.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(82, 80)
+        Me.btSair.Size = New System.Drawing.Size(82, 87)
         Me.btSair.TabIndex = 26
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = True
@@ -1706,9 +1811,9 @@ Partial Class frmCadastroClientes
         'lblciID
         '
         Me.lblciID.AutoSize = True
-        Me.lblciID.Location = New System.Drawing.Point(1160, 20)
+        Me.lblciID.Location = New System.Drawing.Point(1160, 22)
         Me.lblciID.Name = "lblciID"
-        Me.lblciID.Size = New System.Drawing.Size(13, 13)
+        Me.lblciID.Size = New System.Drawing.Size(13, 14)
         Me.lblciID.TabIndex = 27
         Me.lblciID.Text = "0"
         '
@@ -1721,25 +1826,59 @@ Partial Class frmCadastroClientes
         Me.btPesquisaEmpresa.FlatAppearance.BorderSize = 0
         Me.btPesquisaEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisaEmpresa.Image = CType(resources.GetObject("btPesquisaEmpresa.Image"), System.Drawing.Image)
-        Me.btPesquisaEmpresa.Location = New System.Drawing.Point(1163, 183)
+        Me.btPesquisaEmpresa.Location = New System.Drawing.Point(1162, 197)
+        Me.btPesquisaEmpresa.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btPesquisaEmpresa.Name = "btPesquisaEmpresa"
-        Me.btPesquisaEmpresa.Size = New System.Drawing.Size(89, 52)
+        Me.btPesquisaEmpresa.Size = New System.Drawing.Size(90, 56)
         Me.btPesquisaEmpresa.TabIndex = 95
         Me.btPesquisaEmpresa.Text = "Pesquisar Empresa"
         Me.btPesquisaEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btPesquisaEmpresa.UseVisualStyleBackColor = True
         '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(118, 15)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(70, 14)
+        Me.Label41.TabIndex = 95
+        Me.Label41.Text = "Nº Benefício:"
+        Me.Label41.Visible = False
+        '
+        'txtCPFRedesim
+        '
+        Me.txtCPFRedesim.Location = New System.Drawing.Point(135, 547)
+        Me.txtCPFRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtCPFRedesim.Mask = "000.000.000-00"
+        Me.txtCPFRedesim.Name = "txtCPFRedesim"
+        Me.txtCPFRedesim.ReadOnly = True
+        Me.txtCPFRedesim.Size = New System.Drawing.Size(90, 20)
+        Me.txtCPFRedesim.TabIndex = 97
+        Me.txtCPFRedesim.Visible = False
+        '
+        'lblcpfRedesim
+        '
+        Me.lblcpfRedesim.AutoSize = True
+        Me.lblcpfRedesim.Location = New System.Drawing.Point(103, 553)
+        Me.lblcpfRedesim.Name = "lblcpfRedesim"
+        Me.lblcpfRedesim.Size = New System.Drawing.Size(29, 14)
+        Me.lblcpfRedesim.TabIndex = 96
+        Me.lblcpfRedesim.Text = "CPF:"
+        Me.lblcpfRedesim.Visible = False
+        '
         'frmCadastroClientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.ClientSize = New System.Drawing.Size(1264, 686)
         Me.Controls.Add(Me.btPesquisaEmpresa)
         Me.Controls.Add(Me.lblciID)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btLimpar)
+        Me.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "frmCadastroClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cadastro de Clientes"
@@ -1831,7 +1970,6 @@ Partial Class frmCadastroClientes
     Public WithEvents txtMEI As System.Windows.Forms.TextBox
     Public WithEvents txtVIP As System.Windows.Forms.TextBox
     Public WithEvents txtAutonomo As System.Windows.Forms.TextBox
-    Public WithEvents txtFuncPublico As System.Windows.Forms.TextBox
     Public WithEvents txtPJ As System.Windows.Forms.TextBox
     Public WithEvents txtNumBeneficio As System.Windows.Forms.TextBox
     Public WithEvents txtParcelamentos As System.Windows.Forms.TextBox
@@ -1851,8 +1989,7 @@ Partial Class frmCadastroClientes
     Friend WithEvents lblSenhaWebPJ As System.Windows.Forms.Label
     Public WithEvents txtSenhaWebPJ As System.Windows.Forms.TextBox
     Friend WithEvents chbSenhaWebPJ As System.Windows.Forms.CheckBox
-    Friend WithEvents lblSimplesNacilnal As System.Windows.Forms.Label
-    Friend WithEvents lblSenha As System.Windows.Forms.Label
+    Friend WithEvents lblSenhaSefaz As System.Windows.Forms.Label
     Friend WithEvents lblUsuario As System.Windows.Forms.Label
     Public WithEvents txtSefazSen As System.Windows.Forms.TextBox
     Public WithEvents txtSefazUsu As System.Windows.Forms.TextBox
@@ -1921,4 +2058,8 @@ Partial Class frmCadastroClientes
     Friend WithEvents cboCliente As System.Windows.Forms.ComboBox
     Friend WithEvents lblidEmpresa As System.Windows.Forms.Label
     Friend WithEvents btPesquisaEmpresa As System.Windows.Forms.Button
+    Public WithEvents txtFuncPublico As System.Windows.Forms.ComboBox
+    Friend WithEvents Label41 As System.Windows.Forms.Label
+    Public WithEvents txtCPFRedesim As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents lblcpfRedesim As System.Windows.Forms.Label
 End Class

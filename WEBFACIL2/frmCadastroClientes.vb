@@ -110,7 +110,7 @@ Public Class frmCadastroClientes
             cliente.cli_DtCadastro = Now.Date
 
             cliente.GravarDados()
-            
+
             LimparCampos()
 
         Catch ex As Exception
@@ -136,7 +136,7 @@ Public Class frmCadastroClientes
         Dim clnCategoria As New clsCategoria
         clnCategoria.cat_ID = cbTipo.SelectedValue
 
-        Dim clnCliente As New clsCliente 
+        Dim clnCliente As New clsCliente
         clnCliente.cli_id = cboCliente.SelectedValue
 
 
@@ -197,6 +197,7 @@ Public Class frmCadastroClientes
         lblciID.Text = frmClienteConsulta.cli_id
         txtCPF.Text = frmClienteConsulta.cli_CPF
         txtEmprCPF.Text = frmClienteConsulta.cli_CPF
+        txtCPFRedesim.Text = frmClienteConsulta.cli_CPF
         lblclienteID.Text = frmClienteConsulta.cli_id
         txtRG.Text = frmClienteConsulta.cli_RG
         txtNome.Text = frmClienteConsulta.cli_Nome
@@ -455,7 +456,7 @@ Public Class frmCadastroClientes
         chbAposentado.Checked = False
         txtNumBeneficio.Text = ""
         chbFuncPublico.Checked = False
-        txtFuncPublico.Text = ""
+        ' txtFuncPublico_old.Text = ""
         chbAutonomo.Checked = False
         txtAutonomo.Text = ""
         chbFalecido.Checked = False
@@ -661,6 +662,22 @@ Public Class frmCadastroClientes
         CodRFB()
     End Sub
 
+    Private Sub chbSimples_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSimples.CheckedChanged
+        SimplesNacional()
+    End Sub
+
+    Private Sub chbSIMEI_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSIMEI.CheckedChanged
+        SIMEI()
+    End Sub
+
+    Private Sub chbSefaz_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSefaz.CheckedChanged
+        acessoSefaz()
+    End Sub
+
+    Private Sub chbSenhaWebPJ_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSenhaWebPJ.CheckedChanged
+        SenhaWebPJ()
+    End Sub
+
     Private Sub Aposentado()
         Try
             If chbAposentado.Checked = True Then
@@ -697,11 +714,11 @@ Public Class frmCadastroClientes
         Try
             If chbAutonomo.Checked = True Then
                 '  lblAutonomo.Visible = True
-                txtAutonomo.Visible = True
+                '  txtAutonomo.Visible = True
 
             Else
                 ' lblAutonomo.Visible = False
-                txtAutonomo.Visible = False
+                ' txtAutonomo.Visible = False
 
             End If
         Catch ex As Exception
@@ -914,12 +931,13 @@ Public Class frmCadastroClientes
             If chbRedesim.Checked = True Then
                 lblSenhaRedesim.Visible = True
                 txtSenhaRedesim.Visible = True
-
+                txtCPFRedesim.Visible = True
+                lblcpfRedesim.Visible = True
             Else
                 lblSenhaRedesim.Visible = False
                 txtSenhaRedesim.Visible = False
-
-
+                txtCPFRedesim.Visible = False
+                lblcpfRedesim.Visible = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -944,7 +962,67 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
-   
-    
-    
+    Private Sub SimplesNacional()
+        Try
+            If chbSimples.Checked = True Then
+                txtSimplesNacional.Visible = True
+            Else
+                txtSimplesNacional.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SIMEI()
+        Try
+            If chbSIMEI.Checked = True Then
+                txtEmprSimei.Visible = True
+            Else
+                txtEmprSimei.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub acessoSefaz()
+        Try
+            If chbSefaz.Checked = True Then
+                lblUsuario.Visible = True
+                lblSenhaSefaz.Visible = True
+                txtSefazUsu.Visible = True
+                txtSefazSen.Visible = True
+            Else
+                lblUsuario.Visible = False
+                lblSenhaSefaz.Visible = False
+                txtSefazUsu.Visible = False
+                txtSefazSen.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub SenhaWebPJ()
+        Try
+            If chbSenhaWebPJ.Checked = True Then
+                lblSenhaWebPJ.Visible = True
+                lblSenhaPJValidade.Visible = True
+                txtSenhaWebPJ.Visible = True
+                txtSenhaPJValidade.Visible = True
+            Else
+                lblSenhaWebPJ.Visible = False
+                lblSenhaPJValidade.Visible = False
+                txtSenhaWebPJ.Visible = False
+                txtSenhaPJValidade.Visible = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
 End Class
