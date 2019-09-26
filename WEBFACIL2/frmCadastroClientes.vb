@@ -253,70 +253,71 @@ Public Class frmCadastroClientes
     End Sub
 
     Private Sub btPesquisaEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisaEmpresa.Click
-        Dim frmClienteConsulta As New frmEmpresaConsulta
-        frmClienteConsulta.Text = "Consulta de Cliente com Empresa"
-        frmClienteConsulta.ConsultaTipo = frmEmpresaConsulta.TipoConsulta.Cliente
-        frmClienteConsulta.ShowDialog()
+        Dim frmEmpresaConsulta As New frmEmpresaConsulta
+        frmEmpresaConsulta.Text = "Consulta de Cliente com Empresa"
+        frmEmpresaConsulta.ConsultaTipo = frmEmpresaConsulta.TipoConsulta.Cliente
+        frmEmpresaConsulta.ShowDialog()
 
-        CodigoCliente = frmClienteConsulta.cli_id
-        lblciID.Text = frmClienteConsulta.cli_id
-        txtCPF.Text = frmClienteConsulta.cli_CPF
-        txtEmprCPF.Text = frmClienteConsulta.cli_CPF
-        lblclienteID.Text = frmClienteConsulta.cli_id
-        txtRG.Text = frmClienteConsulta.cli_RG
-        txtNome.Text = frmClienteConsulta.cli_Nome
-        txtPIS.Text = frmClienteConsulta.cli_PIS
-        txtTitEleitoral.Text = frmClienteConsulta.cli_TitEleitoral
-        txtLogradouro.Text = frmClienteConsulta.cli_Logradouro
-        txtNumero.Text = frmClienteConsulta.cli_Numero
-        txtComplemento.Text = frmClienteConsulta.cli_complemento
-        txtBairro.Text = frmClienteConsulta.cli_Bairro
-        txtCidade.Text = frmClienteConsulta.cli_Cidade
-        cboUF.Text = frmClienteConsulta.cli_UF
-        txtCEP.Text = frmClienteConsulta.cli_CEP
-        txtFoneRes.Text = frmClienteConsulta.cli_FoneRes
-        txtFoneCel.Text = frmClienteConsulta.cli_FoneCel
-        txtDtNasc.Text = frmClienteConsulta.cli_data_nasc
-        chbCurriculo.Checked = frmClienteConsulta.cli_Curriculo
-        txtEmail.Text = frmClienteConsulta.cli_Email
-        txtObs.Text = frmClienteConsulta.cli_observacoes
-        chbAposentado.Checked = frmClienteConsulta.cli_Aposentado
-        txtNumBeneficio.Text = frmClienteConsulta.cli_NumBeneficio
-        chbFuncPublico.Checked = frmClienteConsulta.cli_FuncPublico
-        txtFuncPublico.Text = frmClienteConsulta.cli_NomeFunc
-        chbAutonomo.Checked = frmClienteConsulta.cli_Autonomo
-        txtAutonomo.Text = frmClienteConsulta.cli_AutonomoNome
-        chbFalecido.Checked = frmClienteConsulta.cli_Falecido
-        txtFalecido.Text = frmClienteConsulta.cli_NomeFalecido
-        chbParcelamentos.Checked = frmClienteConsulta.cli_Parcelamento
-        txtParcelamentos.Text = frmClienteConsulta.cli_NumParcelamento
-        chbESocial.Checked = frmClienteConsulta.cli_EmprDom
-        txtESocial.Text = frmClienteConsulta.cli_ESocial
-        txtEsocialSenha.Text = frmClienteConsulta.cli_EsocialSenha
-        chbVIP.Checked = frmClienteConsulta.cli_VIP
-        txtVIP.Text = frmClienteConsulta.cli_VIPDescricao
-        chbPJ.Checked = frmClienteConsulta.cli_PJ
-        txtPJ.Text = frmClienteConsulta.cli_NumPJ
-        chbMEI.Checked = frmClienteConsulta.cli_MEI
-        txtMEI.Text = frmClienteConsulta.cli_NumMEI
-        chbITR.Checked = frmClienteConsulta.cli_ITR
-        txtITR.Text = frmClienteConsulta.cli_NumITR
-        chbMensalista.Checked = frmClienteConsulta.cli_Mensalista
-        txtMensalista.Text = frmClienteConsulta.cli_NomeMensalista
-        chbDecore.Checked = frmClienteConsulta.cli_Decore
-        txtDecore.Text = frmClienteConsulta.cli_DecoreDescricao
-        chbIRPF.Checked = frmClienteConsulta.cli_IRPF
-        txtIRPF.Text = frmClienteConsulta.cli_NumIRPF
-        chbSenhaWeb.Checked = frmClienteConsulta.cli_SenWebPrefeitura
-        txtSenhaWeb.Text = frmClienteConsulta.cli_SenhaWebPrefeitura
-        chbRedesim.Checked = frmClienteConsulta.cli_Redesim
-        txtSenhaRedesim.Text = frmClienteConsulta.cli_SenhaRedesim
-        chbCodRFB.Checked = frmClienteConsulta.cli_CodRFB
-        txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
-        txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
+        CodigoCliente = frmEmpresaConsulta.cli_id
+        lblciID.Text = frmEmpresaConsulta.cli_id
+        txtCPF.Text = frmEmpresaConsulta.cli_CPF
+        txtEmprCPF.Text = frmEmpresaConsulta.cli_CPF
+        lblclienteID.Text = frmEmpresaConsulta.cli_id
+        txtRG.Text = frmEmpresaConsulta.cli_RG
+        txtNome.Text = frmEmpresaConsulta.cli_Nome
+        txtPIS.Text = frmEmpresaConsulta.cli_PIS
+        txtTitEleitoral.Text = frmEmpresaConsulta.cli_TitEleitoral
+        txtLogradouro.Text = frmEmpresaConsulta.cli_Logradouro
+        txtNumero.Text = frmEmpresaConsulta.cli_Numero
+        txtComplemento.Text = frmEmpresaConsulta.cli_complemento
+        txtBairro.Text = frmEmpresaConsulta.cli_Bairro
+        txtCidade.Text = frmEmpresaConsulta.cli_Cidade
+        cboUF.Text = frmEmpresaConsulta.cli_UF
+        txtCEP.Text = frmEmpresaConsulta.cli_CEP
+        txtFoneRes.Text = frmEmpresaConsulta.cli_FoneRes
+        txtFoneCel.Text = frmEmpresaConsulta.cli_FoneCel
+        txtDtNasc.Text = frmEmpresaConsulta.cli_data_nasc
+        chbCurriculo.Checked = frmEmpresaConsulta.cli_Curriculo
+        txtEmail.Text = frmEmpresaConsulta.cli_Email
+        txtObs.Text = frmEmpresaConsulta.cli_observacoes
+        chbAposentado.Checked = frmEmpresaConsulta.cli_Aposentado
+        txtNumBeneficio.Text = frmEmpresaConsulta.cli_NumBeneficio
+        chbFuncPublico.Checked = frmEmpresaConsulta.cli_FuncPublico
+        txtFuncPublico.Text = frmEmpresaConsulta.cli_NomeFunc
+        chbAutonomo.Checked = frmEmpresaConsulta.cli_Autonomo
+        txtAutonomo.Text = frmEmpresaConsulta.cli_AutonomoNome
+        chbFalecido.Checked = frmEmpresaConsulta.cli_Falecido
+        txtFalecido.Text = frmEmpresaConsulta.cli_NomeFalecido
+        chbParcelamentos.Checked = frmEmpresaConsulta.cli_Parcelamento
+        txtParcelamentos.Text = frmEmpresaConsulta.cli_NumParcelamento
+        chbESocial.Checked = frmEmpresaConsulta.cli_EmprDom
+        txtESocial.Text = frmEmpresaConsulta.cli_ESocial
+        txtEsocialSenha.Text = frmEmpresaConsulta.cli_EsocialSenha
+        chbVIP.Checked = frmEmpresaConsulta.cli_VIP
+        txtVIP.Text = frmEmpresaConsulta.cli_VIPDescricao
+        chbPJ.Checked = frmEmpresaConsulta.cli_PJ
+        txtPJ.Text = frmEmpresaConsulta.cli_NumPJ
+        chbMEI.Checked = frmEmpresaConsulta.cli_MEI
+        txtMEI.Text = frmEmpresaConsulta.cli_NumMEI
+        chbITR.Checked = frmEmpresaConsulta.cli_ITR
+        txtITR.Text = frmEmpresaConsulta.cli_NumITR
+        chbMensalista.Checked = frmEmpresaConsulta.cli_Mensalista
+        txtMensalista.Text = frmEmpresaConsulta.cli_NomeMensalista
+        chbDecore.Checked = frmEmpresaConsulta.cli_Decore
+        txtDecore.Text = frmEmpresaConsulta.cli_DecoreDescricao
+        chbIRPF.Checked = frmEmpresaConsulta.cli_IRPF
+        txtIRPF.Text = frmEmpresaConsulta.cli_NumIRPF
+        chbSenhaWeb.Checked = frmEmpresaConsulta.cli_SenWebPrefeitura
+        txtSenhaWeb.Text = frmEmpresaConsulta.cli_SenhaWebPrefeitura
+        chbRedesim.Checked = frmEmpresaConsulta.cli_Redesim
+        txtSenhaRedesim.Text = frmEmpresaConsulta.cli_SenhaRedesim
+        chbCodRFB.Checked = frmEmpresaConsulta.cli_CodRFB
+        txtCodRFB.Text = frmEmpresaConsulta.cli_CodRFBNum
+        txtValidadeRFB.Text = frmEmpresaConsulta.cli_CodRFBValidade
 
         'PESQUISA DE CAMPOS DA EMPRESA
-
+        CodigoEmpresa = frmEmpresaConsulta.empr_ID
+        lblidEmpresa.Text = frmEmpresaConsulta.empr_ID
         txtRazaoSocial.Text = frmEmpresaConsulta.empr_razaosocial
         txtNomeFantasia.Text = frmEmpresaConsulta.empr_nomefantasia
         txtCNPJ.Text = frmEmpresaConsulta.empr_cnpj
@@ -539,12 +540,12 @@ Public Class frmCadastroClientes
     End Sub
 
     Private Sub txtSenhaWeb_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSenhaWeb.KeyPress
-        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
-        KeyAscii = CShort(SoNumeros(KeyAscii))
-        If KeyAscii = 0 Then
-            e.Handled = True
-            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+        ''Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        ''KeyAscii = CShort(SoNumeros(KeyAscii))
+        ''If KeyAscii = 0 Then
+        ''    e.Handled = True
+        ''    MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ''End If
     End Sub
 
     Private Sub txtCodRFB_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCodRFB.KeyPress
@@ -566,12 +567,12 @@ Public Class frmCadastroClientes
     End Sub
 
     Private Sub txtSenhaWebPJ_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSenhaWebPJ.KeyPress
-        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
-        KeyAscii = CShort(SoNumeros(KeyAscii))
-        If KeyAscii = 0 Then
-            e.Handled = True
-            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+        'Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        'KeyAscii = CShort(SoNumeros(KeyAscii))
+        'If KeyAscii = 0 Then
+        '    e.Handled = True
+        '    MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'End If
     End Sub
 
     Private Sub txtNIRE_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNIRE.KeyPress
@@ -892,13 +893,13 @@ Public Class frmCadastroClientes
             If chbSenhaWeb.Checked = True Then
                 'lblSenhaWeb.Visible = True
                 txtSenhaWeb.Visible = True
-                lblValidoRFB.Visible = True
+                ' lblValidoRFB.Visible = True
                 txtValidadeRFB.Visible = True
 
             Else
                 ' lblSenhaWeb.Visible = False
                 txtSenhaWeb.Visible = False
-                lblValidoRFB.Visible = False
+                ' lblValidoRFB.Visible = False
                 txtValidadeRFB.Visible = False
 
             End If
@@ -944,4 +945,6 @@ Public Class frmCadastroClientes
     End Sub
 
    
+    
+    
 End Class
