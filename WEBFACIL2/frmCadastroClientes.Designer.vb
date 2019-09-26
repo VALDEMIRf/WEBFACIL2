@@ -38,7 +38,6 @@ Partial Class frmCadastroClientes
         Me.chbRedesim = New System.Windows.Forms.CheckBox()
         Me.lblEsocialSenha = New System.Windows.Forms.Label()
         Me.txtEsocialSenha = New System.Windows.Forms.TextBox()
-        Me.btLimpar = New System.Windows.Forms.Button()
         Me.txtValidadeRFB = New System.Windows.Forms.MaskedTextBox()
         Me.lblValidoRFB = New System.Windows.Forms.Label()
         Me.txtSenhaWeb = New System.Windows.Forms.TextBox()
@@ -150,6 +149,7 @@ Partial Class frmCadastroClientes
         Me.txtEmprNum = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblidEmpresa = New System.Windows.Forms.Label()
         Me.cboCliente = New System.Windows.Forms.ComboBox()
         Me.txtEmprCPF = New System.Windows.Forms.MaskedTextBox()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -175,10 +175,11 @@ Partial Class frmCadastroClientes
         Me.dtpDataInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.btLimpar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.lblidEmpresa = New System.Windows.Forms.Label()
+        Me.btPesquisaEmpresa = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -371,19 +372,6 @@ Partial Class frmCadastroClientes
         Me.txtEsocialSenha.Size = New System.Drawing.Size(160, 20)
         Me.txtEsocialSenha.TabIndex = 86
         Me.txtEsocialSenha.Visible = False
-        '
-        'btLimpar
-        '
-        Me.btLimpar.FlatAppearance.BorderSize = 0
-        Me.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btLimpar.Image = CType(resources.GetObject("btLimpar.Image"), System.Drawing.Image)
-        Me.btLimpar.Location = New System.Drawing.Point(1147, 117)
-        Me.btLimpar.Name = "btLimpar"
-        Me.btLimpar.Size = New System.Drawing.Size(105, 48)
-        Me.btLimpar.TabIndex = 84
-        Me.btLimpar.Text = "Limpar Campos"
-        Me.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btLimpar.UseVisualStyleBackColor = True
         '
         'txtValidadeRFB
         '
@@ -1472,6 +1460,15 @@ Partial Class frmCadastroClientes
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Dados da Empresa"
         '
+        'lblidEmpresa
+        '
+        Me.lblidEmpresa.AutoSize = True
+        Me.lblidEmpresa.Location = New System.Drawing.Point(54, 20)
+        Me.lblidEmpresa.Name = "lblidEmpresa"
+        Me.lblidEmpresa.Size = New System.Drawing.Size(13, 13)
+        Me.lblidEmpresa.TabIndex = 74
+        Me.lblidEmpresa.Text = "0"
+        '
         'cboCliente
         '
         Me.cboCliente.FormattingEnabled = True
@@ -1681,6 +1678,19 @@ Partial Class frmCadastroClientes
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "Tipo:"
         '
+        'btLimpar
+        '
+        Me.btLimpar.FlatAppearance.BorderSize = 0
+        Me.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btLimpar.Image = CType(resources.GetObject("btLimpar.Image"), System.Drawing.Image)
+        Me.btLimpar.Location = New System.Drawing.Point(1147, 117)
+        Me.btLimpar.Name = "btLimpar"
+        Me.btLimpar.Size = New System.Drawing.Size(105, 48)
+        Me.btLimpar.TabIndex = 84
+        Me.btLimpar.Text = "Limpar Campos"
+        Me.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btLimpar.UseVisualStyleBackColor = True
+        '
         'btSair
         '
         Me.btSair.FlatAppearance.BorderSize = 0
@@ -1706,14 +1716,18 @@ Partial Class frmCadastroClientes
         '
         Me.errErro.ContainerControl = Me
         '
-        'lblidEmpresa
+        'btPesquisaEmpresa
         '
-        Me.lblidEmpresa.AutoSize = True
-        Me.lblidEmpresa.Location = New System.Drawing.Point(54, 20)
-        Me.lblidEmpresa.Name = "lblidEmpresa"
-        Me.lblidEmpresa.Size = New System.Drawing.Size(13, 13)
-        Me.lblidEmpresa.TabIndex = 74
-        Me.lblidEmpresa.Text = "0"
+        Me.btPesquisaEmpresa.FlatAppearance.BorderSize = 0
+        Me.btPesquisaEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btPesquisaEmpresa.Image = CType(resources.GetObject("btPesquisaEmpresa.Image"), System.Drawing.Image)
+        Me.btPesquisaEmpresa.Location = New System.Drawing.Point(1163, 183)
+        Me.btPesquisaEmpresa.Name = "btPesquisaEmpresa"
+        Me.btPesquisaEmpresa.Size = New System.Drawing.Size(89, 52)
+        Me.btPesquisaEmpresa.TabIndex = 95
+        Me.btPesquisaEmpresa.Text = "Pesquisar Empresa"
+        Me.btPesquisaEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btPesquisaEmpresa.UseVisualStyleBackColor = True
         '
         'frmCadastroClientes
         '
@@ -1721,6 +1735,7 @@ Partial Class frmCadastroClientes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.Controls.Add(Me.btPesquisaEmpresa)
         Me.Controls.Add(Me.lblciID)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.TabControl1)
@@ -1905,4 +1920,5 @@ Partial Class frmCadastroClientes
     Public WithEvents txtEmprCPF As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cboCliente As System.Windows.Forms.ComboBox
     Friend WithEvents lblidEmpresa As System.Windows.Forms.Label
+    Friend WithEvents btPesquisaEmpresa As System.Windows.Forms.Button
 End Class

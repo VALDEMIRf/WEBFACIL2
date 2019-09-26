@@ -117,7 +117,7 @@ Partial Class frmClienteConsulta
         Me.dgvGrid.GridColor = System.Drawing.Color.DarkGray
         Me.dgvGrid.Location = New System.Drawing.Point(12, 100)
         Me.dgvGrid.Name = "dgvGrid"
-        Me.dgvGrid.Size = New System.Drawing.Size(793, 326)
+        Me.dgvGrid.Size = New System.Drawing.Size(696, 326)
         Me.dgvGrid.TabIndex = 1
         '
         'codigo
@@ -151,7 +151,7 @@ Partial Class frmClienteConsulta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.ClientSize = New System.Drawing.Size(817, 438)
+        Me.ClientSize = New System.Drawing.Size(734, 438)
         Me.Controls.Add(Me.dgvGrid)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

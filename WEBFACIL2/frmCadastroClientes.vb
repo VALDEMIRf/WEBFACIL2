@@ -5,6 +5,7 @@ Public Class frmCadastroClientes
     Dim ds As New DataSet
     Dim con As New Conexao
     Dim CodigoCliente As Integer
+    Dim CodigoEmpresa As Integer
     Dim cliente As New clsCliente
     Dim empresa As New clsEmpresa
    
@@ -249,36 +250,102 @@ Public Class frmCadastroClientes
         txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
         txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
 
-        'PESQUISA DE CAMPOS DA EMPRESA
-        txtRazaoSocial.Text = frmClienteConsulta.empr_razaosocial
-        txtNomeFantasia.Text = frmClienteConsulta.empr_nomefantasia
-        txtCNPJ.Text = frmClienteConsulta.empr_cnpj
-        txtNIRE.Text = frmClienteConsulta.empr_NIRE
-        txtInscrEstadual.Text = frmClienteConsulta.empr_InscrEstadual
-        txtCCM.Text = frmClienteConsulta.empr_CCM
-        txtAtividade.Text = frmClienteConsulta.empr_atividade
-        txtEmprPorte.Text = frmClienteConsulta.empr_Porte
-        dtpDataInicio.Text = frmClienteConsulta.empr_dataInicio
-        txtEmprEndereco.Text = frmClienteConsulta.empr_endereco
-        txtEmprNum.Text = frmClienteConsulta.empr_numero
-        txtEmprComplemento.Text = frmClienteConsulta.empr_complemento
-        txtEmprBairro.Text = frmClienteConsulta.empr_bairro
-        txtEmprCidade.Text = frmClienteConsulta.empr_cidade
-        lblclienteID.Text = frmClienteConsulta.empr_lblclienteID
-        txtEmprUF.Text = frmClienteConsulta.empr_UF
-        txtEmprCEP.Text = frmClienteConsulta.empr_CEP
-        txtEmprObs.Text = frmClienteConsulta.empr_obs
-        chbSimples.Checked = frmClienteConsulta.empr_Simples
-        txtSimplesNacional.Text = frmClienteConsulta.empr_SimplesNacional
-        chbSIMEI.Checked = frmClienteConsulta.empr_Simei
-        txtEmprSimei.Text = frmClienteConsulta.empr_CodSimei
-        chbSefaz.Checked = frmClienteConsulta.empr_sefaz
-        txtSefazUsu.Text = frmClienteConsulta.empr_SefazUsu
-        txtSefazSen.Text = frmClienteConsulta.empr_SefazSen
-        chbSenhaWebPJ.Checked = frmClienteConsulta.empr_CodReceitaPJ
-        txtSenhaWebPJ.Text = frmClienteConsulta.empr_NumCodReceitaPJ
-
     End Sub
+
+    Private Sub btPesquisaEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisaEmpresa.Click
+        Dim frmClienteConsulta As New frmEmpresaConsulta
+        frmClienteConsulta.Text = "Consulta de Cliente com Empresa"
+        frmClienteConsulta.ConsultaTipo = frmEmpresaConsulta.TipoConsulta.Cliente
+        frmClienteConsulta.ShowDialog()
+
+        CodigoCliente = frmClienteConsulta.cli_id
+        lblciID.Text = frmClienteConsulta.cli_id
+        txtCPF.Text = frmClienteConsulta.cli_CPF
+        txtEmprCPF.Text = frmClienteConsulta.cli_CPF
+        lblclienteID.Text = frmClienteConsulta.cli_id
+        txtRG.Text = frmClienteConsulta.cli_RG
+        txtNome.Text = frmClienteConsulta.cli_Nome
+        txtPIS.Text = frmClienteConsulta.cli_PIS
+        txtTitEleitoral.Text = frmClienteConsulta.cli_TitEleitoral
+        txtLogradouro.Text = frmClienteConsulta.cli_Logradouro
+        txtNumero.Text = frmClienteConsulta.cli_Numero
+        txtComplemento.Text = frmClienteConsulta.cli_complemento
+        txtBairro.Text = frmClienteConsulta.cli_Bairro
+        txtCidade.Text = frmClienteConsulta.cli_Cidade
+        cboUF.Text = frmClienteConsulta.cli_UF
+        txtCEP.Text = frmClienteConsulta.cli_CEP
+        txtFoneRes.Text = frmClienteConsulta.cli_FoneRes
+        txtFoneCel.Text = frmClienteConsulta.cli_FoneCel
+        txtDtNasc.Text = frmClienteConsulta.cli_data_nasc
+        chbCurriculo.Checked = frmClienteConsulta.cli_Curriculo
+        txtEmail.Text = frmClienteConsulta.cli_Email
+        txtObs.Text = frmClienteConsulta.cli_observacoes
+        chbAposentado.Checked = frmClienteConsulta.cli_Aposentado
+        txtNumBeneficio.Text = frmClienteConsulta.cli_NumBeneficio
+        chbFuncPublico.Checked = frmClienteConsulta.cli_FuncPublico
+        txtFuncPublico.Text = frmClienteConsulta.cli_NomeFunc
+        chbAutonomo.Checked = frmClienteConsulta.cli_Autonomo
+        txtAutonomo.Text = frmClienteConsulta.cli_AutonomoNome
+        chbFalecido.Checked = frmClienteConsulta.cli_Falecido
+        txtFalecido.Text = frmClienteConsulta.cli_NomeFalecido
+        chbParcelamentos.Checked = frmClienteConsulta.cli_Parcelamento
+        txtParcelamentos.Text = frmClienteConsulta.cli_NumParcelamento
+        chbESocial.Checked = frmClienteConsulta.cli_EmprDom
+        txtESocial.Text = frmClienteConsulta.cli_ESocial
+        txtEsocialSenha.Text = frmClienteConsulta.cli_EsocialSenha
+        chbVIP.Checked = frmClienteConsulta.cli_VIP
+        txtVIP.Text = frmClienteConsulta.cli_VIPDescricao
+        chbPJ.Checked = frmClienteConsulta.cli_PJ
+        txtPJ.Text = frmClienteConsulta.cli_NumPJ
+        chbMEI.Checked = frmClienteConsulta.cli_MEI
+        txtMEI.Text = frmClienteConsulta.cli_NumMEI
+        chbITR.Checked = frmClienteConsulta.cli_ITR
+        txtITR.Text = frmClienteConsulta.cli_NumITR
+        chbMensalista.Checked = frmClienteConsulta.cli_Mensalista
+        txtMensalista.Text = frmClienteConsulta.cli_NomeMensalista
+        chbDecore.Checked = frmClienteConsulta.cli_Decore
+        txtDecore.Text = frmClienteConsulta.cli_DecoreDescricao
+        chbIRPF.Checked = frmClienteConsulta.cli_IRPF
+        txtIRPF.Text = frmClienteConsulta.cli_NumIRPF
+        chbSenhaWeb.Checked = frmClienteConsulta.cli_SenWebPrefeitura
+        txtSenhaWeb.Text = frmClienteConsulta.cli_SenhaWebPrefeitura
+        chbRedesim.Checked = frmClienteConsulta.cli_Redesim
+        txtSenhaRedesim.Text = frmClienteConsulta.cli_SenhaRedesim
+        chbCodRFB.Checked = frmClienteConsulta.cli_CodRFB
+        txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
+        txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
+
+        'PESQUISA DE CAMPOS DA EMPRESA
+
+        txtRazaoSocial.Text = frmEmpresaConsulta.empr_razaosocial
+        txtNomeFantasia.Text = frmEmpresaConsulta.empr_nomefantasia
+        txtCNPJ.Text = frmEmpresaConsulta.empr_cnpj
+        txtNIRE.Text = frmEmpresaConsulta.empr_NIRE
+        txtInscrEstadual.Text = frmEmpresaConsulta.empr_InscrEstadual
+        txtCCM.Text = frmEmpresaConsulta.empr_CCM
+        txtAtividade.Text = frmEmpresaConsulta.empr_atividade
+        txtEmprPorte.Text = frmEmpresaConsulta.empr_Porte
+        dtpDataInicio.Text = frmEmpresaConsulta.empr_dataInicio
+        txtEmprEndereco.Text = frmEmpresaConsulta.empr_endereco
+        txtEmprNum.Text = frmEmpresaConsulta.empr_numero
+        txtEmprComplemento.Text = frmEmpresaConsulta.empr_complemento
+        txtEmprBairro.Text = frmEmpresaConsulta.empr_bairro
+        txtEmprCidade.Text = frmEmpresaConsulta.empr_cidade
+        lblclienteID.Text = frmEmpresaConsulta.empr_lblclienteID
+        txtEmprUF.Text = frmEmpresaConsulta.empr_UF
+        txtEmprCEP.Text = frmEmpresaConsulta.empr_CEP
+        txtEmprObs.Text = frmEmpresaConsulta.empr_obs
+        chbSimples.Checked = frmEmpresaConsulta.empr_Simples
+        txtSimplesNacional.Text = frmEmpresaConsulta.empr_SimplesNacional
+        chbSIMEI.Checked = frmEmpresaConsulta.empr_Simei
+        txtEmprSimei.Text = frmEmpresaConsulta.empr_CodSimei
+        chbSefaz.Checked = frmEmpresaConsulta.empr_sefaz
+        txtSefazUsu.Text = frmEmpresaConsulta.empr_SefazUsu
+        txtSefazSen.Text = frmEmpresaConsulta.empr_SefazSen
+        chbSenhaWebPJ.Checked = frmEmpresaConsulta.empr_CodReceitaPJ
+        txtSenhaWebPJ.Text = frmEmpresaConsulta.empr_NumCodReceitaPJ
+    End Sub
+
 
     Private Sub btAlterarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDados.Click
         If txtCPF.Text.Equals(String.Empty) Then
@@ -876,4 +943,5 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
+   
 End Class
