@@ -87,10 +87,22 @@
     <Compile Include="Formularios\frmCadastroClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmCadastroFamiliar.Designer.vb">
+      <DependentUpon>frmCadastroFamiliar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCadastroFamiliar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmClienteConsulta.Designer.vb">
       <DependentUpon>frmClienteConsulta.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmClienteConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsultaFamiliar.Designer.vb">
+      <DependentUpon>frmConsultaFamiliar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsultaFamiliar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmEmpresaConsulta.Designer.vb">
@@ -128,8 +140,14 @@
     <EmbeddedResource Include="Formularios\frmCadastroClientes.resx">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadastroFamiliar.resx">
+      <DependentUpon>frmCadastroFamiliar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmClienteConsulta.resx">
       <DependentUpon>frmClienteConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsultaFamiliar.resx">
+      <DependentUpon>frmConsultaFamiliar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEmpresaConsulta.resx">
       <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
@@ -159,6 +177,7 @@
   <ItemGroup>
     <Content Include="Imagens\Accounting-Calculator.ico" />
     <Content Include="Imagens\Accounting-Calculator1.ico" />
+    <Content Include="Imagens\Action-file-new-icon.png" />
     <Content Include="Imagens\alterar.png" />
     <Content Include="Imagens\alterarDados.png" />
     <Content Include="Imagens\arrow-right.png" />
@@ -167,6 +186,7 @@
     <Content Include="Imagens\Consultar.ico" />
     <Content Include="Imagens\deletar.png" />
     <Content Include="Imagens\Ebiene-E-Commerce-Cash-register.ico" />
+    <Content Include="Imagens\Edit-Document-icon.png" />
     <Content Include="Imagens\forms-icon.png" />
     <Content Include="Imagens\lupa.png" />
     <Content Include="Imagens\novo1.png" />

@@ -480,7 +480,7 @@ Partial Class frmCadastroClientes
         Me.btAlterarDados.FlatAppearance.BorderSize = 0
         Me.btAlterarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAlterarDados.Image = CType(resources.GetObject("btAlterarDados.Image"), System.Drawing.Image)
-        Me.btAlterarDados.Location = New System.Drawing.Point(357, 2)
+        Me.btAlterarDados.Location = New System.Drawing.Point(357, 6)
         Me.btAlterarDados.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btAlterarDados.Name = "btAlterarDados"
         Me.btAlterarDados.Size = New System.Drawing.Size(93, 73)
