@@ -378,7 +378,7 @@ Public Class clsEmpresa
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
-                Dim sql As String = "UPDATE tbEmpresas SET empr_razaosocial=?,empr_nomefantasia=?,empr_cnpj=?,empr_NIRE=?,empr_InscrEstadual=?,empr_CCM=?,empr_atividade=?,empr_Porte=?,cli_id=?,cat_Id=?,empr_dataInicio=?,empr_endereco=?,empr_numero=?,empr_complemento=?,empr_bairro=?,empr_cidade=?,empr_UF=?,empr_CEP=?,empr_obs=?,empr_Simples=?,empr_SimplesNacional=?,empr_Simei=?,empr_CodSimei=?,empr_sefaz=?,empr_SefazUsu=?,empr_SefazSen=?,empr_CodReceitaPJ=?,empr_NumCodReceitaPJ WHERE empr_ID =" & CInt(empr_ID)
+                Dim sql As String = "UPDATE tbEmpresas SET empr_razaosocial=?,empr_nomefantasia=?,empr_cnpj=?,empr_NIRE=?,empr_InscrEstadual=?,empr_CCM=?,empr_atividade=?,empr_Porte=?,cli_id=?,cat_Id=?,empr_dataInicio=?,empr_endereco=?,empr_numero=?,empr_complemento=?,empr_bairro=?,empr_cidade=?,empr_UF=?,empr_CEP=?,empr_obs=?,empr_Simples=?,empr_SimplesNacional=?,empr_Simei=?,empr_CodSimei=?,empr_sefaz=?,empr_SefazUsu=?,empr_SefazSen=?,empr_CodReceitaPJ=?,empr_NumCodReceitaPJ=? WHERE empr_ID =" & CInt(empr_ID)
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_razaosocial", _empr_razaosocial))
@@ -389,7 +389,7 @@ Public Class clsEmpresa
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_CCM", _empr_CCM))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_atividade", _empr_atividade))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Porte", _empr_Porte))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _clsCliente.cli_id))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _empr_lblclienteID))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cat_Id", _clsCategoria.cat_ID))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_dataInicio", _empr_dataInicio))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_endereco", _empr_endereco))

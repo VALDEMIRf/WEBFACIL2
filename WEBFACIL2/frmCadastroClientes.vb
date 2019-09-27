@@ -348,7 +348,6 @@ Public Class frmCadastroClientes
         txtSenhaWebPJ.Text = frmEmpresaConsulta.empr_NumCodReceitaPJ
     End Sub
 
-
     Private Sub btAlterarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDados.Click
         If txtCPF.Text.Equals(String.Empty) Then
             errErro.SetError(txtCPF, "Digite um CPF")
@@ -432,6 +431,68 @@ Public Class frmCadastroClientes
             MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
             MsgBox(ex.Message.ToString)
         End Try
+    End Sub
+
+    Private Sub btAlterarDadosEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDadosEmpresa.Click
+        If txtRazaoSocial.Text.Equals(String.Empty) Then
+            errErro.SetError(txtRazaoSocial, "Digite O nome da Empresa")
+            Exit Sub
+        Else
+            errErro.SetError(txtRazaoSocial, "")
+        End If
+        If txtCNPJ.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCNPJ, "Digite o CNPJ da Empresa")
+            Exit Sub
+        Else
+            errErro.SetError(txtCNPJ, "")
+
+        End If
+        Dim clnCategoria As New clsCategoria
+        clnCategoria.cat_ID = cbTipo.SelectedValue
+
+        Dim clnCliente As New clsCliente
+        clnCliente.cli_id = cboCliente.SelectedValue
+
+        Try
+
+            empresa.empr_ID = lblidEmpresa.Text
+            empresa.empr_razaosocial = txtRazaoSocial.Text
+            empresa.empr_nomefantasia = txtNomeFantasia.Text
+            empresa.empr_cnpj = txtCNPJ.Text
+            empresa.empr_NIRE = txtNIRE.Text
+            empresa.empr_InscrEstadual = txtInscrEstadual.Text
+            empresa.empr_CCM = txtCCM.Text
+            empresa.empr_atividade = txtAtividade.Text
+            empresa.empr_Porte = txtEmprPorte.Text
+            empresa.empr_lblclienteID = lblclienteID.Text
+            empresa.clsCategoria = clnCategoria
+            empresa.empr_dataInicio = dtpDataInicio.Text
+            empresa.empr_endereco = txtEmprEndereco.Text
+            empresa.empr_numero = txtEmprNum.Text
+            empresa.empr_complemento = txtEmprComplemento.Text
+            empresa.empr_bairro = txtEmprBairro.Text
+            empresa.empr_cidade = txtEmprCidade.Text
+            empresa.empr_UF = txtEmprUF.Text
+            empresa.empr_CEP = txtEmprCEP.Text
+            empresa.empr_obs = txtEmprObs.Text
+            empresa.empr_Simples = chbSimples.Checked
+            empresa.empr_SimplesNacional = txtSimplesNacional.Text
+            empresa.empr_Simei = chbSIMEI.Checked
+            empresa.empr_CodSimei = txtEmprSimei.Text
+            empresa.empr_sefaz = chbSefaz.Checked
+            empresa.empr_SefazUsu = txtSefazUsu.Text
+            empresa.empr_SefazSen = txtSefazSen.Text
+            empresa.empr_CodReceitaPJ = chbSenhaWebPJ.Checked
+            empresa.empr_NumCodReceitaPJ = txtSenhaWebPJ.Text
+
+            empresa.AlterarDados()
+            LimparCampos()
+
+        Catch ex As Exception
+            ' MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
+
     End Sub
 
     Private Sub LimparCampos()
@@ -1025,4 +1086,5 @@ Public Class frmCadastroClientes
 
     End Sub
 
+   
 End Class

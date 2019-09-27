@@ -27,6 +27,9 @@ Partial Class frmCadastroClientes
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabCliente = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtCPFRedesim = New System.Windows.Forms.MaskedTextBox()
+        Me.lblcpfRedesim = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
         Me.txtFuncPublico = New System.Windows.Forms.ComboBox()
         Me.txtCodRFB = New System.Windows.Forms.TextBox()
         Me.chbCodRFB = New System.Windows.Forms.CheckBox()
@@ -115,6 +118,7 @@ Partial Class frmCadastroClientes
         Me.txtCPF = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabEmpresa = New System.Windows.Forms.TabPage()
+        Me.btAlterarDadosEmpresa = New System.Windows.Forms.Button()
         Me.txtEmprSimei = New System.Windows.Forms.TextBox()
         Me.chbSIMEI = New System.Windows.Forms.CheckBox()
         Me.txtSenhaPJValidade = New System.Windows.Forms.MaskedTextBox()
@@ -179,9 +183,6 @@ Partial Class frmCadastroClientes
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.btPesquisaEmpresa = New System.Windows.Forms.Button()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.txtCPFRedesim = New System.Windows.Forms.MaskedTextBox()
-        Me.lblcpfRedesim = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -274,6 +275,37 @@ Partial Class frmCadastroClientes
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(562, 676)
         Me.Panel1.TabIndex = 53
+        '
+        'txtCPFRedesim
+        '
+        Me.txtCPFRedesim.Location = New System.Drawing.Point(135, 547)
+        Me.txtCPFRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtCPFRedesim.Mask = "000.000.000-00"
+        Me.txtCPFRedesim.Name = "txtCPFRedesim"
+        Me.txtCPFRedesim.ReadOnly = True
+        Me.txtCPFRedesim.Size = New System.Drawing.Size(90, 20)
+        Me.txtCPFRedesim.TabIndex = 97
+        Me.txtCPFRedesim.Visible = False
+        '
+        'lblcpfRedesim
+        '
+        Me.lblcpfRedesim.AutoSize = True
+        Me.lblcpfRedesim.Location = New System.Drawing.Point(103, 553)
+        Me.lblcpfRedesim.Name = "lblcpfRedesim"
+        Me.lblcpfRedesim.Size = New System.Drawing.Size(29, 14)
+        Me.lblcpfRedesim.TabIndex = 96
+        Me.lblcpfRedesim.Text = "CPF:"
+        Me.lblcpfRedesim.Visible = False
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(118, 15)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(70, 14)
+        Me.Label41.TabIndex = 95
+        Me.Label41.Text = "Nº Benefício:"
+        Me.Label41.Visible = False
         '
         'txtFuncPublico
         '
@@ -479,7 +511,7 @@ Partial Class frmCadastroClientes
         '
         'txtMensalista
         '
-        Me.txtMensalista.Location = New System.Drawing.Point(121, 394)
+        Me.txtMensalista.Location = New System.Drawing.Point(130, 394)
         Me.txtMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtMensalista.Name = "txtMensalista"
         Me.txtMensalista.Size = New System.Drawing.Size(160, 20)
@@ -506,14 +538,14 @@ Partial Class frmCadastroClientes
         Me.chbMensalista.Location = New System.Drawing.Point(15, 396)
         Me.chbMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbMensalista.Name = "chbMensalista"
-        Me.chbMensalista.Size = New System.Drawing.Size(80, 18)
+        Me.chbMensalista.Size = New System.Drawing.Size(102, 18)
         Me.chbMensalista.TabIndex = 70
-        Me.chbMensalista.Text = "Mensalista:"
+        Me.chbMensalista.Text = "Cliente Contábil:"
         Me.chbMensalista.UseVisualStyleBackColor = True
         '
         'txtIRPF
         '
-        Me.txtIRPF.Location = New System.Drawing.Point(90, 475)
+        Me.txtIRPF.Location = New System.Drawing.Point(71, 476)
         Me.txtIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtIRPF.Name = "txtIRPF"
         Me.txtIRPF.Size = New System.Drawing.Size(160, 20)
@@ -531,7 +563,7 @@ Partial Class frmCadastroClientes
         '
         'txtITR
         '
-        Me.txtITR.Location = New System.Drawing.Point(90, 360)
+        Me.txtITR.Location = New System.Drawing.Point(230, 328)
         Me.txtITR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtITR.Name = "txtITR"
         Me.txtITR.Size = New System.Drawing.Size(160, 20)
@@ -540,19 +572,19 @@ Partial Class frmCadastroClientes
         '
         'txtMEI
         '
-        Me.txtMEI.Location = New System.Drawing.Point(214, 326)
+        Me.txtMEI.Location = New System.Drawing.Point(466, 276)
         Me.txtMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtMEI.Name = "txtMEI"
-        Me.txtMEI.Size = New System.Drawing.Size(61, 20)
+        Me.txtMEI.Size = New System.Drawing.Size(11, 20)
         Me.txtMEI.TabIndex = 63
         Me.txtMEI.Visible = False
         '
         'txtVIP
         '
-        Me.txtVIP.Location = New System.Drawing.Point(121, 281)
+        Me.txtVIP.Location = New System.Drawing.Point(83, 282)
         Me.txtVIP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtVIP.Name = "txtVIP"
-        Me.txtVIP.Size = New System.Drawing.Size(104, 20)
+        Me.txtVIP.Size = New System.Drawing.Size(142, 20)
         Me.txtVIP.TabIndex = 61
         Me.txtVIP.Visible = False
         '
@@ -567,10 +599,10 @@ Partial Class frmCadastroClientes
         '
         'txtPJ
         '
-        Me.txtPJ.Location = New System.Drawing.Point(62, 326)
+        Me.txtPJ.Location = New System.Drawing.Point(426, 284)
         Me.txtPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtPJ.Name = "txtPJ"
-        Me.txtPJ.Size = New System.Drawing.Size(62, 20)
+        Me.txtPJ.Size = New System.Drawing.Size(10, 20)
         Me.txtPJ.TabIndex = 52
         Me.txtPJ.Visible = False
         '
@@ -695,7 +727,7 @@ Partial Class frmCadastroClientes
         'chbMEI
         '
         Me.chbMEI.AutoSize = True
-        Me.chbMEI.Location = New System.Drawing.Point(160, 331)
+        Me.chbMEI.Location = New System.Drawing.Point(90, 328)
         Me.chbMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbMEI.Name = "chbMEI"
         Me.chbMEI.Size = New System.Drawing.Size(45, 18)
@@ -706,7 +738,7 @@ Partial Class frmCadastroClientes
         'chbITR
         '
         Me.chbITR.AutoSize = True
-        Me.chbITR.Location = New System.Drawing.Point(15, 360)
+        Me.chbITR.Location = New System.Drawing.Point(181, 328)
         Me.chbITR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbITR.Name = "chbITR"
         Me.chbITR.Size = New System.Drawing.Size(44, 18)
@@ -1167,6 +1199,7 @@ Partial Class frmCadastroClientes
         'TabEmpresa
         '
         Me.TabEmpresa.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.TabEmpresa.Controls.Add(Me.btAlterarDadosEmpresa)
         Me.TabEmpresa.Controls.Add(Me.txtEmprSimei)
         Me.TabEmpresa.Controls.Add(Me.chbSIMEI)
         Me.TabEmpresa.Controls.Add(Me.txtSenhaPJValidade)
@@ -1193,6 +1226,20 @@ Partial Class frmCadastroClientes
         Me.TabEmpresa.Size = New System.Drawing.Size(1122, 692)
         Me.TabEmpresa.TabIndex = 1
         Me.TabEmpresa.Text = "Empresa"
+        '
+        'btAlterarDadosEmpresa
+        '
+        Me.btAlterarDadosEmpresa.FlatAppearance.BorderSize = 0
+        Me.btAlterarDadosEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAlterarDadosEmpresa.Image = CType(resources.GetObject("btAlterarDadosEmpresa.Image"), System.Drawing.Image)
+        Me.btAlterarDadosEmpresa.Location = New System.Drawing.Point(1011, 69)
+        Me.btAlterarDadosEmpresa.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btAlterarDadosEmpresa.Name = "btAlterarDadosEmpresa"
+        Me.btAlterarDadosEmpresa.Size = New System.Drawing.Size(93, 73)
+        Me.btAlterarDadosEmpresa.TabIndex = 111
+        Me.btAlterarDadosEmpresa.Text = "Alterar Dados"
+        Me.btAlterarDadosEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btAlterarDadosEmpresa.UseVisualStyleBackColor = True
         '
         'txtEmprSimei
         '
@@ -1800,10 +1847,10 @@ Partial Class frmCadastroClientes
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(1147, 38)
-        Me.btSair.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btSair.Location = New System.Drawing.Point(1163, 42)
+        Me.btSair.Margin = New System.Windows.Forms.Padding(1, 4, 3, 5)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(82, 87)
+        Me.btSair.Size = New System.Drawing.Size(80, 85)
         Me.btSair.TabIndex = 26
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = True
@@ -1825,46 +1872,16 @@ Partial Class frmCadastroClientes
         '
         Me.btPesquisaEmpresa.FlatAppearance.BorderSize = 0
         Me.btPesquisaEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btPesquisaEmpresa.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btPesquisaEmpresa.Image = CType(resources.GetObject("btPesquisaEmpresa.Image"), System.Drawing.Image)
-        Me.btPesquisaEmpresa.Location = New System.Drawing.Point(1162, 197)
+        Me.btPesquisaEmpresa.Location = New System.Drawing.Point(1152, 192)
         Me.btPesquisaEmpresa.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btPesquisaEmpresa.Name = "btPesquisaEmpresa"
-        Me.btPesquisaEmpresa.Size = New System.Drawing.Size(90, 56)
+        Me.btPesquisaEmpresa.Size = New System.Drawing.Size(100, 56)
         Me.btPesquisaEmpresa.TabIndex = 95
         Me.btPesquisaEmpresa.Text = "Pesquisar Empresa"
         Me.btPesquisaEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btPesquisaEmpresa.UseVisualStyleBackColor = True
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(118, 15)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(70, 14)
-        Me.Label41.TabIndex = 95
-        Me.Label41.Text = "Nº Benefício:"
-        Me.Label41.Visible = False
-        '
-        'txtCPFRedesim
-        '
-        Me.txtCPFRedesim.Location = New System.Drawing.Point(135, 547)
-        Me.txtCPFRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtCPFRedesim.Mask = "000.000.000-00"
-        Me.txtCPFRedesim.Name = "txtCPFRedesim"
-        Me.txtCPFRedesim.ReadOnly = True
-        Me.txtCPFRedesim.Size = New System.Drawing.Size(90, 20)
-        Me.txtCPFRedesim.TabIndex = 97
-        Me.txtCPFRedesim.Visible = False
-        '
-        'lblcpfRedesim
-        '
-        Me.lblcpfRedesim.AutoSize = True
-        Me.lblcpfRedesim.Location = New System.Drawing.Point(103, 553)
-        Me.lblcpfRedesim.Name = "lblcpfRedesim"
-        Me.lblcpfRedesim.Size = New System.Drawing.Size(29, 14)
-        Me.lblcpfRedesim.TabIndex = 96
-        Me.lblcpfRedesim.Text = "CPF:"
-        Me.lblcpfRedesim.Visible = False
         '
         'frmCadastroClientes
         '
@@ -2062,4 +2079,5 @@ Partial Class frmCadastroClientes
     Friend WithEvents Label41 As System.Windows.Forms.Label
     Public WithEvents txtCPFRedesim As System.Windows.Forms.MaskedTextBox
     Friend WithEvents lblcpfRedesim As System.Windows.Forms.Label
+    Friend WithEvents btAlterarDadosEmpresa As System.Windows.Forms.Button
 End Class
