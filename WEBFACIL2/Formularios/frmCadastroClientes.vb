@@ -859,7 +859,7 @@ Public Class frmCadastroClientes
 
             Else
                 ' lblPJ.Visible = False
-                txtPJ.Visible = False
+                'txtPJ.Visible = False
                 TabEmpresa.Enabled = False
             End If
         Catch ex As Exception
@@ -877,7 +877,7 @@ Public Class frmCadastroClientes
             Else
                 '   lblMEI.Visible = False
                 ' txtMEI.Visible = False
-
+                TabEmpresa.Enabled = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

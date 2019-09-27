@@ -75,34 +75,34 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsCategoria.vb" />
-    <Compile Include="clsEmpresa.vb" />
+    <Compile Include="Classes\clsCategoria.vb" />
+    <Compile Include="Classes\clsEmpresa.vb" />
     <Compile Include="cldBancoDados.vb" />
-    <Compile Include="clsCliente.vb" />
-    <Compile Include="clsCPFVinculado.vb" />
+    <Compile Include="Classes\clsCliente.vb" />
+    <Compile Include="Classes\clsCPFVinculado.vb" />
     <Compile Include="Conexao.vb" />
-    <Compile Include="frmCadastroClientes.Designer.vb">
+    <Compile Include="Formularios\frmCadastroClientes.Designer.vb">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCadastroClientes.vb">
+    <Compile Include="Formularios\frmCadastroClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClienteConsulta.Designer.vb">
+    <Compile Include="Formularios\frmClienteConsulta.Designer.vb">
       <DependentUpon>frmClienteConsulta.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmClienteConsulta.vb">
+    <Compile Include="Formularios\frmClienteConsulta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmpresaConsulta.Designer.vb">
+    <Compile Include="Formularios\frmEmpresaConsulta.Designer.vb">
       <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmEmpresaConsulta.vb">
+    <Compile Include="Formularios\frmEmpresaConsulta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.vb">
+    <Compile Include="Formularios\frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.vb">
+    <Compile Include="Formularios\frmPrincipal.Designer.vb">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -125,16 +125,16 @@
     <Compile Include="ValidaTextBox.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmCadastroClientes.resx">
+    <EmbeddedResource Include="Formularios\frmCadastroClientes.resx">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClienteConsulta.resx">
+    <EmbeddedResource Include="Formularios\frmClienteConsulta.resx">
       <DependentUpon>frmClienteConsulta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmpresaConsulta.resx">
+    <EmbeddedResource Include="Formularios\frmEmpresaConsulta.resx">
       <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
+    <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
