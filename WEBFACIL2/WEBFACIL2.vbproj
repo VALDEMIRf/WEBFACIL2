@@ -87,6 +87,12 @@
     <Compile Include="Formularios\frmCadastroClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmPrincipal2.Designer.vb">
+      <DependentUpon>frmPrincipal2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmPrincipal2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmVinculadoCadastro.Designer.vb">
       <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
     </Compile>
@@ -139,6 +145,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Formularios\frmCadastroClientes.resx">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPrincipal2.resx">
+      <DependentUpon>frmPrincipal2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVinculadoCadastro.resx">
       <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
@@ -198,6 +207,17 @@
     <Content Include="Imagens\salvar.png" />
     <Content Include="Imagens\Text-Edit-icon.png" />
     <Content Include="Imagens\usuarios.png" />
+    <None Include="Resources\colaboradores.png" />
+    <None Include="Resources\ferramenta.png" />
+    <None Include="Resources\bolinha_xis.png" />
+    <None Include="Resources\177-building.png" />
+    <None Include="Resources\179-notepad.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\glyphicons_027_search.png" />
+    <None Include="Resources\19-gear.png" />
+    <None Include="Resources\unnamed1.jpg" />
+    <None Include="Resources\unnamed.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

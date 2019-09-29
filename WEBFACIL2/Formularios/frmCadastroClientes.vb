@@ -8,7 +8,41 @@ Public Class frmCadastroClientes
     Dim CodigoEmpresa As Integer
     Dim cliente As New clsCliente
     Dim empresa As New clsEmpresa
-   
+    Public Enum TipoConsulta
+        Cliente
+        '  Empresa
+    End Enum
+    Private _ConsultaTipo As TipoConsulta
+    Public Property ConsultaTipo() As TipoConsulta
+        Get
+            Return _ConsultaTipo
+        End Get
+        Set(ByVal value As TipoConsulta)
+            _ConsultaTipo = value
+        End Set
+    End Property
+
+    Private _cli_id As Integer
+    Public Property cli_id() As Integer
+        Get
+            Return _cli_id
+        End Get
+        Set(ByVal value As Integer)
+            _cli_id = value
+        End Set
+    End Property
+
+    Private _cli_Nome As String
+    Public Property cli_Nome() As String
+        Get
+            Return _cli_Nome
+        End Get
+        Set(ByVal value As String)
+            _cli_Nome = value
+        End Set
+    End Property
+
+
     Private Sub frmCadastroClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TabEmpresa.Enabled = False
 
@@ -494,6 +528,16 @@ Public Class frmCadastroClientes
         End Try
 
     End Sub
+
+    Private Sub btPesquisarCPFVinculado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCPFVinculado.Click
+        Dim frmVinculadoCadastro As New frmVinculadoConsulta
+        Dim enviarDados As New frmVinculadoConsulta
+        enviarDados.myString = txtNome.Text
+        enviarDados.vinc_id = lblciID.Text
+        enviarDados.ShowDialog()
+    End Sub
+
+
 
     Private Sub LimparCampos()
         txtCPF.Text = ""
@@ -1087,8 +1131,5 @@ Public Class frmCadastroClientes
     End Sub
 
    
-    Private Sub btPesquisarCPFVinculado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCPFVinculado.Click
-        Dim frmVinculadoCadastro As New frmVinculadoConsulta
-        frmVinculadoCadastro.ShowDialog()
-    End Sub
+   
 End Class

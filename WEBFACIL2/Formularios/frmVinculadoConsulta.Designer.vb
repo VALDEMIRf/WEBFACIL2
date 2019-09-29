@@ -24,6 +24,7 @@ Partial Class frmVinculadoConsulta
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVinculadoConsulta))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblRecebeIDCliente = New System.Windows.Forms.Label()
         Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.txtDescricao = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,7 +37,6 @@ Partial Class frmVinculadoConsulta
         Me.btnNovo = New System.Windows.Forms.Button()
         Me.btnAlterar = New System.Windows.Forms.Button()
         Me.btnSair = New System.Windows.Forms.Button()
-        Me.lblRecebeIDCliente = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,6 +53,16 @@ Partial Class frmVinculadoConsulta
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pesquisa de Pessoas Vinculadas"
+        '
+        'lblRecebeIDCliente
+        '
+        Me.lblRecebeIDCliente.AutoSize = True
+        Me.lblRecebeIDCliente.Location = New System.Drawing.Point(40, 49)
+        Me.lblRecebeIDCliente.Name = "lblRecebeIDCliente"
+        Me.lblRecebeIDCliente.Size = New System.Drawing.Size(17, 18)
+        Me.lblRecebeIDCliente.TabIndex = 6
+        Me.lblRecebeIDCliente.Text = "0"
+        Me.lblRecebeIDCliente.Visible = False
         '
         'btnPesquisar
         '
@@ -72,6 +82,7 @@ Partial Class frmVinculadoConsulta
         Me.txtDescricao.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.txtDescricao.Location = New System.Drawing.Point(97, 25)
         Me.txtDescricao.Name = "txtDescricao"
+        Me.txtDescricao.ReadOnly = True
         Me.txtDescricao.Size = New System.Drawing.Size(473, 26)
         Me.txtDescricao.TabIndex = 4
         '
@@ -162,15 +173,6 @@ Partial Class frmVinculadoConsulta
         Me.btnSair.Text = "Sair"
         Me.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSair.UseVisualStyleBackColor = True
-        '
-        'lblRecebeIDCliente
-        '
-        Me.lblRecebeIDCliente.AutoSize = True
-        Me.lblRecebeIDCliente.Location = New System.Drawing.Point(40, 49)
-        Me.lblRecebeIDCliente.Name = "lblRecebeIDCliente"
-        Me.lblRecebeIDCliente.Size = New System.Drawing.Size(17, 18)
-        Me.lblRecebeIDCliente.TabIndex = 6
-        Me.lblRecebeIDCliente.Text = "0"
         '
         'frmVinculadoConsulta
         '

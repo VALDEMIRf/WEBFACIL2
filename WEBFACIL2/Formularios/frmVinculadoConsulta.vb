@@ -1,46 +1,99 @@
 ﻿Imports System.Data.OleDb
-
+Imports System.Text
 Public Class frmVinculadoConsulta
+    Public Enum TipoConsulta
+        Cliente
+    End Enum
+    Private _myString As String
+    
+    Public Property myString() As String
+        Set(ByVal value As String)
+            _myString = value
+        End Set
+        Get
+            Return _myString
+        End Get
+    End Property
+    'Cria todos os métodos internos e propriedades externas com os mesmos atributos do banco de dados
 
-    Private reader As OleDbDataReader
+    Private _vinc_id As Integer
+    Public Property vinc_id() As Integer
+        Get
+            Return _vinc_id
+        End Get
+        Set(ByVal value As Integer)
+            _vinc_id = value
+        End Set
+    End Property
 
-    Private Sub txtDescricao_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtDescricao.TextChanged
-        Using con As OleDbConnection = GetConnection()
-            Try
-                con.Open()
-                'Dim dt As New DataTable
-                '' Dim conn As New OleDbConnection
-                '   Dim cmd As New OleDbCommand("SELECT cli_id,cli_Nome FROM tbClientes", con)
-                Dim cmd As New OleDbCommand("SELECT Distinct(cli_Nome) FROM tbClientes", con)
-                reader = cmd.ExecuteReader()
-                Dim autoComp As New AutoCompleteStringCollection()
-                While reader.Read()
-                    autoComp.Add(reader("cli_Nome"))
-                    '    lblRecebeIDCliente.GetType(cli_id)
-                End While
-                reader.Close()
-                'Dim da As New OleDbDataAdapter(cmd)
-                'Dim col As New AutoCompleteStringCollection
-                'da.Fill(dt)
-                'For i = 0 To dt.Rows.Count - 1
-                '    col.Add(dt.Rows(i)("cli_Nome").ToString())
-                'Next
-                txtDescricao.AutoCompleteMode = AutoCompleteMode.Suggest
-                txtDescricao.AutoCompleteSource = AutoCompleteSource.CustomSource
-                txtDescricao.AutoCompleteCustomSource = autoComp
+    Private _ConsultaTipo As TipoConsulta
+    Public Property ConsultaTipo() As TipoConsulta
+        Get
+            Return _ConsultaTipo
+        End Get
+        Set(ByVal value As TipoConsulta)
+            _ConsultaTipo = value
+        End Set
+    End Property
 
-            Catch ex As Exception
-                ' MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                MsgBox(ex.Message.ToString)
-            Finally
-                con.Close()
-            End Try
-            
+    Private _clsCliente As clsCliente
+    Public Property clsCliente() As clsCliente
+        Get
+            Return _clsCliente
+        End Get
+        Set(ByVal value As clsCliente)
+            _clsCliente = value
+        End Set
+    End Property
 
+    Private _vinc_nome As String
+    Public Property vinc_nome() As String
+        Get
+            Return _vinc_nome
+        End Get
+        Set(ByVal value As String)
+            _vinc_nome = value
+        End Set
+    End Property
 
-        End Using
+    Private _vinc_CPF As String
+    Public Property vinc_CPF() As String
+        Get
+            Return _vinc_CPF
+        End Get
+        Set(ByVal value As String)
+            _vinc_CPF = value
+        End Set
+    End Property
+
+    Private _vinc_vinculo As String
+    Public Property vinc_vinculo() As String
+        Get
+            Return _vinc_vinculo
+        End Get
+        Set(ByVal value As String)
+            _vinc_vinculo = value
+        End Set
+    End Property
+
+    Private _vinc_lblVincID As Integer
+    Public Property vinc_lblVincID() As Integer
+        Get
+            Return _vinc_lblVincID
+        End Get
+        Set(ByVal value As Integer)
+            _vinc_lblVincID = value
+        End Set
+    End Property
+
+    Private Sub frmVinculadoConsulta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Show()
+        txtDescricao.Text = Me.myString
+        lblRecebeIDCliente.Text = Me.vinc_id
 
     End Sub
+
+
 
 
 
