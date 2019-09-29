@@ -477,6 +477,7 @@ Partial Class frmCadastroClientes
         '
         'btAlterarDados
         '
+        Me.btAlterarDados.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btAlterarDados.FlatAppearance.BorderSize = 0
         Me.btAlterarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAlterarDados.Image = CType(resources.GetObject("btAlterarDados.Image"), System.Drawing.Image)
@@ -520,6 +521,7 @@ Partial Class frmCadastroClientes
         '
         'btSalvar
         '
+        Me.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btSalvar.FlatAppearance.BorderSize = 0
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
@@ -1044,6 +1046,7 @@ Partial Class frmCadastroClientes
         'btPesquisarCPFVinculado
         '
         Me.btPesquisarCPFVinculado.AutoSize = True
+        Me.btPesquisarCPFVinculado.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btPesquisarCPFVinculado.FlatAppearance.BorderSize = 0
         Me.btPesquisarCPFVinculado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisarCPFVinculado.Image = CType(resources.GetObject("btPesquisarCPFVinculado.Image"), System.Drawing.Image)
@@ -1830,6 +1833,7 @@ Partial Class frmCadastroClientes
         '
         'btLimpar
         '
+        Me.btLimpar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btLimpar.FlatAppearance.BorderSize = 0
         Me.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btLimpar.Image = CType(resources.GetObject("btLimpar.Image"), System.Drawing.Image)
@@ -1844,6 +1848,7 @@ Partial Class frmCadastroClientes
         '
         'btSair
         '
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
@@ -1870,6 +1875,7 @@ Partial Class frmCadastroClientes
         '
         'btPesquisaEmpresa
         '
+        Me.btPesquisaEmpresa.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btPesquisaEmpresa.FlatAppearance.BorderSize = 0
         Me.btPesquisaEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisaEmpresa.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

@@ -80,6 +80,7 @@
     <Compile Include="cldBancoDados.vb" />
     <Compile Include="Classes\clsCliente.vb" />
     <Compile Include="Classes\clsCPFVinculado.vb" />
+    <Compile Include="clsFuncoesGerais.vb" />
     <Compile Include="Conexao.vb" />
     <Compile Include="Formularios\frmCadastroClientes.Designer.vb">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>

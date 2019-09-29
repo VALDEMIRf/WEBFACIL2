@@ -28,7 +28,7 @@ Partial Class frmVinculadoConsulta
         Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.txtDescricao = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvGridVinculo = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clienteID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,7 +38,7 @@ Partial Class frmVinculadoConsulta
         Me.btnAlterar = New System.Windows.Forms.Button()
         Me.btnSair = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvGridVinculo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -66,6 +66,7 @@ Partial Class frmVinculadoConsulta
         '
         'btnPesquisar
         '
+        Me.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPesquisar.FlatAppearance.BorderSize = 0
         Me.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPesquisar.Image = CType(resources.GetObject("btnPesquisar.Image"), System.Drawing.Image)
@@ -95,14 +96,14 @@ Partial Class frmVinculadoConsulta
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Descrição:"
         '
-        'DataGridView1
+        'dgvGridVinculo
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.clienteID, Me.Nome, Me.CPF, Me.Tipo})
-        Me.DataGridView1.Location = New System.Drawing.Point(26, 103)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(745, 229)
-        Me.DataGridView1.TabIndex = 1
+        Me.dgvGridVinculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvGridVinculo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.clienteID, Me.Nome, Me.CPF, Me.Tipo})
+        Me.dgvGridVinculo.Location = New System.Drawing.Point(26, 103)
+        Me.dgvGridVinculo.Name = "dgvGridVinculo"
+        Me.dgvGridVinculo.Size = New System.Drawing.Size(745, 229)
+        Me.dgvGridVinculo.TabIndex = 1
         '
         'codigo
         '
@@ -137,6 +138,7 @@ Partial Class frmVinculadoConsulta
         '
         'btnNovo
         '
+        Me.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnNovo.FlatAppearance.BorderSize = 0
         Me.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNovo.Image = CType(resources.GetObject("btnNovo.Image"), System.Drawing.Image)
@@ -150,6 +152,7 @@ Partial Class frmVinculadoConsulta
         '
         'btnAlterar
         '
+        Me.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAlterar.FlatAppearance.BorderSize = 0
         Me.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlterar.Image = CType(resources.GetObject("btnAlterar.Image"), System.Drawing.Image)
@@ -163,6 +166,7 @@ Partial Class frmVinculadoConsulta
         '
         'btnSair
         '
+        Me.btnSair.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSair.FlatAppearance.BorderSize = 0
         Me.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSair.Image = CType(resources.GetObject("btnSair.Image"), System.Drawing.Image)
@@ -183,7 +187,7 @@ Partial Class frmVinculadoConsulta
         Me.Controls.Add(Me.btnNovo)
         Me.Controls.Add(Me.btnAlterar)
         Me.Controls.Add(Me.btnSair)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvGridVinculo)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -191,7 +195,7 @@ Partial Class frmVinculadoConsulta
         Me.Text = "Consulta de Pessoas Vinculadas ao Cliente"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvGridVinculo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -199,7 +203,7 @@ Partial Class frmVinculadoConsulta
     Public WithEvents btnPesquisar As System.Windows.Forms.Button
     Public WithEvents txtDescricao As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvGridVinculo As System.Windows.Forms.DataGridView
     Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clienteID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nome As System.Windows.Forms.DataGridViewTextBoxColumn

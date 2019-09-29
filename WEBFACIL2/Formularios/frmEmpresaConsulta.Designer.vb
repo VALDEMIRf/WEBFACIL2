@@ -56,6 +56,7 @@ Partial Class frmEmpresaConsulta
         '
         'btFecharEmpresa
         '
+        Me.btFecharEmpresa.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btFecharEmpresa.FlatAppearance.BorderSize = 0
         Me.btFecharEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btFecharEmpresa.Image = CType(resources.GetObject("btFecharEmpresa.Image"), System.Drawing.Image)
@@ -69,6 +70,7 @@ Partial Class frmEmpresaConsulta
         '
         'btEnviarDadosEmpresa
         '
+        Me.btEnviarDadosEmpresa.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btEnviarDadosEmpresa.FlatAppearance.BorderSize = 0
         Me.btEnviarDadosEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEnviarDadosEmpresa.Image = CType(resources.GetObject("btEnviarDadosEmpresa.Image"), System.Drawing.Image)
@@ -82,6 +84,7 @@ Partial Class frmEmpresaConsulta
         '
         'btPesquisaEmpresa
         '
+        Me.btPesquisaEmpresa.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btPesquisaEmpresa.FlatAppearance.BorderSize = 0
         Me.btPesquisaEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisaEmpresa.Image = CType(resources.GetObject("btPesquisaEmpresa.Image"), System.Drawing.Image)

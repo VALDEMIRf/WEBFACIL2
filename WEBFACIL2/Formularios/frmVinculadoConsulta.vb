@@ -36,6 +36,16 @@ Public Class frmVinculadoConsulta
         End Set
     End Property
 
+    Private _cli_id As Integer
+    Public Property cli_id() As Integer
+        Get
+            Return _cli_id
+        End Get
+        Set(ByVal value As Integer)
+            _cli_id = value
+        End Set
+    End Property
+
     Private _clsCliente As clsCliente
     Public Property clsCliente() As clsCliente
         Get
@@ -93,9 +103,58 @@ Public Class frmVinculadoConsulta
 
     End Sub
 
+    Private Sub CarregaGrid()
+        Dim dsConsulta As New Data.DataSet
+        Select Case _ConsultaTipo
+            Case TipoConsulta.Cliente
+                Dim clnVinculo As New clsCPFVinculado
+                dsConsulta = clnVinculo.Listar(txtDescricao.Text)
 
+                'Case TipoConsulta.Cliente
+                '    Dim clnVinculo As New clsCPFVinculado
+                '    dsConsulta = clnVinculo.Listar(txtDescricao.Text)
+        End Select
+        dgvGridVinculo.DataSource = dsConsulta.Tables(0)
+    End Sub
 
+    Private Sub btnPesquisar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPesquisar.Click
+        CarregaGrid()
+    End Sub
 
+    Private Sub btnNovo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNovo.Click
+        Dim frmVinculo As New frmVinculadoCadastro
+        ' Dim frmVinculadoCadastro As New frmVinculadoConsulta
+        Dim enviarDados As New frmVinculadoCadastro
 
+        enviarDados.cli_id = lblRecebeIDCliente.Text
+        enviarDados.ShowDialog()
 
+        ' frmVinculo.ShowDialog()
+        With enviarDados
+            .Operacao = clsFuncoesGerais.Operacao.Inclusao
+            .ShowDialog()
+        End With
+        CarregaGrid()
+    End Sub
+
+    Private Sub btnAlterar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlterar.Click
+        Dim frmVinculo As New frmVinculadoCadastro
+        ' Dim frmVinculadoCadastro As New frmVinculadoConsulta
+        Dim enviarDados As New frmVinculadoCadastro
+
+        enviarDados.cli_id = lblRecebeIDCliente.Text
+        'enviarDados.ShowDialog()
+
+        ' frmVinculo.ShowDialog()
+        With enviarDados
+            .Operacao = clsFuncoesGerais.Operacao.Alteracao
+            .Codigo = dgvGridVinculo.CurrentRow.Cells(0).Value
+            .ShowDialog()
+        End With
+        CarregaGrid()
+    End Sub
+
+    Private Sub btnSair_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSair.Click
+        Me.Close()
+    End Sub
 End Class

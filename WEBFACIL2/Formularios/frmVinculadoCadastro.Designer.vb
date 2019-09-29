@@ -22,43 +22,36 @@ Partial Class frmVinculadoCadastro
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVinculadoCadastro))
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtDescricao = New System.Windows.Forms.TextBox()
-        Me.cboCategoria = New System.Windows.Forms.ComboBox()
+        Me.txtNomeVinculado = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtTipoVinculo = New System.Windows.Forms.TextBox()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btGravar = New System.Windows.Forms.Button()
+        Me.lblRecebeIDClienteVinculo = New System.Windows.Forms.Label()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtCPFVinculado = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 42)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 18)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cliente"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 80)
+        Me.Label2.Location = New System.Drawing.Point(13, 31)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 18)
+        Me.Label2.Size = New System.Drawing.Size(145, 18)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Nome do Parente"
+        Me.Label2.Text = "Nome do Vinculado"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 123)
+        Me.Label3.Location = New System.Drawing.Point(13, 73)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 18)
         Me.Label3.TabIndex = 2
@@ -67,34 +60,25 @@ Partial Class frmVinculadoCadastro
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 171)
+        Me.Label4.Location = New System.Drawing.Point(13, 118)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(144, 18)
+        Me.Label4.Size = New System.Drawing.Size(115, 18)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Tipo de Parentesco"
+        Me.Label4.Text = "Tipo de Vinculo"
         '
-        'txtDescricao
+        'txtNomeVinculado
         '
-        Me.txtDescricao.Location = New System.Drawing.Point(162, 80)
-        Me.txtDescricao.Name = "txtDescricao"
-        Me.txtDescricao.Size = New System.Drawing.Size(314, 26)
-        Me.txtDescricao.TabIndex = 9
-        '
-        'cboCategoria
-        '
-        Me.cboCategoria.FormattingEnabled = True
-        Me.cboCategoria.Location = New System.Drawing.Point(162, 39)
-        Me.cboCategoria.Name = "cboCategoria"
-        Me.cboCategoria.Size = New System.Drawing.Size(314, 26)
-        Me.cboCategoria.TabIndex = 8
+        Me.txtNomeVinculado.Location = New System.Drawing.Point(163, 27)
+        Me.txtNomeVinculado.Name = "txtNomeVinculado"
+        Me.txtNomeVinculado.Size = New System.Drawing.Size(314, 26)
+        Me.txtNomeVinculado.TabIndex = 9
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.cboCategoria)
-        Me.GroupBox1.Controls.Add(Me.txtDescricao)
-        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.txtCPFVinculado)
+        Me.GroupBox1.Controls.Add(Me.lblRecebeIDClienteVinculo)
+        Me.GroupBox1.Controls.Add(Me.txtTipoVinculo)
+        Me.GroupBox1.Controls.Add(Me.txtNomeVinculado)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -105,22 +89,16 @@ Partial Class frmVinculadoCadastro
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cadastro de Familiar"
         '
-        'TextBox1
+        'txtTipoVinculo
         '
-        Me.TextBox1.Location = New System.Drawing.Point(162, 123)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(314, 26)
-        Me.TextBox1.TabIndex = 10
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(162, 168)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(314, 26)
-        Me.TextBox2.TabIndex = 11
+        Me.txtTipoVinculo.Location = New System.Drawing.Point(163, 115)
+        Me.txtTipoVinculo.Name = "txtTipoVinculo"
+        Me.txtTipoVinculo.Size = New System.Drawing.Size(314, 26)
+        Me.txtTipoVinculo.TabIndex = 11
         '
         'btSair
         '
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
@@ -134,6 +112,7 @@ Partial Class frmVinculadoCadastro
         '
         'btGravar
         '
+        Me.btGravar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btGravar.FlatAppearance.BorderSize = 0
         Me.btGravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btGravar.Image = CType(resources.GetObject("btGravar.Image"), System.Drawing.Image)
@@ -145,7 +124,29 @@ Partial Class frmVinculadoCadastro
         Me.btGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btGravar.UseVisualStyleBackColor = True
         '
-        'frmCadastroFamiliar
+        'lblRecebeIDClienteVinculo
+        '
+        Me.lblRecebeIDClienteVinculo.AutoSize = True
+        Me.lblRecebeIDClienteVinculo.Location = New System.Drawing.Point(488, 13)
+        Me.lblRecebeIDClienteVinculo.Name = "lblRecebeIDClienteVinculo"
+        Me.lblRecebeIDClienteVinculo.Size = New System.Drawing.Size(17, 18)
+        Me.lblRecebeIDClienteVinculo.TabIndex = 12
+        Me.lblRecebeIDClienteVinculo.Text = "0"
+        '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
+        'txtCPFVinculado
+        '
+        Me.txtCPFVinculado.Location = New System.Drawing.Point(163, 73)
+        Me.txtCPFVinculado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtCPFVinculado.Mask = "000.000.000-00"
+        Me.txtCPFVinculado.Name = "txtCPFVinculado"
+        Me.txtCPFVinculado.Size = New System.Drawing.Size(129, 26)
+        Me.txtCPFVinculado.TabIndex = 13
+        '
+        'frmVinculadoCadastro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -156,24 +157,25 @@ Partial Class frmVinculadoCadastro
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Name = "frmCadastroFamiliar"
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Name = "frmVinculadoCadastro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cadastro de Pessoas Vinculadas ao Cliente"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents txtDescricao As System.Windows.Forms.TextBox
-    Friend WithEvents cboCategoria As System.Windows.Forms.ComboBox
+    Friend WithEvents txtNomeVinculado As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtTipoVinculo As System.Windows.Forms.TextBox
     Friend WithEvents btSair As System.Windows.Forms.Button
     Friend WithEvents btGravar As System.Windows.Forms.Button
+    Friend WithEvents lblRecebeIDClienteVinculo As System.Windows.Forms.Label
+    Friend WithEvents errErro As System.Windows.Forms.ErrorProvider
+    Public WithEvents txtCPFVinculado As System.Windows.Forms.MaskedTextBox
 End Class

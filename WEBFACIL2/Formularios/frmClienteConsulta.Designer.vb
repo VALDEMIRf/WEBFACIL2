@@ -56,6 +56,7 @@ Partial Class frmClienteConsulta
         '
         'btFechar
         '
+        Me.btFechar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btFechar.FlatAppearance.BorderSize = 0
         Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btFechar.Image = CType(resources.GetObject("btFechar.Image"), System.Drawing.Image)
@@ -69,6 +70,7 @@ Partial Class frmClienteConsulta
         '
         'btEnviarDados
         '
+        Me.btEnviarDados.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btEnviarDados.FlatAppearance.BorderSize = 0
         Me.btEnviarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEnviarDados.Image = CType(resources.GetObject("btEnviarDados.Image"), System.Drawing.Image)
@@ -82,6 +84,7 @@ Partial Class frmClienteConsulta
         '
         'btPesquisaCliente
         '
+        Me.btPesquisaCliente.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btPesquisaCliente.FlatAppearance.BorderSize = 0
         Me.btPesquisaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisaCliente.Image = CType(resources.GetObject("btPesquisaCliente.Image"), System.Drawing.Image)
