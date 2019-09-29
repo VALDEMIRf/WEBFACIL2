@@ -1087,4 +1087,8 @@ Public Class frmCadastroClientes
     End Sub
 
    
+    Private Sub btPesquisarCPFVinculado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCPFVinculado.Click
+        Dim frmVinculadoCadastro As New frmVinculadoConsulta
+        frmVinculadoCadastro.ShowDialog()
+    End Sub
 End Class

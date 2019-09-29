@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmConsultaFamiliar
+Partial Class frmVinculadoConsulta
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class frmConsultaFamiliar
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsultaFamiliar))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVinculadoConsulta))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.txtDescricao = New System.Windows.Forms.TextBox()
@@ -36,12 +36,14 @@ Partial Class frmConsultaFamiliar
         Me.btnNovo = New System.Windows.Forms.Button()
         Me.btnAlterar = New System.Windows.Forms.Button()
         Me.btnSair = New System.Windows.Forms.Button()
+        Me.lblRecebeIDCliente = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblRecebeIDCliente)
         Me.GroupBox1.Controls.Add(Me.btnPesquisar)
         Me.GroupBox1.Controls.Add(Me.txtDescricao)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -67,6 +69,7 @@ Partial Class frmConsultaFamiliar
         '
         'txtDescricao
         '
+        Me.txtDescricao.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.txtDescricao.Location = New System.Drawing.Point(97, 25)
         Me.txtDescricao.Name = "txtDescricao"
         Me.txtDescricao.Size = New System.Drawing.Size(473, 26)
@@ -160,7 +163,16 @@ Partial Class frmConsultaFamiliar
         Me.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSair.UseVisualStyleBackColor = True
         '
-        'frmConsultaFamiliar
+        'lblRecebeIDCliente
+        '
+        Me.lblRecebeIDCliente.AutoSize = True
+        Me.lblRecebeIDCliente.Location = New System.Drawing.Point(40, 49)
+        Me.lblRecebeIDCliente.Name = "lblRecebeIDCliente"
+        Me.lblRecebeIDCliente.Size = New System.Drawing.Size(17, 18)
+        Me.lblRecebeIDCliente.TabIndex = 6
+        Me.lblRecebeIDCliente.Text = "0"
+        '
+        'frmVinculadoConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -172,8 +184,8 @@ Partial Class frmConsultaFamiliar
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Name = "frmConsultaFamiliar"
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Name = "frmVinculadoConsulta"
         Me.Text = "Consulta de Pessoas Vinculadas ao Cliente"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -194,4 +206,5 @@ Partial Class frmConsultaFamiliar
     Public WithEvents btnNovo As System.Windows.Forms.Button
     Public WithEvents btnAlterar As System.Windows.Forms.Button
     Public WithEvents btnSair As System.Windows.Forms.Button
+    Friend WithEvents lblRecebeIDCliente As System.Windows.Forms.Label
 End Class

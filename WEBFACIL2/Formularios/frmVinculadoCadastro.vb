@@ -1,4 +1,4 @@
-﻿Public Class frmCadastroFamiliar
+﻿Public Class frmVinculadoCadastro
 
     Private Sub frmCadastroFamiliar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 

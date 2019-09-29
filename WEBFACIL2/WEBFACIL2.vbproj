@@ -87,10 +87,10 @@
     <Compile Include="Formularios\frmCadastroClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmCadastroFamiliar.Designer.vb">
-      <DependentUpon>frmCadastroFamiliar.vb</DependentUpon>
+    <Compile Include="Formularios\frmVinculadoCadastro.Designer.vb">
+      <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmCadastroFamiliar.vb">
+    <Compile Include="Formularios\frmVinculadoCadastro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmClienteConsulta.Designer.vb">
@@ -99,10 +99,10 @@
     <Compile Include="Formularios\frmClienteConsulta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmConsultaFamiliar.Designer.vb">
-      <DependentUpon>frmConsultaFamiliar.vb</DependentUpon>
+    <Compile Include="Formularios\frmVinculadoConsulta.Designer.vb">
+      <DependentUpon>frmVinculadoConsulta.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmConsultaFamiliar.vb">
+    <Compile Include="Formularios\frmVinculadoConsulta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmEmpresaConsulta.Designer.vb">
@@ -140,14 +140,14 @@
     <EmbeddedResource Include="Formularios\frmCadastroClientes.resx">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmCadastroFamiliar.resx">
-      <DependentUpon>frmCadastroFamiliar.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmVinculadoCadastro.resx">
+      <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmClienteConsulta.resx">
       <DependentUpon>frmClienteConsulta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmConsultaFamiliar.resx">
-      <DependentUpon>frmConsultaFamiliar.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\frmVinculadoConsulta.resx">
+      <DependentUpon>frmVinculadoConsulta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEmpresaConsulta.resx">
       <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
