@@ -467,7 +467,7 @@ Partial Class frmCadastroClientes
         'chbSenhaWeb
         '
         Me.chbSenhaWeb.AutoSize = True
-        Me.chbSenhaWeb.Location = New System.Drawing.Point(15, 507)
+        Me.chbSenhaWeb.Location = New System.Drawing.Point(12, 503)
         Me.chbSenhaWeb.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbSenhaWeb.Name = "chbSenhaWeb"
         Me.chbSenhaWeb.Size = New System.Drawing.Size(147, 18)
@@ -512,7 +512,7 @@ Partial Class frmCadastroClientes
         '
         'txtMensalista
         '
-        Me.txtMensalista.Location = New System.Drawing.Point(130, 394)
+        Me.txtMensalista.Location = New System.Drawing.Point(130, 366)
         Me.txtMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtMensalista.Name = "txtMensalista"
         Me.txtMensalista.Size = New System.Drawing.Size(160, 20)
@@ -537,7 +537,7 @@ Partial Class frmCadastroClientes
         'chbMensalista
         '
         Me.chbMensalista.AutoSize = True
-        Me.chbMensalista.Location = New System.Drawing.Point(15, 396)
+        Me.chbMensalista.Location = New System.Drawing.Point(15, 368)
         Me.chbMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbMensalista.Name = "chbMensalista"
         Me.chbMensalista.Size = New System.Drawing.Size(102, 18)
@@ -547,7 +547,7 @@ Partial Class frmCadastroClientes
         '
         'txtIRPF
         '
-        Me.txtIRPF.Location = New System.Drawing.Point(71, 476)
+        Me.txtIRPF.Location = New System.Drawing.Point(80, 457)
         Me.txtIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtIRPF.Name = "txtIRPF"
         Me.txtIRPF.Size = New System.Drawing.Size(160, 20)
@@ -556,7 +556,7 @@ Partial Class frmCadastroClientes
         '
         'txtDecore
         '
-        Me.txtDecore.Location = New System.Drawing.Point(121, 429)
+        Me.txtDecore.Location = New System.Drawing.Point(106, 414)
         Me.txtDecore.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtDecore.Name = "txtDecore"
         Me.txtDecore.Size = New System.Drawing.Size(160, 20)
@@ -663,7 +663,7 @@ Partial Class frmCadastroClientes
         'chbDecore
         '
         Me.chbDecore.AutoSize = True
-        Me.chbDecore.Location = New System.Drawing.Point(15, 438)
+        Me.chbDecore.Location = New System.Drawing.Point(15, 416)
         Me.chbDecore.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbDecore.Name = "chbDecore"
         Me.chbDecore.Size = New System.Drawing.Size(70, 18)
@@ -674,7 +674,7 @@ Partial Class frmCadastroClientes
         'chbIRPF
         '
         Me.chbIRPF.AutoSize = True
-        Me.chbIRPF.Location = New System.Drawing.Point(15, 477)
+        Me.chbIRPF.Location = New System.Drawing.Point(15, 457)
         Me.chbIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.chbIRPF.Name = "chbIRPF"
         Me.chbIRPF.Size = New System.Drawing.Size(50, 18)

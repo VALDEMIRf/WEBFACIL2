@@ -127,7 +127,7 @@ Public Class frmVinculadoConsulta
         Dim enviarDados As New frmVinculadoCadastro
 
         enviarDados.cli_id = lblRecebeIDCliente.Text
-        enviarDados.ShowDialog()
+        '  enviarDados.ShowDialog()
 
         ' frmVinculo.ShowDialog()
         With enviarDados
@@ -143,9 +143,7 @@ Public Class frmVinculadoConsulta
         Dim enviarDados As New frmVinculadoCadastro
 
         enviarDados.cli_id = lblRecebeIDCliente.Text
-        'enviarDados.ShowDialog()
-
-        ' frmVinculo.ShowDialog()
+       
         With enviarDados
             .Operacao = clsFuncoesGerais.Operacao.Alteracao
             .Codigo = dgvGridVinculo.CurrentRow.Cells(0).Value

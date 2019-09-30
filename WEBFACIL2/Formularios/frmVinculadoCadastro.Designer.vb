@@ -29,12 +29,12 @@ Partial Class frmVinculadoCadastro
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtNomeVinculado = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtCPFVinculado = New System.Windows.Forms.MaskedTextBox()
+        Me.lblRecebeIDClienteVinculo = New System.Windows.Forms.Label()
         Me.txtTipoVinculo = New System.Windows.Forms.TextBox()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btGravar = New System.Windows.Forms.Button()
-        Me.lblRecebeIDClienteVinculo = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.txtCPFVinculado = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -87,7 +87,26 @@ Partial Class frmVinculadoCadastro
         Me.GroupBox1.Size = New System.Drawing.Size(511, 211)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Cadastro de Familiar"
+        Me.GroupBox1.Text = "Cadastro de Pessoa Vinculada ao Cliente"
+        '
+        'txtCPFVinculado
+        '
+        Me.txtCPFVinculado.Location = New System.Drawing.Point(163, 73)
+        Me.txtCPFVinculado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtCPFVinculado.Mask = "000.000.000-00"
+        Me.txtCPFVinculado.Name = "txtCPFVinculado"
+        Me.txtCPFVinculado.Size = New System.Drawing.Size(129, 26)
+        Me.txtCPFVinculado.TabIndex = 13
+        '
+        'lblRecebeIDClienteVinculo
+        '
+        Me.lblRecebeIDClienteVinculo.AutoSize = True
+        Me.lblRecebeIDClienteVinculo.Location = New System.Drawing.Point(488, 13)
+        Me.lblRecebeIDClienteVinculo.Name = "lblRecebeIDClienteVinculo"
+        Me.lblRecebeIDClienteVinculo.Size = New System.Drawing.Size(17, 18)
+        Me.lblRecebeIDClienteVinculo.TabIndex = 12
+        Me.lblRecebeIDClienteVinculo.Text = "0"
+        Me.lblRecebeIDClienteVinculo.Visible = False
         '
         'txtTipoVinculo
         '
@@ -124,27 +143,9 @@ Partial Class frmVinculadoCadastro
         Me.btGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btGravar.UseVisualStyleBackColor = True
         '
-        'lblRecebeIDClienteVinculo
-        '
-        Me.lblRecebeIDClienteVinculo.AutoSize = True
-        Me.lblRecebeIDClienteVinculo.Location = New System.Drawing.Point(488, 13)
-        Me.lblRecebeIDClienteVinculo.Name = "lblRecebeIDClienteVinculo"
-        Me.lblRecebeIDClienteVinculo.Size = New System.Drawing.Size(17, 18)
-        Me.lblRecebeIDClienteVinculo.TabIndex = 12
-        Me.lblRecebeIDClienteVinculo.Text = "0"
-        '
         'errErro
         '
         Me.errErro.ContainerControl = Me
-        '
-        'txtCPFVinculado
-        '
-        Me.txtCPFVinculado.Location = New System.Drawing.Point(163, 73)
-        Me.txtCPFVinculado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtCPFVinculado.Mask = "000.000.000-00"
-        Me.txtCPFVinculado.Name = "txtCPFVinculado"
-        Me.txtCPFVinculado.Size = New System.Drawing.Size(129, 26)
-        Me.txtCPFVinculado.TabIndex = 13
         '
         'frmVinculadoCadastro
         '
