@@ -209,6 +209,7 @@ Partial Class frmCadastroClientes
         '
         'TabCliente
         '
+        Me.TabCliente.AutoScroll = True
         Me.TabCliente.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.TabCliente.Controls.Add(Me.Panel1)
         Me.TabCliente.Controls.Add(Me.txtObs)

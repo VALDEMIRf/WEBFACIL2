@@ -11,7 +11,6 @@ Public Class clsCliente
     Private _cli_id As Integer
     Friend Shared nome As Object
 
-
     Public Property cli_id() As Integer
         Get
             Return _cli_id
@@ -28,6 +27,16 @@ Public Class clsCliente
         End Get
         Set(ByVal value As String)
             _cli_CPF = value
+        End Set
+    End Property
+
+    Private _cli_CPFSituacao As String
+    Public Property cli_CPFSituacao() As String
+        Get
+            Return _cli_CPFSituacao
+        End Get
+        Set(ByVal value As String)
+            _cli_CPFSituacao = value
         End Set
     End Property
 
@@ -607,10 +616,11 @@ Public Class clsCliente
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
-                Dim sql As String = "INSERT INTO tbClientes(cli_CPF,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_data_nasc,cli_Curriculo,cli_Email,cli_observacoes,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NomeFunc,cli_Autonomo,cli_AutonomoNome,cli_Falecido,cli_NomeFalecido,cli_Inativo,cli_InativoObs,cli_Parcelamento,cli_NumParcelamento,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_VIP,cli_VIPDescricao,cli_PJ,cli_NumPJ,cli_MEI,cli_NumMEI,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                Dim sql As String = "INSERT INTO tbClientes(cli_CPF,cli_CPFSituacao,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_data_nasc,cli_Curriculo,cli_Email,cli_observacoes,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NomeFunc,cli_Autonomo,cli_AutonomoNome,cli_Falecido,cli_NomeFalecido,cli_Inativo,cli_InativoObs,cli_Parcelamento,cli_NumParcelamento,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_VIP,cli_VIPDescricao,cli_PJ,cli_NumPJ,cli_MEI,cli_NumMEI,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CPF", _cli_CPF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CPFSituacao", _cli_CPFSituacao))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_RG", _cli_RG))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Nome", _cli_Nome))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_PIS", _cli_PIS))
