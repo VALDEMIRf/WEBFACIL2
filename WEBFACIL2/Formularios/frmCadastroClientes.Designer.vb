@@ -1901,6 +1901,8 @@ Partial Class frmCadastroClientes
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btLimpar)
         Me.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "frmCadastroClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

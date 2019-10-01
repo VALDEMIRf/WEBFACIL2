@@ -110,9 +110,6 @@ Public Class frmVinculadoConsulta
                 Dim clnVinculo As New clsCPFVinculado
                 dsConsulta = clnVinculo.Listar(txtDescricao.Text)
 
-                'Case TipoConsulta.Cliente
-                '    Dim clnVinculo As New clsCPFVinculado
-                '    dsConsulta = clnVinculo.Listar(txtDescricao.Text)
         End Select
         dgvGridVinculo.DataSource = dsConsulta.Tables(0)
     End Sub
@@ -123,23 +120,19 @@ Public Class frmVinculadoConsulta
 
     Private Sub btnNovo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNovo.Click
         Dim frmVinculo As New frmVinculadoCadastro
-        ' Dim frmVinculadoCadastro As New frmVinculadoConsulta
         Dim enviarDados As New frmVinculadoCadastro
 
         enviarDados.cli_id = lblRecebeIDCliente.Text
-        '  enviarDados.ShowDialog()
-
-        ' frmVinculo.ShowDialog()
+      
         With enviarDados
             .Operacao = clsFuncoesGerais.Operacao.Inclusao
             .ShowDialog()
         End With
-        CarregaGrid()
+        '  CarregaGrid()
     End Sub
 
     Private Sub btnAlterar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAlterar.Click
         Dim frmVinculo As New frmVinculadoCadastro
-        ' Dim frmVinculadoCadastro As New frmVinculadoConsulta
         Dim enviarDados As New frmVinculadoCadastro
 
         enviarDados.cli_id = lblRecebeIDCliente.Text

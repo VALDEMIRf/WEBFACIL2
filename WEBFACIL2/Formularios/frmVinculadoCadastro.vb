@@ -74,12 +74,7 @@
                 .vinc_lblVincID = lblRecebeIDClienteVinculo.Text
                 .vinc_vinculo = txtTipoVinculo.Text
             End With
-            'vinculo.vinc_nome = txtNomeVinculado.Text
-            'vinculo.vinc_CPF = txtCPFVinculado.Text
-            'vinculo.vinc_lblVincID = lblRecebeIDClienteVinculo.Text
-            'vinculo.vinc_vinculo = txtTipoVinculo.Text
-
-            'vinculo.GravarDados()
+           
             If _Operacao = clsFuncoesGerais.Operacao.Inclusao Then
                 cldVinculo.GravarDados()
             ElseIf _Operacao = clsFuncoesGerais.Operacao.Alteracao Then

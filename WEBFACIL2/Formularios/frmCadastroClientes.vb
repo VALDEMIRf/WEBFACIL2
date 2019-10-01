@@ -700,436 +700,251 @@ Public Class frmCadastroClientes
     End Sub
 
     Private Sub chbAposentado_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbAposentado.CheckedChanged
-        Aposentado()
+        If chbAposentado.Checked = True Then
+            '  lblNumBeneficio.Visible = True
+            txtNumBeneficio.Visible = True
+
+        Else
+            '   lblNumBeneficio.Visible = False
+            txtNumBeneficio.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbFuncPublico_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbFuncPublico.CheckedChanged
-        FuncPublico()
+        If chbFuncPublico.Checked = True Then
+            '  lblFuncPublico.Visible = True
+            txtFuncPublico.Visible = True
+
+        Else
+            '    lblFuncPublico.Visible = False
+            txtFuncPublico.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbAutonomo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbAutonomo.CheckedChanged
-        Autonomo()
+
     End Sub
 
     Private Sub chbFalecido_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbFalecido.CheckedChanged
-        Falecido()
+        If chbFalecido.Checked = True Then
+            '  lblFalecido.Visible = True
+            txtFalecido.Visible = True
+
+        Else
+            '   lblFalecido.Visible = False
+            txtFalecido.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbInativo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbInativo.CheckedChanged
-        Inativo()
+        If chbInativo.Checked = True Then
+            txtInativo.Visible = True
+
+        Else
+            txtInativo.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbParcelamentos_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbParcelamentos.CheckedChanged
-        Parcelamentos()
+        If chbParcelamentos.Checked = True Then
+            '  lblParcelamentos.Visible = True
+            txtParcelamentos.Visible = True
+
+        Else
+            '  lblParcelamentos.Visible = False
+            txtParcelamentos.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbESocial_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbESocial.CheckedChanged
-        ESocial()
+        If chbESocial.Checked = True Then
+            '  lblESocial.Visible = True
+            txtESocial.Visible = True
+            txtEsocialSenha.Visible = True
+            lblEsocialSenha.Visible = True
+        Else
+            '   lblESocial.Visible = False
+            txtESocial.Visible = False
+            txtEsocialSenha.Visible = False
+            lblEsocialSenha.Visible = False
+        End If
     End Sub
 
     Private Sub chbVIP_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbVIP.CheckedChanged
-        vip()
+        If chbVIP.Checked = True Then
+            '  lblVIP.Visible = True
+            txtVIP.Visible = True
+
+        Else
+            '  lblVIP.Visible = False
+            txtVIP.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbPJ_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbPJ.CheckedChanged
-        PJ()
+        If chbPJ.Checked = True Then
+            ' lblPJ.Visible = True
+            '  txtPJ.Visible = True
+            TabEmpresa.Enabled = True
+            ' TabControl.SelectedTab = TabPage2
+
+        Else
+            ' lblPJ.Visible = False
+            'txtPJ.Visible = False
+            TabEmpresa.Enabled = False
+        End If
     End Sub
 
     Private Sub chbMEI_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbMEI.CheckedChanged
-        MEI()
+        If chbMEI.Checked = True Then
+            ' lblMEI.Visible = True
+            TabEmpresa.Enabled = True
+            ' txtMEI.Visible = True
+
+        Else
+            '   lblMEI.Visible = False
+            ' txtMEI.Visible = False
+            TabEmpresa.Enabled = False
+        End If
     End Sub
 
     Private Sub chbITR_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbITR.CheckedChanged
-        ITR()
+        If chbITR.Checked = True Then
+            ' lblITR.Visible = True
+            txtITR.Visible = True
+
+        Else
+            '   lblITR.Visible = False
+            txtITR.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbMensalista_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbMensalista.CheckedChanged
-        Mensalista()
+        If chbMensalista.Checked = True Then
+            '   lblMensalista.Visible = True
+            txtMensalista.Visible = True
+
+        Else
+            '   lblMensalista.Visible = False
+            txtMensalista.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbDecore_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbDecore.CheckedChanged
-        Decore()
+        If chbDecore.Checked = True Then
+            '     lblDecore.Visible = True
+            txtDecore.Visible = True
+
+        Else
+            '   lblDecore.Visible = False
+            txtDecore.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbIRPF_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbIRPF.CheckedChanged
-        IRPF()
+        If chbIRPF.Checked = True Then
+            '  lblIRPF.Visible = True
+            txtIRPF.Visible = True
+
+        Else
+            ' lblIRPF.Visible = False
+            txtIRPF.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbSenhaWeb_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSenhaWeb.CheckedChanged
-        SenhaWeb()
+        If chbSenhaWeb.Checked = True Then
+            'lblSenhaWeb.Visible = True
+            txtSenhaWeb.Visible = True
+           
+        Else
+            ' lblSenhaWeb.Visible = False
+            txtSenhaWeb.Visible = False
+           
+        End If
     End Sub
 
     Private Sub chbRedesim_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbRedesim.CheckedChanged
-        Redesim()
+        If chbRedesim.Checked = True Then
+            lblSenhaRedesim.Visible = True
+            txtSenhaRedesim.Visible = True
+            txtCPFRedesim.Visible = True
+            lblcpfRedesim.Visible = True
+        Else
+            lblSenhaRedesim.Visible = False
+            txtSenhaRedesim.Visible = False
+            txtCPFRedesim.Visible = False
+            lblcpfRedesim.Visible = False
+        End If
     End Sub
 
     Private Sub chbCodRFB_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbCodRFB.CheckedChanged
-        CodRFB()
+        If chbCodRFB.Checked = True Then
+            txtCodRFB.Visible = True
+            lblValidoRFB.Visible = True
+            txtValidadeRFB.Visible = True
+
+        Else
+            txtCodRFB.Visible = False
+            lblValidoRFB.Visible = False
+            txtValidadeRFB.Visible = False
+
+        End If
     End Sub
 
     Private Sub chbSimples_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSimples.CheckedChanged
-        SimplesNacional()
+        If chbSimples.Checked = True Then
+            txtSimplesNacional.Visible = True
+        Else
+            txtSimplesNacional.Visible = False
+        End If
     End Sub
 
     Private Sub chbSIMEI_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSIMEI.CheckedChanged
-        SIMEI()
+        If chbSIMEI.Checked = True Then
+            txtEmprSimei.Visible = True
+        Else
+            txtEmprSimei.Visible = False
+        End If
     End Sub
 
     Private Sub chbSefaz_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSefaz.CheckedChanged
-        acessoSefaz()
+        If chbSefaz.Checked = True Then
+            lblUsuario.Visible = True
+            lblSenhaSefaz.Visible = True
+            txtSefazUsu.Visible = True
+            txtSefazSen.Visible = True
+        Else
+            lblUsuario.Visible = False
+            lblSenhaSefaz.Visible = False
+            txtSefazUsu.Visible = False
+            txtSefazSen.Visible = False
+        End If
     End Sub
 
     Private Sub chbSenhaWebPJ_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbSenhaWebPJ.CheckedChanged
-        SenhaWebPJ()
+        If chbSenhaWebPJ.Checked = True Then
+            lblSenhaWebPJ.Visible = True
+            lblSenhaPJValidade.Visible = True
+            txtSenhaWebPJ.Visible = True
+            txtSenhaPJValidade.Visible = True
+        Else
+            lblSenhaWebPJ.Visible = False
+            lblSenhaPJValidade.Visible = False
+            txtSenhaWebPJ.Visible = False
+            txtSenhaPJValidade.Visible = False
+        End If
     End Sub
 
-    Private Sub Aposentado()
-        Try
-            If chbAposentado.Checked = True Then
-                '  lblNumBeneficio.Visible = True
-                txtNumBeneficio.Visible = True
-
-            Else
-                '   lblNumBeneficio.Visible = False
-                txtNumBeneficio.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub FuncPublico()
-        Try
-            If chbFuncPublico.Checked = True Then
-                '  lblFuncPublico.Visible = True
-                txtFuncPublico.Visible = True
-
-            Else
-                '    lblFuncPublico.Visible = False
-                txtFuncPublico.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Autonomo()
-        Try
-            If chbAutonomo.Checked = True Then
-                '  lblAutonomo.Visible = True
-                '  txtAutonomo.Visible = True
-
-            Else
-                ' lblAutonomo.Visible = False
-                ' txtAutonomo.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Falecido()
-        Try
-            If chbFalecido.Checked = True Then
-                '  lblFalecido.Visible = True
-                txtFalecido.Visible = True
-
-            Else
-                '   lblFalecido.Visible = False
-                txtFalecido.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Inativo()
-        Try
-            If chbInativo.Checked = True Then
-                txtInativo.Visible = True
-
-            Else
-                txtInativo.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Parcelamentos()
-        Try
-            If chbParcelamentos.Checked = True Then
-                '  lblParcelamentos.Visible = True
-                txtParcelamentos.Visible = True
-
-            Else
-                '  lblParcelamentos.Visible = False
-                txtParcelamentos.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub vip()
-        Try
-            If chbVIP.Checked = True Then
-                '  lblVIP.Visible = True
-                txtVIP.Visible = True
-
-            Else
-                '  lblVIP.Visible = False
-                txtVIP.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub PJ()
-        Try
-            If chbPJ.Checked = True Then
-                ' lblPJ.Visible = True
-                '  txtPJ.Visible = True
-                TabEmpresa.Enabled = True
-                ' TabControl.SelectedTab = TabPage2
-
-            Else
-                ' lblPJ.Visible = False
-                'txtPJ.Visible = False
-                TabEmpresa.Enabled = False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub MEI()
-        Try
-            If chbMEI.Checked = True Then
-                ' lblMEI.Visible = True
-                TabEmpresa.Enabled = True
-                ' txtMEI.Visible = True
-
-            Else
-                '   lblMEI.Visible = False
-                ' txtMEI.Visible = False
-                TabEmpresa.Enabled = False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub ITR()
-        Try
-            If chbITR.Checked = True Then
-                ' lblITR.Visible = True
-                txtITR.Visible = True
-
-            Else
-                '   lblITR.Visible = False
-                txtITR.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Mensalista()
-        Try
-            If chbMensalista.Checked = True Then
-                '   lblMensalista.Visible = True
-                txtMensalista.Visible = True
-
-            Else
-                '   lblMensalista.Visible = False
-                txtMensalista.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub Decore()
-        Try
-            If chbDecore.Checked = True Then
-                '     lblDecore.Visible = True
-                txtDecore.Visible = True
-
-            Else
-                '   lblDecore.Visible = False
-                txtDecore.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub IRPF()
-        Try
-            If chbIRPF.Checked = True Then
-                '  lblIRPF.Visible = True
-                txtIRPF.Visible = True
-
-            Else
-                ' lblIRPF.Visible = False
-                txtIRPF.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub ESocial()
-        Try
-            If chbESocial.Checked = True Then
-                '  lblESocial.Visible = True
-                txtESocial.Visible = True
-                txtEsocialSenha.Visible = True
-                lblEsocialSenha.Visible = True
-            Else
-                '   lblESocial.Visible = False
-                txtESocial.Visible = False
-                txtEsocialSenha.Visible = False
-                lblEsocialSenha.Visible = False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub SenhaWeb()
-        Try
-            If chbSenhaWeb.Checked = True Then
-                'lblSenhaWeb.Visible = True
-                txtSenhaWeb.Visible = True
-                ' lblValidoRFB.Visible = True
-                txtValidadeRFB.Visible = True
-
-            Else
-                ' lblSenhaWeb.Visible = False
-                txtSenhaWeb.Visible = False
-                ' lblValidoRFB.Visible = False
-                txtValidadeRFB.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-    End Sub
-
-    Private Sub Redesim()
-        Try
-            If chbRedesim.Checked = True Then
-                lblSenhaRedesim.Visible = True
-                txtSenhaRedesim.Visible = True
-                txtCPFRedesim.Visible = True
-                lblcpfRedesim.Visible = True
-            Else
-                lblSenhaRedesim.Visible = False
-                txtSenhaRedesim.Visible = False
-                txtCPFRedesim.Visible = False
-                lblcpfRedesim.Visible = False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub CodRFB()
-        Try
-            If chbCodRFB.Checked = True Then
-                txtCodRFB.Visible = True
-                lblValidoRFB.Visible = True
-                txtValidadeRFB.Visible = True
-
-            Else
-                txtCodRFB.Visible = False
-                lblValidoRFB.Visible = False
-                txtValidadeRFB.Visible = False
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub SimplesNacional()
-        Try
-            If chbSimples.Checked = True Then
-                txtSimplesNacional.Visible = True
-            Else
-                txtSimplesNacional.Visible = False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub SIMEI()
-        Try
-            If chbSIMEI.Checked = True Then
-                txtEmprSimei.Visible = True
-            Else
-                txtEmprSimei.Visible = False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-    End Sub
-
-    Private Sub acessoSefaz()
-        Try
-            If chbSefaz.Checked = True Then
-                lblUsuario.Visible = True
-                lblSenhaSefaz.Visible = True
-                txtSefazUsu.Visible = True
-                txtSefazSen.Visible = True
-            Else
-                lblUsuario.Visible = False
-                lblSenhaSefaz.Visible = False
-                txtSefazUsu.Visible = False
-                txtSefazSen.Visible = False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-    End Sub
-
-    Private Sub SenhaWebPJ()
-        Try
-            If chbSenhaWebPJ.Checked = True Then
-                lblSenhaWebPJ.Visible = True
-                lblSenhaPJValidade.Visible = True
-                txtSenhaWebPJ.Visible = True
-                txtSenhaPJValidade.Visible = True
-            Else
-                lblSenhaWebPJ.Visible = False
-                lblSenhaPJValidade.Visible = False
-                txtSenhaWebPJ.Visible = False
-                txtSenhaPJValidade.Visible = False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-    End Sub
-
-   
    
 End Class
