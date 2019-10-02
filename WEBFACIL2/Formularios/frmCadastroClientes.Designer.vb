@@ -98,6 +98,7 @@ Partial Class frmCadastroClientes
         Me.txtNumero = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtCPFSituacao = New System.Windows.Forms.ComboBox()
         Me.chbCurriculo = New System.Windows.Forms.CheckBox()
         Me.txtCPFVinculado = New System.Windows.Forms.ComboBox()
         Me.btPesquisarCPFVinculado = New System.Windows.Forms.Button()
@@ -183,7 +184,6 @@ Partial Class frmCadastroClientes
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.btPesquisaEmpresa = New System.Windows.Forms.Button()
-        Me.txtCPFSituacao = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1026,6 +1026,17 @@ Partial Class frmCadastroClientes
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Dados do Cliente"
+        '
+        'txtCPFSituacao
+        '
+        Me.txtCPFSituacao.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCPFSituacao.FormattingEnabled = True
+        Me.txtCPFSituacao.Items.AddRange(New Object() {"", "Ativo", "Pendente", "Suspenso", "Cancelado"})
+        Me.txtCPFSituacao.Location = New System.Drawing.Point(200, 24)
+        Me.txtCPFSituacao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtCPFSituacao.Name = "txtCPFSituacao"
+        Me.txtCPFSituacao.Size = New System.Drawing.Size(145, 26)
+        Me.txtCPFSituacao.TabIndex = 84
         '
         'chbCurriculo
         '
@@ -1894,23 +1905,12 @@ Partial Class frmCadastroClientes
         Me.btPesquisaEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btPesquisaEmpresa.UseVisualStyleBackColor = True
         '
-        'txtCPFSituacao
-        '
-        Me.txtCPFSituacao.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCPFSituacao.FormattingEnabled = True
-        Me.txtCPFSituacao.Items.AddRange(New Object() {"Ativo", "Pendente", "Suspenso", "Cancelado"})
-        Me.txtCPFSituacao.Location = New System.Drawing.Point(200, 24)
-        Me.txtCPFSituacao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtCPFSituacao.Name = "txtCPFSituacao"
-        Me.txtCPFSituacao.Size = New System.Drawing.Size(145, 26)
-        Me.txtCPFSituacao.TabIndex = 84
-        '
         'frmCadastroClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1264, 742)
+        Me.ClientSize = New System.Drawing.Size(1264, 741)
         Me.Controls.Add(Me.btPesquisaEmpresa)
         Me.Controls.Add(Me.lblciID)
         Me.Controls.Add(Me.btSair)

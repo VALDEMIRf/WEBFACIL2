@@ -88,6 +88,7 @@ Public Class frmCadastroClientes
         End If
         Try
             cliente.cli_CPF = txtCPF.Text
+            cliente.cli_CPFSituacao = txtCPFSituacao.Text
             cliente.cli_RG = txtRG.Text
             cliente.cli_Nome = txtNome.Text
             cliente.cli_PIS = txtPIS.Text
@@ -541,6 +542,7 @@ Public Class frmCadastroClientes
 
     Private Sub LimparCampos()
         txtCPF.Text = ""
+        txtCPFSituacao.Text = ""
         txtRG.Text = ""
         txtNome.Text = ""
         txtPIS.Text = ""
