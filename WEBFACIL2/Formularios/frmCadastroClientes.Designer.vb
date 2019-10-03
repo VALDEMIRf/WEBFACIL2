@@ -1031,7 +1031,7 @@ Partial Class frmCadastroClientes
         '
         Me.txtCPFSituacao.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCPFSituacao.FormattingEnabled = True
-        Me.txtCPFSituacao.Items.AddRange(New Object() {"", "Ativo", "Pendente", "Suspenso", "Cancelado"})
+        Me.txtCPFSituacao.Items.AddRange(New Object() {"Ativo", "Pendente", "Suspenso", "Cancelado"})
         Me.txtCPFSituacao.Location = New System.Drawing.Point(200, 24)
         Me.txtCPFSituacao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCPFSituacao.Name = "txtCPFSituacao"

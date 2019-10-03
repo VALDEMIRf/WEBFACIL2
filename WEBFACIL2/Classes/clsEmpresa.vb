@@ -99,6 +99,16 @@ Public Class clsEmpresa
         End Set
     End Property
 
+    Private _cli_CPFSituacao As String
+    Public Property cli_CPFSituacao() As String
+        Get
+            Return _cli_CPFSituacao
+        End Get
+        Set(ByVal value As String)
+            _cli_CPFSituacao = value
+        End Set
+    End Property
+
     Private _clsCategoria As clsCategoria
     Public Property clsCategoria() As clsCategoria
         Get

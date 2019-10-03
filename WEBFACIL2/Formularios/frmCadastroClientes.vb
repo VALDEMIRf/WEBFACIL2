@@ -231,6 +231,7 @@ Public Class frmCadastroClientes
         CodigoCliente = frmClienteConsulta.cli_id
         lblciID.Text = frmClienteConsulta.cli_id
         txtCPF.Text = frmClienteConsulta.cli_CPF
+        txtCPFSituacao.Text = frmClienteConsulta.cli_CPFSituacao
         txtEmprCPF.Text = frmClienteConsulta.cli_CPF
         txtCPFRedesim.Text = frmClienteConsulta.cli_CPF
         lblclienteID.Text = frmClienteConsulta.cli_id
@@ -404,6 +405,7 @@ Public Class frmCadastroClientes
         Try
             cliente.cli_id = lblciID.Text
             cliente.cli_CPF = txtCPF.Text
+            cliente.cli_CPFSituacao = txtCPFSituacao.Text
             cliente.cli_RG = txtRG.Text
             cliente.cli_Nome = txtNome.Text
             cliente.cli_PIS = txtPIS.Text
