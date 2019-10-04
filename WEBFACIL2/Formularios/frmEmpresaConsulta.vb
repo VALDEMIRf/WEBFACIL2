@@ -84,13 +84,13 @@
         End Set
     End Property
 
-    Private _cli_CPFSituacao As String
-    Public Property cli_CPFSituacao() As String
+    Private _cli_Situacao As String
+    Public Property cli_Situacao() As String
         Get
-            Return _cli_CPFSituacao
+            Return _cli_Situacao
         End Get
         Set(ByVal value As String)
-            _cli_CPFSituacao = value
+            _cli_Situacao = value
         End Set
     End Property
 
@@ -929,7 +929,7 @@
                     'ENVIO DE DADOS DO CLIENTE
                     _cli_id = dgvGridEmpresa.CurrentRow.Cells(0).Value
                     _cli_CPF = dgvGridEmpresa.CurrentRow.Cells(1).Value
-                    _cli_CPFSituacao = dgvGridEmpresa.CurrentRow.Cells(2).Value
+                    _cli_Situacao = dgvGridEmpresa.CurrentRow.Cells(2).Value.ToString
                     _cli_RG = dgvGridEmpresa.CurrentRow.Cells(3).Value
                     _cli_Nome = dgvGridEmpresa.CurrentRow.Cells(4).Value
                     _cli_PIS = dgvGridEmpresa.CurrentRow.Cells(5).Value
@@ -1029,7 +1029,7 @@
                     'ENVIO DE DADOS DO CLIENTE
                     _cli_id = dgvGridEmpresa.CurrentRow.Cells(0).Value
                     _cli_CPF = dgvGridEmpresa.CurrentRow.Cells(1).Value
-                    _cli_CPFSituacao = dgvGridEmpresa.CurrentRow.Cells(2).Value
+                    _cli_Situacao = dgvGridEmpresa.CurrentRow.Cells(2).Value.ToString
                     _cli_RG = dgvGridEmpresa.CurrentRow.Cells(3).Value
                     _cli_Nome = dgvGridEmpresa.CurrentRow.Cells(4).Value
                     _cli_PIS = dgvGridEmpresa.CurrentRow.Cells(5).Value

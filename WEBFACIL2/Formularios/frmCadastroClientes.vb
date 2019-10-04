@@ -299,7 +299,7 @@ Public Class frmCadastroClientes
         lblciID.Text = frmEmpresaConsulta.cli_id
         txtCPF.Text = frmEmpresaConsulta.cli_CPF
         txtEmprCPF.Text = frmEmpresaConsulta.cli_CPF
-        ' cboSituacao.Text = frmEmpresaConsulta.cli_Situacao
+        cboSituacao.Text = frmEmpresaConsulta.cli_Situacao
         lblclienteID.Text = frmEmpresaConsulta.cli_id
         txtRG.Text = frmEmpresaConsulta.cli_RG
         txtNome.Text = frmEmpresaConsulta.cli_Nome
@@ -544,6 +544,8 @@ Public Class frmCadastroClientes
 
 
     Private Sub LimparCampos()
+        lblciID.Text = ""
+        lblidEmpresa.Text = ""
         txtCPF.Text = ""
         cboSituacao.Text = ""
         txtRG.Text = ""
