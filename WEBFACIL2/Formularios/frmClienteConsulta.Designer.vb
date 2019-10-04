@@ -32,6 +32,7 @@ Partial Class frmClienteConsulta
         Me.dgvGrid = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Situacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
@@ -116,7 +117,7 @@ Partial Class frmClienteConsulta
         'dgvGrid
         '
         Me.dgvGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.CPF, Me.RG, Me.Nome})
+        Me.dgvGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.CPF, Me.Situacao, Me.RG, Me.Nome})
         Me.dgvGrid.GridColor = System.Drawing.Color.DarkGray
         Me.dgvGrid.Location = New System.Drawing.Point(12, 100)
         Me.dgvGrid.Name = "dgvGrid"
@@ -135,6 +136,13 @@ Partial Class frmClienteConsulta
         Me.CPF.HeaderText = "CPF"
         Me.CPF.Name = "CPF"
         Me.CPF.Width = 150
+        '
+        'Situacao
+        '
+        Me.Situacao.DataPropertyName = "Situacao"
+        Me.Situacao.HeaderText = "Situacao"
+        Me.Situacao.Name = "Situacao"
+        Me.Situacao.Width = 150
         '
         'RG
         '
@@ -178,6 +186,7 @@ Partial Class frmClienteConsulta
     Friend WithEvents btEnviarDados As System.Windows.Forms.Button
     Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CPF As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Situacao As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RG As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nome As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

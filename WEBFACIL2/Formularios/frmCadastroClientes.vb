@@ -88,7 +88,7 @@ Public Class frmCadastroClientes
         End If
         Try
             cliente.cli_CPF = txtCPF.Text
-            cliente.cli_CPFSituacao = txtCPFSituacao.Text
+            cliente.cli_Situacao = cboSituacao.Text
             cliente.cli_RG = txtRG.Text
             cliente.cli_Nome = txtNome.Text
             cliente.cli_PIS = txtPIS.Text
@@ -231,7 +231,7 @@ Public Class frmCadastroClientes
         CodigoCliente = frmClienteConsulta.cli_id
         lblciID.Text = frmClienteConsulta.cli_id
         txtCPF.Text = frmClienteConsulta.cli_CPF
-        txtCPFSituacao.Text = frmClienteConsulta.cli_CPFSituacao
+        cboSituacao.Text = frmClienteConsulta.cli_Situacao
         txtEmprCPF.Text = frmClienteConsulta.cli_CPF
         txtCPFRedesim.Text = frmClienteConsulta.cli_CPF
         lblclienteID.Text = frmClienteConsulta.cli_id
@@ -299,6 +299,7 @@ Public Class frmCadastroClientes
         lblciID.Text = frmEmpresaConsulta.cli_id
         txtCPF.Text = frmEmpresaConsulta.cli_CPF
         txtEmprCPF.Text = frmEmpresaConsulta.cli_CPF
+        ' cboSituacao.Text = frmEmpresaConsulta.cli_Situacao
         lblclienteID.Text = frmEmpresaConsulta.cli_id
         txtRG.Text = frmEmpresaConsulta.cli_RG
         txtNome.Text = frmEmpresaConsulta.cli_Nome
@@ -405,7 +406,7 @@ Public Class frmCadastroClientes
         Try
             cliente.cli_id = lblciID.Text
             cliente.cli_CPF = txtCPF.Text
-            cliente.cli_CPFSituacao = txtCPFSituacao.Text
+            cliente.cli_Situacao = cboSituacao.Text
             cliente.cli_RG = txtRG.Text
             cliente.cli_Nome = txtNome.Text
             cliente.cli_PIS = txtPIS.Text
@@ -544,7 +545,7 @@ Public Class frmCadastroClientes
 
     Private Sub LimparCampos()
         txtCPF.Text = ""
-        txtCPFSituacao.Text = ""
+        cboSituacao.Text = ""
         txtRG.Text = ""
         txtNome.Text = ""
         txtPIS.Text = ""

@@ -98,7 +98,7 @@ Partial Class frmCadastroClientes
         Me.txtNumero = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtCPFSituacao = New System.Windows.Forms.ComboBox()
+        Me.cboSituacao = New System.Windows.Forms.ComboBox()
         Me.chbCurriculo = New System.Windows.Forms.CheckBox()
         Me.txtCPFVinculado = New System.Windows.Forms.ComboBox()
         Me.btPesquisarCPFVinculado = New System.Windows.Forms.Button()
@@ -998,7 +998,7 @@ Partial Class frmCadastroClientes
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.txtCPFSituacao)
+        Me.GroupBox2.Controls.Add(Me.cboSituacao)
         Me.GroupBox2.Controls.Add(Me.chbCurriculo)
         Me.GroupBox2.Controls.Add(Me.txtCPFVinculado)
         Me.GroupBox2.Controls.Add(Me.btPesquisarCPFVinculado)
@@ -1027,16 +1027,16 @@ Partial Class frmCadastroClientes
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Dados do Cliente"
         '
-        'txtCPFSituacao
+        'cboSituacao
         '
-        Me.txtCPFSituacao.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCPFSituacao.FormattingEnabled = True
-        Me.txtCPFSituacao.Items.AddRange(New Object() {"Ativo", "Pendente", "Suspenso", "Cancelado"})
-        Me.txtCPFSituacao.Location = New System.Drawing.Point(200, 24)
-        Me.txtCPFSituacao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtCPFSituacao.Name = "txtCPFSituacao"
-        Me.txtCPFSituacao.Size = New System.Drawing.Size(145, 26)
-        Me.txtCPFSituacao.TabIndex = 84
+        Me.cboSituacao.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSituacao.FormattingEnabled = True
+        Me.cboSituacao.Items.AddRange(New Object() {"Ativo", "Pendente", "Suspenso", "Cancelado"})
+        Me.cboSituacao.Location = New System.Drawing.Point(200, 24)
+        Me.cboSituacao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.cboSituacao.Name = "cboSituacao"
+        Me.cboSituacao.Size = New System.Drawing.Size(145, 26)
+        Me.cboSituacao.TabIndex = 84
         '
         'chbCurriculo
         '
@@ -2104,5 +2104,5 @@ Partial Class frmCadastroClientes
     Public WithEvents txtCPFRedesim As System.Windows.Forms.MaskedTextBox
     Friend WithEvents lblcpfRedesim As System.Windows.Forms.Label
     Friend WithEvents btAlterarDadosEmpresa As System.Windows.Forms.Button
-    Friend WithEvents txtCPFSituacao As System.Windows.Forms.ComboBox
+    Public WithEvents cboSituacao As System.Windows.Forms.ComboBox
 End Class
