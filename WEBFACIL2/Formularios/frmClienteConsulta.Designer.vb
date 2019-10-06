@@ -75,9 +75,9 @@ Partial Class frmClienteConsulta
         Me.btEnviarDados.FlatAppearance.BorderSize = 0
         Me.btEnviarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEnviarDados.Image = CType(resources.GetObject("btEnviarDados.Image"), System.Drawing.Image)
-        Me.btEnviarDados.Location = New System.Drawing.Point(333, 29)
+        Me.btEnviarDados.Location = New System.Drawing.Point(343, 29)
         Me.btEnviarDados.Name = "btEnviarDados"
-        Me.btEnviarDados.Size = New System.Drawing.Size(108, 47)
+        Me.btEnviarDados.Size = New System.Drawing.Size(148, 47)
         Me.btEnviarDados.TabIndex = 5
         Me.btEnviarDados.Text = "Enviar Dados"
         Me.btEnviarDados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -116,12 +116,13 @@ Partial Class frmClienteConsulta
         '
         'dgvGrid
         '
+        Me.dgvGrid.BackgroundColor = System.Drawing.Color.White
         Me.dgvGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.CPF, Me.Situacao, Me.RG, Me.Nome})
         Me.dgvGrid.GridColor = System.Drawing.Color.DarkGray
-        Me.dgvGrid.Location = New System.Drawing.Point(12, 100)
+        Me.dgvGrid.Location = New System.Drawing.Point(12, 106)
         Me.dgvGrid.Name = "dgvGrid"
-        Me.dgvGrid.Size = New System.Drawing.Size(696, 326)
+        Me.dgvGrid.Size = New System.Drawing.Size(870, 300)
         Me.dgvGrid.TabIndex = 1
         '
         'codigo
@@ -129,6 +130,7 @@ Partial Class frmClienteConsulta
         Me.codigo.DataPropertyName = "codigo"
         Me.codigo.HeaderText = "codigo"
         Me.codigo.Name = "codigo"
+        Me.codigo.Width = 60
         '
         'CPF
         '
@@ -162,10 +164,11 @@ Partial Class frmClienteConsulta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.ClientSize = New System.Drawing.Size(734, 438)
+        Me.ClientSize = New System.Drawing.Size(894, 411)
         Me.Controls.Add(Me.dgvGrid)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmClienteConsulta"

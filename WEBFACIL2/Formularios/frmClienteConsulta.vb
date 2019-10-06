@@ -3,7 +3,6 @@
         Cliente
         '  Empresa
     End Enum
-
     Private Sub CarregaGrid()
         Dim dsConsulta As New Data.DataSet
         Select Case _ConsultaTipo
@@ -11,9 +10,6 @@
                 Dim clnCliente As New clsCliente
                 dsConsulta = clnCliente.ListarCpf(txtCPFPesquisa.Text)
 
-                'Case TipoConsulta.Empresa
-                '    Dim clnEmpresa As New clsEmpresa
-                '    dsConsulta = clnEmpresa.Listar(txtCPFPesquisa.Text)
         End Select
         dgvGrid.DataSource = dsConsulta.Tables(0)
     End Sub

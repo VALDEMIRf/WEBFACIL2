@@ -32,6 +32,7 @@ Partial Class frmEmpresaConsulta
         Me.dgvGridEmpresa = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Situacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RG = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
@@ -74,9 +75,9 @@ Partial Class frmEmpresaConsulta
         Me.btEnviarDadosEmpresa.FlatAppearance.BorderSize = 0
         Me.btEnviarDadosEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEnviarDadosEmpresa.Image = CType(resources.GetObject("btEnviarDadosEmpresa.Image"), System.Drawing.Image)
-        Me.btEnviarDadosEmpresa.Location = New System.Drawing.Point(333, 29)
+        Me.btEnviarDadosEmpresa.Location = New System.Drawing.Point(343, 29)
         Me.btEnviarDadosEmpresa.Name = "btEnviarDadosEmpresa"
-        Me.btEnviarDadosEmpresa.Size = New System.Drawing.Size(108, 47)
+        Me.btEnviarDadosEmpresa.Size = New System.Drawing.Size(148, 47)
         Me.btEnviarDadosEmpresa.TabIndex = 5
         Me.btEnviarDadosEmpresa.Text = "Enviar Dados"
         Me.btEnviarDadosEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -115,12 +116,13 @@ Partial Class frmEmpresaConsulta
         '
         'dgvGridEmpresa
         '
+        Me.dgvGridEmpresa.BackgroundColor = System.Drawing.Color.White
         Me.dgvGridEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvGridEmpresa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.CPF, Me.RG, Me.Nome})
+        Me.dgvGridEmpresa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.CPF, Me.Situacao, Me.RG, Me.Nome})
         Me.dgvGridEmpresa.GridColor = System.Drawing.Color.DarkGray
-        Me.dgvGridEmpresa.Location = New System.Drawing.Point(13, 109)
+        Me.dgvGridEmpresa.Location = New System.Drawing.Point(10, 109)
         Me.dgvGridEmpresa.Name = "dgvGridEmpresa"
-        Me.dgvGridEmpresa.Size = New System.Drawing.Size(696, 326)
+        Me.dgvGridEmpresa.Size = New System.Drawing.Size(862, 280)
         Me.dgvGridEmpresa.TabIndex = 2
         '
         'codigo
@@ -128,6 +130,7 @@ Partial Class frmEmpresaConsulta
         Me.codigo.DataPropertyName = "codigo"
         Me.codigo.HeaderText = "codigo"
         Me.codigo.Name = "codigo"
+        Me.codigo.Width = 60
         '
         'CPF
         '
@@ -135,6 +138,12 @@ Partial Class frmEmpresaConsulta
         Me.CPF.HeaderText = "CPF"
         Me.CPF.Name = "CPF"
         Me.CPF.Width = 150
+        '
+        'Situacao
+        '
+        Me.Situacao.DataPropertyName = "Situacao"
+        Me.Situacao.HeaderText = "Situacao"
+        Me.Situacao.Name = "Situacao"
         '
         'RG
         '
@@ -154,7 +163,7 @@ Partial Class frmEmpresaConsulta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.ClientSize = New System.Drawing.Size(814, 432)
+        Me.ClientSize = New System.Drawing.Size(884, 401)
         Me.Controls.Add(Me.dgvGridEmpresa)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -177,6 +186,7 @@ Partial Class frmEmpresaConsulta
     Friend WithEvents dgvGridEmpresa As System.Windows.Forms.DataGridView
     Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CPF As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Situacao As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RG As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nome As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
