@@ -49,6 +49,16 @@ Public Class clsEmpresa
         End Set
     End Property
 
+    Private _empr_Situacaocnpj As String
+    Public Property empr_Situacaocnpj() As String
+        Get
+            Return _empr_Situacaocnpj
+        End Get
+        Set(ByVal value As String)
+            _empr_Situacaocnpj = value
+        End Set
+    End Property
+
     Private _empr_NIRE As String
     Public Property empr_NIRE() As String
         Get
@@ -323,13 +333,14 @@ Public Class clsEmpresa
     Public Sub GravarDados()
         Using con As OleDbConnection = GetConnection()
             Try
-                con.Open() '
-                Dim sql As String = "INSERT INTO tbEmpresas(empr_razaosocial,empr_nomefantasia,empr_cnpj,empr_NIRE,empr_InscrEstadual,empr_CCM,empr_atividade,empr_Porte,cli_id,cat_Id,empr_dataInicio,empr_endereco,empr_numero,empr_complemento,empr_bairro,empr_cidade,empr_UF,empr_CEP,empr_obs,empr_Simples,empr_SimplesNacional,empr_Simei,empr_CodSimei,empr_sefaz,empr_SefazUsu,empr_SefazSen,empr_CodReceitaPJ,empr_NumCodReceitaPJ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                con.Open()                                                                             'empr_Situacaocnpj
+                Dim sql As String = "INSERT INTO tbEmpresas(empr_razaosocial,empr_nomefantasia,empr_cnpj,empr_Situacaocnpj,empr_NIRE,empr_InscrEstadual,empr_CCM,empr_atividade,empr_Porte,cli_id,cat_Id,empr_dataInicio,empr_endereco,empr_numero,empr_complemento,empr_bairro,empr_cidade,empr_UF,empr_CEP,empr_obs,empr_Simples,empr_SimplesNacional,empr_Simei,empr_CodSimei,empr_sefaz,empr_SefazUsu,empr_SefazSen,empr_CodReceitaPJ,empr_NumCodReceitaPJ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_razaosocial", _empr_razaosocial))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_nomefantasia", _empr_nomefantasia))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_cnpj", _empr_cnpj))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Situacaocnpj", _empr_Situacaocnpj))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_NIRE", _empr_NIRE))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_InscrEstadual", _empr_InscrEstadual))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_CCM", _empr_CCM))
@@ -372,7 +383,7 @@ Public Class clsEmpresa
     Public Function Listar(ByVal strDescricao As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder
-        strQuery.Append(" SELECT empr_ID as Codigo,empr_razaosocial as Razao Social,empr_nomefantasia as Nome Fantasia,empr_cnpj as CNPJ,empr_NIRE,empr_InscrEstadual,empr_CCM,empr_atividade,empr_Porte,cli_id,cat_Id,empr_dataInicio,empr_endereco,empr_numero,empr_complemento,empr_bairro,empr_cidade,empr_UF,empr_CEP,empr_obs,empr_Simples,empr_SimplesNacional,empr_Simei,empr_CodSimei,empr_sefaz,empr_SefazUsu,empr_SefazSen,empr_CodReceitaPJ,empr_NumCodReceitaPJ ")
+        strQuery.Append(" SELECT empr_ID as Codigo,empr_razaosocial as Razao Social,empr_nomefantasia as Nome Fantasia,empr_cnpj as CNPJ,empr_Situacaocnpj as Situacao,empr_NIRE,empr_InscrEstadual,empr_CCM,empr_atividade,empr_Porte,cli_id,cat_Id,empr_dataInicio,empr_endereco,empr_numero,empr_complemento,empr_bairro,empr_cidade,empr_UF,empr_CEP,empr_obs,empr_Simples,empr_SimplesNacional,empr_Simei,empr_CodSimei,empr_sefaz,empr_SefazUsu,empr_SefazSen,empr_CodReceitaPJ,empr_NumCodReceitaPJ ")
         strQuery.Append(" FROM tbEmpresas ")
         If Not strDescricao.Equals(String.Empty) Then
             strQuery.Append(" WHERE empr_cnpj like '%" & strDescricao & "%'")
@@ -388,12 +399,13 @@ Public Class clsEmpresa
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
-                Dim sql As String = "UPDATE tbEmpresas SET empr_razaosocial=?,empr_nomefantasia=?,empr_cnpj=?,empr_NIRE=?,empr_InscrEstadual=?,empr_CCM=?,empr_atividade=?,empr_Porte=?,cli_id=?,cat_Id=?,empr_dataInicio=?,empr_endereco=?,empr_numero=?,empr_complemento=?,empr_bairro=?,empr_cidade=?,empr_UF=?,empr_CEP=?,empr_obs=?,empr_Simples=?,empr_SimplesNacional=?,empr_Simei=?,empr_CodSimei=?,empr_sefaz=?,empr_SefazUsu=?,empr_SefazSen=?,empr_CodReceitaPJ=?,empr_NumCodReceitaPJ=? WHERE empr_ID =" & CInt(empr_ID)
+                Dim sql As String = "UPDATE tbEmpresas SET empr_razaosocial=?,empr_nomefantasia=?,empr_cnpj=?,empr_Situacaocnpj=?,empr_NIRE=?,empr_InscrEstadual=?,empr_CCM=?,empr_atividade=?,empr_Porte=?,cli_id=?,cat_Id=?,empr_dataInicio=?,empr_endereco=?,empr_numero=?,empr_complemento=?,empr_bairro=?,empr_cidade=?,empr_UF=?,empr_CEP=?,empr_obs=?,empr_Simples=?,empr_SimplesNacional=?,empr_Simei=?,empr_CodSimei=?,empr_sefaz=?,empr_SefazUsu=?,empr_SefazSen=?,empr_CodReceitaPJ=?,empr_NumCodReceitaPJ=? WHERE empr_ID =" & CInt(empr_ID)
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_razaosocial", _empr_razaosocial))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_nomefantasia", _empr_nomefantasia))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_cnpj", _empr_cnpj))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_cnpj", _empr_cnpj)) 'empr_Situacaocnpj
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Situacaocnpj", _empr_Situacaocnpj))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_NIRE", _empr_NIRE))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_InscrEstadual", _empr_InscrEstadual))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_CCM", _empr_CCM))

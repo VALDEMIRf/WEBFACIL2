@@ -182,6 +182,7 @@ Public Class frmCadastroClientes
             empresa.empr_razaosocial = txtRazaoSocial.Text
             empresa.empr_nomefantasia = txtNomeFantasia.Text
             empresa.empr_cnpj = txtCNPJ.Text
+            empresa.empr_Situacaocnpj = cboSituacaoCNPJ.Text
             empresa.empr_NIRE = txtNIRE.Text
             empresa.empr_InscrEstadual = txtInscrEstadual.Text
             empresa.empr_CCM = txtCCM.Text
@@ -359,6 +360,7 @@ Public Class frmCadastroClientes
         txtRazaoSocial.Text = frmEmpresaConsulta.empr_razaosocial
         txtNomeFantasia.Text = frmEmpresaConsulta.empr_nomefantasia
         txtCNPJ.Text = frmEmpresaConsulta.empr_cnpj
+        cboSituacaoCNPJ.Text = frmEmpresaConsulta.empr_Situacaocnpj
         txtNIRE.Text = frmEmpresaConsulta.empr_NIRE
         txtInscrEstadual.Text = frmEmpresaConsulta.empr_InscrEstadual
         txtCCM.Text = frmEmpresaConsulta.empr_CCM
@@ -497,6 +499,7 @@ Public Class frmCadastroClientes
             empresa.empr_razaosocial = txtRazaoSocial.Text
             empresa.empr_nomefantasia = txtNomeFantasia.Text
             empresa.empr_cnpj = txtCNPJ.Text
+            empresa.empr_Situacaocnpj = cboSituacaoCNPJ.Text
             empresa.empr_NIRE = txtNIRE.Text
             empresa.empr_InscrEstadual = txtInscrEstadual.Text
             empresa.empr_CCM = txtCCM.Text
@@ -567,6 +570,7 @@ Public Class frmCadastroClientes
         txtObs.Text = ""
         chbAposentado.Checked = False
         txtNumBeneficio.Text = ""
+
         chbFuncPublico.Checked = False
         ' txtFuncPublico_old.Text = ""
         chbAutonomo.Checked = False
@@ -622,6 +626,7 @@ Public Class frmCadastroClientes
         txtEmprCEP.Text = ""
         txtEmprObs.Text = ""
         chbSimples.Checked = False
+        cboSituacaoCNPJ.Text = ""
         txtSimplesNacional.Text = ""
         chbSIMEI.Checked = False
         txtEmprSimei.Text = ""
@@ -633,7 +638,7 @@ Public Class frmCadastroClientes
         lblclienteID.Text = ""
     End Sub
 
-    Private Sub txtPIS_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtPIS.KeyPress
+    Private Sub txtPIS_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
         KeyAscii = CShort(SoNumeros(KeyAscii))
         If KeyAscii = 0 Then
@@ -643,7 +648,7 @@ Public Class frmCadastroClientes
 
     End Sub
 
-    Private Sub txtESocial_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtESocial.KeyPress
+    Private Sub txtESocial_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
         KeyAscii = CShort(SoNumeros(KeyAscii))
         If KeyAscii = 0 Then
@@ -688,7 +693,7 @@ Public Class frmCadastroClientes
         'End If
     End Sub
 
-    Private Sub txtNIRE_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNIRE.KeyPress
+    Private Sub txtNIRE_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
         KeyAscii = CShort(SoNumeros(KeyAscii))
         If KeyAscii = 0 Then
@@ -697,7 +702,7 @@ Public Class frmCadastroClientes
         End If
     End Sub
 
-    Private Sub txtTitEleitoral_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtTitEleitoral.KeyPress
+    Private Sub txtTitEleitoral_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
         KeyAscii = CShort(SoNumeros(KeyAscii))
         If KeyAscii = 0 Then
@@ -708,11 +713,11 @@ Public Class frmCadastroClientes
 
     Private Sub chbAposentado_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbAposentado.CheckedChanged
         If chbAposentado.Checked = True Then
-            '  lblNumBeneficio.Visible = True
+            lblNBeneficio.Visible = True
             txtNumBeneficio.Visible = True
 
         Else
-            '   lblNumBeneficio.Visible = False
+            lblNBeneficio.Visible = False
             txtNumBeneficio.Visible = False
 
         End If
@@ -954,4 +959,6 @@ Public Class frmCadastroClientes
     End Sub
 
    
+    
+    
 End Class
