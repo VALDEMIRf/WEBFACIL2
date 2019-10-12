@@ -44,6 +44,7 @@ Public Class frmCadastroClientes
 
 
     Private Sub frmCadastroClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        txtCPF.Focus()
         TabEmpresa.Enabled = False
 
         Dim clnCategoria As New clsCategoria
@@ -713,11 +714,11 @@ Public Class frmCadastroClientes
 
     Private Sub chbAposentado_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chbAposentado.CheckedChanged
         If chbAposentado.Checked = True Then
-            lblNBeneficio.Visible = True
+            ' lblNBeneficio.Visible = True
             txtNumBeneficio.Visible = True
 
         Else
-            lblNBeneficio.Visible = False
+            ' lblNBeneficio.Visible = False
             txtNumBeneficio.Visible = False
 
         End If
@@ -960,5 +961,10 @@ Public Class frmCadastroClientes
 
    
     
-    
+    Private Sub txtEsocialSenha_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEsocialSenha.TextChanged
+
+    End Sub
+    Private Sub lblEsocialSenha_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblEsocialSenha.Click
+
+    End Sub
 End Class
