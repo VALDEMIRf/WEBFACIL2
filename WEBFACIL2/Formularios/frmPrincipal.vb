@@ -17,14 +17,15 @@
     '    Me.Close()
     'End Sub
 
-    Private Sub btnCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCliente.Click
+    Private Sub btnCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim frmCliente_Cadastro As New frmCadastroClientes
         frmCliente_Cadastro.ShowDialog()
     End Sub
 
-    Private Sub btSair_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSair.Click
+    Private Sub btSair_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
     End Sub
 
    
+
 End Class

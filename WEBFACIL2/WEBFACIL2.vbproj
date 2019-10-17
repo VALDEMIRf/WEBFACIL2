@@ -52,10 +52,13 @@
     <ApplicationIcon>Imagens\Accounting-Calculator1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -86,12 +89,6 @@
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmCadastroClientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmPrincipal2.Designer.vb">
-      <DependentUpon>frmPrincipal2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmPrincipal2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmVinculadoCadastro.Designer.vb">
@@ -142,13 +139,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ValidaTextBox.vb" />
+    <Compile Include="WEBFACIL_DBDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WEBFACIL_DBDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Formularios\frmCadastroClientes.resx">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmPrincipal2.resx">
-      <DependentUpon>frmPrincipal2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVinculadoCadastro.resx">
       <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
@@ -183,6 +182,17 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="WEBFACIL_DBDataSet.xsc">
+      <DependentUpon>WEBFACIL_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WEBFACIL_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WEBFACIL_DBDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WEBFACIL_DBDataSet.xss">
+      <DependentUpon>WEBFACIL_DBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagens\Accounting-Calculator.ico" />
@@ -201,6 +211,7 @@
     <Content Include="Imagens\Edit-Document-icon.png" />
     <Content Include="Imagens\exit-icon.png" />
     <Content Include="Imagens\forms-icon.png" />
+    <Content Include="Imagens\logo webfacil.png" />
     <Content Include="Imagens\lupa.png" />
     <Content Include="Imagens\novo1.png" />
     <Content Include="Imagens\Ok-icon.png" />
@@ -212,20 +223,6 @@
     <Content Include="Imagens\Text-Edit-icon.png" />
     <Content Include="Imagens\users-novo.png" />
     <Content Include="Imagens\usuarios.png" />
-    <Content Include="logos\logo1.png" />
-    <Content Include="logos\logo13.png" />
-    <Content Include="logos\logo14.png" />
-    <Content Include="logos\logo15.png" />
-    <Content Include="logos\logo2.png" />
-    <Content Include="logos\logo3.png" />
-    <Content Include="logos\logo4.png" />
-    <Content Include="logos\LOGO5.png" />
-    <Content Include="logos\LOGOS6.png" />
-    <Content Include="logos\LOGOS7.png" />
-    <Content Include="logos\Sem título10.png" />
-    <Content Include="logos\Sem título11.png" />
-    <Content Include="logos\Sem título8.png" />
-    <Content Include="logos\Sem título9.png" />
     <None Include="Resources\Gnome-View-Restore-64.png" />
     <None Include="Resources\Gnome-Window-Close-64.png" />
     <None Include="Resources\Window-App-Blank-32.png" />
@@ -242,6 +239,9 @@
     <None Include="Resources\19-gear.png" />
     <None Include="Resources\unnamed1.jpg" />
     <None Include="Resources\unnamed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatorios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
