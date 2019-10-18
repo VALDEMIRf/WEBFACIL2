@@ -26,6 +26,8 @@ Partial Class frmCadastroClientes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCadastroClientes))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabCliente = New System.Windows.Forms.TabPage()
+        Me.linkObservacoes = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtNumBeneficio = New System.Windows.Forms.MaskedTextBox()
         Me.txtESocial = New System.Windows.Forms.MaskedTextBox()
@@ -213,6 +215,8 @@ Partial Class frmCadastroClientes
         '
         Me.TabCliente.AutoScroll = True
         Me.TabCliente.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.TabCliente.Controls.Add(Me.linkObservacoes)
+        Me.TabCliente.Controls.Add(Me.LinkLabel1)
         Me.TabCliente.Controls.Add(Me.Panel1)
         Me.TabCliente.Controls.Add(Me.txtObs)
         Me.TabCliente.Controls.Add(Me.Label11)
@@ -226,6 +230,28 @@ Partial Class frmCadastroClientes
         Me.TabCliente.Size = New System.Drawing.Size(1122, 637)
         Me.TabCliente.TabIndex = 0
         Me.TabCliente.Text = "Clientes"
+        '
+        'linkObservacoes
+        '
+        Me.linkObservacoes.AutoSize = True
+        Me.linkObservacoes.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.linkObservacoes.Location = New System.Drawing.Point(348, 615)
+        Me.linkObservacoes.Name = "linkObservacoes"
+        Me.linkObservacoes.Size = New System.Drawing.Size(200, 18)
+        Me.linkObservacoes.TabIndex = 55
+        Me.linkObservacoes.TabStop = True
+        Me.linkObservacoes.Text = "Pasta de  dados cadastrais"
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.LinkLabel1.Location = New System.Drawing.Point(12, 611)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(242, 18)
+        Me.LinkLabel1.TabIndex = 54
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Clique aqui para mais informções"
         '
         'Panel1
         '
@@ -2145,4 +2171,6 @@ Partial Class frmCadastroClientes
     Friend WithEvents txtNumBeneficio As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txtESocial As System.Windows.Forms.MaskedTextBox
     Public WithEvents txtAutonomo As System.Windows.Forms.TextBox
+    Friend WithEvents linkObservacoes As System.Windows.Forms.LinkLabel
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
 End Class

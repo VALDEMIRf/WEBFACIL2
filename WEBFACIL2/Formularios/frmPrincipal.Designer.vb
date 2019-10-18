@@ -30,7 +30,6 @@ Partial Class frmPrincipal
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ClientsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormuláriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatórioGeralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SobreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -107,7 +106,6 @@ Partial Class frmPrincipal
         'ClientsToolStripMenuItem
         '
         Me.ClientsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.ClientsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastrosToolStripMenuItem})
         Me.ClientsToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ClientsToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ClientsToolStripMenuItem.Image = CType(resources.GetObject("ClientsToolStripMenuItem.Image"), System.Drawing.Image)
@@ -116,14 +114,6 @@ Partial Class frmPrincipal
         Me.ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
         Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(165, 36)
         Me.ClientsToolStripMenuItem.Text = "Clientes"
-        '
-        'CadastrosToolStripMenuItem
-        '
-        Me.CadastrosToolStripMenuItem.BackColor = System.Drawing.Color.Gray
-        Me.CadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
-        Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(184, 28)
-        Me.CadastrosToolStripMenuItem.Text = "Cadastros"
         '
         'FormuláriosToolStripMenuItem
         '
@@ -211,7 +201,6 @@ Partial Class frmPrincipal
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents ClientsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CadastrosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FormuláriosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SobreToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

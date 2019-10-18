@@ -961,10 +961,13 @@ Public Class frmCadastroClientes
 
    
     
-    Private Sub txtEsocialSenha_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtEsocialSenha.TextChanged
-
+    Private Sub linkObservacoes_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles linkObservacoes.LinkClicked
+        linkObservacoes.LinkVisited = True
+        System.Diagnostics.Process.Start("\\WEB02\Meus Doctos\AMÓS\SERVIÇOS CONTÁBEIS\DADOS CADASTRAIS")
     End Sub
-    Private Sub lblEsocialSenha_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblEsocialSenha.Click
 
+    Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        linkObservacoes.LinkVisited = True
+        System.Diagnostics.Process.Start("\\WEB02\Meus Doctos\AMÓS\CADASTRO DE CLIENTES\CADASTRO IR\Cadastro Geral IR 000 a 999.doc")
     End Sub
 End Class
