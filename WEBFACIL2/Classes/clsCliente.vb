@@ -715,7 +715,47 @@ Public Class clsCliente
         Dim cldBancoDados As New cldBancoDados()
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
-   
+
+    Public Function LeInformacoesCliente(ByVal strDescricao As String) As DataSet
+        Dim dr As OleDbDataReader = Nothing
+        Dim cli As String
+        Dim strQuery As New StringBuilder
+        strQuery.Append(" SELECT cli_id,cli_CPF,cli_Nome ")
+        strQuery.Append(" FROM tbClientes ")
+        If Not strDescricao.Equals(String.Empty) Then
+            strQuery.Append(" WHERE cli_CPF like '%" & strDescricao & "%'")
+        End If
+        ''Using con As OleDbConnection = GetConnection()
+        ''    Try
+        ''        con.Open()
+        ''        'Dim sql As String = "SELECT cli_id,cli_CPF,cli_Nome FROM tbClientes WHERE cli_CPF = '" & cli.cli_CPF & "'"
+        ''        Dim sql As String = "SELECT cli_id,cli_CPF,cli_Nome FROM tbClientes WHERE cli_id = " & lblciID.Text
+        ''        Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+        ''        dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+        ''        If dr.HasRows Then
+        ''            dr.Read()
+        ''            'lblciID.Text = dr.Item("cli_id")
+        ''            ' lblclienteID.Text = dr.Item("cli_id")
+        ''            txtNome.Text = dr.Item("cli_Nome")
+        ''            cli = dr.Item("cli_Nome")
+        ''            ' txtNome.Text = cli.cli_Nome
+        ''        Else
+        ''            MsgBox("Não foi possível carregar os dados.", MsgBoxStyle.Critical, "Aviso do Sistema")
+        ''        End If
+
+        ''    Catch ex As Exception
+        ''        MsgBox(ex.Message.ToString)
+        ''    Finally
+        ''        dr.Close()
+        ''        con.Close()
+
+        ''    End Try
+        ''End Using
+        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
+        Dim cldBancoDados As New cldBancoDados()
+        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
+    End Function
+
     Public Sub AlterarDados()
 
         Using con As OleDbConnection = GetConnection()
@@ -793,4 +833,7 @@ Public Class clsCliente
         End Using
 
     End Sub
+
+   
+
 End Class

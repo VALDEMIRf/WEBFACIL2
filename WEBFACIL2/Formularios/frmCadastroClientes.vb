@@ -388,6 +388,61 @@ Public Class frmCadastroClientes
         txtSenhaWebPJ.Text = frmEmpresaConsulta.empr_NumCodReceitaPJ
     End Sub
 
+    Private Sub linkObservacoes_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles linkObservacoes.LinkClicked
+        linkObservacoes.LinkVisited = True
+        System.Diagnostics.Process.Start("\\WEB02\Meus Doctos\AMÓS\SERVIÇOS CONTÁBEIS\DADOS CADASTRAIS")
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Dim cli As New clsCliente
+        Dim frmClienteConsulta As New frmClienteConsulta
+        ' frmClienteConsulta.Text = "Consulta de Cliente"
+        frmClienteConsulta.ConsultaTipo = frmClienteConsulta.TipoConsulta.Cliente
+        ' frmClienteConsulta.ShowDialog()
+
+        CodigoCliente = frmClienteConsulta.cli_id
+        lblciID.Text = frmClienteConsulta.cli_id
+        txtCPF.Text = frmClienteConsulta.cli_CPF
+        txtNome.Text = frmClienteConsulta.cli_Nome
+        cli.LeInformacoesCliente(txtCPF.Text)
+        linkObservacoes.LinkVisited = True
+        System.Diagnostics.Process.Start("\\WEB02\Meus Doctos\VALDEMIR\Observacoes_de_clientes\" + txtNome.Text + ".docx")
+
+        'Juliano Cezar de Lima.doc
+        '        System.Diagnostics.Process.Start("\\WEB02\Meus Doctos\AMÓS\CADASTRO DE CLIENTES\CADASTRO IR\Cadastro Geral IR 000 a 999.doc")
+    End Sub
+    Private Sub LedadosCliente()
+        Dim dr As OleDbDataReader = Nothing
+        Dim cli As String
+        Using con As OleDbConnection = GetConnection()
+            Try
+                con.Open()
+                'Dim sql As String = "SELECT cli_id,cli_CPF,cli_Nome FROM tbClientes WHERE cli_CPF = '" & cli.cli_CPF & "'"
+                Dim sql As String = "SELECT cli_id,cli_CPF,cli_Nome FROM tbClientes WHERE cli_id = " & lblciID.Text
+                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+                dr = cmd.ExecuteReader(CommandBehavior.SingleRow)
+                If dr.HasRows Then
+                    dr.Read()
+                    'lblciID.Text = dr.Item("cli_id")
+                    ' lblclienteID.Text = dr.Item("cli_id")
+                    txtNome.Text = dr.Item("cli_Nome")
+                    cli = dr.Item("cli_Nome")
+                    ' txtNome.Text = cli.cli_Nome
+                    linkObservacoes.LinkVisited = True
+                    System.Diagnostics.Process.Start("\\WEB02\Meus Doctos\VALDEMIR\Observacoes_de_clientes\" + cli + ".docx")
+                Else
+                    MsgBox("Não foi possível carregar os dados.", MsgBoxStyle.Critical, "Aviso do Sistema")
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message.ToString)
+            Finally
+                dr.Close()
+                con.Close()
+
+            End Try
+        End Using
+    End Sub
     Private Sub btAlterarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDados.Click
         If txtCPF.Text.Equals(String.Empty) Then
             errErro.SetError(txtCPF, "Digite um CPF")
@@ -961,13 +1016,5 @@ Public Class frmCadastroClientes
 
    
     
-    Private Sub linkObservacoes_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles linkObservacoes.LinkClicked
-        linkObservacoes.LinkVisited = True
-        System.Diagnostics.Process.Start("\\WEB02\Meus Doctos\AMÓS\SERVIÇOS CONTÁBEIS\DADOS CADASTRAIS")
-    End Sub
-
-    Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        linkObservacoes.LinkVisited = True
-        System.Diagnostics.Process.Start("\\WEB02\Meus Doctos\AMÓS\CADASTRO DE CLIENTES\CADASTRO IR\Cadastro Geral IR 000 a 999.doc")
-    End Sub
+   
 End Class
