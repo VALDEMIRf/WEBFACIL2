@@ -28,6 +28,13 @@ Partial Class frmPrincipal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmbDia = New System.Windows.Forms.ComboBox()
+        Me.cmbMes = New System.Windows.Forms.ComboBox()
+        Me.dgvAniversariantes = New System.Windows.Forms.DataGridView()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ClientsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormuláriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,6 +44,8 @@ Partial Class frmPrincipal
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.dgvAniversariantes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -84,6 +93,8 @@ Partial Class frmPrincipal
         '
         'Panel5
         '
+        Me.Panel5.Controls.Add(Me.GroupBox1)
+        Me.Panel5.Controls.Add(Me.Panel4)
         Me.Panel5.Controls.Add(Me.MenuStrip1)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 65)
@@ -91,33 +102,106 @@ Partial Class frmPrincipal
         Me.Panel5.Size = New System.Drawing.Size(1090, 501)
         Me.Panel5.TabIndex = 1
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.cmbDia)
+        Me.GroupBox1.Controls.Add(Me.cmbMes)
+        Me.GroupBox1.Controls.Add(Me.dgvAniversariantes)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 75)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(354, 313)
+        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Aniversariantes"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(183, 28)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(34, 17)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Dia:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(10, 26)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 17)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Mês:"
+        '
+        'cmbDia
+        '
+        Me.cmbDia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDia.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmbDia.FormattingEnabled = True
+        Me.cmbDia.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cmbDia.Location = New System.Drawing.Point(222, 23)
+        Me.cmbDia.Name = "cmbDia"
+        Me.cmbDia.Size = New System.Drawing.Size(121, 25)
+        Me.cmbDia.TabIndex = 2
+        '
+        'cmbMes
+        '
+        Me.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbMes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmbMes.FormattingEnabled = True
+        Me.cmbMes.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
+        Me.cmbMes.Location = New System.Drawing.Point(55, 23)
+        Me.cmbMes.Name = "cmbMes"
+        Me.cmbMes.Size = New System.Drawing.Size(121, 25)
+        Me.cmbMes.TabIndex = 1
+        '
+        'dgvAniversariantes
+        '
+        Me.dgvAniversariantes.BackgroundColor = System.Drawing.Color.White
+        Me.dgvAniversariantes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvAniversariantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAniversariantes.Location = New System.Drawing.Point(6, 54)
+        Me.dgvAniversariantes.Name = "dgvAniversariantes"
+        Me.dgvAniversariantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvAniversariantes.Size = New System.Drawing.Size(341, 253)
+        Me.dgvAniversariantes.TabIndex = 0
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(0, 457)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1090, 44)
+        Me.Panel4.TabIndex = 7
+        '
         'MenuStrip1
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.Gray
-        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.MenuStrip1.BackColor = System.Drawing.Color.CadetBlue
         Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientsToolStripMenuItem, Me.FormuláriosToolStripMenuItem, Me.SobreToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(178, 501)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1090, 61)
         Me.MenuStrip1.TabIndex = 6
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ClientsToolStripMenuItem
         '
-        Me.ClientsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.ClientsToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
         Me.ClientsToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ClientsToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ClientsToolStripMenuItem.Image = CType(resources.GetObject("ClientsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClientsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ClientsToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
-        Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(165, 36)
+        Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(135, 47)
         Me.ClientsToolStripMenuItem.Text = "Clientes"
         '
         'FormuláriosToolStripMenuItem
         '
-        Me.FormuláriosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.FormuláriosToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
         Me.FormuláriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RelatórioGeralToolStripMenuItem})
         Me.FormuláriosToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormuláriosToolStripMenuItem.ForeColor = System.Drawing.Color.White
@@ -125,37 +209,39 @@ Partial Class frmPrincipal
         Me.FormuláriosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FormuláriosToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 5, 0, 0)
         Me.FormuláriosToolStripMenuItem.Name = "FormuláriosToolStripMenuItem"
-        Me.FormuláriosToolStripMenuItem.Size = New System.Drawing.Size(165, 52)
+        Me.FormuláriosToolStripMenuItem.Size = New System.Drawing.Size(172, 52)
         Me.FormuláriosToolStripMenuItem.Text = "Relatórios"
         '
         'RelatórioGeralToolStripMenuItem
         '
+        Me.RelatórioGeralToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
+        Me.RelatórioGeralToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.RelatórioGeralToolStripMenuItem.Name = "RelatórioGeralToolStripMenuItem"
         Me.RelatórioGeralToolStripMenuItem.Size = New System.Drawing.Size(229, 28)
         Me.RelatórioGeralToolStripMenuItem.Text = "Relatório Geral"
         '
         'SobreToolStripMenuItem
         '
-        Me.SobreToolStripMenuItem.BackColor = System.Drawing.Color.Gray
+        Me.SobreToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
         Me.SobreToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SobreToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.SobreToolStripMenuItem.Image = CType(resources.GetObject("SobreToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SobreToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SobreToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 5, 0, 0)
         Me.SobreToolStripMenuItem.Name = "SobreToolStripMenuItem"
-        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(165, 36)
+        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(114, 52)
         Me.SobreToolStripMenuItem.Text = "Sobre"
         '
         'SairToolStripMenuItem
         '
-        Me.SairToolStripMenuItem.BackColor = System.Drawing.Color.Gray
+        Me.SairToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
         Me.SairToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.SairToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.SairToolStripMenuItem.Image = CType(resources.GetObject("SairToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SairToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(165, 36)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(93, 57)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'frmPrincipal
@@ -179,6 +265,9 @@ Partial Class frmPrincipal
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.dgvAniversariantes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -205,5 +294,12 @@ Partial Class frmPrincipal
     Friend WithEvents SobreToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RelatórioGeralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents cmbDia As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbMes As System.Windows.Forms.ComboBox
+    Friend WithEvents dgvAniversariantes As System.Windows.Forms.DataGridView
 
 End Class
