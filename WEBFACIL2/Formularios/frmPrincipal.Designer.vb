@@ -41,6 +41,9 @@ Partial Class frmPrincipal
         Me.RelatórioGeralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SobreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TrabalhosDiáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -58,7 +61,7 @@ Partial Class frmPrincipal
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1090, 65)
+        Me.Panel3.Size = New System.Drawing.Size(1012, 65)
         Me.Panel3.TabIndex = 0
         '
         'PictureBox1
@@ -96,10 +99,11 @@ Partial Class frmPrincipal
         Me.Panel5.Controls.Add(Me.GroupBox1)
         Me.Panel5.Controls.Add(Me.Panel4)
         Me.Panel5.Controls.Add(Me.MenuStrip1)
+        Me.Panel5.Controls.Add(Me.MenuStrip2)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 65)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1090, 501)
+        Me.Panel5.Size = New System.Drawing.Size(1012, 501)
         Me.Panel5.TabIndex = 1
         '
         'GroupBox1
@@ -109,7 +113,7 @@ Partial Class frmPrincipal
         Me.GroupBox1.Controls.Add(Me.cmbDia)
         Me.GroupBox1.Controls.Add(Me.cmbMes)
         Me.GroupBox1.Controls.Add(Me.dgvAniversariantes)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 75)
+        Me.GroupBox1.Location = New System.Drawing.Point(168, 158)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(354, 313)
         Me.GroupBox1.TabIndex = 8
@@ -173,43 +177,44 @@ Partial Class frmPrincipal
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel4.Location = New System.Drawing.Point(0, 457)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1090, 44)
+        Me.Panel4.Size = New System.Drawing.Size(1012, 44)
         Me.Panel4.TabIndex = 7
         '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.CadetBlue
-        Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientsToolStripMenuItem, Me.FormuláriosToolStripMenuItem, Me.SobreToolStripMenuItem, Me.SairToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1090, 61)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1012, 61)
         Me.MenuStrip1.TabIndex = 6
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ClientsToolStripMenuItem
         '
         Me.ClientsToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
-        Me.ClientsToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClientsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.TrabalhosDiáriosToolStripMenuItem})
+        Me.ClientsToolStripMenuItem.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ClientsToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ClientsToolStripMenuItem.Image = CType(resources.GetObject("ClientsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClientsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ClientsToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
-        Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(135, 47)
-        Me.ClientsToolStripMenuItem.Text = "Clientes"
+        Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(121, 47)
+        Me.ClientsToolStripMenuItem.Text = "Cadastros"
         '
         'FormuláriosToolStripMenuItem
         '
         Me.FormuláriosToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
         Me.FormuláriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RelatórioGeralToolStripMenuItem})
-        Me.FormuláriosToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormuláriosToolStripMenuItem.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me.FormuláriosToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.FormuláriosToolStripMenuItem.Image = CType(resources.GetObject("FormuláriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FormuláriosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.FormuláriosToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 5, 0, 0)
         Me.FormuláriosToolStripMenuItem.Name = "FormuláriosToolStripMenuItem"
-        Me.FormuláriosToolStripMenuItem.Size = New System.Drawing.Size(172, 52)
+        Me.FormuláriosToolStripMenuItem.Size = New System.Drawing.Size(140, 52)
         Me.FormuláriosToolStripMenuItem.Text = "Relatórios"
         '
         'RelatórioGeralToolStripMenuItem
@@ -217,39 +222,60 @@ Partial Class frmPrincipal
         Me.RelatórioGeralToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
         Me.RelatórioGeralToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.RelatórioGeralToolStripMenuItem.Name = "RelatórioGeralToolStripMenuItem"
-        Me.RelatórioGeralToolStripMenuItem.Size = New System.Drawing.Size(229, 28)
+        Me.RelatórioGeralToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.RelatórioGeralToolStripMenuItem.Text = "Relatório Geral"
         '
         'SobreToolStripMenuItem
         '
         Me.SobreToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
-        Me.SobreToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SobreToolStripMenuItem.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me.SobreToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.SobreToolStripMenuItem.Image = CType(resources.GetObject("SobreToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SobreToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SobreToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 5, 0, 0)
         Me.SobreToolStripMenuItem.Name = "SobreToolStripMenuItem"
-        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(114, 52)
+        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(94, 52)
         Me.SobreToolStripMenuItem.Text = "Sobre"
         '
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
         Me.SairToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.SairToolStripMenuItem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SairToolStripMenuItem.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.SairToolStripMenuItem.Image = CType(resources.GetObject("SairToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SairToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(93, 57)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(79, 57)
         Me.SairToolStripMenuItem.Text = "Sair"
+        '
+        'MenuStrip2
+        '
+        Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip2.Name = "MenuStrip2"
+        Me.MenuStrip2.Size = New System.Drawing.Size(1012, 24)
+        Me.MenuStrip2.TabIndex = 9
+        Me.MenuStrip2.Text = "MenuStrip2"
+        '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        '
+        'TrabalhosDiáriosToolStripMenuItem
+        '
+        Me.TrabalhosDiáriosToolStripMenuItem.Name = "TrabalhosDiáriosToolStripMenuItem"
+        Me.TrabalhosDiáriosToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.TrabalhosDiáriosToolStripMenuItem.Text = "Trabalhos Diários"
         '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1090, 566)
+        Me.ClientSize = New System.Drawing.Size(1012, 566)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel3)
         Me.Font = New System.Drawing.Font("Arial", 11.0!)
@@ -257,6 +283,7 @@ Partial Class frmPrincipal
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.ImeMode = System.Windows.Forms.ImeMode.[On]
         Me.IsMdiContainer = True
+        Me.MainMenuStrip = Me.MenuStrip2
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -301,5 +328,8 @@ Partial Class frmPrincipal
     Friend WithEvents cmbDia As System.Windows.Forms.ComboBox
     Friend WithEvents cmbMes As System.Windows.Forms.ComboBox
     Friend WithEvents dgvAniversariantes As System.Windows.Forms.DataGridView
+    Friend WithEvents MenuStrip2 As System.Windows.Forms.MenuStrip
+    Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TrabalhosDiáriosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

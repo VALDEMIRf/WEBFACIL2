@@ -8,9 +8,11 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub ClientsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClientsToolStripMenuItem.Click
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClientesToolStripMenuItem.Click
         Dim frmCliente_Cadastro As New frmCadastroClientes
         frmCliente_Cadastro.ShowDialog()
-
     End Sub
 
     Private Sub SairToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SairToolStripMenuItem.Click
@@ -83,4 +85,6 @@ Public Class frmPrincipal
     Private Sub cmbDia_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbDia.SelectedIndexChanged
         PCarregaDadosDia()
     End Sub
+
+   
 End Class
