@@ -87,4 +87,8 @@ Public Class frmPrincipal
     End Sub
 
    
+    Private Sub TrabalhosDiáriosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrabalhosDiáriosToolStripMenuItem.Click
+        Dim frmAssessoria As New frmAcessoria
+        frmAssessoria.ShowDialog()
+    End Sub
 End Class

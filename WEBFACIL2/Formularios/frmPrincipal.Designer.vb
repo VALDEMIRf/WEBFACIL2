@@ -37,13 +37,13 @@ Partial Class frmPrincipal
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ClientsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TrabalhosDiáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormuláriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatórioGeralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SobreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
-        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TrabalhosDiáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -204,6 +204,20 @@ Partial Class frmPrincipal
         Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(121, 47)
         Me.ClientsToolStripMenuItem.Text = "Cadastros"
         '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        '
+        'TrabalhosDiáriosToolStripMenuItem
+        '
+        Me.TrabalhosDiáriosToolStripMenuItem.Image = CType(resources.GetObject("TrabalhosDiáriosToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.TrabalhosDiáriosToolStripMenuItem.Name = "TrabalhosDiáriosToolStripMenuItem"
+        Me.TrabalhosDiáriosToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.TrabalhosDiáriosToolStripMenuItem.Text = "Assessoria"
+        '
         'FormuláriosToolStripMenuItem
         '
         Me.FormuláriosToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
@@ -256,19 +270,6 @@ Partial Class frmPrincipal
         Me.MenuStrip2.Size = New System.Drawing.Size(1012, 24)
         Me.MenuStrip2.TabIndex = 9
         Me.MenuStrip2.Text = "MenuStrip2"
-        '
-        'ClientesToolStripMenuItem
-        '
-        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.ClientesToolStripMenuItem.Text = "Clientes"
-        '
-        'TrabalhosDiáriosToolStripMenuItem
-        '
-        Me.TrabalhosDiáriosToolStripMenuItem.Name = "TrabalhosDiáriosToolStripMenuItem"
-        Me.TrabalhosDiáriosToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
-        Me.TrabalhosDiáriosToolStripMenuItem.Text = "Trabalhos Diários"
         '
         'frmPrincipal
         '

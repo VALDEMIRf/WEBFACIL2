@@ -49,7 +49,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Imagens\Accounting-Calculator1.ico</ApplicationIcon>
+    <ApplicationIcon>Imagens\Balance.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -78,6 +78,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\clsAcessoria.vb" />
     <Compile Include="Classes\clsCategoria.vb" />
     <Compile Include="Classes\clsEmpresa.vb" />
     <Compile Include="cldBancoDados.vb" />
@@ -89,6 +90,12 @@
       <DependentUpon>frmAcessoria.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmAcessoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadAcessoria.Designer.vb">
+      <DependentUpon>frmCadAcessoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCadAcessoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmCadastroClientes.Designer.vb">
@@ -155,6 +162,9 @@
     <EmbeddedResource Include="Formularios\frmAcessoria.resx">
       <DependentUpon>frmAcessoria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadAcessoria.resx">
+      <DependentUpon>frmCadAcessoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCadastroClientes.resx">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +220,8 @@
     <Content Include="Imagens\alterar.png" />
     <Content Include="Imagens\alterarDados.png" />
     <Content Include="Imagens\arrow-right.png" />
+    <Content Include="Imagens\Balance-icon.png" />
+    <Content Include="Imagens\Balance.ico" />
     <Content Include="Imagens\binoculars.png" />
     <Content Include="Imagens\bolinha_xis.png" />
     <Content Include="Imagens\Button-Add-icon.png" />
@@ -222,6 +234,9 @@
     <Content Include="Imagens\forms-icon.png" />
     <Content Include="Imagens\logo webfacil.png" />
     <Content Include="Imagens\lupa.png" />
+    <Content Include="Imagens\Maintenance.ico" />
+    <Content Include="Imagens\newspaper-jobs-icon.png" />
+    <Content Include="Imagens\Newspaper-jobs.ico" />
     <Content Include="Imagens\novo1.png" />
     <Content Include="Imagens\Ok-icon.png" />
     <Content Include="Imagens\Register.ico" />
@@ -230,6 +245,8 @@
     <Content Include="Imagens\sair4.png" />
     <Content Include="Imagens\salvar.png" />
     <Content Include="Imagens\Text-Edit-icon.png" />
+    <Content Include="Imagens\Unemployed-icon.png" />
+    <Content Include="Imagens\Unemployed.ico" />
     <Content Include="Imagens\users-novo.png" />
     <Content Include="Imagens\usuarios.png" />
     <None Include="Resources\Gnome-View-Restore-64.png" />
@@ -251,6 +268,35 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Relatorios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

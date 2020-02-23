@@ -330,6 +330,7 @@ Public Class clsEmpresa
         End Set
     End Property
 
+    'METODO QUE GRAVA DADOS PESSOA JURÍDICA
     Public Sub GravarDados()
         Using con As OleDbConnection = GetConnection()
             Try
@@ -394,6 +395,7 @@ Public Class clsEmpresa
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
 
+    'ALTERA DADOS PESSOA JURÍDICA
     Public Sub AlterarDados()
 
         Using con As OleDbConnection = GetConnection()

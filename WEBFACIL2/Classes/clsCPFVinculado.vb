@@ -151,7 +151,7 @@ Public Class clsCPFVinculado
     End Sub
 
 
-
+    ''METODO QUE LISTA AS PESSOAS VINCULADAS AO CLIENTE
     Public Function Listar(ByVal strDescricao As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder  'vinc_id,cli_id,vinc_nome,vinc_CPF,vinc_vinculo

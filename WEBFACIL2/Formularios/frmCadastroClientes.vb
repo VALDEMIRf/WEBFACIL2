@@ -71,6 +71,7 @@ Public Class frmCadastroClientes
         Me.Close()
     End Sub
 
+    'BOTÃO DE CADASTRO DE PESSOA FÍSICA
     Private Sub btSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSalvar.Click
         
         If txtCPF.Text.Equals(String.Empty) Then
@@ -155,7 +156,8 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
-    Private Sub btEmpresaSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEmpresaSalvar.Click
+    'BOTÃO QUE GRAVA DADOS PESSOA JURÍDICA
+    Private Sub btSalvarEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSalvarEmpresa.Click
         If txtRazaoSocial.Text.Equals(String.Empty) Then
             errErro.SetError(txtRazaoSocial, "Digite O nome da Empresa")
             Exit Sub
@@ -217,13 +219,18 @@ Public Class frmCadastroClientes
             ' MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
             MsgBox(ex.Message.ToString)
         End Try
-
     End Sub
+    'Private Sub btEmpresaSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEmpresaSalvar.Click
+    
 
+    'End Sub
+
+    'BOTÃO QUE LIMPA OS DADOS DO FORMULARIO
     Private Sub btLimpar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btLimpar.Click
         LimparCampos()
     End Sub
 
+    'BOTÃO QUE PESQUISA PESSOA FÍSICA
     Private Sub btPesquisarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCliente.Click
         Dim frmClienteConsulta As New frmClienteConsulta
         frmClienteConsulta.Text = "Consulta de Cliente"
@@ -443,6 +450,8 @@ Public Class frmCadastroClientes
             End Try
         End Using
     End Sub
+
+    'BOTÃO QUE ALTERA DADOS PESSOA FÍSICA
     Private Sub btAlterarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDados.Click
         If txtCPF.Text.Equals(String.Empty) Then
             errErro.SetError(txtCPF, "Digite um CPF")
@@ -529,7 +538,8 @@ Public Class frmCadastroClientes
         End Try
     End Sub
 
-    Private Sub btAlterarDadosEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDadosEmpresa.Click
+    'BOTÃO QUE ALTERA DADOS PESSOA JURÍDICA
+    Private Sub btAlteraEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlteraEmpresa.Click
         If txtRazaoSocial.Text.Equals(String.Empty) Then
             errErro.SetError(txtRazaoSocial, "Digite O nome da Empresa")
             Exit Sub
@@ -589,9 +599,10 @@ Public Class frmCadastroClientes
             ' MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
             MsgBox(ex.Message.ToString)
         End Try
-
     End Sub
+   
 
+    'BOTÃO QUE PESQUISA PESSOA VINCULADO AO CLIENTE
     Private Sub btPesquisarCPFVinculado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCPFVinculado.Click
         Dim frmVinculadoCadastro As New frmVinculadoConsulta
         Dim enviarDados As New frmVinculadoConsulta
@@ -1015,5 +1026,8 @@ Public Class frmCadastroClientes
     End Sub
 
    
+    
+   
+    
     
 End Class

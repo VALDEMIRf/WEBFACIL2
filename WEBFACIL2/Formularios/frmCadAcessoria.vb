@@ -1,29 +1,9 @@
 ﻿Imports System.Data.OleDb
 Imports Microsoft.Office.Interop
+Public Class frmCadAcessoria
 
-
-Public Class frmAcessoria
-
-    Dim xl As New Excel.Application
-    Dim xlw As Excel.Workbook
-
-
-    'Abrir o arquivo do Excel
-    'Set xlw = xl.Workbooks.Open("C:\Users\Valdemir\Documents\DB_Access\BDCADASSESSORIA.xls.xls")
-
-
-
-
-    'Class
-
-
-
-
-
-
-    Private Sub frmAcessoria_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmCadAcessoria_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         carregaDados()
-
     End Sub
 
     Private Sub carregaDados()
@@ -35,7 +15,7 @@ Public Class frmAcessoria
                 Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
                 Dim dt As DataTable = New DataTable
                 da.Fill(dt)
-                dgvAssessoria.DataSource = dt
+                ' dgvAssessoria.DataSource = dt
 
             Catch ex As Exception
                 MsgBox(ex.Message.ToString)
@@ -45,7 +25,4 @@ Public Class frmAcessoria
         End Using
     End Sub
 
-    Private Sub dgvAssessoria_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvAssessoria.CellContentClick
-
-    End Sub
 End Class

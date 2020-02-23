@@ -618,6 +618,7 @@
 
 
     Private Sub btPesquisaCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisaCliente.Click
+        '  BOTÃO QUE CARREGA OS DADOS DA PESQUISA PESSOA FÍSICA
         CarregaGrid()
     End Sub
 
@@ -625,6 +626,7 @@
         Me.Close()
     End Sub
 
+    'BOTÃO QUE ENVIA DADOS PARA O FORMULARIO PESSOA FÍSICA
     Private Sub btEnviarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEnviarDados.Click
 
         Select Case _ConsultaTipo
@@ -696,6 +698,7 @@
         dadosEnviados()
     End Sub
 
+    'METODO DE DUPLO CLICK QUE ENVIA DADOS PARA O FORMULARIO PESSOA FÍSICA
     Private Sub dadosEnviados()
         If dgvGrid.RowCount <> 0 Then
             _cli_id = dgvGrid.CurrentRow.Cells(0).Value

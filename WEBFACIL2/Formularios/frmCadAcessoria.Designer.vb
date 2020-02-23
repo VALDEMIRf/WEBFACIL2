@@ -1,0 +1,544 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmCadAcessoria
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtEmpresa = New System.Windows.Forms.TextBox()
+        Me.txtContato = New System.Windows.Forms.TextBox()
+        Me.btnPesquisar = New System.Windows.Forms.Button()
+        Me.txtAno = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtMes = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.chbProlabore = New System.Windows.Forms.CheckBox()
+        Me.gbEmpresa = New System.Windows.Forms.GroupBox()
+        Me.txtResponsavel = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GBsIMPLES = New System.Windows.Forms.GroupBox()
+        Me.chbFolha = New System.Windows.Forms.CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt13salario = New System.Windows.Forms.TextBox()
+        Me.chbSefip = New System.Windows.Forms.CheckBox()
+        Me.chbGPS = New System.Windows.Forms.CheckBox()
+        Me.chbGRF = New System.Windows.Forms.CheckBox()
+        Me.chbDASZERO = New System.Windows.Forms.CheckBox()
+        Me.chbDASN = New System.Windows.Forms.CheckBox()
+        Me.chbDAS = New System.Windows.Forms.CheckBox()
+        Me.gbDeclaracoes = New System.Windows.Forms.GroupBox()
+        Me.chbRAISNEGATIVA = New System.Windows.Forms.CheckBox()
+        Me.chbRAIS = New System.Windows.Forms.CheckBox()
+        Me.chbDCTF = New System.Windows.Forms.CheckBox()
+        Me.chbIRRF = New System.Windows.Forms.CheckBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.chbCAGED = New System.Windows.Forms.CheckBox()
+        Me.chbGIA = New System.Windows.Forms.CheckBox()
+        Me.chbEFD = New System.Windows.Forms.CheckBox()
+        Me.chbECF = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtObs = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.gbEmpresa.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GBsIMPLES.SuspendLayout()
+        Me.gbDeclaracoes.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(5, 36)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(53, 16)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Empresa:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(9, 78)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(73, 16)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Responsável:"
+        '
+        'txtEmpresa
+        '
+        Me.txtEmpresa.Location = New System.Drawing.Point(58, 33)
+        Me.txtEmpresa.Name = "txtEmpresa"
+        Me.txtEmpresa.Size = New System.Drawing.Size(274, 22)
+        Me.txtEmpresa.TabIndex = 3
+        '
+        'txtContato
+        '
+        Me.txtContato.Location = New System.Drawing.Point(270, 78)
+        Me.txtContato.Name = "txtContato"
+        Me.txtContato.Size = New System.Drawing.Size(123, 22)
+        Me.txtContato.TabIndex = 5
+        '
+        'btnPesquisar
+        '
+        Me.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPesquisar.FlatAppearance.BorderSize = 0
+        Me.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPesquisar.Image = Global.WEBFACIL2.My.Resources.Resources.lupa
+        Me.btnPesquisar.Location = New System.Drawing.Point(550, 27)
+        Me.btnPesquisar.Name = "btnPesquisar"
+        Me.btnPesquisar.Size = New System.Drawing.Size(34, 34)
+        Me.btnPesquisar.TabIndex = 6
+        Me.btnPesquisar.UseVisualStyleBackColor = True
+        '
+        'txtAno
+        '
+        Me.txtAno.Location = New System.Drawing.Point(486, 33)
+        Me.txtAno.Name = "txtAno"
+        Me.txtAno.Size = New System.Drawing.Size(58, 22)
+        Me.txtAno.TabIndex = 8
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(450, 36)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(30, 16)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Ano:"
+        '
+        'txtMes
+        '
+        Me.txtMes.Location = New System.Drawing.Point(381, 33)
+        Me.txtMes.Name = "txtMes"
+        Me.txtMes.Size = New System.Drawing.Size(58, 22)
+        Me.txtMes.TabIndex = 11
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(344, 36)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(31, 16)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Mes:"
+        '
+        'chbProlabore
+        '
+        Me.chbProlabore.AutoSize = True
+        Me.chbProlabore.Location = New System.Drawing.Point(12, 30)
+        Me.chbProlabore.Name = "chbProlabore"
+        Me.chbProlabore.Size = New System.Drawing.Size(82, 20)
+        Me.chbProlabore.TabIndex = 12
+        Me.chbProlabore.Text = "Pro-Labore"
+        Me.chbProlabore.UseVisualStyleBackColor = True
+        '
+        'gbEmpresa
+        '
+        Me.gbEmpresa.Controls.Add(Me.txtEmpresa)
+        Me.gbEmpresa.Controls.Add(Me.Label6)
+        Me.gbEmpresa.Controls.Add(Me.txtMes)
+        Me.gbEmpresa.Controls.Add(Me.txtContato)
+        Me.gbEmpresa.Controls.Add(Me.Label2)
+        Me.gbEmpresa.Controls.Add(Me.Label5)
+        Me.gbEmpresa.Controls.Add(Me.txtAno)
+        Me.gbEmpresa.Controls.Add(Me.txtResponsavel)
+        Me.gbEmpresa.Controls.Add(Me.Label4)
+        Me.gbEmpresa.Controls.Add(Me.btnPesquisar)
+        Me.gbEmpresa.Controls.Add(Me.Label3)
+        Me.gbEmpresa.Location = New System.Drawing.Point(12, 26)
+        Me.gbEmpresa.Name = "gbEmpresa"
+        Me.gbEmpresa.Size = New System.Drawing.Size(597, 112)
+        Me.gbEmpresa.TabIndex = 13
+        Me.gbEmpresa.TabStop = False
+        Me.gbEmpresa.Text = "Dados da Empresa"
+        '
+        'txtResponsavel
+        '
+        Me.txtResponsavel.Location = New System.Drawing.Point(88, 75)
+        Me.txtResponsavel.Name = "txtResponsavel"
+        Me.txtResponsavel.Size = New System.Drawing.Size(123, 22)
+        Me.txtResponsavel.TabIndex = 5
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(217, 80)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(47, 16)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Contato:"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.chbGRF)
+        Me.GroupBox1.Controls.Add(Me.chbGPS)
+        Me.GroupBox1.Controls.Add(Me.chbSefip)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.chbFolha)
+        Me.GroupBox1.Controls.Add(Me.txt13salario)
+        Me.GroupBox1.Controls.Add(Me.chbProlabore)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 153)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(307, 104)
+        Me.GroupBox1.TabIndex = 14
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Folha de Pagamento"
+        '
+        'GBsIMPLES
+        '
+        Me.GBsIMPLES.Controls.Add(Me.chbDASZERO)
+        Me.GBsIMPLES.Controls.Add(Me.chbDASN)
+        Me.GBsIMPLES.Controls.Add(Me.chbDAS)
+        Me.GBsIMPLES.Location = New System.Drawing.Point(325, 153)
+        Me.GBsIMPLES.Name = "GBsIMPLES"
+        Me.GBsIMPLES.Size = New System.Drawing.Size(284, 104)
+        Me.GBsIMPLES.TabIndex = 15
+        Me.GBsIMPLES.TabStop = False
+        Me.GBsIMPLES.Text = "Simples"
+        '
+        'chbFolha
+        '
+        Me.chbFolha.AutoSize = True
+        Me.chbFolha.Location = New System.Drawing.Point(12, 70)
+        Me.chbFolha.Name = "chbFolha"
+        Me.chbFolha.Size = New System.Drawing.Size(54, 20)
+        Me.chbFolha.TabIndex = 13
+        Me.chbFolha.Text = "Folha"
+        Me.chbFolha.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(104, 30)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(64, 16)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "13° Salario:"
+        '
+        'txt13salario
+        '
+        Me.txt13salario.Location = New System.Drawing.Point(173, 28)
+        Me.txt13salario.Name = "txt13salario"
+        Me.txt13salario.Size = New System.Drawing.Size(123, 22)
+        Me.txt13salario.TabIndex = 13
+        '
+        'chbSefip
+        '
+        Me.chbSefip.AutoSize = True
+        Me.chbSefip.Location = New System.Drawing.Point(73, 70)
+        Me.chbSefip.Name = "chbSefip"
+        Me.chbSefip.Size = New System.Drawing.Size(50, 20)
+        Me.chbSefip.TabIndex = 14
+        Me.chbSefip.Text = "Sefip"
+        Me.chbSefip.UseVisualStyleBackColor = True
+        '
+        'chbGPS
+        '
+        Me.chbGPS.AutoSize = True
+        Me.chbGPS.Location = New System.Drawing.Point(129, 70)
+        Me.chbGPS.Name = "chbGPS"
+        Me.chbGPS.Size = New System.Drawing.Size(49, 20)
+        Me.chbGPS.TabIndex = 15
+        Me.chbGPS.Text = "GPS"
+        Me.chbGPS.UseVisualStyleBackColor = True
+        '
+        'chbGRF
+        '
+        Me.chbGRF.AutoSize = True
+        Me.chbGRF.Location = New System.Drawing.Point(184, 70)
+        Me.chbGRF.Name = "chbGRF"
+        Me.chbGRF.Size = New System.Drawing.Size(50, 20)
+        Me.chbGRF.TabIndex = 16
+        Me.chbGRF.Text = "GRF"
+        Me.chbGRF.UseVisualStyleBackColor = True
+        '
+        'chbDASZERO
+        '
+        Me.chbDASZERO.AutoSize = True
+        Me.chbDASZERO.Location = New System.Drawing.Point(80, 30)
+        Me.chbDASZERO.Name = "chbDASZERO"
+        Me.chbDASZERO.Size = New System.Drawing.Size(97, 20)
+        Me.chbDASZERO.TabIndex = 19
+        Me.chbDASZERO.Text = "DAS ZERADO"
+        Me.chbDASZERO.UseVisualStyleBackColor = True
+        '
+        'chbDASN
+        '
+        Me.chbDASN.AutoSize = True
+        Me.chbDASN.Location = New System.Drawing.Point(198, 30)
+        Me.chbDASN.Name = "chbDASN"
+        Me.chbDASN.Size = New System.Drawing.Size(57, 20)
+        Me.chbDASN.TabIndex = 18
+        Me.chbDASN.Text = "DASN"
+        Me.chbDASN.UseVisualStyleBackColor = True
+        '
+        'chbDAS
+        '
+        Me.chbDAS.AutoSize = True
+        Me.chbDAS.Location = New System.Drawing.Point(10, 30)
+        Me.chbDAS.Name = "chbDAS"
+        Me.chbDAS.Size = New System.Drawing.Size(49, 20)
+        Me.chbDAS.TabIndex = 17
+        Me.chbDAS.Text = "DAS"
+        Me.chbDAS.UseVisualStyleBackColor = True
+        '
+        'gbDeclaracoes
+        '
+        Me.gbDeclaracoes.Controls.Add(Me.chbRAISNEGATIVA)
+        Me.gbDeclaracoes.Controls.Add(Me.chbRAIS)
+        Me.gbDeclaracoes.Controls.Add(Me.chbDCTF)
+        Me.gbDeclaracoes.Controls.Add(Me.chbIRRF)
+        Me.gbDeclaracoes.Location = New System.Drawing.Point(12, 270)
+        Me.gbDeclaracoes.Name = "gbDeclaracoes"
+        Me.gbDeclaracoes.Size = New System.Drawing.Size(307, 67)
+        Me.gbDeclaracoes.TabIndex = 16
+        Me.gbDeclaracoes.TabStop = False
+        Me.gbDeclaracoes.Text = "Declarações"
+        '
+        'chbRAISNEGATIVA
+        '
+        Me.chbRAISNEGATIVA.AutoSize = True
+        Me.chbRAISNEGATIVA.Location = New System.Drawing.Point(192, 32)
+        Me.chbRAISNEGATIVA.Name = "chbRAISNEGATIVA"
+        Me.chbRAISNEGATIVA.Size = New System.Drawing.Size(109, 20)
+        Me.chbRAISNEGATIVA.TabIndex = 20
+        Me.chbRAISNEGATIVA.Text = "RAIS NEGATIVA"
+        Me.chbRAISNEGATIVA.UseVisualStyleBackColor = True
+        '
+        'chbRAIS
+        '
+        Me.chbRAIS.AutoSize = True
+        Me.chbRAIS.Location = New System.Drawing.Point(136, 32)
+        Me.chbRAIS.Name = "chbRAIS"
+        Me.chbRAIS.Size = New System.Drawing.Size(52, 20)
+        Me.chbRAIS.TabIndex = 19
+        Me.chbRAIS.Text = "RAIS"
+        Me.chbRAIS.UseVisualStyleBackColor = True
+        '
+        'chbDCTF
+        '
+        Me.chbDCTF.AutoSize = True
+        Me.chbDCTF.Location = New System.Drawing.Point(73, 32)
+        Me.chbDCTF.Name = "chbDCTF"
+        Me.chbDCTF.Size = New System.Drawing.Size(57, 20)
+        Me.chbDCTF.TabIndex = 18
+        Me.chbDCTF.Text = "DCTF"
+        Me.chbDCTF.UseVisualStyleBackColor = True
+        '
+        'chbIRRF
+        '
+        Me.chbIRRF.AutoSize = True
+        Me.chbIRRF.Location = New System.Drawing.Point(12, 32)
+        Me.chbIRRF.Name = "chbIRRF"
+        Me.chbIRRF.Size = New System.Drawing.Size(53, 20)
+        Me.chbIRRF.TabIndex = 17
+        Me.chbIRRF.Text = "IRRF"
+        Me.chbIRRF.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.chbCAGED)
+        Me.GroupBox2.Controls.Add(Me.chbGIA)
+        Me.GroupBox2.Controls.Add(Me.chbECF)
+        Me.GroupBox2.Controls.Add(Me.chbEFD)
+        Me.GroupBox2.Location = New System.Drawing.Point(337, 271)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(272, 67)
+        Me.GroupBox2.TabIndex = 17
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Outros"
+        '
+        'chbCAGED
+        '
+        Me.chbCAGED.AutoSize = True
+        Me.chbCAGED.Location = New System.Drawing.Point(188, 32)
+        Me.chbCAGED.Name = "chbCAGED"
+        Me.chbCAGED.Size = New System.Drawing.Size(65, 20)
+        Me.chbCAGED.TabIndex = 20
+        Me.chbCAGED.Text = "CAGED"
+        Me.chbCAGED.UseVisualStyleBackColor = True
+        '
+        'chbGIA
+        '
+        Me.chbGIA.AutoSize = True
+        Me.chbGIA.Location = New System.Drawing.Point(133, 32)
+        Me.chbGIA.Name = "chbGIA"
+        Me.chbGIA.Size = New System.Drawing.Size(45, 20)
+        Me.chbGIA.TabIndex = 19
+        Me.chbGIA.Text = "GIA"
+        Me.chbGIA.UseVisualStyleBackColor = True
+        '
+        'chbEFD
+        '
+        Me.chbEFD.AutoSize = True
+        Me.chbEFD.Location = New System.Drawing.Point(77, 32)
+        Me.chbEFD.Name = "chbEFD"
+        Me.chbEFD.Size = New System.Drawing.Size(49, 20)
+        Me.chbEFD.TabIndex = 18
+        Me.chbEFD.Text = "EFD"
+        Me.chbEFD.UseVisualStyleBackColor = True
+        '
+        'chbECF
+        '
+        Me.chbECF.AutoSize = True
+        Me.chbECF.Location = New System.Drawing.Point(16, 32)
+        Me.chbECF.Name = "chbECF"
+        Me.chbECF.Size = New System.Drawing.Size(49, 20)
+        Me.chbECF.TabIndex = 17
+        Me.chbECF.Text = "ECF"
+        Me.chbECF.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(627, 9)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(74, 16)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Observações:"
+        '
+        'txtObs
+        '
+        Me.txtObs.Location = New System.Drawing.Point(615, 33)
+        Me.txtObs.Multiline = True
+        Me.txtObs.Name = "txtObs"
+        Me.txtObs.Size = New System.Drawing.Size(188, 266)
+        Me.txtObs.TabIndex = 13
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(218, 393)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Salvar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(359, 393)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 19
+        Me.Button2.Text = "Alterar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(505, 393)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 20
+        Me.Button3.Text = "Próximo"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(79, 393)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 21
+        Me.Button4.Text = "Anterior"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'frmCadAcessoria
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 16.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.SkyBlue
+        Me.ClientSize = New System.Drawing.Size(805, 441)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.txtObs)
+        Me.Controls.Add(Me.gbDeclaracoes)
+        Me.Controls.Add(Me.GBsIMPLES)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.gbEmpresa)
+        Me.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Name = "frmCadAcessoria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "frmCadAcessoria"
+        Me.gbEmpresa.ResumeLayout(False)
+        Me.gbEmpresa.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GBsIMPLES.ResumeLayout(False)
+        Me.GBsIMPLES.PerformLayout()
+        Me.gbDeclaracoes.ResumeLayout(False)
+        Me.gbDeclaracoes.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txtEmpresa As System.Windows.Forms.TextBox
+    Friend WithEvents txtContato As System.Windows.Forms.TextBox
+    Friend WithEvents btnPesquisar As System.Windows.Forms.Button
+    Friend WithEvents txtAno As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtMes As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents chbProlabore As System.Windows.Forms.CheckBox
+    Friend WithEvents gbEmpresa As System.Windows.Forms.GroupBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txtResponsavel As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents chbGRF As System.Windows.Forms.CheckBox
+    Friend WithEvents chbGPS As System.Windows.Forms.CheckBox
+    Friend WithEvents chbSefip As System.Windows.Forms.CheckBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents chbFolha As System.Windows.Forms.CheckBox
+    Friend WithEvents txt13salario As System.Windows.Forms.TextBox
+    Friend WithEvents GBsIMPLES As System.Windows.Forms.GroupBox
+    Friend WithEvents chbDASZERO As System.Windows.Forms.CheckBox
+    Friend WithEvents chbDASN As System.Windows.Forms.CheckBox
+    Friend WithEvents chbDAS As System.Windows.Forms.CheckBox
+    Friend WithEvents gbDeclaracoes As System.Windows.Forms.GroupBox
+    Friend WithEvents chbRAISNEGATIVA As System.Windows.Forms.CheckBox
+    Friend WithEvents chbRAIS As System.Windows.Forms.CheckBox
+    Friend WithEvents chbDCTF As System.Windows.Forms.CheckBox
+    Friend WithEvents chbIRRF As System.Windows.Forms.CheckBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents chbCAGED As System.Windows.Forms.CheckBox
+    Friend WithEvents chbGIA As System.Windows.Forms.CheckBox
+    Friend WithEvents chbECF As System.Windows.Forms.CheckBox
+    Friend WithEvents chbEFD As System.Windows.Forms.CheckBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtObs As System.Windows.Forms.TextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+End Class

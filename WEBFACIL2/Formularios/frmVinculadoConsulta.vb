@@ -103,6 +103,7 @@ Public Class frmVinculadoConsulta
 
     End Sub
 
+    'CARREGA OS DADOS DA PESSOA VINCULADA AO CLIENTE
     Private Sub CarregaGrid()
         Dim dsConsulta As New Data.DataSet
         Select Case _ConsultaTipo

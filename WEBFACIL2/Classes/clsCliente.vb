@@ -612,6 +612,7 @@ Public Class clsCliente
         End Set
     End Property
 
+    'MÉTODO QUE GRAVA DADOS PESSOA FÍSICA
     Public Sub GravarDados()
         Using con As OleDbConnection = GetConnection()
             Try
@@ -702,6 +703,8 @@ Public Class clsCliente
         Dim cldBancoDados As New cldBancoDados()
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
+
+    'METODO QUE LISTA PESSOA FÍSICA
     Public Function ListarCpf(ByVal strDescricao As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder
@@ -756,6 +759,7 @@ Public Class clsCliente
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
 
+    'METODO QUE ALTERA DADOS PESSOA FÍSICA
     Public Sub AlterarDados()
 
         Using con As OleDbConnection = GetConnection()
