@@ -3,8 +3,8 @@ Public Class frmPrincipal
 
     Private Sub frmPrincipal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
-        PCarregaDadosDia()
-        PCarregaDados()
+        ' PCarregaDadosDia()
+        ' PCarregaDados()
     End Sub
 
     Private Sub ClientsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClientsToolStripMenuItem.Click
@@ -88,7 +88,7 @@ Public Class frmPrincipal
 
    
     Private Sub TrabalhosDiáriosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrabalhosDiáriosToolStripMenuItem.Click
-        Dim frmAssessoria As New frmAcessoria
-        frmAssessoria.ShowDialog()
+        Dim frmCadAcessoria As New frmCadAcessoria
+        frmCadAcessoria.ShowDialog()
     End Sub
 End Class

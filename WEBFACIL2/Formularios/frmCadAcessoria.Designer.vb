@@ -22,27 +22,28 @@ Partial Class frmCadAcessoria
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtEmpresa = New System.Windows.Forms.TextBox()
         Me.txtContato = New System.Windows.Forms.TextBox()
-        Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.txtAno = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtMes = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.chbProlabore = New System.Windows.Forms.CheckBox()
         Me.gbEmpresa = New System.Windows.Forms.GroupBox()
-        Me.txtResponsavel = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtResponsavel = New System.Windows.Forms.TextBox()
+        Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GBsIMPLES = New System.Windows.Forms.GroupBox()
-        Me.chbFolha = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt13salario = New System.Windows.Forms.TextBox()
-        Me.chbSefip = New System.Windows.Forms.CheckBox()
-        Me.chbGPS = New System.Windows.Forms.CheckBox()
         Me.chbGRF = New System.Windows.Forms.CheckBox()
+        Me.chbGPS = New System.Windows.Forms.CheckBox()
+        Me.chbSefip = New System.Windows.Forms.CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.chbFolha = New System.Windows.Forms.CheckBox()
+        Me.txt13salario = New System.Windows.Forms.TextBox()
+        Me.GBsIMPLES = New System.Windows.Forms.GroupBox()
         Me.chbDASZERO = New System.Windows.Forms.CheckBox()
         Me.chbDASN = New System.Windows.Forms.CheckBox()
         Me.chbDAS = New System.Windows.Forms.CheckBox()
@@ -54,19 +55,24 @@ Partial Class frmCadAcessoria
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.chbCAGED = New System.Windows.Forms.CheckBox()
         Me.chbGIA = New System.Windows.Forms.CheckBox()
-        Me.chbEFD = New System.Windows.Forms.CheckBox()
         Me.chbECF = New System.Windows.Forms.CheckBox()
+        Me.chbEFD = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtObs = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btSalvar = New System.Windows.Forms.Button()
+        Me.btAlterar = New System.Windows.Forms.Button()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btAltera = New System.Windows.Forms.Button()
+        Me.btAnterior = New System.Windows.Forms.Button()
+        Me.btRegistroAnterior = New System.Windows.Forms.Button()
+        Me.btProximoRegistro = New System.Windows.Forms.Button()
+        Me.btSair = New System.Windows.Forms.Button()
         Me.gbEmpresa.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GBsIMPLES.SuspendLayout()
         Me.gbDeclaracoes.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -100,18 +106,6 @@ Partial Class frmCadAcessoria
         Me.txtContato.Name = "txtContato"
         Me.txtContato.Size = New System.Drawing.Size(123, 22)
         Me.txtContato.TabIndex = 5
-        '
-        'btnPesquisar
-        '
-        Me.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPesquisar.FlatAppearance.BorderSize = 0
-        Me.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPesquisar.Image = Global.WEBFACIL2.My.Resources.Resources.lupa
-        Me.btnPesquisar.Location = New System.Drawing.Point(550, 27)
-        Me.btnPesquisar.Name = "btnPesquisar"
-        Me.btnPesquisar.Size = New System.Drawing.Size(34, 34)
-        Me.btnPesquisar.TabIndex = 6
-        Me.btnPesquisar.UseVisualStyleBackColor = True
         '
         'txtAno
         '
@@ -175,13 +169,6 @@ Partial Class frmCadAcessoria
         Me.gbEmpresa.TabStop = False
         Me.gbEmpresa.Text = "Dados da Empresa"
         '
-        'txtResponsavel
-        '
-        Me.txtResponsavel.Location = New System.Drawing.Point(88, 75)
-        Me.txtResponsavel.Name = "txtResponsavel"
-        Me.txtResponsavel.Size = New System.Drawing.Size(123, 22)
-        Me.txtResponsavel.TabIndex = 5
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -190,6 +177,25 @@ Partial Class frmCadAcessoria
         Me.Label6.Size = New System.Drawing.Size(47, 16)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Contato:"
+        '
+        'txtResponsavel
+        '
+        Me.txtResponsavel.Location = New System.Drawing.Point(88, 75)
+        Me.txtResponsavel.Name = "txtResponsavel"
+        Me.txtResponsavel.Size = New System.Drawing.Size(123, 22)
+        Me.txtResponsavel.TabIndex = 5
+        '
+        'btnPesquisar
+        '
+        Me.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPesquisar.FlatAppearance.BorderSize = 0
+        Me.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPesquisar.Image = Global.WEBFACIL2.My.Resources.Resources.lupa
+        Me.btnPesquisar.Location = New System.Drawing.Point(550, 27)
+        Me.btnPesquisar.Name = "btnPesquisar"
+        Me.btnPesquisar.Size = New System.Drawing.Size(34, 34)
+        Me.btnPesquisar.TabIndex = 6
+        Me.btnPesquisar.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -207,53 +213,15 @@ Partial Class frmCadAcessoria
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Folha de Pagamento"
         '
-        'GBsIMPLES
+        'chbGRF
         '
-        Me.GBsIMPLES.Controls.Add(Me.chbDASZERO)
-        Me.GBsIMPLES.Controls.Add(Me.chbDASN)
-        Me.GBsIMPLES.Controls.Add(Me.chbDAS)
-        Me.GBsIMPLES.Location = New System.Drawing.Point(325, 153)
-        Me.GBsIMPLES.Name = "GBsIMPLES"
-        Me.GBsIMPLES.Size = New System.Drawing.Size(284, 104)
-        Me.GBsIMPLES.TabIndex = 15
-        Me.GBsIMPLES.TabStop = False
-        Me.GBsIMPLES.Text = "Simples"
-        '
-        'chbFolha
-        '
-        Me.chbFolha.AutoSize = True
-        Me.chbFolha.Location = New System.Drawing.Point(12, 70)
-        Me.chbFolha.Name = "chbFolha"
-        Me.chbFolha.Size = New System.Drawing.Size(54, 20)
-        Me.chbFolha.TabIndex = 13
-        Me.chbFolha.Text = "Folha"
-        Me.chbFolha.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(104, 30)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 16)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "13° Salario:"
-        '
-        'txt13salario
-        '
-        Me.txt13salario.Location = New System.Drawing.Point(173, 28)
-        Me.txt13salario.Name = "txt13salario"
-        Me.txt13salario.Size = New System.Drawing.Size(123, 22)
-        Me.txt13salario.TabIndex = 13
-        '
-        'chbSefip
-        '
-        Me.chbSefip.AutoSize = True
-        Me.chbSefip.Location = New System.Drawing.Point(73, 70)
-        Me.chbSefip.Name = "chbSefip"
-        Me.chbSefip.Size = New System.Drawing.Size(50, 20)
-        Me.chbSefip.TabIndex = 14
-        Me.chbSefip.Text = "Sefip"
-        Me.chbSefip.UseVisualStyleBackColor = True
+        Me.chbGRF.AutoSize = True
+        Me.chbGRF.Location = New System.Drawing.Point(184, 70)
+        Me.chbGRF.Name = "chbGRF"
+        Me.chbGRF.Size = New System.Drawing.Size(50, 20)
+        Me.chbGRF.TabIndex = 16
+        Me.chbGRF.Text = "GRF"
+        Me.chbGRF.UseVisualStyleBackColor = True
         '
         'chbGPS
         '
@@ -265,15 +233,53 @@ Partial Class frmCadAcessoria
         Me.chbGPS.Text = "GPS"
         Me.chbGPS.UseVisualStyleBackColor = True
         '
-        'chbGRF
+        'chbSefip
         '
-        Me.chbGRF.AutoSize = True
-        Me.chbGRF.Location = New System.Drawing.Point(184, 70)
-        Me.chbGRF.Name = "chbGRF"
-        Me.chbGRF.Size = New System.Drawing.Size(50, 20)
-        Me.chbGRF.TabIndex = 16
-        Me.chbGRF.Text = "GRF"
-        Me.chbGRF.UseVisualStyleBackColor = True
+        Me.chbSefip.AutoSize = True
+        Me.chbSefip.Location = New System.Drawing.Point(73, 70)
+        Me.chbSefip.Name = "chbSefip"
+        Me.chbSefip.Size = New System.Drawing.Size(50, 20)
+        Me.chbSefip.TabIndex = 14
+        Me.chbSefip.Text = "Sefip"
+        Me.chbSefip.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(104, 30)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(64, 16)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "13° Salario:"
+        '
+        'chbFolha
+        '
+        Me.chbFolha.AutoSize = True
+        Me.chbFolha.Location = New System.Drawing.Point(12, 70)
+        Me.chbFolha.Name = "chbFolha"
+        Me.chbFolha.Size = New System.Drawing.Size(54, 20)
+        Me.chbFolha.TabIndex = 13
+        Me.chbFolha.Text = "Folha"
+        Me.chbFolha.UseVisualStyleBackColor = True
+        '
+        'txt13salario
+        '
+        Me.txt13salario.Location = New System.Drawing.Point(173, 28)
+        Me.txt13salario.Name = "txt13salario"
+        Me.txt13salario.Size = New System.Drawing.Size(123, 22)
+        Me.txt13salario.TabIndex = 13
+        '
+        'GBsIMPLES
+        '
+        Me.GBsIMPLES.Controls.Add(Me.chbDASZERO)
+        Me.GBsIMPLES.Controls.Add(Me.chbDASN)
+        Me.GBsIMPLES.Controls.Add(Me.chbDAS)
+        Me.GBsIMPLES.Location = New System.Drawing.Point(325, 153)
+        Me.GBsIMPLES.Name = "GBsIMPLES"
+        Me.GBsIMPLES.Size = New System.Drawing.Size(284, 104)
+        Me.GBsIMPLES.TabIndex = 15
+        Me.GBsIMPLES.TabStop = False
+        Me.GBsIMPLES.Text = "Simples"
         '
         'chbDASZERO
         '
@@ -391,16 +397,6 @@ Partial Class frmCadAcessoria
         Me.chbGIA.Text = "GIA"
         Me.chbGIA.UseVisualStyleBackColor = True
         '
-        'chbEFD
-        '
-        Me.chbEFD.AutoSize = True
-        Me.chbEFD.Location = New System.Drawing.Point(77, 32)
-        Me.chbEFD.Name = "chbEFD"
-        Me.chbEFD.Size = New System.Drawing.Size(49, 20)
-        Me.chbEFD.TabIndex = 18
-        Me.chbEFD.Text = "EFD"
-        Me.chbEFD.UseVisualStyleBackColor = True
-        '
         'chbECF
         '
         Me.chbECF.AutoSize = True
@@ -410,6 +406,16 @@ Partial Class frmCadAcessoria
         Me.chbECF.TabIndex = 17
         Me.chbECF.Text = "ECF"
         Me.chbECF.UseVisualStyleBackColor = True
+        '
+        'chbEFD
+        '
+        Me.chbEFD.AutoSize = True
+        Me.chbEFD.Location = New System.Drawing.Point(77, 32)
+        Me.chbEFD.Name = "chbEFD"
+        Me.chbEFD.Size = New System.Drawing.Size(49, 20)
+        Me.chbEFD.TabIndex = 18
+        Me.chbEFD.Text = "EFD"
+        Me.chbEFD.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -428,41 +434,72 @@ Partial Class frmCadAcessoria
         Me.txtObs.Size = New System.Drawing.Size(188, 266)
         Me.txtObs.TabIndex = 13
         '
-        'Button1
+        'btSalvar
         '
-        Me.Button1.Location = New System.Drawing.Point(218, 393)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Salvar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btSalvar.Location = New System.Drawing.Point(31, 379)
+        Me.btSalvar.Name = "btSalvar"
+        Me.btSalvar.Size = New System.Drawing.Size(75, 23)
+        Me.btSalvar.TabIndex = 18
+        Me.btSalvar.Text = "Salvar"
+        Me.btSalvar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btAlterar
         '
-        Me.Button2.Location = New System.Drawing.Point(359, 393)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 19
-        Me.Button2.Text = "Alterar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btAlterar.Location = New System.Drawing.Point(125, 379)
+        Me.btAlterar.Name = "btAlterar"
+        Me.btAlterar.Size = New System.Drawing.Size(75, 23)
+        Me.btAlterar.TabIndex = 19
+        Me.btAlterar.Text = "Alterar"
+        Me.btAlterar.UseVisualStyleBackColor = True
         '
-        'Button3
+        'errErro
         '
-        Me.Button3.Location = New System.Drawing.Point(505, 393)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 20
-        Me.Button3.Text = "Próximo"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.errErro.ContainerControl = Me
         '
-        'Button4
+        'btAltera
         '
-        Me.Button4.Location = New System.Drawing.Point(79, 393)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 21
-        Me.Button4.Text = "Anterior"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btAltera.Location = New System.Drawing.Point(359, 393)
+        Me.btAltera.Name = "btAltera"
+        Me.btAltera.Size = New System.Drawing.Size(75, 23)
+        Me.btAltera.TabIndex = 19
+        Me.btAltera.Text = "Alterar"
+        Me.btAltera.UseVisualStyleBackColor = True
+        '
+        'btAnterior
+        '
+        Me.btAnterior.Location = New System.Drawing.Point(79, 393)
+        Me.btAnterior.Name = "btAnterior"
+        Me.btAnterior.Size = New System.Drawing.Size(75, 23)
+        Me.btAnterior.TabIndex = 21
+        Me.btAnterior.Text = "Anterior"
+        Me.btAnterior.UseVisualStyleBackColor = True
+        '
+        'btRegistroAnterior
+        '
+        Me.btRegistroAnterior.Location = New System.Drawing.Point(232, 379)
+        Me.btRegistroAnterior.Name = "btRegistroAnterior"
+        Me.btRegistroAnterior.Size = New System.Drawing.Size(112, 39)
+        Me.btRegistroAnterior.TabIndex = 20
+        Me.btRegistroAnterior.Text = "Registro Anterior"
+        Me.btRegistroAnterior.UseVisualStyleBackColor = True
+        '
+        'btProximoRegistro
+        '
+        Me.btProximoRegistro.Location = New System.Drawing.Point(359, 376)
+        Me.btProximoRegistro.Name = "btProximoRegistro"
+        Me.btProximoRegistro.Size = New System.Drawing.Size(107, 42)
+        Me.btProximoRegistro.TabIndex = 21
+        Me.btProximoRegistro.Text = "Próximo Registro"
+        Me.btProximoRegistro.UseVisualStyleBackColor = True
+        '
+        'btSair
+        '
+        Me.btSair.Location = New System.Drawing.Point(515, 386)
+        Me.btSair.Name = "btSair"
+        Me.btSair.Size = New System.Drawing.Size(75, 23)
+        Me.btSair.TabIndex = 22
+        Me.btSair.Text = "Sair"
+        Me.btSair.UseVisualStyleBackColor = True
         '
         'frmCadAcessoria
         '
@@ -470,10 +507,11 @@ Partial Class frmCadAcessoria
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SkyBlue
         Me.ClientSize = New System.Drawing.Size(805, 441)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btSair)
+        Me.Controls.Add(Me.btProximoRegistro)
+        Me.Controls.Add(Me.btRegistroAnterior)
+        Me.Controls.Add(Me.btAlterar)
+        Me.Controls.Add(Me.btSalvar)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.txtObs)
@@ -497,6 +535,7 @@ Partial Class frmCadAcessoria
         Me.gbDeclaracoes.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -537,8 +576,12 @@ Partial Class frmCadAcessoria
     Friend WithEvents chbEFD As System.Windows.Forms.CheckBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtObs As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents btSalvar As System.Windows.Forms.Button
+    Friend WithEvents btAlterar As System.Windows.Forms.Button
+    Friend WithEvents errErro As System.Windows.Forms.ErrorProvider
+    Friend WithEvents btAltera As System.Windows.Forms.Button
+    Friend WithEvents btAnterior As System.Windows.Forms.Button
+    Friend WithEvents btRegistroAnterior As System.Windows.Forms.Button
+    Friend WithEvents btProximoRegistro As System.Windows.Forms.Button
+    Friend WithEvents btSair As System.Windows.Forms.Button
 End Class

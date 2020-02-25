@@ -68,7 +68,7 @@ Public Class frmCadAcessoria
     End Sub
 
     'botão de gravar
-    Private Sub btSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSalvar.Click
+    Private Sub btSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If txtEmpresa.Text.Equals(String.Empty) Then
             errErro.SetError(txtEmpresa, "Digite um CPF")
             txtEmpresa.Focus()
@@ -140,21 +140,13 @@ Public Class frmCadAcessoria
 
     End Sub
 
-    Private Sub btAlterar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterar.Click
+    Private Sub btAlterar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ' IdAssessoria,empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,
         'IRRF, DAS, DASZERO, DASN, DCTF, RAIS, RAISNEGATIVA, ECF, EFD, GIA, CAGED, obs
 
     End Sub
 
-    Private Sub btAnterior_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAnterior.Click
-
-    End Sub
-
-    Private Sub btProximo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btProximo.Click
-
-    End Sub
-
-    Private Sub btnPesquisar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPesquisar.Click
+    Private Sub btnPesquisar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim frmAcessoriaConsulta As New frmAcessoriaConsulta
         frmAcessoriaConsulta.Text = "Consulta de Cliente"
         frmAcessoriaConsulta.ConsultaTipo = frmAcessoriaConsulta.TipoConsulta.Assessoria
@@ -184,9 +176,6 @@ Public Class frmCadAcessoria
         chbGIA.Checked = frmAcessoriaConsulta.GIA
         chbCAGED.Checked = frmAcessoriaConsulta.CAGED
         txtObs.Text = frmAcessoriaConsulta.obs
-
-
-
 
     End Sub
 
@@ -222,5 +211,35 @@ Public Class frmCadAcessoria
 
     End Sub
 
+    Private Sub btnPesquisar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPesquisar.Click
+        Dim frmAcessoriaConsulta As New frmAcessoriaConsulta
+        frmAcessoriaConsulta.Text = "Consulta de Cliente"
+        frmAcessoriaConsulta.ConsultaTipo = frmAcessoriaConsulta.TipoConsulta.Assessoria
+        frmAcessoriaConsulta.ShowDialog()
 
+        CodigoEmpresa = frmAcessoriaConsulta.IdAssessoria
+        txtEmpresa.Text = frmAcessoriaConsulta.empresa
+        txtContato.Text = frmAcessoriaConsulta.contato
+        txtResponsavel.Text = frmAcessoriaConsulta.responsavel
+        txtMes.Text = frmAcessoriaConsulta.mes
+        txtAno.Text = frmAcessoriaConsulta.ano
+        chbProlabore.Checked = frmAcessoriaConsulta.PROLABORE
+        txt13salario.Text = frmAcessoriaConsulta.salario13
+        chbFolha.Checked = frmAcessoriaConsulta.FOLHA
+        chbSefip.Checked = frmAcessoriaConsulta.SEFIP
+        chbGPS.Checked = frmAcessoriaConsulta.GPS
+        chbGRF.Checked = frmAcessoriaConsulta.GRF
+        chbIRRF.Checked = frmAcessoriaConsulta.IRRF
+        chbDAS.Checked = frmAcessoriaConsulta.DAS
+        chbDASZERO.Checked = frmAcessoriaConsulta.DASZERO
+        chbDASN.Checked = frmAcessoriaConsulta.DASN
+        chbDCTF.Checked = frmAcessoriaConsulta.DCTF
+        chbRAIS.Checked = frmAcessoriaConsulta.RAIS
+        chbRAISNEGATIVA.Checked = frmAcessoriaConsulta.RAISNEGATIVA
+        chbECF.Checked = frmAcessoriaConsulta.ECF
+        chbEFD.Checked = frmAcessoriaConsulta.EFD
+        chbGIA.Checked = frmAcessoriaConsulta.GIA
+        chbCAGED.Checked = frmAcessoriaConsulta.CAGED
+        txtObs.Text = frmAcessoriaConsulta.obs
+    End Sub
 End Class

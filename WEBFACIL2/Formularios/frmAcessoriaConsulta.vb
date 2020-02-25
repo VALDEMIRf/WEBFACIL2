@@ -312,7 +312,7 @@ Public Class frmAcessoriaConsulta
                     _mes = dgvGridAssessoria.CurrentRow.Cells(4).Value
                     _ano = dgvGridAssessoria.CurrentRow.Cells(5).Value
                     _PROLABORE = dgvGridAssessoria.CurrentRow.Cells(6).Value
-                    _salario13 = dgvGridAssessoria.CurrentRow.Cells(7).Value
+                    _salario13 = dgvGridAssessoria.CurrentRow.Cells(7).Value.ToString
                     _FOLHA = dgvGridAssessoria.CurrentRow.Cells(8).Value
                     _SEFIP = dgvGridAssessoria.CurrentRow.Cells(9).Value
                     _GPS = dgvGridAssessoria.CurrentRow.Cells(10).Value

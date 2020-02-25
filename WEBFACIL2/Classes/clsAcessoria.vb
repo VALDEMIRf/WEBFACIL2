@@ -98,7 +98,7 @@ Public Class clsAcessoria
             _FOLHA = value
         End Set
     End Property
-    
+
 
     Private _SEFIP As Boolean
     Public Property SEFIP() As Boolean
@@ -129,7 +129,7 @@ Public Class clsAcessoria
             _GRF = value
         End Set
     End Property
-    ' IdAssessoria,contato,empresa,responsavel,mes,ano,PRO-LABORE,SALARIO13,FOLHA,SEFIP,GPS,
+    ' IdAssessoria,contato,empresa,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,
     ' GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
     Private _IRRF As Boolean
     Public Property IRRF() As Boolean
@@ -250,6 +250,120 @@ Public Class clsAcessoria
             _obs = value
         End Set
     End Property
-    ' IdAssessoria,contato,empresa,responsavel,mes,ano,PRO-LABORE,SALARIO13,FOLHA,SEFIP,GPS,
-    ' GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
+
+    'METODO QUE GRAVA DADOS em Acessoria Contábil
+    Public Sub GravarDados()
+        Using con As OleDbConnection = GetConnection()
+            Try
+                con.Open()
+                Dim sql As String = "INSERT INTO tbAssessoria(empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empresa", _empresa))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@contato", _contato))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@responsavel", _responsavel))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@mes", _mes))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@ano", _ano))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@PROLABORE", _PROLABORE))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@SALARIO13", _salario13))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@FOLHA", _FOLHA))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@SEFIP", _SEFIP))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@GPS", _GPS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@GRF", _GRF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@IRRF", _IRRF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DAS", _DAS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DASZERO", _DASZERO))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DASN", _DASN))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DCTF", _DCTF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@RAIS", _RAIS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@RAISNEGATIVA", _RAISNEGATIVA))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@ECF", _ECF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@EFD", _EFD))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@GIA", _GIA))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@CAGED", _CAGED))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@obs", _obs))
+
+                cmd.ExecuteNonQuery()
+
+                MessageBox.Show("Operação realizada com sucesso!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Catch ex As Exception
+                MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MsgBox(ex.Message.ToString)
+            Finally
+                con.Close()
+            End Try
+        End Using
+    End Sub
+
+    'ALTERA DADOS em Acessoria Contábil
+
+    Public Sub AlterarDados()
+
+        Using con As OleDbConnection = GetConnection()
+            Try
+                con.Open()
+                ' IdAssessoria,empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
+                Dim sql As String = "UPDATE tbAssessoria SET empresa=?,contato=?,responsavel=?,mes=?,ano=?,PROLABORE=?,SALARIO13=?,FOLHA=?,SEFIP=?,GPS=?,GRF=?,IRRF=?,DAS=?,DASZERO=?,DASN=?,DCTF=?,RAIS=?,RAISNEGATIVA=?,ECF=?,EFD=?,GIA=?,CAGED=?,obs=? WHERE IdAssessoria =" & CInt(IdAssessoria)
+                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empresa", _empresa))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@contato", _contato))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@responsavel", _responsavel))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@mes", _mes))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@ano", _ano))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@PROLABORE", _PROLABORE))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@SALARIO13", _salario13))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@FOLHA", _FOLHA))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@SEFIP", _SEFIP))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@GPS", _GPS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@GRF", _GRF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@IRRF", _IRRF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DAS", _DAS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DASZERO", _DASZERO))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DASN", _DASN))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DCTF", _DCTF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@RAIS", _RAIS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@RAISNEGATIVA", _RAISNEGATIVA))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@ECF", _ECF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@EFD", _EFD))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@GIA", _GIA))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@CAGED", _CAGED))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@obs", _obs))
+
+                cmd.ExecuteNonQuery()
+
+                MessageBox.Show("Operação de alteração realizada com sucesso!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Catch ex As Exception
+                MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MsgBox(ex.Message.ToString)
+            Finally
+                con.Close()
+            End Try
+        End Using
+    End Sub
+
+    ' IdAssessoria,empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
+    'lista DADOS 
+
+    'Public Function Listar(ByVal strEmpresa As String, ByVal strMes As String, ByVal strAno As Integer) As DataSet
+    Public Function Listar(ByVal strEmpresa As String, ByVal strMes As String, ByVal strAno As String) As DataSet
+        'Cria um StringBuilder para concatenar a Query Sql
+        Dim strQuery As New StringBuilder
+        strQuery.Append(" SELECT IdAssessoria as Codigo,empresa as Empresa,contato as Contato,responsavel as Responsavel,mes as Mes,ano as Ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs ")
+        strQuery.Append(" FROM tbAssessoria ")
+        If Not strEmpresa.Equals(String.Empty) Then
+            strQuery.Append(" WHERE mes like '%" & strMes & "%'")
+        End If
+
+        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
+        Dim cldBancoDados As New cldBancoDados()
+        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
+    End Function
+
+
+
+
+
 End Class
