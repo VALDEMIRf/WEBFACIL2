@@ -86,12 +86,6 @@
     <Compile Include="Classes\clsCPFVinculado.vb" />
     <Compile Include="clsFuncoesGerais.vb" />
     <Compile Include="Conexao.vb" />
-    <Compile Include="Formularios\frmAcessoria.Designer.vb">
-      <DependentUpon>frmAcessoria.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmAcessoria.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\frmCadAcessoria.Designer.vb">
       <DependentUpon>frmCadAcessoria.vb</DependentUpon>
     </Compile>
@@ -159,9 +153,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\frmAcessoria.resx">
-      <DependentUpon>frmAcessoria.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCadAcessoria.resx">
       <DependentUpon>frmCadAcessoria.vb</DependentUpon>
     </EmbeddedResource>
