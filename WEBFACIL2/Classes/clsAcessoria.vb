@@ -17,14 +17,14 @@ Public Class clsAcessoria
         End Set
     End Property
 
-    Private _contato As String
+    Private _telefone As String
 
-    Public Property contato() As String
+    Public Property telefone() As String
         Get
-            Return _contato
+            Return _telefone
         End Get
         Set(ByVal value As String)
-            _contato = value
+            _telefone = value
         End Set
     End Property
 
@@ -48,6 +48,15 @@ Public Class clsAcessoria
         End Set
     End Property
 
+    Private _gerente As String
+    Public Property gerente() As String
+        Get
+            Return _gerente
+        End Get
+        Set(ByVal value As String)
+            _gerente = value
+        End Set
+    End Property
 
     Private _mes As String
     Public Property mes() As String
@@ -129,8 +138,7 @@ Public Class clsAcessoria
             _GRF = value
         End Set
     End Property
-    ' IdAssessoria,contato,empresa,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,
-    ' GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
+   
     Private _IRRF As Boolean
     Public Property IRRF() As Boolean
         Get
@@ -138,6 +146,37 @@ Public Class clsAcessoria
         End Get
         Set(ByVal value As Boolean)
             _IRRF = value
+        End Set
+    End Property
+
+    Private _DARF As Boolean
+    Public Property DARF() As Boolean
+        Get
+            Return _DARF
+        End Get
+        Set(ByVal value As Boolean)
+            _DARF = value
+        End Set
+    End Property
+
+
+    Private _GRRF As Boolean
+    Public Property GRRF() As Boolean
+        Get
+            Return _GRRF
+        End Get
+        Set(ByVal value As Boolean)
+            _GRRF = value
+        End Set
+    End Property
+
+    Private _DEFIS As Boolean
+    Public Property DEFIS() As Boolean
+        Get
+            Return _DEFIS
+        End Get
+        Set(ByVal value As Boolean)
+            _DEFIS = value
         End Set
     End Property
 
@@ -256,24 +295,28 @@ Public Class clsAcessoria
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
-                Dim sql As String = "INSERT INTO tbAssessoria(empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+                Dim sql As String = "INSERT INTO tbAssessoria(empresa,gerente,responsavel,telefone,mes,ano,PROLABORE,SALARIO13,FOLHA,DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empresa", _empresa))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@contato", _contato))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@gerente", _gerente))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@responsavel", _responsavel))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@telefone", _telefone))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@mes", _mes))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@ano", _ano))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@PROLABORE", _PROLABORE))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@SALARIO13", _salario13))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@FOLHA", _FOLHA))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DARF", _DARF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@GRRF", _GRRF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@SEFIP", _SEFIP))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@GPS", _GPS))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@GRF", _GRF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@IRRF", _IRRF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@DAS", _DAS))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@DASZERO", _DASZERO))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@DASN", _DASN))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DEFIS", _DEFIS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@IRRF", _IRRF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@DCTF", _DCTF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@RAIS", _RAIS))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@RAISNEGATIVA", _RAISNEGATIVA))
@@ -303,25 +346,28 @@ Public Class clsAcessoria
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
-                ' IdAssessoria,empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
-                Dim sql As String = "UPDATE tbAssessoria SET empresa=?,contato=?,responsavel=?,mes=?,ano=?,PROLABORE=?,SALARIO13=?,FOLHA=?,SEFIP=?,GPS=?,GRF=?,IRRF=?,DAS=?,DASZERO=?,DASN=?,DCTF=?,RAIS=?,RAISNEGATIVA=?,ECF=?,EFD=?,GIA=?,CAGED=?,obs=? WHERE IdAssessoria =" & CInt(IdAssessoria)
+                Dim sql As String = "UPDATE tbAssessoria SET empresa=?,gerente=?,responsavel=?,telefone=?,mes=?,ano=?,PROLABORE=?,SALARIO13=?,FOLHA=?,DARF=?,GRRF=?,SEFIP=?,GPS=?,GRF=?,DAS=?,DASZERO=?,DASN=?,DEFIS=?,IRRF=?,DCTF=?,RAIS=?,RAISNEGATIVA=?,ECF=?,EFD=?,GIA=?,CAGED=?,obs=? WHERE IdAssessoria =" & CInt(IdAssessoria)
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empresa", _empresa))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@contato", _contato))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@gerente", _gerente))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@responsavel", _responsavel))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@telefone", _telefone))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@mes", _mes))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@ano", _ano))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@PROLABORE", _PROLABORE))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@SALARIO13", _salario13))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@FOLHA", _FOLHA))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DARF", _DARF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@GRRF", _GRRF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@SEFIP", _SEFIP))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@GPS", _GPS))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@GRF", _GRF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@IRRF", _IRRF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@DAS", _DAS))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@DASZERO", _DASZERO))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@DASN", _DASN))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@DEFIS", _DEFIS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@IRRF", _IRRF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@DCTF", _DCTF))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@RAIS", _RAIS))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@RAISNEGATIVA", _RAISNEGATIVA))
@@ -344,14 +390,14 @@ Public Class clsAcessoria
         End Using
     End Sub
 
-    ' IdAssessoria,empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
+    ' IdAssessoria,empresa,gerente,responsavel,telefone,mes,ano,PROLABORE,SALARIO13,FOLHA,DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
     'lista DADOS 
 
     'Public Function Listar(ByVal strEmpresa As String, ByVal strMes As String, ByVal strAno As Integer) As DataSet
     Public Function Listar(ByVal strEmpresa As String, ByVal strMes As String, ByVal strAno As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder
-        strQuery.Append(" SELECT IdAssessoria as Codigo,empresa as Empresa,contato as Contato,responsavel as Responsavel,mes as Mes,ano as Ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs ")
+        strQuery.Append(" SELECT IdAssessoria as Codigo,empresa as Empresa,gerente as Gerente,responsavel as Responsavel,telefone as Telefone,mes as Mes,ano as Ano,PROLABORE,SALARIO13,FOLHA,DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs ")
         strQuery.Append(" FROM tbAssessoria ")
         If Not strEmpresa.Equals(String.Empty) Then
             strQuery.Append(" WHERE mes like '%" & strMes & "%'")
@@ -362,8 +408,35 @@ Public Class clsAcessoria
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
 
-
-
-
-
 End Class
+
+' IdAssessoria,empresa,gerente,responsavel,telefone,mes,ano,PROLABORE,SALARIO13,FOLHA,DARF,GRRF,SEFIP,GPS,
+' GRF,IRRF,DAS,DASZERO,DASN,DEFIS,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
+' IdAssessoria,
+'    empresa,
+'gerente,
+'    responsavel,
+'telefone
+'    mes,
+'    ano,
+'    PROLABORE,
+'    SALARIO13,
+'    FOLHA,
+'    DARF,
+'    GRRF,
+'    SEFIP,
+'    GPS,
+' GRF,
+'IRRF,
+'    DAS,
+'    DASZERO,
+'    DASN,
+'    DEFIS,
+'    DCTF,
+'    RAIS,
+'    RAISNEGATIVA,
+'    ECF,
+'    EFD
+',GIA,
+'    CAGED,
+'    obs

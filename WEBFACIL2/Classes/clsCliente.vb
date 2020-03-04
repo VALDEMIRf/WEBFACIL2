@@ -721,7 +721,6 @@ Public Class clsCliente
 
     Public Function LeInformacoesCliente(ByVal strDescricao As String) As DataSet
         Dim dr As OleDbDataReader = Nothing
-        Dim cli As String
         Dim strQuery As New StringBuilder
         strQuery.Append(" SELECT cli_id,cli_CPF,cli_Nome ")
         strQuery.Append(" FROM tbClientes ")

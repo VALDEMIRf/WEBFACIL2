@@ -29,10 +29,10 @@ Partial Class frmAcessoriaConsulta
         Me.txtAno = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPesquisarCliente = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btFechar = New System.Windows.Forms.Button()
         Me.btEnviarDados = New System.Windows.Forms.Button()
         Me.btPesquisarCliente = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvGridAssessoria = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvGridAssessoria, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,16 +99,6 @@ Partial Class frmAcessoriaConsulta
         Me.txtPesquisarCliente.Size = New System.Drawing.Size(291, 20)
         Me.txtPesquisarCliente.TabIndex = 2
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(11, 43)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cliente:"
-        '
         'btFechar
         '
         Me.btFechar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -131,7 +121,7 @@ Partial Class frmAcessoriaConsulta
         Me.btEnviarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEnviarDados.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btEnviarDados.Image = CType(resources.GetObject("btEnviarDados.Image"), System.Drawing.Image)
-        Me.btEnviarDados.Location = New System.Drawing.Point(480, 33)
+        Me.btEnviarDados.Location = New System.Drawing.Point(488, 33)
         Me.btEnviarDados.Name = "btEnviarDados"
         Me.btEnviarDados.Size = New System.Drawing.Size(114, 47)
         Me.btEnviarDados.TabIndex = 5
@@ -146,13 +136,23 @@ Partial Class frmAcessoriaConsulta
         Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisarCliente.Font = New System.Drawing.Font("Arial Narrow", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
-        Me.btPesquisarCliente.Location = New System.Drawing.Point(356, 36)
+        Me.btPesquisarCliente.Location = New System.Drawing.Point(365, 36)
         Me.btPesquisarCliente.Name = "btPesquisarCliente"
         Me.btPesquisarCliente.Size = New System.Drawing.Size(117, 38)
         Me.btPesquisarCliente.TabIndex = 4
         Me.btPesquisarCliente.Text = "Pesquisar"
         Me.btPesquisarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btPesquisarCliente.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(11, 43)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(57, 17)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Cliente:"
         '
         'dgvGridAssessoria
         '

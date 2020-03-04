@@ -26,17 +26,21 @@ Partial Class frmCadAcessoria
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtEmpresa = New System.Windows.Forms.TextBox()
-        Me.txtContato = New System.Windows.Forms.TextBox()
+        Me.txtGerente = New System.Windows.Forms.TextBox()
         Me.txtAno = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtMes = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.chbProlabore = New System.Windows.Forms.CheckBox()
         Me.gbEmpresa = New System.Windows.Forms.GroupBox()
+        Me.txtTelefone = New System.Windows.Forms.MaskedTextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtResponsavel = New System.Windows.Forms.TextBox()
         Me.btnPesquisar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chbGRRF = New System.Windows.Forms.CheckBox()
+        Me.chbDARF = New System.Windows.Forms.CheckBox()
         Me.chbGRF = New System.Windows.Forms.CheckBox()
         Me.chbGPS = New System.Windows.Forms.CheckBox()
         Me.chbSefip = New System.Windows.Forms.CheckBox()
@@ -44,19 +48,19 @@ Partial Class frmCadAcessoria
         Me.chbFolha = New System.Windows.Forms.CheckBox()
         Me.txt13salario = New System.Windows.Forms.TextBox()
         Me.GBsIMPLES = New System.Windows.Forms.GroupBox()
+        Me.chbDEFIS = New System.Windows.Forms.CheckBox()
         Me.chbDASZERO = New System.Windows.Forms.CheckBox()
         Me.chbDASN = New System.Windows.Forms.CheckBox()
         Me.chbDAS = New System.Windows.Forms.CheckBox()
         Me.gbDeclaracoes = New System.Windows.Forms.GroupBox()
+        Me.chbCAGED = New System.Windows.Forms.CheckBox()
         Me.chbRAISNEGATIVA = New System.Windows.Forms.CheckBox()
+        Me.chbGIA = New System.Windows.Forms.CheckBox()
         Me.chbRAIS = New System.Windows.Forms.CheckBox()
+        Me.chbEFD = New System.Windows.Forms.CheckBox()
+        Me.chbECF = New System.Windows.Forms.CheckBox()
         Me.chbDCTF = New System.Windows.Forms.CheckBox()
         Me.chbIRRF = New System.Windows.Forms.CheckBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.chbCAGED = New System.Windows.Forms.CheckBox()
-        Me.chbGIA = New System.Windows.Forms.CheckBox()
-        Me.chbECF = New System.Windows.Forms.CheckBox()
-        Me.chbEFD = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtObs = New System.Windows.Forms.TextBox()
         Me.btSalvar = New System.Windows.Forms.Button()
@@ -71,7 +75,6 @@ Partial Class frmCadAcessoria
         Me.GroupBox1.SuspendLayout()
         Me.GBsIMPLES.SuspendLayout()
         Me.gbDeclaracoes.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -87,7 +90,7 @@ Partial Class frmCadAcessoria
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 78)
+        Me.Label3.Location = New System.Drawing.Point(191, 78)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(73, 16)
         Me.Label3.TabIndex = 2
@@ -100,12 +103,12 @@ Partial Class frmCadAcessoria
         Me.txtEmpresa.Size = New System.Drawing.Size(274, 22)
         Me.txtEmpresa.TabIndex = 3
         '
-        'txtContato
+        'txtGerente
         '
-        Me.txtContato.Location = New System.Drawing.Point(270, 78)
-        Me.txtContato.Name = "txtContato"
-        Me.txtContato.Size = New System.Drawing.Size(123, 22)
-        Me.txtContato.TabIndex = 5
+        Me.txtGerente.Location = New System.Drawing.Point(58, 76)
+        Me.txtGerente.Name = "txtGerente"
+        Me.txtGerente.Size = New System.Drawing.Size(123, 22)
+        Me.txtGerente.TabIndex = 5
         '
         'txtAno
         '
@@ -151,12 +154,14 @@ Partial Class frmCadAcessoria
         '
         'gbEmpresa
         '
+        Me.gbEmpresa.Controls.Add(Me.txtTelefone)
+        Me.gbEmpresa.Controls.Add(Me.Label8)
         Me.gbEmpresa.Controls.Add(Me.txtEmpresa)
         Me.gbEmpresa.Controls.Add(Me.Label6)
         Me.gbEmpresa.Controls.Add(Me.txtMes)
-        Me.gbEmpresa.Controls.Add(Me.txtContato)
         Me.gbEmpresa.Controls.Add(Me.Label2)
         Me.gbEmpresa.Controls.Add(Me.Label5)
+        Me.gbEmpresa.Controls.Add(Me.txtGerente)
         Me.gbEmpresa.Controls.Add(Me.txtAno)
         Me.gbEmpresa.Controls.Add(Me.txtResponsavel)
         Me.gbEmpresa.Controls.Add(Me.Label4)
@@ -169,18 +174,35 @@ Partial Class frmCadAcessoria
         Me.gbEmpresa.TabStop = False
         Me.gbEmpresa.Text = "Dados da Empresa"
         '
+        'txtTelefone
+        '
+        Me.txtTelefone.Location = New System.Drawing.Point(435, 76)
+        Me.txtTelefone.Mask = "(99) 0 0000-0000"
+        Me.txtTelefone.Name = "txtTelefone"
+        Me.txtTelefone.Size = New System.Drawing.Size(95, 22)
+        Me.txtTelefone.TabIndex = 14
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(400, 78)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(29, 16)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "Tel.:"
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(217, 80)
+        Me.Label6.Location = New System.Drawing.Point(5, 78)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(47, 16)
+        Me.Label6.Size = New System.Drawing.Size(49, 16)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Contato:"
+        Me.Label6.Text = "Gerente:"
         '
         'txtResponsavel
         '
-        Me.txtResponsavel.Location = New System.Drawing.Point(88, 75)
+        Me.txtResponsavel.Location = New System.Drawing.Point(270, 76)
         Me.txtResponsavel.Name = "txtResponsavel"
         Me.txtResponsavel.Size = New System.Drawing.Size(123, 22)
         Me.txtResponsavel.TabIndex = 5
@@ -199,6 +221,8 @@ Partial Class frmCadAcessoria
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chbGRRF)
+        Me.GroupBox1.Controls.Add(Me.chbDARF)
         Me.GroupBox1.Controls.Add(Me.chbGRF)
         Me.GroupBox1.Controls.Add(Me.chbGPS)
         Me.GroupBox1.Controls.Add(Me.chbSefip)
@@ -208,15 +232,35 @@ Partial Class frmCadAcessoria
         Me.GroupBox1.Controls.Add(Me.chbProlabore)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 153)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(307, 104)
+        Me.GroupBox1.Size = New System.Drawing.Size(393, 104)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Folha de Pagamento"
         '
+        'chbGRRF
+        '
+        Me.chbGRRF.AutoSize = True
+        Me.chbGRRF.Location = New System.Drawing.Point(130, 70)
+        Me.chbGRRF.Name = "chbGRRF"
+        Me.chbGRRF.Size = New System.Drawing.Size(58, 20)
+        Me.chbGRRF.TabIndex = 18
+        Me.chbGRRF.Text = "GRRF"
+        Me.chbGRRF.UseVisualStyleBackColor = True
+        '
+        'chbDARF
+        '
+        Me.chbDARF.AutoSize = True
+        Me.chbDARF.Location = New System.Drawing.Point(71, 70)
+        Me.chbDARF.Name = "chbDARF"
+        Me.chbDARF.Size = New System.Drawing.Size(57, 20)
+        Me.chbDARF.TabIndex = 17
+        Me.chbDARF.Text = "DARF"
+        Me.chbDARF.UseVisualStyleBackColor = True
+        '
         'chbGRF
         '
         Me.chbGRF.AutoSize = True
-        Me.chbGRF.Location = New System.Drawing.Point(184, 70)
+        Me.chbGRF.Location = New System.Drawing.Point(325, 70)
         Me.chbGRF.Name = "chbGRF"
         Me.chbGRF.Size = New System.Drawing.Size(50, 20)
         Me.chbGRF.TabIndex = 16
@@ -226,7 +270,7 @@ Partial Class frmCadAcessoria
         'chbGPS
         '
         Me.chbGPS.AutoSize = True
-        Me.chbGPS.Location = New System.Drawing.Point(129, 70)
+        Me.chbGPS.Location = New System.Drawing.Point(270, 70)
         Me.chbGPS.Name = "chbGPS"
         Me.chbGPS.Size = New System.Drawing.Size(49, 20)
         Me.chbGPS.TabIndex = 15
@@ -236,7 +280,7 @@ Partial Class frmCadAcessoria
         'chbSefip
         '
         Me.chbSefip.AutoSize = True
-        Me.chbSefip.Location = New System.Drawing.Point(73, 70)
+        Me.chbSefip.Location = New System.Drawing.Point(203, 70)
         Me.chbSefip.Name = "chbSefip"
         Me.chbSefip.Size = New System.Drawing.Size(50, 20)
         Me.chbSefip.TabIndex = 14
@@ -266,25 +310,36 @@ Partial Class frmCadAcessoria
         '
         Me.txt13salario.Location = New System.Drawing.Point(173, 28)
         Me.txt13salario.Name = "txt13salario"
-        Me.txt13salario.Size = New System.Drawing.Size(123, 22)
+        Me.txt13salario.Size = New System.Drawing.Size(146, 22)
         Me.txt13salario.TabIndex = 13
         '
         'GBsIMPLES
         '
+        Me.GBsIMPLES.Controls.Add(Me.chbDEFIS)
         Me.GBsIMPLES.Controls.Add(Me.chbDASZERO)
         Me.GBsIMPLES.Controls.Add(Me.chbDASN)
         Me.GBsIMPLES.Controls.Add(Me.chbDAS)
-        Me.GBsIMPLES.Location = New System.Drawing.Point(325, 153)
+        Me.GBsIMPLES.Location = New System.Drawing.Point(411, 153)
         Me.GBsIMPLES.Name = "GBsIMPLES"
-        Me.GBsIMPLES.Size = New System.Drawing.Size(284, 104)
+        Me.GBsIMPLES.Size = New System.Drawing.Size(198, 104)
         Me.GBsIMPLES.TabIndex = 15
         Me.GBsIMPLES.TabStop = False
         Me.GBsIMPLES.Text = "Simples"
         '
+        'chbDEFIS
+        '
+        Me.chbDEFIS.AutoSize = True
+        Me.chbDEFIS.Location = New System.Drawing.Point(112, 70)
+        Me.chbDEFIS.Name = "chbDEFIS"
+        Me.chbDEFIS.Size = New System.Drawing.Size(59, 20)
+        Me.chbDEFIS.TabIndex = 20
+        Me.chbDEFIS.Text = "DEFIS"
+        Me.chbDEFIS.UseVisualStyleBackColor = True
+        '
         'chbDASZERO
         '
         Me.chbDASZERO.AutoSize = True
-        Me.chbDASZERO.Location = New System.Drawing.Point(80, 30)
+        Me.chbDASZERO.Location = New System.Drawing.Point(4, 70)
         Me.chbDASZERO.Name = "chbDASZERO"
         Me.chbDASZERO.Size = New System.Drawing.Size(97, 20)
         Me.chbDASZERO.TabIndex = 19
@@ -294,7 +349,7 @@ Partial Class frmCadAcessoria
         'chbDASN
         '
         Me.chbDASN.AutoSize = True
-        Me.chbDASN.Location = New System.Drawing.Point(198, 30)
+        Me.chbDASN.Location = New System.Drawing.Point(112, 30)
         Me.chbDASN.Name = "chbDASN"
         Me.chbDASN.Size = New System.Drawing.Size(57, 20)
         Me.chbDASN.TabIndex = 18
@@ -304,7 +359,7 @@ Partial Class frmCadAcessoria
         'chbDAS
         '
         Me.chbDAS.AutoSize = True
-        Me.chbDAS.Location = New System.Drawing.Point(10, 30)
+        Me.chbDAS.Location = New System.Drawing.Point(6, 26)
         Me.chbDAS.Name = "chbDAS"
         Me.chbDAS.Size = New System.Drawing.Size(49, 20)
         Me.chbDAS.TabIndex = 17
@@ -313,16 +368,30 @@ Partial Class frmCadAcessoria
         '
         'gbDeclaracoes
         '
+        Me.gbDeclaracoes.Controls.Add(Me.chbCAGED)
         Me.gbDeclaracoes.Controls.Add(Me.chbRAISNEGATIVA)
+        Me.gbDeclaracoes.Controls.Add(Me.chbGIA)
         Me.gbDeclaracoes.Controls.Add(Me.chbRAIS)
+        Me.gbDeclaracoes.Controls.Add(Me.chbEFD)
+        Me.gbDeclaracoes.Controls.Add(Me.chbECF)
         Me.gbDeclaracoes.Controls.Add(Me.chbDCTF)
         Me.gbDeclaracoes.Controls.Add(Me.chbIRRF)
         Me.gbDeclaracoes.Location = New System.Drawing.Point(12, 270)
         Me.gbDeclaracoes.Name = "gbDeclaracoes"
-        Me.gbDeclaracoes.Size = New System.Drawing.Size(307, 67)
+        Me.gbDeclaracoes.Size = New System.Drawing.Size(597, 67)
         Me.gbDeclaracoes.TabIndex = 16
         Me.gbDeclaracoes.TabStop = False
         Me.gbDeclaracoes.Text = "Declarações"
+        '
+        'chbCAGED
+        '
+        Me.chbCAGED.AutoSize = True
+        Me.chbCAGED.Location = New System.Drawing.Point(503, 32)
+        Me.chbCAGED.Name = "chbCAGED"
+        Me.chbCAGED.Size = New System.Drawing.Size(65, 20)
+        Me.chbCAGED.TabIndex = 20
+        Me.chbCAGED.Text = "CAGED"
+        Me.chbCAGED.UseVisualStyleBackColor = True
         '
         'chbRAISNEGATIVA
         '
@@ -334,6 +403,16 @@ Partial Class frmCadAcessoria
         Me.chbRAISNEGATIVA.Text = "RAIS NEGATIVA"
         Me.chbRAISNEGATIVA.UseVisualStyleBackColor = True
         '
+        'chbGIA
+        '
+        Me.chbGIA.AutoSize = True
+        Me.chbGIA.Location = New System.Drawing.Point(423, 32)
+        Me.chbGIA.Name = "chbGIA"
+        Me.chbGIA.Size = New System.Drawing.Size(45, 20)
+        Me.chbGIA.TabIndex = 19
+        Me.chbGIA.Text = "GIA"
+        Me.chbGIA.UseVisualStyleBackColor = True
+        '
         'chbRAIS
         '
         Me.chbRAIS.AutoSize = True
@@ -343,6 +422,26 @@ Partial Class frmCadAcessoria
         Me.chbRAIS.TabIndex = 19
         Me.chbRAIS.Text = "RAIS"
         Me.chbRAIS.UseVisualStyleBackColor = True
+        '
+        'chbEFD
+        '
+        Me.chbEFD.AutoSize = True
+        Me.chbEFD.Location = New System.Drawing.Point(368, 32)
+        Me.chbEFD.Name = "chbEFD"
+        Me.chbEFD.Size = New System.Drawing.Size(49, 20)
+        Me.chbEFD.TabIndex = 18
+        Me.chbEFD.Text = "EFD"
+        Me.chbEFD.UseVisualStyleBackColor = True
+        '
+        'chbECF
+        '
+        Me.chbECF.AutoSize = True
+        Me.chbECF.Location = New System.Drawing.Point(307, 32)
+        Me.chbECF.Name = "chbECF"
+        Me.chbECF.Size = New System.Drawing.Size(49, 20)
+        Me.chbECF.TabIndex = 17
+        Me.chbECF.Text = "ECF"
+        Me.chbECF.UseVisualStyleBackColor = True
         '
         'chbDCTF
         '
@@ -363,59 +462,6 @@ Partial Class frmCadAcessoria
         Me.chbIRRF.TabIndex = 17
         Me.chbIRRF.Text = "IRRF"
         Me.chbIRRF.UseVisualStyleBackColor = True
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.chbCAGED)
-        Me.GroupBox2.Controls.Add(Me.chbGIA)
-        Me.GroupBox2.Controls.Add(Me.chbECF)
-        Me.GroupBox2.Controls.Add(Me.chbEFD)
-        Me.GroupBox2.Location = New System.Drawing.Point(337, 271)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(272, 67)
-        Me.GroupBox2.TabIndex = 17
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Outros"
-        '
-        'chbCAGED
-        '
-        Me.chbCAGED.AutoSize = True
-        Me.chbCAGED.Location = New System.Drawing.Point(188, 32)
-        Me.chbCAGED.Name = "chbCAGED"
-        Me.chbCAGED.Size = New System.Drawing.Size(65, 20)
-        Me.chbCAGED.TabIndex = 20
-        Me.chbCAGED.Text = "CAGED"
-        Me.chbCAGED.UseVisualStyleBackColor = True
-        '
-        'chbGIA
-        '
-        Me.chbGIA.AutoSize = True
-        Me.chbGIA.Location = New System.Drawing.Point(133, 32)
-        Me.chbGIA.Name = "chbGIA"
-        Me.chbGIA.Size = New System.Drawing.Size(45, 20)
-        Me.chbGIA.TabIndex = 19
-        Me.chbGIA.Text = "GIA"
-        Me.chbGIA.UseVisualStyleBackColor = True
-        '
-        'chbECF
-        '
-        Me.chbECF.AutoSize = True
-        Me.chbECF.Location = New System.Drawing.Point(16, 32)
-        Me.chbECF.Name = "chbECF"
-        Me.chbECF.Size = New System.Drawing.Size(49, 20)
-        Me.chbECF.TabIndex = 17
-        Me.chbECF.Text = "ECF"
-        Me.chbECF.UseVisualStyleBackColor = True
-        '
-        'chbEFD
-        '
-        Me.chbEFD.AutoSize = True
-        Me.chbEFD.Location = New System.Drawing.Point(77, 32)
-        Me.chbEFD.Name = "chbEFD"
-        Me.chbEFD.Size = New System.Drawing.Size(49, 20)
-        Me.chbEFD.TabIndex = 18
-        Me.chbEFD.Text = "EFD"
-        Me.chbEFD.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -513,7 +559,6 @@ Partial Class frmCadAcessoria
         Me.Controls.Add(Me.btAlterar)
         Me.Controls.Add(Me.btSalvar)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.txtObs)
         Me.Controls.Add(Me.gbDeclaracoes)
         Me.Controls.Add(Me.GBsIMPLES)
@@ -533,8 +578,6 @@ Partial Class frmCadAcessoria
         Me.GBsIMPLES.PerformLayout()
         Me.gbDeclaracoes.ResumeLayout(False)
         Me.gbDeclaracoes.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -543,7 +586,7 @@ Partial Class frmCadAcessoria
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtEmpresa As System.Windows.Forms.TextBox
-    Friend WithEvents txtContato As System.Windows.Forms.TextBox
+    Friend WithEvents txtGerente As System.Windows.Forms.TextBox
     Friend WithEvents btnPesquisar As System.Windows.Forms.Button
     Friend WithEvents txtAno As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -569,7 +612,6 @@ Partial Class frmCadAcessoria
     Friend WithEvents chbRAIS As System.Windows.Forms.CheckBox
     Friend WithEvents chbDCTF As System.Windows.Forms.CheckBox
     Friend WithEvents chbIRRF As System.Windows.Forms.CheckBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents chbCAGED As System.Windows.Forms.CheckBox
     Friend WithEvents chbGIA As System.Windows.Forms.CheckBox
     Friend WithEvents chbECF As System.Windows.Forms.CheckBox
@@ -584,4 +626,9 @@ Partial Class frmCadAcessoria
     Friend WithEvents btRegistroAnterior As System.Windows.Forms.Button
     Friend WithEvents btProximoRegistro As System.Windows.Forms.Button
     Friend WithEvents btSair As System.Windows.Forms.Button
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txtTelefone As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents chbGRRF As System.Windows.Forms.CheckBox
+    Friend WithEvents chbDARF As System.Windows.Forms.CheckBox
+    Friend WithEvents chbDEFIS As System.Windows.Forms.CheckBox
 End Class

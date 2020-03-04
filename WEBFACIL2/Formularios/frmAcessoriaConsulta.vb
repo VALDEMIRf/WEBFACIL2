@@ -38,14 +38,14 @@ Public Class frmAcessoriaConsulta
         End Set
     End Property
 
-    Private _contato As String
+    Private _telefone As String
 
-    Public Property contato() As String
+    Public Property telefone() As String
         Get
-            Return _contato
+            Return _telefone
         End Get
         Set(ByVal value As String)
-            _contato = value
+            _telefone = value
         End Set
     End Property
 
@@ -69,6 +69,15 @@ Public Class frmAcessoriaConsulta
         End Set
     End Property
 
+    Private _gerente As String
+    Public Property gerente() As String
+        Get
+            Return _gerente
+        End Get
+        Set(ByVal value As String)
+            _gerente = value
+        End Set
+    End Property
 
     Private _mes As String
     Public Property mes() As String
@@ -150,8 +159,7 @@ Public Class frmAcessoriaConsulta
             _GRF = value
         End Set
     End Property
-    ' IdAssessoria,contato,empresa,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,
-    ' GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
+
     Private _IRRF As Boolean
     Public Property IRRF() As Boolean
         Get
@@ -159,6 +167,37 @@ Public Class frmAcessoriaConsulta
         End Get
         Set(ByVal value As Boolean)
             _IRRF = value
+        End Set
+    End Property
+
+    Private _DARF As Boolean
+    Public Property DARF() As Boolean
+        Get
+            Return _DARF
+        End Get
+        Set(ByVal value As Boolean)
+            _DARF = value
+        End Set
+    End Property
+
+
+    Private _GRRF As Boolean
+    Public Property GRRF() As Boolean
+        Get
+            Return _GRRF
+        End Get
+        Set(ByVal value As Boolean)
+            _GRRF = value
+        End Set
+    End Property
+
+    Private _DEFIS As Boolean
+    Public Property DEFIS() As Boolean
+        Get
+            Return _DEFIS
+        End Get
+        Set(ByVal value As Boolean)
+            _DEFIS = value
         End Set
     End Property
 
@@ -305,30 +344,37 @@ Public Class frmAcessoriaConsulta
         Select Case _ConsultaTipo
             Case TipoConsulta.Assessoria
                 If dgvGridAssessoria.RowCount <> 0 Then
+                    ' IdAssessoria,empresa,gerente,responsavel,telefone,mes,ano,PROLABORE,SALARIO13,FOLHA,
+                    'DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,
+                    'GIA, CAGED, obs
                     _IdAssessoria = dgvGridAssessoria.CurrentRow.Cells(0).Value
                     _empresa = dgvGridAssessoria.CurrentRow.Cells(1).Value
-                    _contato = dgvGridAssessoria.CurrentRow.Cells(2).Value
+                    _gerente = dgvGridAssessoria.CurrentRow.Cells(2).Value
                     _responsavel = dgvGridAssessoria.CurrentRow.Cells(3).Value
-                    _mes = dgvGridAssessoria.CurrentRow.Cells(4).Value
-                    _ano = dgvGridAssessoria.CurrentRow.Cells(5).Value
-                    _PROLABORE = dgvGridAssessoria.CurrentRow.Cells(6).Value
-                    _salario13 = dgvGridAssessoria.CurrentRow.Cells(7).Value.ToString
-                    _FOLHA = dgvGridAssessoria.CurrentRow.Cells(8).Value
-                    _SEFIP = dgvGridAssessoria.CurrentRow.Cells(9).Value
-                    _GPS = dgvGridAssessoria.CurrentRow.Cells(10).Value
-                    _GRF = dgvGridAssessoria.CurrentRow.Cells(11).Value
-                    _IRRF = dgvGridAssessoria.CurrentRow.Cells(12).Value
-                    _DAS = dgvGridAssessoria.CurrentRow.Cells(13).Value
-                    _DASZERO = dgvGridAssessoria.CurrentRow.Cells(14).Value
-                    _DASN = dgvGridAssessoria.CurrentRow.Cells(15).Value
-                    _DCTF = dgvGridAssessoria.CurrentRow.Cells(16).Value
-                    _RAIS = dgvGridAssessoria.CurrentRow.Cells(17).Value
-                    _RAISNEGATIVA = dgvGridAssessoria.CurrentRow.Cells(18).Value
-                    _ECF = dgvGridAssessoria.CurrentRow.Cells(19).Value
-                    _EFD = dgvGridAssessoria.CurrentRow.Cells(20).Value
-                    _GIA = dgvGridAssessoria.CurrentRow.Cells(21).Value
-                    _CAGED = dgvGridAssessoria.CurrentRow.Cells(22).Value
-                    _obs = dgvGridAssessoria.CurrentRow.Cells(23).Value
+                    _telefone = dgvGridAssessoria.CurrentRow.Cells(4).Value
+                    _mes = dgvGridAssessoria.CurrentRow.Cells(5).Value
+                    _ano = dgvGridAssessoria.CurrentRow.Cells(6).Value
+                    _PROLABORE = dgvGridAssessoria.CurrentRow.Cells(7).Value
+                    _salario13 = dgvGridAssessoria.CurrentRow.Cells(8).Value.ToString
+                    _FOLHA = dgvGridAssessoria.CurrentRow.Cells(9).Value
+                    _DARF = dgvGridAssessoria.CurrentRow.Cells(10).Value
+                    _GRRF = dgvGridAssessoria.CurrentRow.Cells(11).Value
+                    _SEFIP = dgvGridAssessoria.CurrentRow.Cells(12).Value
+                    _GPS = dgvGridAssessoria.CurrentRow.Cells(13).Value
+                    _GRF = dgvGridAssessoria.CurrentRow.Cells(14).Value
+                    _DAS = dgvGridAssessoria.CurrentRow.Cells(15).Value
+                    _DASZERO = dgvGridAssessoria.CurrentRow.Cells(16).Value
+                    _DASN = dgvGridAssessoria.CurrentRow.Cells(17).Value
+                    _DEFIS = dgvGridAssessoria.CurrentRow.Cells(18).Value
+                    _IRRF = dgvGridAssessoria.CurrentRow.Cells(19).Value
+                    _DCTF = dgvGridAssessoria.CurrentRow.Cells(20).Value
+                    _RAIS = dgvGridAssessoria.CurrentRow.Cells(21).Value
+                    _RAISNEGATIVA = dgvGridAssessoria.CurrentRow.Cells(22).Value
+                    _ECF = dgvGridAssessoria.CurrentRow.Cells(23).Value
+                    _EFD = dgvGridAssessoria.CurrentRow.Cells(24).Value
+                    _GIA = dgvGridAssessoria.CurrentRow.Cells(25).Value
+                    _CAGED = dgvGridAssessoria.CurrentRow.Cells(26).Value
+                    _obs = dgvGridAssessoria.CurrentRow.Cells(27).Value.ToString
 
                     Me.Close()
                 End If
@@ -339,30 +385,37 @@ Public Class frmAcessoriaConsulta
         Select Case _ConsultaTipo
             Case TipoConsulta.Assessoria
                 If dgvGridAssessoria.RowCount <> 0 Then
+                    ' IdAssessoria,empresa,gerente,responsavel,telefone,mes,ano,PROLABORE,SALARIO13,FOLHA,
+                    'DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,
+                    'GIA, CAGED, obs
                     _IdAssessoria = dgvGridAssessoria.CurrentRow.Cells(0).Value
                     _empresa = dgvGridAssessoria.CurrentRow.Cells(1).Value
-                    _contato = dgvGridAssessoria.CurrentRow.Cells(2).Value
+                    _gerente = dgvGridAssessoria.CurrentRow.Cells(2).Value
                     _responsavel = dgvGridAssessoria.CurrentRow.Cells(3).Value
-                    _mes = dgvGridAssessoria.CurrentRow.Cells(4).Value
-                    _ano = dgvGridAssessoria.CurrentRow.Cells(5).Value
-                    _PROLABORE = dgvGridAssessoria.CurrentRow.Cells(6).Value
-                    _salario13 = dgvGridAssessoria.CurrentRow.Cells(7).Value
-                    _FOLHA = dgvGridAssessoria.CurrentRow.Cells(8).Value
-                    _SEFIP = dgvGridAssessoria.CurrentRow.Cells(9).Value
-                    _GPS = dgvGridAssessoria.CurrentRow.Cells(10).Value
-                    _GRF = dgvGridAssessoria.CurrentRow.Cells(11).Value
-                    _IRRF = dgvGridAssessoria.CurrentRow.Cells(12).Value
-                    _DAS = dgvGridAssessoria.CurrentRow.Cells(13).Value
-                    _DASZERO = dgvGridAssessoria.CurrentRow.Cells(14).Value
-                    _DASN = dgvGridAssessoria.CurrentRow.Cells(15).Value
-                    _DCTF = dgvGridAssessoria.CurrentRow.Cells(16).Value
-                    _RAIS = dgvGridAssessoria.CurrentRow.Cells(17).Value
-                    _RAISNEGATIVA = dgvGridAssessoria.CurrentRow.Cells(18).Value
-                    _ECF = dgvGridAssessoria.CurrentRow.Cells(19).Value
-                    _EFD = dgvGridAssessoria.CurrentRow.Cells(20).Value
-                    _GIA = dgvGridAssessoria.CurrentRow.Cells(21).Value
-                    _CAGED = dgvGridAssessoria.CurrentRow.Cells(22).Value
-                    _obs = dgvGridAssessoria.CurrentRow.Cells(23).Value
+                    _telefone = dgvGridAssessoria.CurrentRow.Cells(4).Value
+                    _mes = dgvGridAssessoria.CurrentRow.Cells(5).Value
+                    _ano = dgvGridAssessoria.CurrentRow.Cells(6).Value
+                    _PROLABORE = dgvGridAssessoria.CurrentRow.Cells(7).Value
+                    _salario13 = dgvGridAssessoria.CurrentRow.Cells(8).Value.ToString
+                    _FOLHA = dgvGridAssessoria.CurrentRow.Cells(9).Value
+                    _DARF = dgvGridAssessoria.CurrentRow.Cells(10).Value
+                    _GRRF = dgvGridAssessoria.CurrentRow.Cells(11).Value
+                    _SEFIP = dgvGridAssessoria.CurrentRow.Cells(12).Value
+                    _GPS = dgvGridAssessoria.CurrentRow.Cells(13).Value
+                    _GRF = dgvGridAssessoria.CurrentRow.Cells(14).Value
+                    _DAS = dgvGridAssessoria.CurrentRow.Cells(15).Value
+                    _DASZERO = dgvGridAssessoria.CurrentRow.Cells(16).Value
+                    _DASN = dgvGridAssessoria.CurrentRow.Cells(17).Value
+                    _DEFIS = dgvGridAssessoria.CurrentRow.Cells(18).Value
+                    _IRRF = dgvGridAssessoria.CurrentRow.Cells(19).Value
+                    _DCTF = dgvGridAssessoria.CurrentRow.Cells(20).Value
+                    _RAIS = dgvGridAssessoria.CurrentRow.Cells(21).Value
+                    _RAISNEGATIVA = dgvGridAssessoria.CurrentRow.Cells(22).Value
+                    _ECF = dgvGridAssessoria.CurrentRow.Cells(23).Value
+                    _EFD = dgvGridAssessoria.CurrentRow.Cells(24).Value
+                    _GIA = dgvGridAssessoria.CurrentRow.Cells(25).Value
+                    _CAGED = dgvGridAssessoria.CurrentRow.Cells(26).Value
+                    _obs = dgvGridAssessoria.CurrentRow.Cells(27).Value.ToString
 
                     Me.Close()
                 End If

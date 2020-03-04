@@ -19,7 +19,6 @@ Public Class frmCadAcessoria
             _ConsultaTipo = value
         End Set
     End Property
-    ' IdAssessoria,empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,IRRF,DAS,DASZERO,DASN,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
 
     Private _IdAssessoria As Integer
     Public Property IdAssessoria() As Integer
@@ -70,56 +69,68 @@ Public Class frmCadAcessoria
     'botão de gravar
     Private Sub btSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If txtEmpresa.Text.Equals(String.Empty) Then
-            errErro.SetError(txtEmpresa, "Digite um CPF")
+            errErro.SetError(txtEmpresa, "Digite o nome da Empresa")
             txtEmpresa.Focus()
             Exit Sub
         Else
             errErro.SetError(txtEmpresa, "")
 
         End If
-        If txtContato.Text.Equals(String.Empty) Then
-            errErro.SetError(txtContato, "Digite um nome")
-            Exit Sub
-        Else
-            errErro.SetError(txtContato, "")
-        End If
-        If txtResponsavel.Text.Equals(String.Empty) Then
-            errErro.SetError(txtResponsavel, "Digite um CPF")
+        'If txtGerente.Text.Equals(String.Empty) Then
+        '    errErro.SetError(txtGerente, "Digite o nome do Contato")
+        '    Exit Sub
+        'Else
+        '    errErro.SetError(txtGerente, "")
+        'End If
+        'If txtResponsavel.Text.Equals(String.Empty) Then
+        '    errErro.SetError(txtResponsavel, "Digite o nome do Responsável")
 
-            Exit Sub
-        Else
-            errErro.SetError(txtResponsavel, "")
+        '    Exit Sub
+        'Else
+        '    errErro.SetError(txtResponsavel, "")
 
-        End If
+        'End If
+        'If txtTelefone.Text.Equals(String.Empty) Then
+        '    errErro.SetError(txtTelefone, "Digite o nome do Gerente")
+        '    Exit Sub
+        'Else
+        '    errErro.SetError(txtTelefone, "")
+        'End If
         If txtMes.Text.Equals(String.Empty) Then
-            errErro.SetError(txtMes, "Digite um nome")
+            errErro.SetError(txtMes, "Digite o Mês")
             Exit Sub
         Else
             errErro.SetError(txtMes, "")
         End If
         If txtAno.Text.Equals(String.Empty) Then
-            errErro.SetError(txtAno, "Digite um nome")
+            errErro.SetError(txtAno, "Digite o Ano")
             Exit Sub
         Else
             errErro.SetError(txtAno, "")
         End If
-
+        ' IdAssessoria,empresa,gerente,responsavel,telefone,mes,ano,PROLABORE,SALARIO13,FOLHA,
+        'DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,
+        'GIA, CAGED, obs
         Try
             assessoria.empresa = txtEmpresa.Text
-            assessoria.contato = txtContato.Text
+            assessoria.gerente = txtGerente.Text
             assessoria.responsavel = txtResponsavel.Text
+            assessoria.telefone = txtTelefone.Text
             assessoria.mes = txtMes.Text
             assessoria.ano = txtAno.Text
             assessoria.PROLABORE = chbProlabore.Checked
             assessoria.salario13 = txt13salario.Text
             assessoria.FOLHA = chbFolha.Checked
+            assessoria.DARF = chbDARF.Checked
+            assessoria.GRRF = chbGRRF.Checked
             assessoria.SEFIP = chbSefip.Checked
             assessoria.GPS = chbGPS.Checked
             assessoria.GRF = chbGRF.Checked
-            assessoria.IRRF = chbIRRF.Checked
             assessoria.DAS = chbDAS.Checked
             assessoria.DASZERO = chbDASZERO.Checked
             assessoria.DASN = chbDASN.Checked
+            assessoria.DEFIS = chbDEFIS.Checked
+            assessoria.IRRF = chbIRRF.Checked
             assessoria.DCTF = chbDCTF.Checked
             assessoria.RAIS = chbRAIS.Checked
             assessoria.RAISNEGATIVA = chbRAISNEGATIVA.Checked
@@ -141,8 +152,9 @@ Public Class frmCadAcessoria
     End Sub
 
     Private Sub btAlterar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        ' IdAssessoria,empresa,contato,responsavel,mes,ano,PROLABORE,SALARIO13,FOLHA,SEFIP,GPS,GRF,
-        'IRRF, DAS, DASZERO, DASN, DCTF, RAIS, RAISNEGATIVA, ECF, EFD, GIA, CAGED, obs
+        ' IdAssessoria,empresa,gerente,responsavel,telefone,mes,ano,PROLABORE,SALARIO13,FOLHA,
+        'DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,
+        'GIA, CAGED, obs
 
     End Sub
 
@@ -151,23 +163,29 @@ Public Class frmCadAcessoria
         frmAcessoriaConsulta.Text = "Consulta de Cliente"
         frmAcessoriaConsulta.ConsultaTipo = frmAcessoriaConsulta.TipoConsulta.Assessoria
         frmAcessoriaConsulta.ShowDialog()
-
+        ' IdAssessoria,empresa,gerente,responsavel,telefone,mes,ano,PROLABORE,SALARIO13,FOLHA,
+        'DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,
+        'GIA, CAGED, obs
         CodigoEmpresa = frmAcessoriaConsulta.IdAssessoria
         txtEmpresa.Text = frmAcessoriaConsulta.empresa
-        txtContato.Text = frmAcessoriaConsulta.contato
+        txtGerente.Text = frmAcessoriaConsulta.gerente
         txtResponsavel.Text = frmAcessoriaConsulta.responsavel
+        txtTelefone.Text = frmAcessoriaConsulta.telefone
         txtMes.Text = frmAcessoriaConsulta.mes
         txtAno.Text = frmAcessoriaConsulta.ano
         chbProlabore.Checked = frmAcessoriaConsulta.PROLABORE
         txt13salario.Text = frmAcessoriaConsulta.salario13
         chbFolha.Checked = frmAcessoriaConsulta.FOLHA
+        chbDARF.Checked = frmAcessoriaConsulta.DARF
+        chbGRRF.Checked = frmAcessoriaConsulta.GRRF
         chbSefip.Checked = frmAcessoriaConsulta.SEFIP
         chbGPS.Checked = frmAcessoriaConsulta.GPS
         chbGRF.Checked = frmAcessoriaConsulta.GRF
-        chbIRRF.Checked = frmAcessoriaConsulta.IRRF
         chbDAS.Checked = frmAcessoriaConsulta.DAS
         chbDASZERO.Checked = frmAcessoriaConsulta.DASZERO
         chbDASN.Checked = frmAcessoriaConsulta.DASN
+        chbDEFIS.Checked = frmAcessoriaConsulta.DEFIS
+        chbIRRF.Checked = frmAcessoriaConsulta.IRRF
         chbDCTF.Checked = frmAcessoriaConsulta.DCTF
         chbRAIS.Checked = frmAcessoriaConsulta.RAIS
         chbRAISNEGATIVA.Checked = frmAcessoriaConsulta.RAISNEGATIVA
@@ -186,20 +204,24 @@ Public Class frmCadAcessoria
     Private Sub LimparCampos()
 
         txtEmpresa.Text = ""
-        txtContato.Text = ""
+        txtGerente.Text = ""
         txtResponsavel.Text = ""
+        txtTelefone.Text = ""
         txtMes.Text = ""
         txtAno.Text = ""
         chbProlabore.Checked = False
         txt13salario.Text = ""
         chbFolha.Checked = False
+        chbDARF.Checked = False
+        chbGRRF.Checked = False
         chbSefip.Checked = False
         chbGPS.Checked = False
         chbGRF.Checked = False
-        chbIRRF.Checked = False
         chbDAS.Checked = False
         chbDASZERO.Checked = False
         chbDASN.Checked = False
+        chbIRRF.Checked = False
+        chbDEFIS.Checked = False
         chbDCTF.Checked = False
         chbRAIS.Checked = False
         chbRAISNEGATIVA.Checked = False
@@ -219,20 +241,24 @@ Public Class frmCadAcessoria
 
         CodigoEmpresa = frmAcessoriaConsulta.IdAssessoria
         txtEmpresa.Text = frmAcessoriaConsulta.empresa
-        txtContato.Text = frmAcessoriaConsulta.contato
+        txtGerente.Text = frmAcessoriaConsulta.gerente
         txtResponsavel.Text = frmAcessoriaConsulta.responsavel
+        txtTelefone.Text = frmAcessoriaConsulta.telefone
         txtMes.Text = frmAcessoriaConsulta.mes
         txtAno.Text = frmAcessoriaConsulta.ano
         chbProlabore.Checked = frmAcessoriaConsulta.PROLABORE
         txt13salario.Text = frmAcessoriaConsulta.salario13
         chbFolha.Checked = frmAcessoriaConsulta.FOLHA
+        chbDARF.Checked = frmAcessoriaConsulta.DARF
+        chbGRRF.Checked = frmAcessoriaConsulta.GRRF
         chbSefip.Checked = frmAcessoriaConsulta.SEFIP
         chbGPS.Checked = frmAcessoriaConsulta.GPS
         chbGRF.Checked = frmAcessoriaConsulta.GRF
-        chbIRRF.Checked = frmAcessoriaConsulta.IRRF
         chbDAS.Checked = frmAcessoriaConsulta.DAS
         chbDASZERO.Checked = frmAcessoriaConsulta.DASZERO
         chbDASN.Checked = frmAcessoriaConsulta.DASN
+        chbDEFIS.Checked = frmAcessoriaConsulta.DEFIS
+        chbIRRF.Checked = frmAcessoriaConsulta.IRRF
         chbDCTF.Checked = frmAcessoriaConsulta.DCTF
         chbRAIS.Checked = frmAcessoriaConsulta.RAIS
         chbRAISNEGATIVA.Checked = frmAcessoriaConsulta.RAISNEGATIVA
