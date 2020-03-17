@@ -316,27 +316,32 @@ Public Class frmAcessoriaConsulta
 
     End Sub
 
-    'Private Sub carregaDados()
-    '    Using con As OleDbConnection = GetConnection()
-    '        Try
-    '            con.Open()
-    '            Dim sql As String = "SELECT * FROM tbASSESSORIA"
-    '            Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
-    '            Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
-    '            Dim dt As DataTable = New DataTable
-    '            da.Fill(dt)
-    '            dgvAssessoria.DataSource = dt
-
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message.ToString)
-    '        Finally
-    '            con.Close()
-    '        End Try
-    '    End Using
-    'End Sub
+   
 
 
     Private Sub btPesquisarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCliente.Click
+        ' txtPesquisarCliente.Text, txtMes.Text, txtAno.Text
+        If txtPesquisarCliente.Text.Equals(String.Empty) Then
+            errErro.SetError(txtPesquisarCliente, "Digite o nome da Empresa")
+            Exit Sub
+        Else
+            errErro.SetError(txtPesquisarCliente, "")
+        End If
+
+        If txtMes.Text.Equals(String.Empty) Then
+            errErro.SetError(txtMes, "Digite o mês a pesquisar")
+            Exit Sub
+        Else
+            errErro.SetError(txtMes, "")
+        End If
+
+        If txtAno.Text.Equals(String.Empty) Then
+            errErro.SetError(txtAno, "Digite o ano a pesquisar")
+            Exit Sub
+        Else
+            errErro.SetError(txtAno, "")
+        End If
+
         CarregaGrid()
     End Sub
 
@@ -351,7 +356,7 @@ Public Class frmAcessoriaConsulta
                     _empresa = dgvGridAssessoria.CurrentRow.Cells(1).Value
                     _gerente = dgvGridAssessoria.CurrentRow.Cells(2).Value
                     _responsavel = dgvGridAssessoria.CurrentRow.Cells(3).Value
-                    _telefone = dgvGridAssessoria.CurrentRow.Cells(4).Value
+                    _telefone = dgvGridAssessoria.CurrentRow.Cells(4).Value.ToString
                     _mes = dgvGridAssessoria.CurrentRow.Cells(5).Value
                     _ano = dgvGridAssessoria.CurrentRow.Cells(6).Value
                     _PROLABORE = dgvGridAssessoria.CurrentRow.Cells(7).Value

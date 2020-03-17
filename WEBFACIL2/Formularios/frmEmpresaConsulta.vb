@@ -194,6 +194,36 @@
         End Set
     End Property
 
+    Private _cli_Dia As String
+    Public Property cli_Dia() As String
+        Get
+            Return _cli_Dia
+        End Get
+        Set(ByVal value As String)
+            _cli_Dia = value
+        End Set
+    End Property
+
+    Private _cli_Mes As String
+    Public Property cli_Mes() As String
+        Get
+            Return _cli_Mes
+        End Get
+        Set(ByVal value As String)
+            _cli_Mes = value
+        End Set
+    End Property
+
+    Private _cli_Ano As String
+    Public Property cli_Ano() As String
+        Get
+            Return _cli_Ano
+        End Get
+        Set(ByVal value As String)
+            _cli_Ano = value
+        End Set
+    End Property
+
     Private _cli_Email As String
     Public Property cli_Email() As String
         Get
@@ -953,78 +983,80 @@
                     _cli_CEP = dgvGridEmpresa.CurrentRow.Cells(13).Value
                     _cli_FoneRes = dgvGridEmpresa.CurrentRow.Cells(14).Value
                     _cli_FoneCel = dgvGridEmpresa.CurrentRow.Cells(15).Value
-                    _cli_data_nasc = dgvGridEmpresa.CurrentRow.Cells(16).Value
-                    _cli_Curriculo = dgvGridEmpresa.CurrentRow.Cells(17).Value
-                    _cli_Email = dgvGridEmpresa.CurrentRow.Cells(18).Value
-                    _cli_observacoes = dgvGridEmpresa.CurrentRow.Cells(19).Value
-                    _cli_Aposentado = dgvGridEmpresa.CurrentRow.Cells(20).Value
-                    _cli_NumBeneficio = dgvGridEmpresa.CurrentRow.Cells(21).Value
-                    _cli_FuncPublico = dgvGridEmpresa.CurrentRow.Cells(22).Value
-                    _cli_NomeFunc = dgvGridEmpresa.CurrentRow.Cells(23).Value
-                    _cli_Autonomo = dgvGridEmpresa.CurrentRow.Cells(24).Value
-                    _cli_AutonomoNome = dgvGridEmpresa.CurrentRow.Cells(25).Value
-                    _cli_Falecido = dgvGridEmpresa.CurrentRow.Cells(26).Value
-                    _cli_NomeFalecido = dgvGridEmpresa.CurrentRow.Cells(27).Value
-                    _cli_Inativo = dgvGridEmpresa.CurrentRow.Cells(28).Value
-                    _cli_InativoObs = dgvGridEmpresa.CurrentRow.Cells(29).Value
-                    _cli_Parcelamento = dgvGridEmpresa.CurrentRow.Cells(30).Value
-                    _cli_NumParcelamento = dgvGridEmpresa.CurrentRow.Cells(31).Value
-                    _cli_EmprDom = dgvGridEmpresa.CurrentRow.Cells(32).Value
-                    _cli_ESocial = dgvGridEmpresa.CurrentRow.Cells(33).Value
-                    _cli_EsocialSenha = dgvGridEmpresa.CurrentRow.Cells(34).Value
-                    _cli_VIP = dgvGridEmpresa.CurrentRow.Cells(35).Value
-                    _cli_VIPDescricao = dgvGridEmpresa.CurrentRow.Cells(36).Value
-                    _cli_PJ = dgvGridEmpresa.CurrentRow.Cells(37).Value
-                    _cli_NumPJ = dgvGridEmpresa.CurrentRow.Cells(38).Value
-                    _cli_MEI = dgvGridEmpresa.CurrentRow.Cells(39).Value
-                    _cli_NumMEI = dgvGridEmpresa.CurrentRow.Cells(40).Value
-                    _cli_ITR = dgvGridEmpresa.CurrentRow.Cells(41).Value
-                    _cli_NumITR = dgvGridEmpresa.CurrentRow.Cells(42).Value
-                    _cli_Mensalista = dgvGridEmpresa.CurrentRow.Cells(43).Value
-                    _cli_NomeMensalista = dgvGridEmpresa.CurrentRow.Cells(44).Value
-                    _cli_Decore = dgvGridEmpresa.CurrentRow.Cells(45).Value
-                    _cli_DecoreDescricao = dgvGridEmpresa.CurrentRow.Cells(46).Value
-                    _cli_IRPF = dgvGridEmpresa.CurrentRow.Cells(47).Value
-                    _cli_NumIRPF = dgvGridEmpresa.CurrentRow.Cells(48).Value
-                    _cli_SenWebPrefeitura = dgvGridEmpresa.CurrentRow.Cells(49).Value
-                    _cli_SenhaWebPrefeitura = dgvGridEmpresa.CurrentRow.Cells(50).Value
-                    _cli_Redesim = dgvGridEmpresa.CurrentRow.Cells(51).Value
-                    _cli_SenhaRedesim = dgvGridEmpresa.CurrentRow.Cells(52).Value
-                    _cli_CodRFB = dgvGridEmpresa.CurrentRow.Cells(53).Value
-                    _cli_CodRFBNum = dgvGridEmpresa.CurrentRow.Cells(54).Value
-                    _cli_CodRFBValidade = dgvGridEmpresa.CurrentRow.Cells(55).Value
+                    _cli_Dia = dgvGridEmpresa.CurrentRow.Cells(16).Value
+                    _cli_Mes = dgvGridEmpresa.CurrentRow.Cells(17).Value
+                    _cli_Ano = dgvGridEmpresa.CurrentRow.Cells(18).Value
+                    _cli_Curriculo = dgvGridEmpresa.CurrentRow.Cells(19).Value
+                    _cli_Email = dgvGridEmpresa.CurrentRow.Cells(20).Value
+                    _cli_observacoes = dgvGridEmpresa.CurrentRow.Cells(21).Value
+                    _cli_Aposentado = dgvGridEmpresa.CurrentRow.Cells(22).Value
+                    _cli_NumBeneficio = dgvGridEmpresa.CurrentRow.Cells(23).Value
+                    _cli_FuncPublico = dgvGridEmpresa.CurrentRow.Cells(24).Value
+                    _cli_NomeFunc = dgvGridEmpresa.CurrentRow.Cells(25).Value
+                    _cli_Autonomo = dgvGridEmpresa.CurrentRow.Cells(26).Value
+                    _cli_AutonomoNome = dgvGridEmpresa.CurrentRow.Cells(27).Value
+                    _cli_Falecido = dgvGridEmpresa.CurrentRow.Cells(28).Value
+                    _cli_NomeFalecido = dgvGridEmpresa.CurrentRow.Cells(29).Value
+                    _cli_Inativo = dgvGridEmpresa.CurrentRow.Cells(30).Value
+                    _cli_InativoObs = dgvGridEmpresa.CurrentRow.Cells(31).Value
+                    _cli_Parcelamento = dgvGridEmpresa.CurrentRow.Cells(32).Value
+                    _cli_NumParcelamento = dgvGridEmpresa.CurrentRow.Cells(33).Value
+                    _cli_EmprDom = dgvGridEmpresa.CurrentRow.Cells(34).Value
+                    _cli_ESocial = dgvGridEmpresa.CurrentRow.Cells(35).Value
+                    _cli_EsocialSenha = dgvGridEmpresa.CurrentRow.Cells(36).Value
+                    _cli_VIP = dgvGridEmpresa.CurrentRow.Cells(37).Value
+                    _cli_VIPDescricao = dgvGridEmpresa.CurrentRow.Cells(38).Value
+                    _cli_PJ = dgvGridEmpresa.CurrentRow.Cells(39).Value
+                    _cli_NumPJ = dgvGridEmpresa.CurrentRow.Cells(40).Value
+                    _cli_MEI = dgvGridEmpresa.CurrentRow.Cells(41).Value
+                    _cli_NumMEI = dgvGridEmpresa.CurrentRow.Cells(42).Value
+                    _cli_ITR = dgvGridEmpresa.CurrentRow.Cells(43).Value
+                    _cli_NumITR = dgvGridEmpresa.CurrentRow.Cells(44).Value
+                    _cli_Mensalista = dgvGridEmpresa.CurrentRow.Cells(45).Value
+                    _cli_NomeMensalista = dgvGridEmpresa.CurrentRow.Cells(46).Value
+                    _cli_Decore = dgvGridEmpresa.CurrentRow.Cells(47).Value
+                    _cli_DecoreDescricao = dgvGridEmpresa.CurrentRow.Cells(48).Value
+                    _cli_IRPF = dgvGridEmpresa.CurrentRow.Cells(49).Value
+                    _cli_NumIRPF = dgvGridEmpresa.CurrentRow.Cells(50).Value
+                    _cli_SenWebPrefeitura = dgvGridEmpresa.CurrentRow.Cells(51).Value
+                    _cli_SenhaWebPrefeitura = dgvGridEmpresa.CurrentRow.Cells(52).Value
+                    _cli_Redesim = dgvGridEmpresa.CurrentRow.Cells(53).Value
+                    _cli_SenhaRedesim = dgvGridEmpresa.CurrentRow.Cells(54).Value
+                    _cli_CodRFB = dgvGridEmpresa.CurrentRow.Cells(55).Value
+                    _cli_CodRFBNum = dgvGridEmpresa.CurrentRow.Cells(56).Value
+                    _cli_CodRFBValidade = dgvGridEmpresa.CurrentRow.Cells(57).Value
 
                     'ENVIO DE DADOS DA EMPRESA
-                    _empr_ID = dgvGridEmpresa.CurrentRow.Cells(56).Value
-                    _empr_razaosocial = dgvGridEmpresa.CurrentRow.Cells(57).Value
-                    _empr_nomefantasia = dgvGridEmpresa.CurrentRow.Cells(58).Value
-                    _empr_cnpj = dgvGridEmpresa.CurrentRow.Cells(59).Value 'empr_Situacaocnpj
-                    _empr_Situacaocnpj = dgvGridEmpresa.CurrentRow.Cells(60).Value.ToString
-                    _empr_NIRE = dgvGridEmpresa.CurrentRow.Cells(61).Value
-                    _empr_InscrEstadual = dgvGridEmpresa.CurrentRow.Cells(62).Value
-                    _empr_CCM = dgvGridEmpresa.CurrentRow.Cells(63).Value
-                    _empr_atividade = dgvGridEmpresa.CurrentRow.Cells(64).Value
-                    _empr_Porte = dgvGridEmpresa.CurrentRow.Cells(65).Value
-                    _empr_lblclienteID = dgvGridEmpresa.CurrentRow.Cells(66).Value
-                    ' _clsCategoria.cat_ID = dgvGridEmpresa.CurrentRow.Cells(67).Value
-                    _empr_dataInicio = dgvGridEmpresa.CurrentRow.Cells(68).Value
-                    _empr_endereco = dgvGridEmpresa.CurrentRow.Cells(69).Value
-                    _empr_numero = dgvGridEmpresa.CurrentRow.Cells(70).Value
-                    _empr_complemento = dgvGridEmpresa.CurrentRow.Cells(71).Value
-                    _empr_bairro = dgvGridEmpresa.CurrentRow.Cells(72).Value
-                    _empr_cidade = dgvGridEmpresa.CurrentRow.Cells(73).Value
-                    _empr_UF = dgvGridEmpresa.CurrentRow.Cells(74).Value
-                    _empr_CEP = dgvGridEmpresa.CurrentRow.Cells(75).Value
-                    _empr_obs = dgvGridEmpresa.CurrentRow.Cells(76).Value
-                    _empr_Simples = dgvGridEmpresa.CurrentRow.Cells(77).Value
-                    _empr_SimplesNacional = dgvGridEmpresa.CurrentRow.Cells(78).Value
-                    _empr_Simei = dgvGridEmpresa.CurrentRow.Cells(79).Value
-                    _empr_CodSimei = dgvGridEmpresa.CurrentRow.Cells(80).Value
-                    _empr_sefaz = dgvGridEmpresa.CurrentRow.Cells(81).Value
-                    _empr_SefazUsu = dgvGridEmpresa.CurrentRow.Cells(82).Value
-                    _empr_SefazSen = dgvGridEmpresa.CurrentRow.Cells(83).Value
-                    _empr_CodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(84).Value
-                    _empr_NumCodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(85).Value
+                    _empr_ID = dgvGridEmpresa.CurrentRow.Cells(58).Value
+                    _empr_razaosocial = dgvGridEmpresa.CurrentRow.Cells(59).Value
+                    _empr_nomefantasia = dgvGridEmpresa.CurrentRow.Cells(60).Value
+                    _empr_cnpj = dgvGridEmpresa.CurrentRow.Cells(61).Value 'empr_Situacaocnpj
+                    _empr_Situacaocnpj = dgvGridEmpresa.CurrentRow.Cells(62).Value.ToString
+                    _empr_NIRE = dgvGridEmpresa.CurrentRow.Cells(63).Value
+                    _empr_InscrEstadual = dgvGridEmpresa.CurrentRow.Cells(64).Value
+                    _empr_CCM = dgvGridEmpresa.CurrentRow.Cells(65).Value
+                    _empr_atividade = dgvGridEmpresa.CurrentRow.Cells(66).Value
+                    _empr_Porte = dgvGridEmpresa.CurrentRow.Cells(67).Value
+                    _empr_lblclienteID = dgvGridEmpresa.CurrentRow.Cells(68).Value
+                    ' _clsCategoria.cat_ID = dgvGridEmpresa.CurrentRow.Cells(69).Value
+                    _empr_dataInicio = dgvGridEmpresa.CurrentRow.Cells(70).Value
+                    _empr_endereco = dgvGridEmpresa.CurrentRow.Cells(71).Value
+                    _empr_numero = dgvGridEmpresa.CurrentRow.Cells(72).Value
+                    _empr_complemento = dgvGridEmpresa.CurrentRow.Cells(73).Value
+                    _empr_bairro = dgvGridEmpresa.CurrentRow.Cells(74).Value
+                    _empr_cidade = dgvGridEmpresa.CurrentRow.Cells(75).Value
+                    _empr_UF = dgvGridEmpresa.CurrentRow.Cells(76).Value
+                    _empr_CEP = dgvGridEmpresa.CurrentRow.Cells(77).Value
+                    _empr_obs = dgvGridEmpresa.CurrentRow.Cells(78).Value
+                    _empr_Simples = dgvGridEmpresa.CurrentRow.Cells(79).Value
+                    _empr_SimplesNacional = dgvGridEmpresa.CurrentRow.Cells(80).Value
+                    _empr_Simei = dgvGridEmpresa.CurrentRow.Cells(81).Value
+                    _empr_CodSimei = dgvGridEmpresa.CurrentRow.Cells(82).Value
+                    _empr_sefaz = dgvGridEmpresa.CurrentRow.Cells(83).Value
+                    _empr_SefazUsu = dgvGridEmpresa.CurrentRow.Cells(84).Value
+                    _empr_SefazSen = dgvGridEmpresa.CurrentRow.Cells(85).Value
+                    _empr_CodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(86).Value
+                    _empr_NumCodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(87).Value
                     Me.Close()
 
                 End If
@@ -1054,78 +1086,80 @@
                     _cli_CEP = dgvGridEmpresa.CurrentRow.Cells(13).Value
                     _cli_FoneRes = dgvGridEmpresa.CurrentRow.Cells(14).Value
                     _cli_FoneCel = dgvGridEmpresa.CurrentRow.Cells(15).Value
-                    _cli_data_nasc = dgvGridEmpresa.CurrentRow.Cells(16).Value
-                    _cli_Curriculo = dgvGridEmpresa.CurrentRow.Cells(17).Value
-                    _cli_Email = dgvGridEmpresa.CurrentRow.Cells(18).Value
-                    _cli_observacoes = dgvGridEmpresa.CurrentRow.Cells(19).Value
-                    _cli_Aposentado = dgvGridEmpresa.CurrentRow.Cells(20).Value
-                    _cli_NumBeneficio = dgvGridEmpresa.CurrentRow.Cells(21).Value
-                    _cli_FuncPublico = dgvGridEmpresa.CurrentRow.Cells(22).Value
-                    _cli_NomeFunc = dgvGridEmpresa.CurrentRow.Cells(23).Value
-                    _cli_Autonomo = dgvGridEmpresa.CurrentRow.Cells(24).Value
-                    _cli_AutonomoNome = dgvGridEmpresa.CurrentRow.Cells(25).Value
-                    _cli_Falecido = dgvGridEmpresa.CurrentRow.Cells(26).Value
-                    _cli_NomeFalecido = dgvGridEmpresa.CurrentRow.Cells(27).Value
-                    _cli_Inativo = dgvGridEmpresa.CurrentRow.Cells(28).Value
-                    _cli_InativoObs = dgvGridEmpresa.CurrentRow.Cells(29).Value
-                    _cli_Parcelamento = dgvGridEmpresa.CurrentRow.Cells(30).Value
-                    _cli_NumParcelamento = dgvGridEmpresa.CurrentRow.Cells(31).Value
-                    _cli_EmprDom = dgvGridEmpresa.CurrentRow.Cells(32).Value
-                    _cli_ESocial = dgvGridEmpresa.CurrentRow.Cells(33).Value
-                    _cli_EsocialSenha = dgvGridEmpresa.CurrentRow.Cells(34).Value
-                    _cli_VIP = dgvGridEmpresa.CurrentRow.Cells(35).Value
-                    _cli_VIPDescricao = dgvGridEmpresa.CurrentRow.Cells(36).Value
-                    _cli_PJ = dgvGridEmpresa.CurrentRow.Cells(37).Value
-                    _cli_NumPJ = dgvGridEmpresa.CurrentRow.Cells(38).Value
-                    _cli_MEI = dgvGridEmpresa.CurrentRow.Cells(39).Value
-                    _cli_NumMEI = dgvGridEmpresa.CurrentRow.Cells(40).Value
-                    _cli_ITR = dgvGridEmpresa.CurrentRow.Cells(41).Value
-                    _cli_NumITR = dgvGridEmpresa.CurrentRow.Cells(42).Value
-                    _cli_Mensalista = dgvGridEmpresa.CurrentRow.Cells(43).Value
-                    _cli_NomeMensalista = dgvGridEmpresa.CurrentRow.Cells(44).Value
-                    _cli_Decore = dgvGridEmpresa.CurrentRow.Cells(45).Value
-                    _cli_DecoreDescricao = dgvGridEmpresa.CurrentRow.Cells(46).Value
-                    _cli_IRPF = dgvGridEmpresa.CurrentRow.Cells(47).Value
-                    _cli_NumIRPF = dgvGridEmpresa.CurrentRow.Cells(48).Value
-                    _cli_SenWebPrefeitura = dgvGridEmpresa.CurrentRow.Cells(49).Value
-                    _cli_SenhaWebPrefeitura = dgvGridEmpresa.CurrentRow.Cells(50).Value
-                    _cli_Redesim = dgvGridEmpresa.CurrentRow.Cells(51).Value
-                    _cli_SenhaRedesim = dgvGridEmpresa.CurrentRow.Cells(52).Value
-                    _cli_CodRFB = dgvGridEmpresa.CurrentRow.Cells(53).Value
-                    _cli_CodRFBNum = dgvGridEmpresa.CurrentRow.Cells(54).Value
-                    _cli_CodRFBValidade = dgvGridEmpresa.CurrentRow.Cells(55).Value
+                    _cli_Dia = dgvGridEmpresa.CurrentRow.Cells(16).Value
+                    _cli_Mes = dgvGridEmpresa.CurrentRow.Cells(17).Value
+                    _cli_Ano = dgvGridEmpresa.CurrentRow.Cells(18).Value
+                    _cli_Curriculo = dgvGridEmpresa.CurrentRow.Cells(19).Value
+                    _cli_Email = dgvGridEmpresa.CurrentRow.Cells(20).Value
+                    _cli_observacoes = dgvGridEmpresa.CurrentRow.Cells(21).Value
+                    _cli_Aposentado = dgvGridEmpresa.CurrentRow.Cells(22).Value
+                    _cli_NumBeneficio = dgvGridEmpresa.CurrentRow.Cells(23).Value
+                    _cli_FuncPublico = dgvGridEmpresa.CurrentRow.Cells(24).Value
+                    _cli_NomeFunc = dgvGridEmpresa.CurrentRow.Cells(25).Value
+                    _cli_Autonomo = dgvGridEmpresa.CurrentRow.Cells(26).Value
+                    _cli_AutonomoNome = dgvGridEmpresa.CurrentRow.Cells(27).Value
+                    _cli_Falecido = dgvGridEmpresa.CurrentRow.Cells(28).Value
+                    _cli_NomeFalecido = dgvGridEmpresa.CurrentRow.Cells(29).Value
+                    _cli_Inativo = dgvGridEmpresa.CurrentRow.Cells(30).Value
+                    _cli_InativoObs = dgvGridEmpresa.CurrentRow.Cells(31).Value
+                    _cli_Parcelamento = dgvGridEmpresa.CurrentRow.Cells(32).Value
+                    _cli_NumParcelamento = dgvGridEmpresa.CurrentRow.Cells(33).Value
+                    _cli_EmprDom = dgvGridEmpresa.CurrentRow.Cells(34).Value
+                    _cli_ESocial = dgvGridEmpresa.CurrentRow.Cells(35).Value
+                    _cli_EsocialSenha = dgvGridEmpresa.CurrentRow.Cells(36).Value
+                    _cli_VIP = dgvGridEmpresa.CurrentRow.Cells(37).Value
+                    _cli_VIPDescricao = dgvGridEmpresa.CurrentRow.Cells(38).Value
+                    _cli_PJ = dgvGridEmpresa.CurrentRow.Cells(39).Value
+                    _cli_NumPJ = dgvGridEmpresa.CurrentRow.Cells(40).Value
+                    _cli_MEI = dgvGridEmpresa.CurrentRow.Cells(41).Value
+                    _cli_NumMEI = dgvGridEmpresa.CurrentRow.Cells(42).Value
+                    _cli_ITR = dgvGridEmpresa.CurrentRow.Cells(43).Value
+                    _cli_NumITR = dgvGridEmpresa.CurrentRow.Cells(44).Value
+                    _cli_Mensalista = dgvGridEmpresa.CurrentRow.Cells(45).Value
+                    _cli_NomeMensalista = dgvGridEmpresa.CurrentRow.Cells(46).Value
+                    _cli_Decore = dgvGridEmpresa.CurrentRow.Cells(47).Value
+                    _cli_DecoreDescricao = dgvGridEmpresa.CurrentRow.Cells(48).Value
+                    _cli_IRPF = dgvGridEmpresa.CurrentRow.Cells(49).Value
+                    _cli_NumIRPF = dgvGridEmpresa.CurrentRow.Cells(50).Value
+                    _cli_SenWebPrefeitura = dgvGridEmpresa.CurrentRow.Cells(51).Value
+                    _cli_SenhaWebPrefeitura = dgvGridEmpresa.CurrentRow.Cells(52).Value
+                    _cli_Redesim = dgvGridEmpresa.CurrentRow.Cells(53).Value
+                    _cli_SenhaRedesim = dgvGridEmpresa.CurrentRow.Cells(54).Value
+                    _cli_CodRFB = dgvGridEmpresa.CurrentRow.Cells(55).Value
+                    _cli_CodRFBNum = dgvGridEmpresa.CurrentRow.Cells(56).Value
+                    _cli_CodRFBValidade = dgvGridEmpresa.CurrentRow.Cells(57).Value
 
                     'ENVIO DE DADOS DA EMPRESA
-                    _empr_ID = dgvGridEmpresa.CurrentRow.Cells(56).Value
-                    _empr_razaosocial = dgvGridEmpresa.CurrentRow.Cells(57).Value
-                    _empr_nomefantasia = dgvGridEmpresa.CurrentRow.Cells(58).Value
-                    _empr_cnpj = dgvGridEmpresa.CurrentRow.Cells(59).Value 'empr_Situacaocnpj
-                    _empr_Situacaocnpj = dgvGridEmpresa.CurrentRow.Cells(60).Value.ToString
-                    _empr_NIRE = dgvGridEmpresa.CurrentRow.Cells(61).Value
-                    _empr_InscrEstadual = dgvGridEmpresa.CurrentRow.Cells(62).Value
-                    _empr_CCM = dgvGridEmpresa.CurrentRow.Cells(63).Value
-                    _empr_atividade = dgvGridEmpresa.CurrentRow.Cells(64).Value
-                    _empr_Porte = dgvGridEmpresa.CurrentRow.Cells(65).Value
-                    _empr_lblclienteID = dgvGridEmpresa.CurrentRow.Cells(66).Value
-                    ' _clsCategoria.cat_ID = dgvGridEmpresa.CurrentRow.Cells(67).Value
-                    _empr_dataInicio = dgvGridEmpresa.CurrentRow.Cells(68).Value
-                    _empr_endereco = dgvGridEmpresa.CurrentRow.Cells(69).Value
-                    _empr_numero = dgvGridEmpresa.CurrentRow.Cells(70).Value
-                    _empr_complemento = dgvGridEmpresa.CurrentRow.Cells(71).Value
-                    _empr_bairro = dgvGridEmpresa.CurrentRow.Cells(72).Value
-                    _empr_cidade = dgvGridEmpresa.CurrentRow.Cells(73).Value
-                    _empr_UF = dgvGridEmpresa.CurrentRow.Cells(74).Value
-                    _empr_CEP = dgvGridEmpresa.CurrentRow.Cells(75).Value
-                    _empr_obs = dgvGridEmpresa.CurrentRow.Cells(76).Value
-                    _empr_Simples = dgvGridEmpresa.CurrentRow.Cells(77).Value
-                    _empr_SimplesNacional = dgvGridEmpresa.CurrentRow.Cells(78).Value
-                    _empr_Simei = dgvGridEmpresa.CurrentRow.Cells(79).Value
-                    _empr_CodSimei = dgvGridEmpresa.CurrentRow.Cells(80).Value
-                    _empr_sefaz = dgvGridEmpresa.CurrentRow.Cells(81).Value
-                    _empr_SefazUsu = dgvGridEmpresa.CurrentRow.Cells(82).Value
-                    _empr_SefazSen = dgvGridEmpresa.CurrentRow.Cells(83).Value
-                    _empr_CodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(84).Value
-                    _empr_NumCodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(85).Value
+                    _empr_ID = dgvGridEmpresa.CurrentRow.Cells(58).Value
+                    _empr_razaosocial = dgvGridEmpresa.CurrentRow.Cells(59).Value
+                    _empr_nomefantasia = dgvGridEmpresa.CurrentRow.Cells(60).Value
+                    _empr_cnpj = dgvGridEmpresa.CurrentRow.Cells(61).Value 'empr_Situacaocnpj
+                    _empr_Situacaocnpj = dgvGridEmpresa.CurrentRow.Cells(62).Value.ToString
+                    _empr_NIRE = dgvGridEmpresa.CurrentRow.Cells(63).Value
+                    _empr_InscrEstadual = dgvGridEmpresa.CurrentRow.Cells(64).Value
+                    _empr_CCM = dgvGridEmpresa.CurrentRow.Cells(65).Value
+                    _empr_atividade = dgvGridEmpresa.CurrentRow.Cells(66).Value
+                    _empr_Porte = dgvGridEmpresa.CurrentRow.Cells(67).Value
+                    _empr_lblclienteID = dgvGridEmpresa.CurrentRow.Cells(68).Value
+                    ' _clsCategoria.cat_ID = dgvGridEmpresa.CurrentRow.Cells(69).Value
+                    _empr_dataInicio = dgvGridEmpresa.CurrentRow.Cells(70).Value
+                    _empr_endereco = dgvGridEmpresa.CurrentRow.Cells(71).Value
+                    _empr_numero = dgvGridEmpresa.CurrentRow.Cells(72).Value
+                    _empr_complemento = dgvGridEmpresa.CurrentRow.Cells(73).Value
+                    _empr_bairro = dgvGridEmpresa.CurrentRow.Cells(74).Value
+                    _empr_cidade = dgvGridEmpresa.CurrentRow.Cells(75).Value
+                    _empr_UF = dgvGridEmpresa.CurrentRow.Cells(76).Value
+                    _empr_CEP = dgvGridEmpresa.CurrentRow.Cells(77).Value
+                    _empr_obs = dgvGridEmpresa.CurrentRow.Cells(78).Value
+                    _empr_Simples = dgvGridEmpresa.CurrentRow.Cells(79).Value
+                    _empr_SimplesNacional = dgvGridEmpresa.CurrentRow.Cells(80).Value
+                    _empr_Simei = dgvGridEmpresa.CurrentRow.Cells(81).Value
+                    _empr_CodSimei = dgvGridEmpresa.CurrentRow.Cells(82).Value
+                    _empr_sefaz = dgvGridEmpresa.CurrentRow.Cells(83).Value
+                    _empr_SefazUsu = dgvGridEmpresa.CurrentRow.Cells(84).Value
+                    _empr_SefazSen = dgvGridEmpresa.CurrentRow.Cells(85).Value
+                    _empr_CodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(86).Value
+                    _empr_NumCodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(87).Value
                     Me.Close()
 
                 End If

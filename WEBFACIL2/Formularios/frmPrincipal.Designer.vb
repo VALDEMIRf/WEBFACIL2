@@ -28,25 +28,31 @@ Partial Class frmPrincipal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btCarregaGrid = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.dgvTarefas = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cmbDia = New System.Windows.Forms.ComboBox()
         Me.cmbMes = New System.Windows.Forms.ComboBox()
         Me.dgvAniversariantes = New System.Windows.Forms.DataGridView()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.SobreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TrabalhosDiáriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormuláriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatórioGeralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SobreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastroDeTarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultaDeTarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssessoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
+        Me.txtPesquisa = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.dgvTarefas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvAniversariantes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -96,6 +102,7 @@ Partial Class frmPrincipal
         '
         'Panel5
         '
+        Me.Panel5.Controls.Add(Me.GroupBox2)
         Me.Panel5.Controls.Add(Me.GroupBox1)
         Me.Panel5.Controls.Add(Me.Panel4)
         Me.Panel5.Controls.Add(Me.MenuStrip1)
@@ -106,28 +113,52 @@ Partial Class frmPrincipal
         Me.Panel5.Size = New System.Drawing.Size(1012, 501)
         Me.Panel5.TabIndex = 1
         '
+        'btCarregaGrid
+        '
+        Me.btCarregaGrid.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btCarregaGrid.FlatAppearance.BorderSize = 0
+        Me.btCarregaGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCarregaGrid.Image = CType(resources.GetObject("btCarregaGrid.Image"), System.Drawing.Image)
+        Me.btCarregaGrid.Location = New System.Drawing.Point(363, 17)
+        Me.btCarregaGrid.Name = "btCarregaGrid"
+        Me.btCarregaGrid.Size = New System.Drawing.Size(26, 26)
+        Me.btCarregaGrid.TabIndex = 11
+        Me.btCarregaGrid.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btCarregaGrid)
+        Me.GroupBox2.Controls.Add(Me.txtPesquisa)
+        Me.GroupBox2.Controls.Add(Me.dgvTarefas)
+        Me.GroupBox2.Location = New System.Drawing.Point(605, 107)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(395, 344)
+        Me.GroupBox2.TabIndex = 10
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Tarefas"
+        '
+        'dgvTarefas
+        '
+        Me.dgvTarefas.BackgroundColor = System.Drawing.Color.White
+        Me.dgvTarefas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTarefas.Location = New System.Drawing.Point(6, 54)
+        Me.dgvTarefas.Name = "dgvTarefas"
+        Me.dgvTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvTarefas.Size = New System.Drawing.Size(383, 279)
+        Me.dgvTarefas.TabIndex = 0
+        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.cmbDia)
         Me.GroupBox1.Controls.Add(Me.cmbMes)
         Me.GroupBox1.Controls.Add(Me.dgvAniversariantes)
-        Me.GroupBox1.Location = New System.Drawing.Point(168, 158)
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 107)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(354, 313)
+        Me.GroupBox1.Size = New System.Drawing.Size(551, 311)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Aniversariantes"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(183, 28)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 17)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Dia:"
         '
         'Label3
         '
@@ -138,26 +169,16 @@ Partial Class frmPrincipal
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Mês:"
         '
-        'cmbDia
-        '
-        Me.cmbDia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbDia.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmbDia.FormattingEnabled = True
-        Me.cmbDia.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.cmbDia.Location = New System.Drawing.Point(222, 23)
-        Me.cmbDia.Name = "cmbDia"
-        Me.cmbDia.Size = New System.Drawing.Size(121, 25)
-        Me.cmbDia.TabIndex = 2
-        '
         'cmbMes
         '
         Me.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbMes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmbMes.DropDownWidth = 191
         Me.cmbMes.FormattingEnabled = True
-        Me.cmbMes.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
+        Me.cmbMes.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.cmbMes.Items.AddRange(New Object() {"<Selecione o Mês>", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
         Me.cmbMes.Location = New System.Drawing.Point(55, 23)
         Me.cmbMes.Name = "cmbMes"
-        Me.cmbMes.Size = New System.Drawing.Size(121, 25)
+        Me.cmbMes.Size = New System.Drawing.Size(153, 25)
         Me.cmbMes.TabIndex = 1
         '
         'dgvAniversariantes
@@ -168,7 +189,7 @@ Partial Class frmPrincipal
         Me.dgvAniversariantes.Location = New System.Drawing.Point(6, 54)
         Me.dgvAniversariantes.Name = "dgvAniversariantes"
         Me.dgvAniversariantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvAniversariantes.Size = New System.Drawing.Size(341, 253)
+        Me.dgvAniversariantes.Size = New System.Drawing.Size(539, 253)
         Me.dgvAniversariantes.TabIndex = 0
         '
         'Panel4
@@ -184,39 +205,36 @@ Partial Class frmPrincipal
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.CadetBlue
         Me.MenuStrip1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientsToolStripMenuItem, Me.FormuláriosToolStripMenuItem, Me.SobreToolStripMenuItem, Me.SairToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SobreToolStripMenuItem, Me.ClientsToolStripMenuItem, Me.FormuláriosToolStripMenuItem, Me.TarefasToolStripMenuItem, Me.SairToolStripMenuItem, Me.AssessoriaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1012, 61)
         Me.MenuStrip1.TabIndex = 6
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'SobreToolStripMenuItem
+        '
+        Me.SobreToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
+        Me.SobreToolStripMenuItem.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.SobreToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.SobreToolStripMenuItem.Image = CType(resources.GetObject("SobreToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SobreToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.SobreToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 5, 0, 0)
+        Me.SobreToolStripMenuItem.Name = "SobreToolStripMenuItem"
+        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(94, 52)
+        Me.SobreToolStripMenuItem.Text = "Sobre"
+        '
         'ClientsToolStripMenuItem
         '
         Me.ClientsToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
-        Me.ClientsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.TrabalhosDiáriosToolStripMenuItem})
         Me.ClientsToolStripMenuItem.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ClientsToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ClientsToolStripMenuItem.Image = CType(resources.GetObject("ClientsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClientsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ClientsToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 10, 0, 0)
         Me.ClientsToolStripMenuItem.Name = "ClientsToolStripMenuItem"
-        Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(121, 47)
-        Me.ClientsToolStripMenuItem.Text = "Cadastros"
-        '
-        'ClientesToolStripMenuItem
-        '
-        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.ClientesToolStripMenuItem.Text = "Clientes"
-        '
-        'TrabalhosDiáriosToolStripMenuItem
-        '
-        Me.TrabalhosDiáriosToolStripMenuItem.Image = CType(resources.GetObject("TrabalhosDiáriosToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.TrabalhosDiáriosToolStripMenuItem.Name = "TrabalhosDiáriosToolStripMenuItem"
-        Me.TrabalhosDiáriosToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.TrabalhosDiáriosToolStripMenuItem.Text = "Assessoria"
+        Me.ClientsToolStripMenuItem.Size = New System.Drawing.Size(110, 47)
+        Me.ClientsToolStripMenuItem.Text = "Clientes"
         '
         'FormuláriosToolStripMenuItem
         '
@@ -239,29 +257,48 @@ Partial Class frmPrincipal
         Me.RelatórioGeralToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.RelatórioGeralToolStripMenuItem.Text = "Relatório Geral"
         '
-        'SobreToolStripMenuItem
+        'TarefasToolStripMenuItem
         '
-        Me.SobreToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
-        Me.SobreToolStripMenuItem.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.SobreToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.SobreToolStripMenuItem.Image = CType(resources.GetObject("SobreToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SobreToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.SobreToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.SobreToolStripMenuItem.Name = "SobreToolStripMenuItem"
-        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(94, 52)
-        Me.SobreToolStripMenuItem.Text = "Sobre"
+        Me.TarefasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroDeTarefasToolStripMenuItem, Me.ConsultaDeTarefasToolStripMenuItem})
+        Me.TarefasToolStripMenuItem.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TarefasToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.TarefasToolStripMenuItem.Image = CType(resources.GetObject("TarefasToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.TarefasToolStripMenuItem.Name = "TarefasToolStripMenuItem"
+        Me.TarefasToolStripMenuItem.Size = New System.Drawing.Size(82, 57)
+        Me.TarefasToolStripMenuItem.Text = "Tarefas"
+        '
+        'CadastroDeTarefasToolStripMenuItem
+        '
+        Me.CadastroDeTarefasToolStripMenuItem.Name = "CadastroDeTarefasToolStripMenuItem"
+        Me.CadastroDeTarefasToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.CadastroDeTarefasToolStripMenuItem.Text = "Cadastro de Tarefas"
+        '
+        'ConsultaDeTarefasToolStripMenuItem
+        '
+        Me.ConsultaDeTarefasToolStripMenuItem.Name = "ConsultaDeTarefasToolStripMenuItem"
+        Me.ConsultaDeTarefasToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.ConsultaDeTarefasToolStripMenuItem.Text = "Consulta de Tarefas"
         '
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.BackColor = System.Drawing.Color.CadetBlue
         Me.SairToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.SairToolStripMenuItem.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.SairToolStripMenuItem.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.SairToolStripMenuItem.Image = CType(resources.GetObject("SairToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SairToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(79, 57)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(80, 57)
         Me.SairToolStripMenuItem.Text = "Sair"
+        '
+        'AssessoriaToolStripMenuItem
+        '
+        Me.AssessoriaToolStripMenuItem.Font = New System.Drawing.Font("Arial Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AssessoriaToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.AssessoriaToolStripMenuItem.Image = CType(resources.GetObject("AssessoriaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.AssessoriaToolStripMenuItem.Name = "AssessoriaToolStripMenuItem"
+        Me.AssessoriaToolStripMenuItem.Size = New System.Drawing.Size(115, 57)
+        Me.AssessoriaToolStripMenuItem.Text = "Assessoria"
         '
         'MenuStrip2
         '
@@ -270,6 +307,13 @@ Partial Class frmPrincipal
         Me.MenuStrip2.Size = New System.Drawing.Size(1012, 24)
         Me.MenuStrip2.TabIndex = 9
         Me.MenuStrip2.Text = "MenuStrip2"
+        '
+        'txtPesquisa
+        '
+        Me.txtPesquisa.Location = New System.Drawing.Point(257, 19)
+        Me.txtPesquisa.Name = "txtPesquisa"
+        Me.txtPesquisa.Size = New System.Drawing.Size(100, 24)
+        Me.txtPesquisa.TabIndex = 1
         '
         'frmPrincipal
         '
@@ -293,6 +337,9 @@ Partial Class frmPrincipal
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.dgvTarefas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgvAniversariantes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -324,13 +371,17 @@ Partial Class frmPrincipal
     Friend WithEvents RelatórioGeralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents cmbDia As System.Windows.Forms.ComboBox
     Friend WithEvents cmbMes As System.Windows.Forms.ComboBox
     Friend WithEvents dgvAniversariantes As System.Windows.Forms.DataGridView
     Friend WithEvents MenuStrip2 As System.Windows.Forms.MenuStrip
-    Friend WithEvents ClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TrabalhosDiáriosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents dgvTarefas As System.Windows.Forms.DataGridView
+    Friend WithEvents TarefasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CadastroDeTarefasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultaDeTarefasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AssessoriaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents btCarregaGrid As System.Windows.Forms.Button
+    Friend WithEvents txtPesquisa As System.Windows.Forms.TextBox
 
 End Class

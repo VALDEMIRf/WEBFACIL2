@@ -189,6 +189,9 @@ Partial Class frmCadastroClientes
         Me.txtPJ = New System.Windows.Forms.TextBox()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtAutonomo = New System.Windows.Forms.TextBox()
+        Me.cmbDia = New System.Windows.Forms.ComboBox()
+        Me.cmbMes = New System.Windows.Forms.ComboBox()
+        Me.cmbAno = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -993,6 +996,9 @@ Partial Class frmCadastroClientes
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.cmbAno)
+        Me.GroupBox2.Controls.Add(Me.cmbMes)
+        Me.GroupBox2.Controls.Add(Me.cmbDia)
         Me.GroupBox2.Controls.Add(Me.Label42)
         Me.GroupBox2.Controls.Add(Me.cboSituacao)
         Me.GroupBox2.Controls.Add(Me.txtCPF)
@@ -1082,7 +1088,7 @@ Partial Class frmCadastroClientes
         'txtCPFVinculado
         '
         Me.txtCPFVinculado.FormattingEnabled = True
-        Me.txtCPFVinculado.Location = New System.Drawing.Point(73, 132)
+        Me.txtCPFVinculado.Location = New System.Drawing.Point(73, 151)
         Me.txtCPFVinculado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCPFVinculado.Name = "txtCPFVinculado"
         Me.txtCPFVinculado.Size = New System.Drawing.Size(105, 22)
@@ -1095,7 +1101,7 @@ Partial Class frmCadastroClientes
         Me.btPesquisarCPFVinculado.FlatAppearance.BorderSize = 0
         Me.btPesquisarCPFVinculado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisarCPFVinculado.Image = CType(resources.GetObject("btPesquisarCPFVinculado.Image"), System.Drawing.Image)
-        Me.btPesquisarCPFVinculado.Location = New System.Drawing.Point(172, 123)
+        Me.btPesquisarCPFVinculado.Location = New System.Drawing.Point(172, 142)
         Me.btPesquisarCPFVinculado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btPesquisarCPFVinculado.Name = "btPesquisarCPFVinculado"
         Me.btPesquisarCPFVinculado.Size = New System.Drawing.Size(38, 36)
@@ -1107,7 +1113,7 @@ Partial Class frmCadastroClientes
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(6, 161)
+        Me.Label39.Location = New System.Drawing.Point(6, 180)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(46, 14)
         Me.Label39.TabIndex = 79
@@ -1115,7 +1121,7 @@ Partial Class frmCadastroClientes
         '
         'txtVinculo
         '
-        Me.txtVinculo.Location = New System.Drawing.Point(53, 158)
+        Me.txtVinculo.Location = New System.Drawing.Point(53, 177)
         Me.txtVinculo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtVinculo.Name = "txtVinculo"
         Me.txtVinculo.ReadOnly = True
@@ -1124,27 +1130,28 @@ Partial Class frmCadastroClientes
         '
         'txtDtNasc
         '
-        Me.txtDtNasc.Location = New System.Drawing.Point(54, 103)
+        Me.txtDtNasc.Location = New System.Drawing.Point(204, 177)
         Me.txtDtNasc.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtDtNasc.Mask = "00/00/0000"
         Me.txtDtNasc.Name = "txtDtNasc"
         Me.txtDtNasc.Size = New System.Drawing.Size(60, 20)
         Me.txtDtNasc.TabIndex = 7
         Me.txtDtNasc.ValidatingType = GetType(Date)
+        Me.txtDtNasc.Visible = False
         '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(4, 103)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(51, 14)
+        Me.Label20.Size = New System.Drawing.Size(94, 14)
         Me.Label20.TabIndex = 18
-        Me.Label20.Text = "Dt Nasc.:"
+        Me.Label20.Text = "Data Nascimento.:"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(8, 135)
+        Me.Label19.Location = New System.Drawing.Point(8, 154)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(68, 14)
         Me.Label19.TabIndex = 16
@@ -1171,7 +1178,7 @@ Partial Class frmCadastroClientes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(120, 107)
+        Me.Label1.Location = New System.Drawing.Point(11, 130)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(25, 14)
         Me.Label1.TabIndex = 9
@@ -1196,7 +1203,7 @@ Partial Class frmCadastroClientes
         '
         'txtRG
         '
-        Me.txtRG.Location = New System.Drawing.Point(146, 104)
+        Me.txtRG.Location = New System.Drawing.Point(37, 127)
         Me.txtRG.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRG.Name = "txtRG"
         Me.txtRG.Size = New System.Drawing.Size(84, 20)
@@ -1990,6 +1997,33 @@ Partial Class frmCadastroClientes
         Me.txtAutonomo.TabIndex = 57
         Me.txtAutonomo.Visible = False
         '
+        'cmbDia
+        '
+        Me.cmbDia.FormattingEnabled = True
+        Me.cmbDia.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.cmbDia.Location = New System.Drawing.Point(101, 100)
+        Me.cmbDia.Name = "cmbDia"
+        Me.cmbDia.Size = New System.Drawing.Size(39, 22)
+        Me.cmbDia.TabIndex = 86
+        '
+        'cmbMes
+        '
+        Me.cmbMes.FormattingEnabled = True
+        Me.cmbMes.Items.AddRange(New Object() {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
+        Me.cmbMes.Location = New System.Drawing.Point(141, 100)
+        Me.cmbMes.Name = "cmbMes"
+        Me.cmbMes.Size = New System.Drawing.Size(39, 22)
+        Me.cmbMes.TabIndex = 87
+        '
+        'cmbAno
+        '
+        Me.cmbAno.FormattingEnabled = True
+        Me.cmbAno.Items.AddRange(New Object() {"1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"})
+        Me.cmbAno.Location = New System.Drawing.Point(182, 100)
+        Me.cmbAno.Name = "cmbAno"
+        Me.cmbAno.Size = New System.Drawing.Size(51, 22)
+        Me.cmbAno.TabIndex = 200001
+        '
         'frmCadastroClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
@@ -2198,4 +2232,7 @@ Partial Class frmCadastroClientes
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents btAlteraEmpresa As System.Windows.Forms.Button
     Friend WithEvents btSalvarEmpresa As System.Windows.Forms.Button
+    Friend WithEvents cmbAno As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbMes As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbDia As System.Windows.Forms.ComboBox
 End Class

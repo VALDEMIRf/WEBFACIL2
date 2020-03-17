@@ -104,7 +104,9 @@ Public Class frmCadastroClientes
             cliente.cli_CEP = txtCEP.Text
             cliente.cli_FoneRes = txtFoneRes.Text
             cliente.cli_FoneCel = txtFoneCel.Text
-            cliente.cli_data_nasc = txtDtNasc.Text
+            cliente.cli_Dia = cmbDia.Text
+            cliente.cli_Mes = cmbMes.Text
+            cliente.cli_Ano = cmbAno.Text
             cliente.cli_Curriculo = chbCurriculo.Checked
             cliente.cli_Email = txtEmail.Text
             cliente.cli_observacoes = txtObs.Text
@@ -257,7 +259,9 @@ Public Class frmCadastroClientes
         txtCEP.Text = frmClienteConsulta.cli_CEP
         txtFoneRes.Text = frmClienteConsulta.cli_FoneRes
         txtFoneCel.Text = frmClienteConsulta.cli_FoneCel
-        txtDtNasc.Text = frmClienteConsulta.cli_data_nasc
+        cmbDia.Text = frmClienteConsulta.cli_Dia
+        cmbMes.Text = frmClienteConsulta.cli_Mes
+        cmbAno.Text = frmClienteConsulta.cli_Ano
         chbCurriculo.Checked = frmClienteConsulta.cli_Curriculo
         txtEmail.Text = frmClienteConsulta.cli_Email
         txtObs.Text = frmClienteConsulta.cli_observacoes
@@ -323,7 +327,9 @@ Public Class frmCadastroClientes
         txtCEP.Text = frmEmpresaConsulta.cli_CEP
         txtFoneRes.Text = frmEmpresaConsulta.cli_FoneRes
         txtFoneCel.Text = frmEmpresaConsulta.cli_FoneCel
-        txtDtNasc.Text = frmEmpresaConsulta.cli_data_nasc
+        cmbDia.Text = frmEmpresaConsulta.cli_Dia
+        cmbMes.Text = frmEmpresaConsulta.cli_Mes
+        cmbAno.Text = frmEmpresaConsulta.cli_Ano
         chbCurriculo.Checked = frmEmpresaConsulta.cli_Curriculo
         txtEmail.Text = frmEmpresaConsulta.cli_Email
         txtObs.Text = frmEmpresaConsulta.cli_observacoes
@@ -487,7 +493,9 @@ Public Class frmCadastroClientes
             cliente.cli_CEP = txtCEP.Text
             cliente.cli_FoneRes = txtFoneRes.Text
             cliente.cli_FoneCel = txtFoneCel.Text
-            cliente.cli_data_nasc = txtDtNasc.Text
+            cliente.cli_Dia = cmbDia.Text
+            cliente.cli_Mes = cmbMes.Text
+            cliente.cli_Ano = cmbAno.Text
             cliente.cli_Curriculo = chbCurriculo.Checked
             cliente.cli_Email = txtEmail.Text
             cliente.cli_observacoes = txtObs.Text
@@ -631,13 +639,14 @@ Public Class frmCadastroClientes
         txtCEP.Text = ""
         txtFoneRes.Text = ""
         txtFoneCel.Text = ""
-        txtDtNasc.Text = ""
+        cmbDia.Text = ""
+        cmbMes.Text = ""
+        cmbAno.Text = ""
         chbCurriculo.Checked = False
         txtEmail.Text = ""
         txtObs.Text = ""
         chbAposentado.Checked = False
         txtNumBeneficio.Text = ""
-
         chbFuncPublico.Checked = False
         ' txtFuncPublico_old.Text = ""
         chbAutonomo.Checked = False
@@ -672,7 +681,6 @@ Public Class frmCadastroClientes
         chbCodRFB.Checked = False
         txtCodRFB.Text = ""
         txtValidadeRFB.Text = ""
-
         txtRazaoSocial.Text = ""
         txtNomeFantasia.Text = ""
         txtCNPJ.Text = ""

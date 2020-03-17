@@ -81,6 +81,7 @@
     <Compile Include="Classes\clsAcessoria.vb" />
     <Compile Include="Classes\clsCategoria.vb" />
     <Compile Include="Classes\clsEmpresa.vb" />
+    <Compile Include="Classes\clsTarefas.vb" />
     <Compile Include="cldBancoDados.vb" />
     <Compile Include="Classes\clsCliente.vb" />
     <Compile Include="Classes\clsCPFVinculado.vb" />
@@ -102,6 +103,18 @@
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmCadastroClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmTarefasCadastro.Designer.vb">
+      <DependentUpon>frmTarefasCadastro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTarefasCadastro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmTarefasConsulta.Designer.vb">
+      <DependentUpon>frmTarefasConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTarefasConsulta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmVinculadoCadastro.Designer.vb">
@@ -168,6 +181,12 @@
     <EmbeddedResource Include="Formularios\frmCadastroClientes.resx">
       <DependentUpon>frmCadastroClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmTarefasCadastro.resx">
+      <DependentUpon>frmTarefasCadastro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmTarefasConsulta.resx">
+      <DependentUpon>frmTarefasConsulta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVinculadoCadastro.resx">
       <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +250,7 @@
     <Content Include="Imagens\Ebiene-E-Commerce-Cash-register.ico" />
     <Content Include="Imagens\Edit-Document-icon.png" />
     <Content Include="Imagens\exit-icon.png" />
+    <Content Include="Imagens\f5atualizarpeq.jpg" />
     <Content Include="Imagens\forms-icon.png" />
     <Content Include="Imagens\logo webfacil.png" />
     <Content Include="Imagens\lupa.png" />
@@ -244,6 +264,8 @@
     <Content Include="Imagens\sair3.png" />
     <Content Include="Imagens\sair4.png" />
     <Content Include="Imagens\salvar.png" />
+    <Content Include="Imagens\tarefas.png" />
+    <Content Include="Imagens\tarefas1.png" />
     <Content Include="Imagens\Text-Edit-icon.png" />
     <Content Include="Imagens\Unemployed-icon.png" />
     <Content Include="Imagens\Unemployed.ico" />

@@ -22,6 +22,7 @@ Partial Class frmAcessoriaConsulta
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAcessoriaConsulta))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtMes = New System.Windows.Forms.TextBox()
@@ -34,8 +35,10 @@ Partial Class frmAcessoriaConsulta
         Me.btPesquisarCliente = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvGridAssessoria = New System.Windows.Forms.DataGridView()
+        Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvGridAssessoria, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -164,6 +167,10 @@ Partial Class frmAcessoriaConsulta
         Me.dgvGridAssessoria.Size = New System.Drawing.Size(707, 231)
         Me.dgvGridAssessoria.TabIndex = 3
         '
+        'errErro
+        '
+        Me.errErro.ContainerControl = Me
+        '
         'frmAcessoriaConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -177,6 +184,7 @@ Partial Class frmAcessoriaConsulta
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgvGridAssessoria, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -191,4 +199,5 @@ Partial Class frmAcessoriaConsulta
     Friend WithEvents btPesquisarCliente As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgvGridAssessoria As System.Windows.Forms.DataGridView
+    Friend WithEvents errErro As System.Windows.Forms.ErrorProvider
 End Class

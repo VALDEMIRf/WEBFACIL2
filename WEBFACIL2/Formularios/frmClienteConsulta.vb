@@ -194,6 +194,36 @@
         End Set
     End Property
 
+    Private _cli_Dia As String
+    Public Property cli_Dia() As String
+        Get
+            Return _cli_Dia
+        End Get
+        Set(ByVal value As String)
+            _cli_Dia = value
+        End Set
+    End Property
+
+    Private _cli_Mes As String
+    Public Property cli_Mes() As String
+        Get
+            Return _cli_Mes
+        End Get
+        Set(ByVal value As String)
+            _cli_Mes = value
+        End Set
+    End Property
+
+    Private _cli_Ano As String
+    Public Property cli_Ano() As String
+        Get
+            Return _cli_Ano
+        End Get
+        Set(ByVal value As String)
+            _cli_Ano = value
+        End Set
+    End Property
+
     Private _cli_Email As String
     Public Property cli_Email() As String
         Get
@@ -649,46 +679,48 @@
                     _cli_CEP = dgvGrid.CurrentRow.Cells(13).Value
                     _cli_FoneRes = dgvGrid.CurrentRow.Cells(14).Value
                     _cli_FoneCel = dgvGrid.CurrentRow.Cells(15).Value
-                    _cli_data_nasc = dgvGrid.CurrentRow.Cells(16).Value
-                    _cli_Curriculo = dgvGrid.CurrentRow.Cells(17).Value
-                    _cli_Email = dgvGrid.CurrentRow.Cells(18).Value
-                    _cli_observacoes = dgvGrid.CurrentRow.Cells(19).Value
-                    _cli_Aposentado = dgvGrid.CurrentRow.Cells(20).Value
-                    _cli_NumBeneficio = dgvGrid.CurrentRow.Cells(21).Value
-                    _cli_FuncPublico = dgvGrid.CurrentRow.Cells(22).Value
-                    _cli_NomeFunc = dgvGrid.CurrentRow.Cells(23).Value
-                    _cli_Autonomo = dgvGrid.CurrentRow.Cells(24).Value
-                    _cli_AutonomoNome = dgvGrid.CurrentRow.Cells(25).Value
-                    _cli_Falecido = dgvGrid.CurrentRow.Cells(26).Value
-                    _cli_NomeFalecido = dgvGrid.CurrentRow.Cells(27).Value
-                    _cli_Inativo = dgvGrid.CurrentRow.Cells(28).Value
-                    _cli_InativoObs = dgvGrid.CurrentRow.Cells(29).Value
-                    _cli_Parcelamento = dgvGrid.CurrentRow.Cells(30).Value
-                    _cli_NumParcelamento = dgvGrid.CurrentRow.Cells(31).Value
-                    _cli_EmprDom = dgvGrid.CurrentRow.Cells(32).Value
-                    _cli_ESocial = dgvGrid.CurrentRow.Cells(33).Value
-                    _cli_EsocialSenha = dgvGrid.CurrentRow.Cells(34).Value
-                    _cli_VIP = dgvGrid.CurrentRow.Cells(35).Value
-                    _cli_VIPDescricao = dgvGrid.CurrentRow.Cells(36).Value
-                    _cli_PJ = dgvGrid.CurrentRow.Cells(37).Value
-                    _cli_NumPJ = dgvGrid.CurrentRow.Cells(38).Value
-                    _cli_MEI = dgvGrid.CurrentRow.Cells(39).Value
-                    _cli_NumMEI = dgvGrid.CurrentRow.Cells(40).Value
-                    _cli_ITR = dgvGrid.CurrentRow.Cells(41).Value
-                    _cli_NumITR = dgvGrid.CurrentRow.Cells(42).Value
-                    _cli_Mensalista = dgvGrid.CurrentRow.Cells(43).Value
-                    _cli_NomeMensalista = dgvGrid.CurrentRow.Cells(44).Value
-                    _cli_Decore = dgvGrid.CurrentRow.Cells(45).Value
-                    _cli_DecoreDescricao = dgvGrid.CurrentRow.Cells(46).Value
-                    _cli_IRPF = dgvGrid.CurrentRow.Cells(47).Value
-                    _cli_NumIRPF = dgvGrid.CurrentRow.Cells(48).Value
-                    _cli_SenWebPrefeitura = dgvGrid.CurrentRow.Cells(49).Value
-                    _cli_SenhaWebPrefeitura = dgvGrid.CurrentRow.Cells(50).Value
-                    _cli_Redesim = dgvGrid.CurrentRow.Cells(51).Value
-                    _cli_SenhaRedesim = dgvGrid.CurrentRow.Cells(52).Value
-                    _cli_CodRFB = dgvGrid.CurrentRow.Cells(53).Value
-                    _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(54).Value
-                    _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(55).Value
+                    _cli_Dia = dgvGrid.CurrentRow.Cells(16).Value.ToString
+                    _cli_Mes = dgvGrid.CurrentRow.Cells(17).Value.ToString
+                    _cli_Ano = dgvGrid.CurrentRow.Cells(18).Value.ToString
+                    _cli_Curriculo = dgvGrid.CurrentRow.Cells(19).Value
+                    _cli_Email = dgvGrid.CurrentRow.Cells(20).Value
+                    _cli_observacoes = dgvGrid.CurrentRow.Cells(21).Value
+                    _cli_Aposentado = dgvGrid.CurrentRow.Cells(22).Value
+                    _cli_NumBeneficio = dgvGrid.CurrentRow.Cells(23).Value
+                    _cli_FuncPublico = dgvGrid.CurrentRow.Cells(24).Value
+                    _cli_NomeFunc = dgvGrid.CurrentRow.Cells(25).Value
+                    _cli_Autonomo = dgvGrid.CurrentRow.Cells(26).Value
+                    _cli_AutonomoNome = dgvGrid.CurrentRow.Cells(27).Value
+                    _cli_Falecido = dgvGrid.CurrentRow.Cells(28).Value
+                    _cli_NomeFalecido = dgvGrid.CurrentRow.Cells(29).Value
+                    _cli_Inativo = dgvGrid.CurrentRow.Cells(30).Value
+                    _cli_InativoObs = dgvGrid.CurrentRow.Cells(31).Value
+                    _cli_Parcelamento = dgvGrid.CurrentRow.Cells(32).Value
+                    _cli_NumParcelamento = dgvGrid.CurrentRow.Cells(33).Value
+                    _cli_EmprDom = dgvGrid.CurrentRow.Cells(34).Value
+                    _cli_ESocial = dgvGrid.CurrentRow.Cells(35).Value
+                    _cli_EsocialSenha = dgvGrid.CurrentRow.Cells(36).Value
+                    _cli_VIP = dgvGrid.CurrentRow.Cells(37).Value
+                    _cli_VIPDescricao = dgvGrid.CurrentRow.Cells(38).Value
+                    _cli_PJ = dgvGrid.CurrentRow.Cells(39).Value
+                    _cli_NumPJ = dgvGrid.CurrentRow.Cells(40).Value
+                    _cli_MEI = dgvGrid.CurrentRow.Cells(41).Value
+                    _cli_NumMEI = dgvGrid.CurrentRow.Cells(42).Value
+                    _cli_ITR = dgvGrid.CurrentRow.Cells(43).Value
+                    _cli_NumITR = dgvGrid.CurrentRow.Cells(44).Value
+                    _cli_Mensalista = dgvGrid.CurrentRow.Cells(45).Value
+                    _cli_NomeMensalista = dgvGrid.CurrentRow.Cells(46).Value
+                    _cli_Decore = dgvGrid.CurrentRow.Cells(47).Value
+                    _cli_DecoreDescricao = dgvGrid.CurrentRow.Cells(48).Value
+                    _cli_IRPF = dgvGrid.CurrentRow.Cells(49).Value
+                    _cli_NumIRPF = dgvGrid.CurrentRow.Cells(50).Value
+                    _cli_SenWebPrefeitura = dgvGrid.CurrentRow.Cells(51).Value
+                    _cli_SenhaWebPrefeitura = dgvGrid.CurrentRow.Cells(52).Value
+                    _cli_Redesim = dgvGrid.CurrentRow.Cells(53).Value
+                    _cli_SenhaRedesim = dgvGrid.CurrentRow.Cells(54).Value
+                    _cli_CodRFB = dgvGrid.CurrentRow.Cells(55).Value
+                    _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(56).Value
+                    _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(57).Value
                     Me.Close()
                 End If
         End Select
@@ -717,46 +749,48 @@
             _cli_CEP = dgvGrid.CurrentRow.Cells(13).Value
             _cli_FoneRes = dgvGrid.CurrentRow.Cells(14).Value
             _cli_FoneCel = dgvGrid.CurrentRow.Cells(15).Value
-            _cli_data_nasc = dgvGrid.CurrentRow.Cells(16).Value
-            _cli_Curriculo = dgvGrid.CurrentRow.Cells(17).Value
-            _cli_Email = dgvGrid.CurrentRow.Cells(18).Value
-            _cli_observacoes = dgvGrid.CurrentRow.Cells(19).Value
-            _cli_Aposentado = dgvGrid.CurrentRow.Cells(20).Value
-            _cli_NumBeneficio = dgvGrid.CurrentRow.Cells(21).Value
-            _cli_FuncPublico = dgvGrid.CurrentRow.Cells(22).Value
-            _cli_NomeFunc = dgvGrid.CurrentRow.Cells(23).Value
-            _cli_Autonomo = dgvGrid.CurrentRow.Cells(24).Value
-            _cli_AutonomoNome = dgvGrid.CurrentRow.Cells(25).Value
-            _cli_Falecido = dgvGrid.CurrentRow.Cells(26).Value
-            _cli_NomeFalecido = dgvGrid.CurrentRow.Cells(27).Value
-            _cli_Inativo = dgvGrid.CurrentRow.Cells(28).Value
-            _cli_InativoObs = dgvGrid.CurrentRow.Cells(29).Value
-            _cli_Parcelamento = dgvGrid.CurrentRow.Cells(30).Value
-            _cli_NumParcelamento = dgvGrid.CurrentRow.Cells(31).Value
-            _cli_EmprDom = dgvGrid.CurrentRow.Cells(32).Value
-            _cli_ESocial = dgvGrid.CurrentRow.Cells(33).Value
-            _cli_EsocialSenha = dgvGrid.CurrentRow.Cells(34).Value
-            _cli_VIP = dgvGrid.CurrentRow.Cells(35).Value
-            _cli_VIPDescricao = dgvGrid.CurrentRow.Cells(36).Value
-            _cli_PJ = dgvGrid.CurrentRow.Cells(37).Value
-            _cli_NumPJ = dgvGrid.CurrentRow.Cells(38).Value
-            _cli_MEI = dgvGrid.CurrentRow.Cells(39).Value
-            _cli_NumMEI = dgvGrid.CurrentRow.Cells(40).Value
-            _cli_ITR = dgvGrid.CurrentRow.Cells(41).Value
-            _cli_NumITR = dgvGrid.CurrentRow.Cells(42).Value
-            _cli_Mensalista = dgvGrid.CurrentRow.Cells(43).Value
-            _cli_NomeMensalista = dgvGrid.CurrentRow.Cells(44).Value
-            _cli_Decore = dgvGrid.CurrentRow.Cells(45).Value
-            _cli_DecoreDescricao = dgvGrid.CurrentRow.Cells(46).Value
-            _cli_IRPF = dgvGrid.CurrentRow.Cells(47).Value
-            _cli_NumIRPF = dgvGrid.CurrentRow.Cells(48).Value
-            _cli_SenWebPrefeitura = dgvGrid.CurrentRow.Cells(49).Value
-            _cli_SenhaWebPrefeitura = dgvGrid.CurrentRow.Cells(50).Value
-            _cli_Redesim = dgvGrid.CurrentRow.Cells(51).Value
-            _cli_SenhaRedesim = dgvGrid.CurrentRow.Cells(52).Value
-            _cli_CodRFB = dgvGrid.CurrentRow.Cells(53).Value
-            _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(54).Value
-            _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(55).Value
+            _cli_Dia = dgvGrid.CurrentRow.Cells(16).Value
+            _cli_Mes = dgvGrid.CurrentRow.Cells(17).Value
+            _cli_Ano = dgvGrid.CurrentRow.Cells(18).Value
+            _cli_Curriculo = dgvGrid.CurrentRow.Cells(19).Value
+            _cli_Email = dgvGrid.CurrentRow.Cells(20).Value
+            _cli_observacoes = dgvGrid.CurrentRow.Cells(21).Value
+            _cli_Aposentado = dgvGrid.CurrentRow.Cells(22).Value
+            _cli_NumBeneficio = dgvGrid.CurrentRow.Cells(23).Value
+            _cli_FuncPublico = dgvGrid.CurrentRow.Cells(24).Value
+            _cli_NomeFunc = dgvGrid.CurrentRow.Cells(25).Value
+            _cli_Autonomo = dgvGrid.CurrentRow.Cells(26).Value
+            _cli_AutonomoNome = dgvGrid.CurrentRow.Cells(27).Value
+            _cli_Falecido = dgvGrid.CurrentRow.Cells(28).Value
+            _cli_NomeFalecido = dgvGrid.CurrentRow.Cells(29).Value
+            _cli_Inativo = dgvGrid.CurrentRow.Cells(30).Value
+            _cli_InativoObs = dgvGrid.CurrentRow.Cells(31).Value
+            _cli_Parcelamento = dgvGrid.CurrentRow.Cells(32).Value
+            _cli_NumParcelamento = dgvGrid.CurrentRow.Cells(33).Value
+            _cli_EmprDom = dgvGrid.CurrentRow.Cells(34).Value
+            _cli_ESocial = dgvGrid.CurrentRow.Cells(35).Value
+            _cli_EsocialSenha = dgvGrid.CurrentRow.Cells(36).Value
+            _cli_VIP = dgvGrid.CurrentRow.Cells(37).Value
+            _cli_VIPDescricao = dgvGrid.CurrentRow.Cells(38).Value
+            _cli_PJ = dgvGrid.CurrentRow.Cells(39).Value
+            _cli_NumPJ = dgvGrid.CurrentRow.Cells(40).Value
+            _cli_MEI = dgvGrid.CurrentRow.Cells(41).Value
+            _cli_NumMEI = dgvGrid.CurrentRow.Cells(42).Value
+            _cli_ITR = dgvGrid.CurrentRow.Cells(43).Value
+            _cli_NumITR = dgvGrid.CurrentRow.Cells(44).Value
+            _cli_Mensalista = dgvGrid.CurrentRow.Cells(45).Value
+            _cli_NomeMensalista = dgvGrid.CurrentRow.Cells(46).Value
+            _cli_Decore = dgvGrid.CurrentRow.Cells(47).Value
+            _cli_DecoreDescricao = dgvGrid.CurrentRow.Cells(48).Value
+            _cli_IRPF = dgvGrid.CurrentRow.Cells(49).Value
+            _cli_NumIRPF = dgvGrid.CurrentRow.Cells(50).Value
+            _cli_SenWebPrefeitura = dgvGrid.CurrentRow.Cells(51).Value
+            _cli_SenhaWebPrefeitura = dgvGrid.CurrentRow.Cells(52).Value
+            _cli_Redesim = dgvGrid.CurrentRow.Cells(53).Value
+            _cli_SenhaRedesim = dgvGrid.CurrentRow.Cells(54).Value
+            _cli_CodRFB = dgvGrid.CurrentRow.Cells(55).Value
+            _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(56).Value
+            _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(57).Value
             Me.Close()
         End If
     End Sub
