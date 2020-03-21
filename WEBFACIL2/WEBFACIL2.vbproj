@@ -239,6 +239,9 @@
     <Content Include="Imagens\alterar.png" />
     <Content Include="Imagens\alterarDados.png" />
     <Content Include="Imagens\arrow-right.png" />
+    <Content Include="Imagens\Arrows-Left.png" />
+    <Content Include="Imagens\Arrows-Right.png" />
+    <Content Include="Imagens\assignments.ico" />
     <Content Include="Imagens\Balance-icon.png" />
     <Content Include="Imagens\Balance.ico" />
     <Content Include="Imagens\binoculars.png" />
@@ -252,6 +255,7 @@
     <Content Include="Imagens\exit-icon.png" />
     <Content Include="Imagens\f5atualizarpeq.jpg" />
     <Content Include="Imagens\forms-icon.png" />
+    <Content Include="Imagens\Log-Out-icon.png" />
     <Content Include="Imagens\logo webfacil.png" />
     <Content Include="Imagens\lupa.png" />
     <Content Include="Imagens\Maintenance.ico" />
@@ -264,6 +268,7 @@
     <Content Include="Imagens\sair3.png" />
     <Content Include="Imagens\sair4.png" />
     <Content Include="Imagens\salvar.png" />
+    <Content Include="Imagens\save5.png" />
     <Content Include="Imagens\tarefas.png" />
     <Content Include="Imagens\tarefas1.png" />
     <Content Include="Imagens\Text-Edit-icon.png" />

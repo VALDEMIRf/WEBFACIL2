@@ -23,6 +23,7 @@ Partial Class frmCadAcessoria
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCadAcessoria))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtEmpresa = New System.Windows.Forms.TextBox()
@@ -71,6 +72,7 @@ Partial Class frmCadAcessoria
         Me.btRegistroAnterior = New System.Windows.Forms.Button()
         Me.btProximoRegistro = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
+        Me.lblAcessoID = New System.Windows.Forms.Label()
         Me.gbEmpresa.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GBsIMPLES.SuspendLayout()
@@ -482,20 +484,30 @@ Partial Class frmCadAcessoria
         '
         'btSalvar
         '
-        Me.btSalvar.Location = New System.Drawing.Point(31, 379)
+        Me.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSalvar.FlatAppearance.BorderSize = 0
+        Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
+        Me.btSalvar.Location = New System.Drawing.Point(75, 350)
         Me.btSalvar.Name = "btSalvar"
-        Me.btSalvar.Size = New System.Drawing.Size(75, 23)
+        Me.btSalvar.Size = New System.Drawing.Size(109, 60)
         Me.btSalvar.TabIndex = 18
         Me.btSalvar.Text = "Salvar"
+        Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSalvar.UseVisualStyleBackColor = True
         '
         'btAlterar
         '
-        Me.btAlterar.Location = New System.Drawing.Point(125, 379)
+        Me.btAlterar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btAlterar.FlatAppearance.BorderSize = 0
+        Me.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAlterar.Image = CType(resources.GetObject("btAlterar.Image"), System.Drawing.Image)
+        Me.btAlterar.Location = New System.Drawing.Point(171, 350)
         Me.btAlterar.Name = "btAlterar"
-        Me.btAlterar.Size = New System.Drawing.Size(75, 23)
+        Me.btAlterar.Size = New System.Drawing.Size(107, 60)
         Me.btAlterar.TabIndex = 19
         Me.btAlterar.Text = "Alterar"
+        Me.btAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btAlterar.UseVisualStyleBackColor = True
         '
         'errErro
@@ -522,30 +534,54 @@ Partial Class frmCadAcessoria
         '
         'btRegistroAnterior
         '
-        Me.btRegistroAnterior.Location = New System.Drawing.Point(232, 379)
+        Me.btRegistroAnterior.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btRegistroAnterior.FlatAppearance.BorderSize = 0
+        Me.btRegistroAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btRegistroAnterior.Image = CType(resources.GetObject("btRegistroAnterior.Image"), System.Drawing.Image)
+        Me.btRegistroAnterior.Location = New System.Drawing.Point(277, 350)
         Me.btRegistroAnterior.Name = "btRegistroAnterior"
-        Me.btRegistroAnterior.Size = New System.Drawing.Size(112, 39)
+        Me.btRegistroAnterior.Size = New System.Drawing.Size(107, 60)
         Me.btRegistroAnterior.TabIndex = 20
         Me.btRegistroAnterior.Text = "Registro Anterior"
+        Me.btRegistroAnterior.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btRegistroAnterior.UseVisualStyleBackColor = True
         '
         'btProximoRegistro
         '
-        Me.btProximoRegistro.Location = New System.Drawing.Point(359, 376)
+        Me.btProximoRegistro.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btProximoRegistro.FlatAppearance.BorderSize = 0
+        Me.btProximoRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btProximoRegistro.Image = CType(resources.GetObject("btProximoRegistro.Image"), System.Drawing.Image)
+        Me.btProximoRegistro.Location = New System.Drawing.Point(391, 350)
         Me.btProximoRegistro.Name = "btProximoRegistro"
-        Me.btProximoRegistro.Size = New System.Drawing.Size(107, 42)
+        Me.btProximoRegistro.Size = New System.Drawing.Size(107, 60)
         Me.btProximoRegistro.TabIndex = 21
         Me.btProximoRegistro.Text = "Próximo Registro"
+        Me.btProximoRegistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btProximoRegistro.UseVisualStyleBackColor = True
         '
         'btSair
         '
-        Me.btSair.Location = New System.Drawing.Point(515, 386)
+        Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSair.FlatAppearance.BorderSize = 0
+        Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
+        Me.btSair.Location = New System.Drawing.Point(498, 350)
         Me.btSair.Name = "btSair"
-        Me.btSair.Size = New System.Drawing.Size(75, 23)
+        Me.btSair.Size = New System.Drawing.Size(107, 60)
         Me.btSair.TabIndex = 22
         Me.btSair.Text = "Sair"
+        Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = True
+        '
+        'lblAcessoID
+        '
+        Me.lblAcessoID.AutoSize = True
+        Me.lblAcessoID.Location = New System.Drawing.Point(17, 7)
+        Me.lblAcessoID.Name = "lblAcessoID"
+        Me.lblAcessoID.Size = New System.Drawing.Size(14, 16)
+        Me.lblAcessoID.TabIndex = 23
+        Me.lblAcessoID.Text = "0"
         '
         'frmCadAcessoria
         '
@@ -553,6 +589,7 @@ Partial Class frmCadAcessoria
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SkyBlue
         Me.ClientSize = New System.Drawing.Size(805, 441)
+        Me.Controls.Add(Me.lblAcessoID)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.btProximoRegistro)
         Me.Controls.Add(Me.btRegistroAnterior)
@@ -566,10 +603,11 @@ Partial Class frmCadAcessoria
         Me.Controls.Add(Me.gbEmpresa)
         Me.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "frmCadAcessoria"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmCadAcessoria"
+        Me.Text = "Cadastrar Assessoria de Empresas"
         Me.gbEmpresa.ResumeLayout(False)
         Me.gbEmpresa.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -631,4 +669,5 @@ Partial Class frmCadAcessoria
     Friend WithEvents chbGRRF As System.Windows.Forms.CheckBox
     Friend WithEvents chbDARF As System.Windows.Forms.CheckBox
     Friend WithEvents chbDEFIS As System.Windows.Forms.CheckBox
+    Friend WithEvents lblAcessoID As System.Windows.Forms.Label
 End Class
