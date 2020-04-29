@@ -2,7 +2,6 @@
 Imports System.Data
 Public Class frmPrincipal
 
-
     Private _tarefas_id As Integer
     Public Property tarefas_id() As Integer
         Get
@@ -37,15 +36,8 @@ Public Class frmPrincipal
         Me.WindowState = FormWindowState.Maximized
         cmbMes.SelectedIndex = 0
         PCarregaDadosIniciais()
-        'ListaTarefas()
+        ' ListaTarefas()
         CarregaGrid()
-    End Sub
-
-    'cli_Nome,cli_PIS,cli_TitEleitoral,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_Dia,cli_Mes,cli_Ano,cli_Curriculo,cli_Email,cli_observacoes,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NomeFunc,cli_Autonomo,cli_AutonomoNome,cli_Falecido,cli_NomeFalecido,cli_Inativo,cli_InativoObs,cli_Parcelamento,cli_NumParcelamento,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_VIP,cli_VIPDescricao,cli_PJ,cli_NumPJ,cli_MEI,cli_NumMEI,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-
-    Private Sub CarregaGrid()
-        Dim cldTarefa As New clsTarefas
-        dgvTarefas.DataSource = cldTarefa.ListTarefa(txtPesquisa.Text).Tables(0)
     End Sub
 
     Private Sub PCarregaDadosIniciais()
@@ -65,7 +57,7 @@ Public Class frmPrincipal
                 PFormataDataGridView()
 
             Catch ex As Exception
-                MsgBox("Ocorreu um erro ao carregr os dados. Erro: " & ex.Message.ToString, MsgBoxStyle.Critical, "Aniversariantes")
+                MsgBox("Ocorreu um erro ao carregar os dados. Erro: " & ex.Message.ToString, MsgBoxStyle.Critical, "Aniversariantes")
             Finally
                 con.Close()
             End Try
@@ -75,8 +67,6 @@ Public Class frmPrincipal
     Private Sub SairToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SairToolStripMenuItem.Click
         Application.Exit()
     End Sub
-
-   
 
     Private Sub PFormataDataGridView()
         With dgvAniversariantes
@@ -106,7 +96,56 @@ Public Class frmPrincipal
         End With
     End Sub
 
-    Private Sub ListaTarefas()
+    Private Sub cmbMes_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbMes.SelectedIndexChanged
+        If cmbMes.SelectedIndex = 0 Then
+            PCarregaDadosIniciais()
+        Else
+            PCarregaDados(cmbMes.Text)
+        End If
+    End Sub
+
+    Private Sub PCarregaDados(ByVal strMes As String)
+        Using con As OleDbConnection = GetConnection()
+            Try
+                con.Open()
+                Dim sql As String
+
+                sql = "SELECT cli_id,cli_Nome,cli_Logradouro,cli_CEP,cli_Cidade,cli_UF,cli_FoneRes, "
+                sql += "cli_FoneCel,cli_Dia,cli_Mes,cli_Email From tbClientes Where cli_Mes='" & strMes & "' ORDER BY cli_Dia"
+                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+                Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
+                Dim dt As DataTable = New DataTable
+                da.Fill(dt)
+                dgvAniversariantes.DataSource = dt
+
+                'Formata a gridview
+                PFormataDataGridView()
+            Catch ex As Exception
+                MsgBox(ex.Message).ToString()
+            Finally
+                con.Close()
+            End Try
+        End Using
+    End Sub
+
+
+    Private Sub txtPesquisa_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPesquisa.SelectedIndexChanged
+        If txtPesquisa.SelectedIndex = 0 Then
+            CarregaGrid()
+        Else
+            ListaTarefas(txtPesquisa.Text)
+        End If
+    End Sub
+
+    Private Sub rbAtivo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbAtivo.CheckedChanged
+        If txtPesquisa.SelectedIndex = 0 Then
+            CarregaGrid()
+        Else
+            ListaTarefas(txtPesquisa.Text)
+        End If
+    End Sub
+
+    Private Sub ListaTarefas(ByVal strPesquisa As String)
         'Using con As OleDbConnection = GetConnection()
         '    Try
         '        con.Open()
@@ -130,57 +169,28 @@ Public Class frmPrincipal
                 con.Open()
                 Dim sql As String
                 sql = "SELECT tarefa,responsavel,DtCadastro,dtConclusao,"
-                sql += "Ativo,obs From tbTarefas ORDER BY Ativo "
-                ' sql += "Ativo,obs From tbTarefas WHERE Ativo = '" & frmTarefasCadastro.chbAtivo.Checked & "'"
+                sql += "Ativo,obs FROM tbTarefas Where Ativo=" & rbAtivo.Checked 'dgvTarefas.Rows[dgvTarefas.SelectedRows[0].Index + 1].Selected = true
+                ' sql += "Ativo,obs FROM tbTarefas WHERE Ativo = '" & frmTarefasCadastro.chbAtivo.Checked & "'"
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
                 Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
                 Dim dt As DataTable = New DataTable
                 da.Fill(dt)
                 dgvTarefas.DataSource = dt
+                'dgvTarefas.Rows[dgvTarefas.SelectedRows[0].Index + 1].Selected = true
+
 
                 'Formata a gridview
                 PFormataDataGridView1()
 
             Catch ex As Exception
-                MsgBox("Ocorreu um erro ao carregr os dados. Erro: " & ex.Message.ToString, MsgBoxStyle.Critical, "Aniversariantes")
+                MsgBox("Ocorreu um erro ao carregar os dados. Erro: " & ex.Message.ToString, MsgBoxStyle.Critical, "Aniversariantes")
             Finally
                 con.Close()
             End Try
         End Using
     End Sub
 
-    Private Sub cmbMes_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbMes.SelectedIndexChanged
-        If cmbMes.SelectedIndex = 0 Then
-            PCarregaDadosIniciais()
-        Else
-            PCarregaDados(cmbMes.Text)
-        End If
-    End Sub
-
-
-    Private Sub PCarregaDados(ByVal strMes As String)
-        Using con As OleDbConnection = GetConnection()
-            Try
-                con.Open()
-                Dim sql As String
-
-                sql = "SELECT cli_id,cli_Nome,cli_Logradouro,cli_CEP,cli_Cidade,cli_UF,cli_FoneRes, "
-                sql += "cli_FoneCel,cli_Dia,cli_Mes,cli_Email From tbClientes Where cli_Mes='" & strMes & "' ORDER BY cli_Dia"
-                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
-                Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
-                Dim dt As DataTable = New DataTable
-                da.Fill(dt)
-                dgvAniversariantes.DataSource = dt
-
-                'Formata a gridview
-                PFormataDataGridView()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            Finally
-                con.Close()
-            End Try
-        End Using
-    End Sub
+   
 
 
     Private Sub ClientsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClientsToolStripMenuItem.Click
@@ -201,6 +211,13 @@ Public Class frmPrincipal
     Private Sub ConsultaDeTarefasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultaDeTarefasToolStripMenuItem.Click
         Dim frmConTarefas As New frmTarefasConsulta
         frmConTarefas.ShowDialog()
+    End Sub
+
+    'cli_Nome,cli_PIS,cli_TitEleitoral,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_Dia,cli_Mes,cli_Ano,cli_Curriculo,cli_Email,cli_observacoes,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NomeFunc,cli_Autonomo,cli_AutonomoNome,cli_Falecido,cli_NomeFalecido,cli_Inativo,cli_InativoObs,cli_Parcelamento,cli_NumParcelamento,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_VIP,cli_VIPDescricao,cli_PJ,cli_NumPJ,cli_MEI,cli_NumMEI,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+    Private Sub CarregaGrid()
+        Dim cldTarefa As New clsTarefas
+        dgvTarefas.DataSource = cldTarefa.ListTarefa(txtPesquisa.Text).Tables(0)
     End Sub
 
     Private Sub btCarregaGrid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btCarregaGrid.Click
@@ -237,4 +254,7 @@ Public Class frmPrincipal
     End Sub
 
 
+    
+   
+   
 End Class

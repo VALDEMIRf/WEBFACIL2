@@ -26,11 +26,13 @@ Partial Class frmPrincipal
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btCarregaGrid = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.rbAtivo = New System.Windows.Forms.RadioButton()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtPesquisa = New System.Windows.Forms.ComboBox()
         Me.dgvTarefas = New System.Windows.Forms.DataGridView()
+        Me.btCarregaGrid = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbMes = New System.Windows.Forms.ComboBox()
@@ -47,7 +49,6 @@ Partial Class frmPrincipal
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AssessoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
-        Me.txtPesquisa = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -63,7 +64,6 @@ Partial Class frmPrincipal
         Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
         Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
@@ -91,18 +91,10 @@ Partial Class frmPrincipal
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Manutenção de Clientes"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(874, 27)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.GroupBox2)
+        Me.Panel5.Controls.Add(Me.btCarregaGrid)
         Me.Panel5.Controls.Add(Me.GroupBox1)
         Me.Panel5.Controls.Add(Me.Panel4)
         Me.Panel5.Controls.Add(Me.MenuStrip1)
@@ -113,29 +105,51 @@ Partial Class frmPrincipal
         Me.Panel5.Size = New System.Drawing.Size(1012, 501)
         Me.Panel5.TabIndex = 1
         '
-        'btCarregaGrid
-        '
-        Me.btCarregaGrid.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btCarregaGrid.FlatAppearance.BorderSize = 0
-        Me.btCarregaGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCarregaGrid.Image = CType(resources.GetObject("btCarregaGrid.Image"), System.Drawing.Image)
-        Me.btCarregaGrid.Location = New System.Drawing.Point(363, 17)
-        Me.btCarregaGrid.Name = "btCarregaGrid"
-        Me.btCarregaGrid.Size = New System.Drawing.Size(26, 26)
-        Me.btCarregaGrid.TabIndex = 11
-        Me.btCarregaGrid.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btCarregaGrid)
+        Me.GroupBox2.Controls.Add(Me.rbAtivo)
+        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.txtPesquisa)
         Me.GroupBox2.Controls.Add(Me.dgvTarefas)
         Me.GroupBox2.Location = New System.Drawing.Point(605, 107)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(395, 344)
+        Me.GroupBox2.Size = New System.Drawing.Size(395, 311)
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Tarefas"
+        '
+        'rbAtivo
+        '
+        Me.rbAtivo.AutoSize = True
+        Me.rbAtivo.Location = New System.Drawing.Point(332, 24)
+        Me.rbAtivo.Name = "rbAtivo"
+        Me.rbAtivo.Size = New System.Drawing.Size(57, 21)
+        Me.rbAtivo.TabIndex = 6
+        Me.rbAtivo.TabStop = True
+        Me.rbAtivo.Text = "Ativo"
+        Me.rbAtivo.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(183, 26)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(149, 17)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Selecione a Atividade:"
+        '
+        'txtPesquisa
+        '
+        Me.txtPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtPesquisa.DropDownWidth = 191
+        Me.txtPesquisa.FormattingEnabled = True
+        Me.txtPesquisa.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.txtPesquisa.Items.AddRange(New Object() {"<Selecione a Atividade>", "Ativo"})
+        Me.txtPesquisa.Location = New System.Drawing.Point(6, 23)
+        Me.txtPesquisa.Name = "txtPesquisa"
+        Me.txtPesquisa.Size = New System.Drawing.Size(167, 25)
+        Me.txtPesquisa.TabIndex = 4
+        Me.txtPesquisa.Visible = False
         '
         'dgvTarefas
         '
@@ -145,8 +159,21 @@ Partial Class frmPrincipal
         Me.dgvTarefas.Location = New System.Drawing.Point(6, 54)
         Me.dgvTarefas.Name = "dgvTarefas"
         Me.dgvTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTarefas.Size = New System.Drawing.Size(383, 279)
+        Me.dgvTarefas.Size = New System.Drawing.Size(383, 251)
         Me.dgvTarefas.TabIndex = 0
+        '
+        'btCarregaGrid
+        '
+        Me.btCarregaGrid.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btCarregaGrid.FlatAppearance.BorderSize = 0
+        Me.btCarregaGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCarregaGrid.Image = CType(resources.GetObject("btCarregaGrid.Image"), System.Drawing.Image)
+        Me.btCarregaGrid.Location = New System.Drawing.Point(911, 45)
+        Me.btCarregaGrid.Name = "btCarregaGrid"
+        Me.btCarregaGrid.Size = New System.Drawing.Size(26, 26)
+        Me.btCarregaGrid.TabIndex = 11
+        Me.btCarregaGrid.UseVisualStyleBackColor = True
+        Me.btCarregaGrid.Visible = False
         '
         'GroupBox1
         '
@@ -308,13 +335,6 @@ Partial Class frmPrincipal
         Me.MenuStrip2.TabIndex = 9
         Me.MenuStrip2.Text = "MenuStrip2"
         '
-        'txtPesquisa
-        '
-        Me.txtPesquisa.Location = New System.Drawing.Point(257, 19)
-        Me.txtPesquisa.Name = "txtPesquisa"
-        Me.txtPesquisa.Size = New System.Drawing.Size(100, 24)
-        Me.txtPesquisa.TabIndex = 1
-        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
@@ -359,7 +379,6 @@ Partial Class frmPrincipal
     Friend WithEvents btnClientes As System.Windows.Forms.Button
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
@@ -382,6 +401,8 @@ Partial Class frmPrincipal
     Friend WithEvents ConsultaDeTarefasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssessoriaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btCarregaGrid As System.Windows.Forms.Button
-    Friend WithEvents txtPesquisa As System.Windows.Forms.TextBox
+    Friend WithEvents rbAtivo As System.Windows.Forms.RadioButton
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents txtPesquisa As System.Windows.Forms.ComboBox
 
 End Class

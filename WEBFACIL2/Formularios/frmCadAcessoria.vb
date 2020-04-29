@@ -56,7 +56,7 @@ Public Class frmCadAcessoria
 
     Private Sub frmCadAcessoria_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txtEmpresa.Focus()
-        carregaDados()
+        'carregaDados()
 
 
         Select Case valorEnum
@@ -68,18 +68,19 @@ Public Class frmCadAcessoria
         End Select
 
     End Sub
-    Private Sub carregaDados() 'As DataSet
+    '  Private Sub carregaDados(ByVal strMes As String, ByVal strAno As String) 'As DataSet
+    Private Sub carregaDados()
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
-                Dim sql As String = "SELECT * FROM tbASSESSORIA"
+                Dim sql As String = "SELECT * FROM tbASSESSORIA WHERE mes = " & txtMes.Text
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
                 Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
                 Dim dt As DataTable = New DataTable
                 da.Fill(dt)
                 ' dgvAssessoria.DataSource = dt
 
-                da = New OleDbDataAdapter("select * from tbASSESSORIA", con)
+                da = New OleDbDataAdapter("SELECT * FROM tbASSESSORIA WHERE mes = " & txtMes.Text, con)
                 ds = New DataSet()
                 da.Fill(ds, "tbASSESSORIA")
                 Call ExibeDados()
@@ -91,6 +92,7 @@ Public Class frmCadAcessoria
         End Using
     End Sub
     Private Sub carregaCampos(ByVal strmes As Integer, ByVal strano As Integer) 'As DataSet
+        carregaDados()
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
@@ -417,6 +419,8 @@ Public Class frmCadAcessoria
     End Sub
 
     Private Sub btRegistroAnterior_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btRegistroAnterior.Click
+        carregaDados()
+
         If i = ds.Tables(0).Rows.Count - 1 OrElse i <> 0 Then
             i -= 1
             Call ExibeDados()
@@ -426,9 +430,15 @@ Public Class frmCadAcessoria
     End Sub
 
     Private Sub btProximoRegistro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btProximoRegistro.Click
+        ' carregaCampos(ByVal strmes As Integer, ByVal strano As Integer) 'As DataSet
+        carregaDados()
         If i < ds.Tables(0).Rows.Count - 1 Then
             i += 1
             Call ExibeDados()
         End If
+    End Sub
+
+    Private Sub btSalvar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSalvar.Click
+
     End Sub
 End Class

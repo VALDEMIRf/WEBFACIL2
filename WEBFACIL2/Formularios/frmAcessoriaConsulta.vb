@@ -397,7 +397,7 @@ Public Class frmAcessoriaConsulta
                     _empresa = dgvGridAssessoria.CurrentRow.Cells(1).Value
                     _gerente = dgvGridAssessoria.CurrentRow.Cells(2).Value
                     _responsavel = dgvGridAssessoria.CurrentRow.Cells(3).Value
-                    _telefone = dgvGridAssessoria.CurrentRow.Cells(4).Value
+                    _telefone = dgvGridAssessoria.CurrentRow.Cells(4).Value.ToString
                     _mes = dgvGridAssessoria.CurrentRow.Cells(5).Value
                     _ano = dgvGridAssessoria.CurrentRow.Cells(6).Value
                     _PROLABORE = dgvGridAssessoria.CurrentRow.Cells(7).Value

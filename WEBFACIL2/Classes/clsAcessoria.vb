@@ -400,7 +400,7 @@ Public Class clsAcessoria
         strQuery.Append(" SELECT IdAssessoria as Codigo,empresa as Empresa,gerente as Gerente,responsavel as Responsavel,telefone as Telefone,mes as Mes,ano as Ano,PROLABORE,SALARIO13,FOLHA,DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs ")
         strQuery.Append(" FROM tbAssessoria ")
         If Not strEmpresa.Equals(String.Empty) Then
-            strQuery.Append(" WHERE mes like '%" & strMes & "%'")
+            strQuery.Append(" WHERE mes = " & strMes & "AND ano = " & strAno & "")
         End If
 
         'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
