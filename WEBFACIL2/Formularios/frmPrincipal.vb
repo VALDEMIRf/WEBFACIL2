@@ -129,13 +129,13 @@ Public Class frmPrincipal
     End Sub
 
 
-    Private Sub txtPesquisa_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPesquisa.SelectedIndexChanged
-        If txtPesquisa.SelectedIndex = 0 Then
-            CarregaGrid()
-        Else
-            ListaTarefas(txtPesquisa.Text)
-        End If
-    End Sub
+    'Private Sub txtPesquisa_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    If txtPesquisa.SelectedIndex = 0 Then
+    '        CarregaGrid()
+    '    Else
+    '        ListaTarefas(txtPesquisa.Text)
+    '    End If
+    'End Sub
 
     Private Sub rbAtivo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbAtivo.CheckedChanged
         If txtPesquisa.SelectedIndex = 0 Then
@@ -257,4 +257,7 @@ Public Class frmPrincipal
     
    
    
+    Private Sub txtPesquisa_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPesquisa.SelectedIndexChanged
+
+    End Sub
 End Class

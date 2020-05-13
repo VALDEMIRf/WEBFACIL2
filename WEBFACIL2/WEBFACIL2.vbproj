@@ -263,12 +263,15 @@
     <Content Include="Imagens\Newspaper-jobs.ico" />
     <Content Include="Imagens\novo1.png" />
     <Content Include="Imagens\Ok-icon.png" />
+    <Content Include="Imagens\page-refresh.png" />
     <Content Include="Imagens\Register.ico" />
     <Content Include="Imagens\sair.png" />
     <Content Include="Imagens\sair3.png" />
     <Content Include="Imagens\sair4.png" />
     <Content Include="Imagens\salvar.png" />
     <Content Include="Imagens\save5.png" />
+    <Content Include="Imagens\sync-icon.png" />
+    <Content Include="Imagens\sync-icon1.png" />
     <Content Include="Imagens\tarefas.png" />
     <Content Include="Imagens\tarefas1.png" />
     <Content Include="Imagens\Text-Edit-icon.png" />

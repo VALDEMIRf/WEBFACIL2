@@ -7,9 +7,6 @@
 
     End Sub
 
-
-
-
     Private Sub btnPesquisar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPesquisar.Click
         CarregaGrid()
     End Sub

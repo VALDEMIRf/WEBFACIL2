@@ -149,11 +149,11 @@ Public Class clsTarefas
     Public Function Lista(ByVal strDescricao As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder
-        strQuery.Append(" SELECT * ")
+        strQuery.Append(" SELECT tarefas_id AS Codigo,tarefa AS Tarefa,responsavel,DtCadastro,dtConclusao,Ativo,obs ")
         strQuery.Append(" FROM tbTarefas ")
 
         If Not strDescricao.Equals(String.Empty) Then
-            strQuery.Append(" WHERE Ativo like '%" & strDescricao & "%'")
+            strQuery.Append(" WHERE tarefa like '%" & strDescricao & "%'")
         End If
 
         'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
